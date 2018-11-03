@@ -1,6 +1,6 @@
 # Radiko
 
-##Instalación de laravel
+## Instalación de laravel
 Para instalar laravel debemos tener instalado en en nuestra PC [NodeJS](https://nodejs.org/es/)  y [Composer](https://getcomposer.org/download/). Una vez instalados podemos realizar los siguientes pasos:
 
 1. Clonar el repositorio
@@ -21,12 +21,12 @@ php artisan storage:link
 
 ---
 
-##funciones últiles	
+## funciones últiles	
 composer dump-autoload
 
 ---
 
-##Paquetes de terceros
+## Paquetes de terceros
 
 * Paquete 1
 * Paquete 2
@@ -35,7 +35,7 @@ composer dump-autoload
 
 ---
 
-##Lista de tareas
+## Lista de tareas
 
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 - [x] list syntax required (any unordered or ordered list supported)
