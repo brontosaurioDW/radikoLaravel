@@ -19,12 +19,28 @@ php artisan storage:link
 ```
 5. Las imagenes se encuentran dentro de la carpeta radiko-html/dist. Copiamos la carpeta images y pegamos en storage/app/public
 
----
+6. Es posible que al momento de realizar una migración con la base de datos no arroje un error del tipo SQLSTATE[42000]. Para corregir este error tenemos que editar el achivo AppServiceProvider.php y colocar Schema::defaultStringLength(191);
+
+```
+public function boot()
+{
+	Schema::defaultStringLength(191);
+}
+```
 
 ## funciones últiles	
+```
 composer dump-autoload
+php artisan make:migration
+php artisan migrate
+php artisan migrate:refresh
+php artisan migrate:fresh
+php artisan make:model 
+php artisan make:seeder
+php artisan db:seeder
+php artisan make:controller
+```
 
----
 
 ## Paquetes de terceros
 
@@ -32,12 +48,3 @@ composer dump-autoload
 * Paquete 2
 * Paquete 3
 * Paquete 4
-
----
-
-## Lista de tareas
-
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item

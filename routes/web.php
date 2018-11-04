@@ -16,6 +16,8 @@ Route::get('/', [
 	'uses' => 'HuertasController@showPrincipal',
 ]);
 
+/* Huertas */
+
 Route::get('huertas', [
 	'as' => 'huertas',
 	'uses' => 'HuertasController@index'
@@ -26,6 +28,12 @@ Route::get('/huertas/{receta}', [
 	'uses' => 'HuertasController@show',
 ]);
 
+/* Productos */
+
+Route::get('productos', [
+	'as' => 'productos.index',
+	'uses' => 'ProductosController@index',
+]);
 
 // Auth
 
