@@ -27,6 +27,6 @@ class CrearTablaEstadoPedido extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estado_pedido')
+        Schema::dropIfExists('estado_pedido');
     }
 }

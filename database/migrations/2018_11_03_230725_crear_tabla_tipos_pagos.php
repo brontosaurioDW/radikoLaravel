@@ -27,6 +27,6 @@ class CrearTablaTiposPagos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipos_pagos')
+        Schema::dropIfExists('tipos_pagos');
     }
 }

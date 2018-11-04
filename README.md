@@ -1,27 +1,28 @@
 # Radiko
 
 ## Instalación de laravel
-Para instalar laravel debemos tener instalado en en nuestra PC [NodeJS](https://nodejs.org/es/)  y [Composer](https://getcomposer.org/download/). Una vez instalados podemos realizar los siguientes pasos:
+Para comenzar con la instalación de laravel debemos tener instalado en en nuestra PC [NodeJS](https://nodejs.org/es/)  y [Composer](https://getcomposer.org/download/). 
 
-1. Clonar el repositorio
-2. Una vez que hayamos clonado el repositorio debemos correr 
+Una vez instalados podemos  vamos a la carpeta principal del proyecto (donde se encuentra el index.php), abrimos la consola de comandos y corremos la instalacion de composer.
 ```
 composer install
 ```
-3. Al terminar la instalación de laravel vamos al carpeta principal , buscarmos el archivo .env.example como template y usamos sus datos para crear el archivo .env en la misma ruta. Cuando tengamos el arvhivo .env creado corremos el siguiente comando para generar la key.
+Ahora necesitamos establecer nuestro archivo de configuración. Para ello vamos a la carpeta principal del proyecto, buscamos el archivo _.env.example_ y lo usamos como base para crear _.env_.
+Una véz creado el archivo generamos la clave de seguridad.
+
 ```
 php artisan key:generate
 ```
-4. Solo nos resta vincular las imagenes, para ello tenemos que generar un vinculo entre el storage y la carpeta pública.
-Corremos el siguiente comando
+Solo queda copiar la carpeta images dentro de _radiko-html/dist_ y pegarla en _storage/app/public_ y vincular el storage con la carpeta public.
 ```
 php artisan storage:link
 ```
-5. Las imagenes se encuentran dentro de la carpeta radiko-html/dist. Copiamos la carpeta images y pegamos en storage/app/public
 
-6. Es posible que al momento de realizar una migración con la base de datos no arroje un error del tipo SQLSTATE[42000]. Para corregir este error tenemos que editar el achivo AppServiceProvider.php y colocar Schema::defaultStringLength(191);
+## Base de datos
 
-```
+Es posible que al momento de realizar una migración con la base de datos no arroje un error del tipo SQLSTATE[42000]. Para corregir este error tenemos que editar el achivo _AppServiceProvider.php_ y colocar _Schema::defaultStringLength(191);_ dentro de la funccion boot().
+
+```php
 public function boot()
 {
 	Schema::defaultStringLength(191);
@@ -29,7 +30,7 @@ public function boot()
 ```
 
 ## funciones últiles	
-```
+
 composer dump-autoload
 php artisan make:migration
 php artisan migrate
@@ -39,12 +40,11 @@ php artisan make:model
 php artisan make:seeder
 php artisan db:seeder
 php artisan make:controller
-```
 
 
 ## Paquetes de terceros
 
-* Paquete 1
+* barryvdh/laravel-debugbar
 * Paquete 2
 * Paquete 3
 * Paquete 4

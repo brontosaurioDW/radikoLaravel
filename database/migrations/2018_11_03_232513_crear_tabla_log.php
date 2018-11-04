@@ -29,6 +29,6 @@ class CrearTablaLog extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('log')
+        Schema::dropIfExists('log');
     }
 }

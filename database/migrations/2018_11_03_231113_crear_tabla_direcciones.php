@@ -35,6 +35,6 @@ class CrearTablaDirecciones extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('direcciones')
+        Schema::dropIfExists('direcciones');
     }
 }

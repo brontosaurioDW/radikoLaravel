@@ -27,6 +27,6 @@ class CrearTablaCostoZona extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('costo_zona')
+        Schema::dropIfExists('costo_zona');
     }
 }

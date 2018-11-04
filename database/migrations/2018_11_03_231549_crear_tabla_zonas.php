@@ -27,6 +27,6 @@ class CrearTablaZonas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('zonas')
+        Schema::dropIfExists('zonas');
     }
 }

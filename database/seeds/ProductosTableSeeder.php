@@ -19,7 +19,6 @@ class ProductosTableSeeder extends Seeder
   		'precio' => 529.99,
   		'foto' => 'img_test.jpg',
   		'estado' => 1
-
   	]);
   }
 }

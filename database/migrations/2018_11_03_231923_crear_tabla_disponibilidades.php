@@ -31,6 +31,6 @@ class CrearTablaDisponibilidades extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('disponibilidades')
+        Schema::dropIfExists('disponibilidades');
     }
 }

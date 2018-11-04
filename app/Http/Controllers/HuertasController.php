@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Huerta;
 
 class HuertasController extends Controller
 {
@@ -14,7 +15,10 @@ class HuertasController extends Controller
    */
   public function showPrincipal()
   {
-    return view('principal');
+
+    $huertas = Huerta::all();
+
+    return view('principal', compact('huertas'));
   }  
 
   /**

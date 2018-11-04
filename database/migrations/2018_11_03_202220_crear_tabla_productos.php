@@ -23,7 +23,7 @@ class CrearTablaProductos extends Migration
             $table->tinyInteger('estado');
             $table->softDeletes();
             $table->timestamps();
-      });
+        });
     }
 
     /**
