@@ -18,4 +18,10 @@ class Huerta extends Model
 	// 	'genero' => 'required|min:3',
 	// 	'precio' => 'required|numeric',
 	// ];
+
+
+	public function tipoHuerta() 
+	{
+		return $this->belongsTo(TipoHuerta::class, 'id', 'id');
+	}
 }

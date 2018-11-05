@@ -59,6 +59,6 @@ public function boot()
 ## Paquetes de terceros
 
 * barryvdh/laravel-debugbar
-* Paquete 2
+* barryvdh/laravel-ide-helper
 * Paquete 3
 * Paquete 4

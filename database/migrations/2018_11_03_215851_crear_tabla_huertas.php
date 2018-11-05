@@ -24,7 +24,10 @@ class CrearTablaHuertas extends Migration
             $table->boolean('destacado');
             $table->softDeletes();
             $table->timestamps();
-      });
+
+            $table->unsignedInteger('id_tipo_huerta');
+            $table->foreign('id_tipo_huerta')->references('id')->on('tipo_huerta');
+        });
     }
 
     /**

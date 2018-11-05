@@ -123,6 +123,13 @@
           <img src="{{ url('storage/images/red-1.png') }}" alt="Huerta 1">
           <div class="item-info">
             <h3>{{ $huerta->huerta }}</h3>
+
+            {{-- {{ $huerta->tipo_huerta->tipo }} --}}
+
+            {{-- {{ $huerta->tipoHuerta['tipo'] }} --}}
+
+            {{ $huerta->tipohuerta['tipo'] }}
+
             <div class="stars">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -139,8 +146,6 @@
       @endforeach
 
     </div>
-
-<?php echo $huertas->render(); ?>
 
     <div class="text-center btn-load">
       <a href="{{ url('/huertas') }}" class="btn btn-medium btn-primary">Ver todas</a>

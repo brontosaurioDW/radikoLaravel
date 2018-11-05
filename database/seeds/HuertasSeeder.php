@@ -19,7 +19,8 @@ class HuertasSeeder extends Seeder
   		'direccion' => NULL,
       'cantaidad_max_envios' => 15,
       'foto' => 'h-1.jpg',
-      'destacado' => true
+      'destacado' => true,
+      'id_tipo_huerta' => 1
     ]);
     Huerta::create([
       'huerta' => 'Huertas Orgánicas Urbana',
@@ -28,7 +29,8 @@ class HuertasSeeder extends Seeder
       'direccion'=> 'Av. Estado de Israel 4799',
       'cantaidad_max_envios' => 20,
       'foto' => 'h-2.jpg',
-      'destacado' => false
+      'destacado' => false,
+      'id_tipo_huerta' => 1
     ]);
     Huerta::create([
       'huerta' => 'Tallo Verde',
@@ -37,7 +39,8 @@ class HuertasSeeder extends Seeder
       'direccion'=> 'Ruta 192 Km. 8 - Open Door - Luján',
       'cantaidad_max_envios' => 10,
       'foto' => 'h-3.jpg',
-      'destacado' => true
+      'destacado' => true,
+      'id_tipo_huerta' => 1
     ]);
     Huerta::create([
       'huerta' => 'Estilo Orgánico',
@@ -46,7 +49,8 @@ class HuertasSeeder extends Seeder
       'direccion'=> '3 de Febrero 940 San Isidro Buenos ',
       'cantaidad_max_envios' => 25,
       'foto' => 'h-4.jpg',
-  		'destacado' => true
+      'destacado' => true,
+      'id_tipo_huerta' => 1
     ]);
   }
 }
