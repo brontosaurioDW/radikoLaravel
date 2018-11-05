@@ -140,6 +140,8 @@
 
     </div>
 
+<?php echo $huertas->render(); ?>
+
     <div class="text-center btn-load">
       <a href="{{ url('/huertas') }}" class="btn btn-medium btn-primary">Ver todas</a>
     </div>

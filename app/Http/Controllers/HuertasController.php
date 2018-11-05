@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Huerta;
 
+use Illuminate\Support\Facades\DB;
+
 class HuertasController extends Controller
 {
 
@@ -16,7 +18,9 @@ class HuertasController extends Controller
   public function showPrincipal()
   {
 
-    $huertas = Huerta::all();
+    $huertas = Huerta::All();
+    // $huertas = Huerta::where('id', '1')->paginate(2);
+    $huertas = DB::table('huertas')->simplePaginate(2);
 
     return view('principal', compact('huertas'));
   }  
@@ -28,7 +32,10 @@ class HuertasController extends Controller
    */
   public function index()
   {
-    return view('huertas.index');
+
+    $huertas = DB::table('huertas')->simplePaginate(2);
+
+    return view('huertas.index', compact('huertas'));
   }
 
   /**

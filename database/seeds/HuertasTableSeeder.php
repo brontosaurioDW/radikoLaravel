@@ -18,7 +18,7 @@ class HuertasTableSeeder extends Seeder
   		'razon_social' => 'Huerta S.A.',
   		'direccion' => NULL,
       'cantaidad_max_envios' => 15,
-      'foto' => 'organico.jpg',
+      'foto' => 'h-1.jpg',
       'destacado' => true
     ]);
     Huerta::create([
@@ -27,7 +27,7 @@ class HuertasTableSeeder extends Seeder
       'razon_social' => 'Gonzales y Perez S.R.L',
       'direccion'=> 'Av. Estado de Israel 4799',
       'cantaidad_max_envios' => 20,
-      'foto' => 'huertaorganica.jpg',
+      'foto' => 'h-2.jpg',
       'destacado' => false
     ]);
     Huerta::create([
@@ -36,7 +36,7 @@ class HuertasTableSeeder extends Seeder
       'razon_social' => 'Tallo S.A.',
       'direccion'=> 'Ruta 192 Km. 8 - Open Door - Luján',
       'cantaidad_max_envios' => 10,
-      'foto' => 'talloverde.jpg',
+      'foto' => 'h-3.jpg',
       'destacado' => true
     ]);
     Huerta::create([
@@ -45,7 +45,7 @@ class HuertasTableSeeder extends Seeder
       'razon_social' => 'Gatofer y Asociados',
       'direccion'=> '3 de Febrero 940 San Isidro Buenos ',
       'cantaidad_max_envios' => 25,
-      'foto' => 'estiloorganico.png',
+      'foto' => 'h-4.jpg',
   		'destacado' => true
     ]);
   }

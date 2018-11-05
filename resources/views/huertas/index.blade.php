@@ -39,6 +39,32 @@
 							</div>
 						</div>
 						<div class="row">
+
+							@foreach ($huertas as $huerta)
+
+							<div class="col-12 col-sm-6 col-md-4">
+								<div class="card">
+									<a href="detalle-huerta.html">
+										<img class="card-img-top" src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="<?php echo $huerta->huerta ?>">
+										<div class="stars">
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="far fa-star"></i>
+											<i class="far fa-star"></i>
+										</div>
+									</a>
+									<div class="card-body">
+										<div class="title text-left">
+											<h4 class="card-title huerta">{{ $huerta->huerta }}</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							@endforeach
+
+
 							<div class="col-12 col-sm-6 col-md-4">
 								<div class="card">
 									<a href="detalle-huerta.html">
@@ -58,6 +84,7 @@
 									</div>
 								</div>
 							</div>
+
 							<div class="col-12 col-sm-6 col-md-4">
 								<div class="card">
 									<a href="detalle-huerta.html">
