@@ -33,6 +33,18 @@
     </div>
 
     <ul class="d-flex justify-content-between">
+
+      @foreach ($categorias as $categoria)
+      <li class="frutas">
+        <a href="{{ url('/huertas') }}" style="background-image: url(storage/images/categories/{{ $categoria->icono }})">
+          <span>{{ $categoria->categoria }}</span>
+        </a>
+      </li>
+      @endforeach
+
+    </ul>
+
+    <ul class="d-flex justify-content-between">
       <li class="frutas">
         <a href="{{ url('/huertas') }}">
           <span>Frutas</span>
@@ -82,53 +94,43 @@
   </div>
 </section>
 
-
-
-
 <section class="grid-masonry">
   <div class="container">
     <div class="title">
       <h2>Huertas destacadas asd</h2>
     </div>
 
-
     <div class="grid flex-wrap">
 
-      @foreach ($huertas as $huerta)
+      @foreach ($huertasDestacadas as $huerta)
 
       @switch($loop->index)
       @case(0)
-      <?php $class="half title-top-left plus-bottom-right red"; ?>
+      <?php $class="single-item half title-top-left plus-bottom-right red"; ?>
       @break
 
       @case(1)
-      <?php $class="half title-bottom-right plus-top-left orange"; ?>
+      <?php $class="single-item half title-bottom-right plus-top-left orange"; ?>
       @break
 
       @case(2)
-      <?php $class="third title-top-left plus-bottom-right violet"; ?>
+      <?php $class="single-item third title-top-left plus-bottom-right violet"; ?>
       @break
 
       @case(3)
-      <?php $class="third title-center-bottom plus-top-right green"; ?>
+      <?php $class="single-item third title-center-bottom plus-top-right green"; ?>
       @break
 
       @case(4)
-      <?php $class="third title-bottom-right plus-top-left red"; ?>
+      <?php $class="single-item third title-bottom-right plus-top-left red"; ?>
       @break
       @endswitch     
 
-      <div class="single-item <?php echo $class ?>">
+      <div class="<?php echo $class ?>">
         <a href="{{ url('/huertas/1') }}" class="cta-link">
           <img src="{{ url('storage/images/red-1.png') }}" alt="Huerta 1">
           <div class="item-info">
             <h3>{{ $huerta->huerta }}</h3>
-
-            {{-- {{ $huerta->tipo_huerta->tipo }} --}}
-
-            {{-- {{ $huerta->tipoHuerta['tipo'] }} --}}
-
-            {{ $huerta->tipohuerta['tipo'] }}
 
             <div class="stars">
               <i class="fas fa-star"></i>
@@ -147,112 +149,6 @@
 
     </div>
 
-    <div class="text-center btn-load">
-      <a href="{{ url('/huertas') }}" class="btn btn-medium btn-primary">Ver todas</a>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="grid-masonry">
-  <div class="container">
-    <div class="title">
-      <h2>Huertas destacadas</h2>
-    </div>
-
-
-
-
-
-
-
-    <div class="grid flex-wrap">
-      <div class="single-item half title-top-left plus-bottom-right red">
-        <a href="{{ url('/huertas/1') }}" class="cta-link">
-          <img src="{{ url('storage/images/red-1.png') }}" alt="Huerta 1">
-          <div class="item-info">
-            <h3>Tallo Verde</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-
-          <i class="fas fa-plus"></i>
-        </a>
-      </div>
-      <div class="single-item half title-bottom-right plus-top-left orange">
-        <a href="{{ url('/huertas/1') }}" class="cta-link">
-          <img src="{{ url('storage/images/orange.png') }}" alt="Huerta 1">
-          <div class="item-info">
-            <h3>El jardín orgánico</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-
-          <i class="fas fa-plus"></i>
-        </a>
-      </div>
-      <div class="single-item third title-top-left plus-bottom-right violet">
-        <a href="{{ url('/huertas/1') }}" class="cta-link block">
-          <img src="{{ url('storage/images/violet.png') }}" alt="Huerta 1">
-          <div class="item-info">
-            <h3>La orgánica</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <i class="fas fa-plus"></i>
-        </a>
-      </div>
-      <div class="single-item third title-center-bottom plus-top-right green">
-        <a href="{{ url('/huertas/1') }}" class="cta-link">
-          <img src="{{ url('storage/images/green.png') }}" alt="Huerta 1">
-          <div class="item-info">
-            <h3>El brote urbano</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-
-          <i class="fas fa-plus"></i>
-        </a>
-      </div>
-      <div class="single-item third title-bottom-right plus-top-left red">
-        <a href="{{ url('/huertas/1') }}" class="cta-link">
-          <img src="{{ url('storage/images/red-2.png') }}" alt="Huerta 1">
-          <div class="item-info">
-            <h3>Ital</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-
-          <i class="fas fa-plus"></i>
-        </a>
-      </div>
-    </div>
     <div class="text-center btn-load">
       <a href="{{ url('/huertas') }}" class="btn btn-medium btn-primary">Ver todas</a>
     </div>

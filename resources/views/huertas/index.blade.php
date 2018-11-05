@@ -64,188 +64,20 @@
 
 							@endforeach
 
-
-							<div class="col-12 col-sm-6 col-md-4">
-								<div class="card">
-									<a href="detalle-huerta.html">
-										<img class="card-img-top" src="{{ url('storage/images/huertas/h-1.jpg') }}" alt="Card image cap">
-										<div class="stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="far fa-star"></i>
-											<i class="far fa-star"></i>
-										</div>
-									</a>
-									<div class="card-body">
-										<div class="title text-left">
-											<h4 class="card-title huerta">Tallo Verde</h4>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-12 col-sm-6 col-md-4">
-								<div class="card">
-									<a href="detalle-huerta.html">
-										<img class="card-img-top" src="{{ url('storage/images/huertas/h-2.jpg') }}" alt="Card image cap">
-										<div class="stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="far fa-star"></i>
-											<i class="far fa-star"></i>
-										</div>
-									</a>
-									<div class="card-body">
-										<div class="title text-left">
-											<h4 class="card-title huerta">Tallo Orgánico</h4>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-4">
-								<div class="card">
-									<a href="detalle-huerta.html">
-										<img class="card-img-top" src="{{ url('storage/images/huertas/h-3.jpg') }}" alt="Card image cap">
-										<div class="stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="far fa-star"></i>
-											<i class="far fa-star"></i>
-										</div>
-									</a>
-									<div class="card-body">
-										<div class="title text-left">
-											<h4 class="card-title huerta">El bolsón</h4>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-4">
-								<div class="card">
-									<a href="detalle-huerta.html">
-										<img class="card-img-top" src="{{ url('storage/images/huertas/h-4.jpg') }}" alt="Card image cap">
-										<div class="stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="far fa-star"></i>
-											<i class="far fa-star"></i>
-										</div>
-									</a>
-									<div class="card-body">
-										<div class="title text-left">
-											<h4 class="card-title huerta">El jardín</h4>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-4">
-								<div class="card">
-									<a href="detalle-huerta.html">
-										<img class="card-img-top" src="{{ url('storage/images/huertas/h-5.jpg') }}" alt="Card image cap">
-										<div class="stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="far fa-star"></i>
-											<i class="far fa-star"></i>
-										</div>
-									</a>
-									<div class="card-body">
-										<div class="title text-left">
-											<h4 class="card-title huerta">La huerta</h4>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-4">
-								<div class="card">
-									<a href="detalle-huerta.html">
-										<img class="card-img-top" src="{{ url('storage/images/huertas/h-6.jpg') }}" alt="Card image cap">
-										<div class="stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="far fa-star"></i>
-											<i class="far fa-star"></i>
-										</div>
-									</a>
-									<div class="card-body">
-										<div class="title text-left">
-											<h4 class="card-title huerta">Y acá otra huerta</h4>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-4">
-								<div class="card">
-									<a href="detalle-huerta.html">
-										<img class="card-img-top" src="{{ url('storage/images/huertas/h-7.jpg') }}" alt="Card image cap">
-										<div class="stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="far fa-star"></i>
-											<i class="far fa-star"></i>
-										</div>
-									</a>
-									<div class="card-body">
-										<div class="title text-left">
-											<h4 class="card-title huerta">Tallo Orgánico</h4>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-4">
-								<div class="card">
-									<a href="detalle-huerta.html">
-										<img class="card-img-top" src="{{ url('storage/images/huertas/h-8.jpg') }}" alt="Card image cap">
-										<div class="stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="far fa-star"></i>
-											<i class="far fa-star"></i>
-										</div>
-									</a>
-									<div class="card-body">
-										<div class="title text-left">
-											<h4 class="card-title huerta">Una con título más largo</h4>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-sm-6 col-md-4">
-								<div class="card">
-									<a href="detalle-huerta.html">
-										<img class="card-img-top" src="{{ url('storage/images/huertas/h-9.jpg') }}" alt="Card image cap">
-										<div class="stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="far fa-star"></i>
-											<i class="far fa-star"></i>
-										</div>
-									</a>
-									<div class="card-body">
-										<div class="title text-left">
-											<h4 class="card-title huerta">Tallo Orgánico</h4>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
+
+
 					</div>
 					<div class="row">
 						<div class="col-12">
 							<nav aria-label="navigation" class="huerta-navigation">
 								<ul class="pagination justify-content-center">
+								<?php echo $huertas->links(); ?>
+									{{-- 									
 									<li class="page-item"><a class="page-link" href="#">1</a></li>
 									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li> 
+									--}}
 								</ul>
 							</nav>
 						</div>

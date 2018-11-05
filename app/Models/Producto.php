@@ -10,7 +10,7 @@ class Producto extends Model
 	protected $table = "productos";
 
 	/** @var array Los campos que se pueden cargar de manera masiva. */
-	//protected $fillable = ['nombre', 'genero', 'precio', 'anio_estreno'];
+	protected $fillable = ['nombre', 'genero', 'precio', 'anio_estreno'];
 
 	/** @var array Las reglas de la validación. */
 	// public static $rules = [

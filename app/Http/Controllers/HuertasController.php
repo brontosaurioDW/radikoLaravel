@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Huerta;
 use App\Models\TipoHuerta;
+use App\Models\Categoria;
 
 use Illuminate\Support\Facades\DB;
 
@@ -19,21 +20,19 @@ class HuertasController extends Controller
   public function showPrincipal()
   {
 
-    // $huertas = Huerta::All();
+    $huertasDestacadas = Huerta::All()->where('destacado', true);
+    $categorias = Categoria::All();
+
     // $huertas = Huerta::where('id', '1')->paginate(2);
     // $huertas = DB::table('huertas')->simplePaginate(2);
 
-    $huertas = Huerta::with('tipoHuerta')->get(); 
+    // $huertas = Huerta::with('tipoHuerta')->get(); 
 
     // dd($huertas);
 
     // return view('principal', compact('huertas'));
 
-    return view('principal', [
-      'huertas' => $huertas
-    ]);
-
-
+    return view( 'principal', compact('huertasDestacadas', 'categorias') );
   }  
 
   /**
@@ -44,7 +43,7 @@ class HuertasController extends Controller
   public function index()
   {
 
-    $huertas = DB::table('huertas')->simplePaginate(2);
+    $huertas = DB::table('huertas')->paginate(6);
 
     return view('huertas.index', compact('huertas'));
   }
