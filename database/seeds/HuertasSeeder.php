@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\Huerta;
 
-class HuertasTableSeeder extends Seeder
+class HuertasSeeder extends Seeder
 {
   /**
    * Run the database seeds.

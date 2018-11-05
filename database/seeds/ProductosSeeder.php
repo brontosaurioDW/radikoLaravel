@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\Producto;
 
-class ProductosTableSeeder extends Seeder
+class ProductosSeeder extends Seeder
 {
   /**
    * Run the database seeds.
