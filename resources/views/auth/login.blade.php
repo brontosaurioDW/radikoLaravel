@@ -14,16 +14,27 @@
 					Volver
 				</a>
 			</div>
-			<div class="form">
-				<div>
+
+			<form action="{{ route('auth.doLogin')}}" method="post">
+				<div class="form">
+					@csrf
 					<h1>Login</h1>
+					@if(Session::has('status'))
+					<div class="text-danger">{{ Session::get('status') }}</div>
+					@endif
 					<div class="row-form">
 						<label class="sr-only">Usuario o email</label>
-						<input type="text" name="user" placeholder="Usuario o email">
+						<input type="text" id="email" name="email" value="{{ old('email')}}" placeholder="Usuario o email">
+						@if($errors->has('email'))
+						<small class="text-danger">{{ $errors->first('email') }}</small>
+						@endif
 					</div>
 					<div class="row-form">
 						<label class="sr-only">Contraseña</label>
-						<input type="password" name="password" placeholder="Contraseña">
+						<input type="password" name="password" id="password" placeholder="Contraseña">
+						@if($errors->has('password'))
+						<small class="text-danger">{{ $errors->first('password') }}</small>
+						@endif
 					</div>
 					<div class="row-form">
 						<div class="remember checkbox">
@@ -34,11 +45,13 @@
 						</div>
 					</div>
 					<div class="row-form">
-						<a href="{{ url('/') }}" class="btn btn-secondary">Ingresar</a>
+
+						<button class="btn btn-secondary">Ingresar</button>
+
 						<a href="{{ url('/registro') }}">¿No tenés cuenta? <span class="bold uppercase">Regístrate</span></a>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 </div>

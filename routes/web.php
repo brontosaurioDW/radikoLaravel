@@ -52,6 +52,16 @@ Route::get('/registro-mensaje', [
 	'uses' => 'AuthController@showRegistroMensaje'
 ]);
 
+Route::post('login', [
+	'as' => 'auth.doLogin',
+	'uses' => 'AuthController@doLogin'
+]);
+
+Route::post('registro', [
+	'as' => 'auth.doRegistro',
+	'uses' => 'AuthController@doRegistro'
+]);
+
 
 //
 
