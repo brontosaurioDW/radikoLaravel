@@ -11,10 +11,10 @@
                     <a class="nav-link" href="{{ url('/huertas') }}">Huertas</a>
                 </li>
                 <!--
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="listado-productos.html">Productos</a>
-                                            </li>
-                                            -->
+                <li class="nav-item">
+                    <a class="nav-link" href="listado-productos.html">Productos</a>
+                </li>
+                -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/login') }}">Ingresá</a>
                 </li>
