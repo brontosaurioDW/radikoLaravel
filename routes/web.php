@@ -16,7 +16,7 @@ Route::get('/', [
 	'uses' => 'HuertasController@showPrincipal',
 ]);
 
-/* Huertas */
+/* --- Huertas */
 
 Route::get('huertas', [
 	'as' => 'huertas',
@@ -28,7 +28,7 @@ Route::get('/huertas/{receta}', [
 	'uses' => 'HuertasController@show',
 ]);
 
-/* Productos */
+/* --- Productos */
 
 Route::get('productos', [
 	'as' => 'productos.index',
@@ -36,22 +36,24 @@ Route::get('productos', [
 ]);
 
 
-/* Legales */
+/* --- Legales */
 
 Route::get('/legales/faq', function () {
-    return view('legales.faq');
+	return view('legales.faq');
 });
 
 Route::get('/legales/politica-privacidad', function () {
-    return view('legales.politica-privacidad');
+	return view('legales.politica-privacidad');
 });
 
 Route::get('/legales/terminos-condiciones', function () {
-    return view('legales.terminos-condiciones');
+	return view('legales.terminos-condiciones');
 });
 
 
-// Auth
+
+
+/* --- Auth */
 
 Route::get('login', [
 	'as' => 'login',
@@ -84,8 +86,47 @@ Route::get('logout', [
 ]);
 
 
+/* --- Perfil */
 
-//
+Route::middleware('auth')->group(function() {
+
+	Route::get('/perfil', [
+		'as' => 'perfil',
+		'uses' => 'PerfilController@index'
+	]);
+
+	Route::get('/perfil/{perfil}', [
+		'as' => 'perfil.detalle',
+		'uses' => 'PerfilController@show'
+	]);
+
+	Route::get('/perfil/{perfil}/editar', [
+		'as' => 'perfil.edit',
+		'uses' => 'PerfilController@edit'
+	]);
+
+	Route::put('/perfil/{perfil}/editar', [
+		'as' => 'perfil.update',
+		'uses' => 'PerfilController@update'
+	]);
+
+});
+
+// Route::middleware('auth')->group(function() {
+
+// 	Route::get('/perfil', [
+// 		'as' => 'perfil',
+// 		'uses' => 'PerfilController@lindex'
+// 	]);
+
+// });
+
+
+
+
+
+
+// -------------------------------
 
 Route::get('/recetas', [
 	'as' => 'recetas',

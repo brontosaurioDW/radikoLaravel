@@ -18,7 +18,8 @@ class ProductosSeeder extends Seeder
   		'marca' => 'marca test',
   		'precio' => 529.99,
   		'foto' => 'img_test.jpg',
-  		'estado' => 1
+  		'estado' => 1,
+      'id_huerta' => 1
   	]);
   }
 }

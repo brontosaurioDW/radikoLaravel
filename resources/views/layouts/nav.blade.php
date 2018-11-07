@@ -24,8 +24,7 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Perfil</a>
-                        <a class="dropdown-item" href="#">Configuración</a>
+                        <a class="dropdown-item" href="{{ route('perfil.detalle' , Auth::user()->id ) }}">Perfil</a>
                         <a class="dropdown-item" href="{{ route('logout') }}">Cerrar sesión</a>
                     </div>
                 </div>

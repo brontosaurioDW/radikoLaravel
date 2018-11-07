@@ -81,6 +81,8 @@ class HuertasController extends Controller
     $huerta = Huerta::find($id);
     //$huerta = $this->repoHuerta->find($huerta);
 
+    //dd($huerta->productos);
+
     return view('huertas.show', compact('huerta'));
   }
 

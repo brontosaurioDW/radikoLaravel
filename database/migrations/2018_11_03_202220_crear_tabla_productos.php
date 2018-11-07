@@ -21,6 +21,7 @@ class CrearTablaProductos extends Migration
             $table->decimal('precio', 6, 2);
             $table->string('foto', 255);
             $table->tinyInteger('estado');
+            $table->unsignedInteger('id_huerta');
             $table->softDeletes();
             $table->timestamps();
         });
