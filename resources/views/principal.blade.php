@@ -36,6 +36,7 @@
             </li>
             @endforeach
         </ul>
+
         <ul class="d-flex justify-content-between">
             <li class="frutas">
                 <a href="{{ url('/huertas') }}">
@@ -83,6 +84,7 @@
                 </a>
             </li>
         </ul>
+
     </div>
 </section>
 
@@ -244,7 +246,7 @@
         <div class="title">
             <h2>Unite a Radiko y sumate a una vida más sana</h2>
         </div>
-        <button class="btn-secondary btn btn-medium"> Registrate </button>
+        <a href="{{ route('registro') }}" class="btn-secondary btn btn-medium"> Registrate </a>
     </div>
 </section>
 
