@@ -26,4 +26,25 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Array con las reglas de validación
+     *
+     * @var array
+     */
+    public static $rules_login = [
+        'email' => 'required|max:255',
+        'password' => 'required|min:3',
+    ];
+
+    /**
+     * Array con las reglas de validación
+     *
+     * @var array
+     */
+    public static $rules_register = [
+        'email' => 'required|max:255|email|unique:users',
+        'password' => 'required|min:3|confirmed',
+    ];
+
 }

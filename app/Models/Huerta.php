@@ -10,7 +10,16 @@ class Huerta extends Model
 	protected $table = "huertas";
 
 	/** @var array Los campos que se pueden cargar de manera masiva. */
-	protected $fillable = ['huerta', 'cuti', 'razon_social', 'direccion', 'cantidad_max_envios', 'foto', 'destacado', 'id_tipo_huerta'];
+	protected $fillable = [
+		'huerta',
+		'cuti',
+		'razon_social',
+		'direccion',
+		'cantidad_max_envios',
+		'foto',
+		'destacado',
+		'id_tipo_huerta'
+	];
 
 	/** @var array Las reglas de la validación. */
 	// public static $rules = [

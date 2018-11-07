@@ -22,12 +22,21 @@ class UsersSeeder extends Seeder
     		'foto' => NULL,
     		'estado' => 'activo'
     	]);
+        User::create([
+            'name' => 'Florencia',
+            'last-name' => 'Ederli',
+            'email' => 'fespi@mail.com',
+            'password' => \Hash::make('123'),
+            'telephone' => NULL,
+            'foto' => NULL,
+            'estado' => 'activo'
+        ]);
     	User::create([
     		'name' => 'Florencia',
-    		'last-name' => 'Ederli',
-    		'email' => 'fespi@mail.com',
+    		'last-name' => 'Sepúlveda',
+    		'email' => 'flor@mail.com',
     		'password' => \Hash::make('123'),
-    		'telephone' => NULL,
+    		'telephone' => '2365-4578',
     		'foto' => NULL,
     		'estado' => 'activo'
     	]);

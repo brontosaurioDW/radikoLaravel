@@ -48,10 +48,14 @@ class AuthController extends Controller
     */
     public function doLogin(Request $request)
     {
-        $request->validate([
-            'email' => 'required|max:255',
-            'password' => 'required|min:3',
+
+        $request->validate(User::$rules_login, [
+            'email.required' => 'El campo email es requerido',
+            'email.max' => 'La dirección de mail no puede tener más de :max caracteres',
+            'password.required' => 'El campo contraseña es requerido',
+            'password.min' => 'La contraseña debe tener al menos :min caracteres'
         ]);
+
 
         $input = $request->input();
 
@@ -60,7 +64,6 @@ class AuthController extends Controller
             'password' => $input['password'], 
             'email' => $input['email']
         ])) {
-
             return redirect()->route('login')
             ->withInput()
             ->with('status', 'E-mail y/o password incorrectos.');
@@ -77,10 +80,15 @@ class AuthController extends Controller
     */
     public function doRegistro(Request $request)
     {
-        $request->validate([
-            //'name' => 'required|min:2|max:100',
-            'email' => 'required|max:255|unique:users',
-            'password' => 'required|min:3|confirmed',
+
+        $request->validate(User::$rules_register, [
+            'email.required' => 'El campo email es requerido',
+            'email.max' => 'La dirección de mail no puede tener más de :max caracteres',
+            'email.email' => 'La dirección de mail ingresada no es válida',
+            'email.unique' => 'La dirección de correo ingresada ya se encuentra en el sistema',
+            'password.required' => 'El campo contraseña es requerido',
+            'password.min' => 'La contraseña debe tener al menos :min caracteres',
+            'password.confirmed' =>'Las contraseñas no coinciden'
         ]);
 
         $input = $request->input();
@@ -88,9 +96,8 @@ class AuthController extends Controller
         $input['password'] = \Hash::make($input['password']);
         $user = User::create($input);
 
-
         return redirect('/')
-            ->with('status', 'Usuario registrado con éxito!');
+        ->with('status', 'Usuario registrado con éxito!');
     }
 
     /**
@@ -102,72 +109,5 @@ class AuthController extends Controller
     {
         Auth::logout();
         return redirect('/');
-    }
-
-
-    /**
-    * Show the form for creating a new resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function create()
-    {
-      //
-    }
-
-    /**
-    * Store a newly created resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-    public function store(Request $request)
-    {
-      //
-    }
-
-    /**
-    * Display the specified resource.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
-    public function show($id)
-    {
-      //
-    }
-
-    /**
-    * Show the form for editing the specified resource.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
-    public function edit($id)
-    {
-      //
-    }
-
-    /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
-    public function update(Request $request, $id)
-    {
-      //
-    }
-
-    /**
-    * Remove the specified resource from storage.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
-    public function destroy($id)
-    {
-      //
     }
 }
