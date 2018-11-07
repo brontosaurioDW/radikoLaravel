@@ -35,6 +35,22 @@ Route::get('productos', [
 	'uses' => 'ProductosController@index',
 ]);
 
+
+/* Legales */
+
+Route::get('/legales/faq', function () {
+    return view('legales.faq');
+});
+
+Route::get('/legales/politica-privacidad', function () {
+    return view('legales.politica-privacidad');
+});
+
+Route::get('/legales/terminos-condiciones', function () {
+    return view('legales.terminos-condiciones');
+});
+
+
 // Auth
 
 Route::get('login', [
@@ -66,6 +82,7 @@ Route::get('logout', [
 	'as' => 'logout',
 	'uses' => 'AuthController@logout'
 ]);
+
 
 
 //

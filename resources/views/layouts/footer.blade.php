@@ -10,13 +10,13 @@
             <div class="col-md-3">
                 <ul>
                     <li>
-                        <a href="#">Preguntas frecuentes</a>
+                        <a href="{{ url('/legales/faq') }}">Preguntas frecuentes</a>
                     </li>
                     <li>
-                        <a href="#">Política de privacidad</a>
+                        <a href="{{ url('/legales/politica-privacidad') }}">Política de privacidad</a>
                     </li>
                     <li>
-                        <a href="#">Términos y condiciones</a>
+                        <a href="{{ url('/legales/terminos-condiciones') }}">Términos y condiciones</a>
                     </li>
                 </ul>
             </div>
