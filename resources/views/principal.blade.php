@@ -24,19 +24,20 @@
 
 <section class="categories">
     <div class="container">
-        <div class="title text-center">
+        <div class="title text-center d-none d-sm-block">
             <h2 class="bold">Ver todas las huertas que ofrecen:</h2>
         </div>
         <ul class="d-flex justify-content-between">
             @foreach ($categorias as $categoria)
-            <li class="frutas">
-                <a href="{{ url('/huertas') }}" style="background-image: url(storage/images/categories/{{ $categoria->icono }})">
-                    <span>{{ $categoria->categoria }}</span>
-                </a>
-            </li>
+                <li class="frutas">
+                    <a href="{{ url('/huertas') }}">
+                        <span style="background-image: url(storage/images/categories/{{ $categoria->icono }})" class="cat-img"> {{ $categoria->categoria }} </span>
+                        <span>{{ $categoria->categoria }}</span>
+                    </a>
+                </li>
             @endforeach
         </ul>
-        <ul class="d-flex justify-content-between">
+        {{-- <ul class="d-flex justify-content-between">
             <li class="frutas">
                 <a href="{{ url('/huertas') }}">
                     <span>Frutas</span>
@@ -82,7 +83,7 @@
                     <span>Envasados</span>
                 </a>
             </li>
-        </ul>
+        </ul> --}}
     </div>
 </section>
 

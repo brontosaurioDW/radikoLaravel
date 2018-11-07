@@ -2,8 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <a href="#" class="logo-foo"> Rádiko </a>
-                <p> Tu nuevo super </p>
+                <div class="d-none d-lg-block">
+                    <a href="#" class="logo-foo"> Rádiko </a>
+                    <p> Tu nuevo super </p>
+                </div>
             </div>
             <div class="col-md-3">
                 <ul>
@@ -11,7 +13,7 @@
                         <a href="#">Preguntas frecuentes</a>
                     </li>
                     <li>
-                        <a href="#">Legales</a>
+                        <a href="#">Política de privacidad</a>
                     </li>
                     <li>
                         <a href="#">Términos y condiciones</a>
@@ -26,14 +28,11 @@
                     <li>
                         <a href="#">Tengo una huerta</a>
                     </li>
-                    <li>
-                        <a href="#">Otro link</a>
-                    </li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <div class="download-btn">
-                    <ul>
+                    <ul class="d-flex align-items-center justify-content-center">
                         <li>
                             <a href="#">
                                 <img src="{{ url('storage/images/google-play-btn.png') }}" alt="Download in Google Play" class="img-fluid">
@@ -47,7 +46,7 @@
                     </ul>
                 </div>
                 <div class="social">
-                    <ul>
+                    <ul class="d-flex align-items-center justify-content-center">
                         <li>
                             <a href="#">
                                 <i class="fab fa-instagram"></i>
