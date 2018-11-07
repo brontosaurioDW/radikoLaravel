@@ -62,6 +62,11 @@ Route::post('registro', [
 	'uses' => 'AuthController@doRegistro'
 ]);
 
+Route::get('logout', [
+	'as' => 'logout',
+	'uses' => 'AuthController@logout'
+]);
+
 
 //
 

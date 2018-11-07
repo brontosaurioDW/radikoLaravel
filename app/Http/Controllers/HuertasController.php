@@ -44,8 +44,9 @@ class HuertasController extends Controller
   {
 
     $huertas = DB::table('huertas')->paginate(6);
+    $categorias = Categoria::All();
 
-    return view('huertas.index', compact('huertas'));
+    return view('huertas.index', compact('huertas', 'categorias'));
   }
 
   /**
@@ -77,7 +78,10 @@ class HuertasController extends Controller
    */
   public function show($id)
   {
-    return view('huertas.show');
+    $huerta = Huerta::find($id);
+    //$huerta = $this->repoHuerta->find($huerta);
+
+    return view('huertas.show', compact('huerta'));
   }
 
   /**

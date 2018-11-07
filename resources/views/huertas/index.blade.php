@@ -44,7 +44,7 @@
 
 							<div class="col-12 col-sm-6 col-md-4">
 								<div class="card">
-									<a href="detalle-huerta.html">
+									<a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}">
 										<img class="card-img-top" src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="<?php echo $huerta->huerta ?>">
 										<div class="stars">
 											<i class="fas fa-star"></i>
@@ -86,32 +86,14 @@
 				<div class="col-12 col-md-3">
 					<div class="huerta-list">
 						<ul class="list-group list-group-flush">
-							<li class="list-group-item list-title">Categoría</li>
+							<li class="list-group-item list-title">Categorias</li>
+							@foreach ($categorias as $categoria)
 							<li class="list-group-item">
-								<label for="valor-1">
-									<span class="checkbox">
-										<input type="checkbox" name="valor-1" id="valor-1">
-										<span>Valor 1</span>
-									</span>
-								</label>
-							</li>
-							<li class="list-group-item">
-								<label for="valor-2">
-									<span class="checkbox">
-										<input type="checkbox" name="valor-2" id="valor-2">
-										<span>Valor 2</span>
-									</span>
-								</label>
-							</li>
-							<li class="list-group-item">
-								<label for="valor-3">
-									<span class="checkbox">
-										<input type="checkbox" name="valor-3" id="valor-3">
-										<span>Valor 3</span>
-									</span>
-								</label>
-							</li>
+										<a href="#">{{ $categoria->categoria }}</a>
+							</li>								
+							@endforeach				
 						</ul>
+
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item list-title">Categoría</li>
 							<li class="list-group-item">
@@ -139,6 +121,7 @@
 								</label>
 							</li>
 						</ul>
+
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item list-title">Categoría</li>
 							<li class="list-group-item">
@@ -166,6 +149,7 @@
 								</label>
 							</li>
 						</ul>
+
 					</div>
 				</div>
 			</div>

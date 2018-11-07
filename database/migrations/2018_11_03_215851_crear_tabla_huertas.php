@@ -19,7 +19,7 @@ class CrearTablaHuertas extends Migration
             $table->bigInteger('cuit');
             $table->string('razon_social', 100);
             $table->string('direccion', 100)->nullable();
-            $table->tinyInteger('cantaidad_max_envios');
+            $table->tinyInteger('cantidad_max_envios');
             $table->string('foto', 255);
             $table->boolean('destacado');
             $table->softDeletes();

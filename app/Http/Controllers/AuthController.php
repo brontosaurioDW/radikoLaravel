@@ -93,6 +93,17 @@ class AuthController extends Controller
             ->with('status', 'Usuario registrado con éxito!');
     }
 
+    /**
+    * Realiza el logout del usuario
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
+
 
     /**
     * Show the form for creating a new resource.
