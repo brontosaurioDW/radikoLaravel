@@ -10,7 +10,7 @@
 			<section class="huerta-title-wrapper">
 				<div class="container-fluid">
 					<div class="row justify-content-center align-items-center">
-						<h2 class="huerta-title	">Tallo Verde</h2>
+						<h2 class="huerta-title	">{{$huerta->huerta}}</h2>
 					</div>
 				</div>
 			</section>
@@ -284,12 +284,15 @@
 								<div class="col col-md-4">
 									<div class="card">
 										<div class="card-header">
-											Featured
+											Información
 										</div>
 										<ul class="list-group list-group-flush">
-											<li class="list-group-item">Cras justo odio</li>
-											<li class="list-group-item">Dapibus ac facilisis in</li>
-											<li class="list-group-item">Vestibulum at eros</li>
+											<li class="list-group-item"><b>Nombre:</b> {{$huerta->huerta}}</li>
+											<li class="list-group-item"><b>Cuit:</b> {{$huerta->cuit}}</li>
+											<li class="list-group-item"><b>Razón social:</b> {{$huerta->razon_social}}</li>
+											<li class="list-group-item"><b>Dirección:</b> {{$huerta->direccion}}</li>
+											<li class="list-group-item"><b>Cantidad máxima de envios:</b> {{$huerta->cantidad_max_envios}}</li>
+											<li class="list-group-item"><b>Foto:</b> {{$huerta->foto}}</li>
 										</ul>
 									</div>
 								</div>

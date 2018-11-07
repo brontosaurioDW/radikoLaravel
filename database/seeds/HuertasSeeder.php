@@ -17,7 +17,7 @@ class HuertasSeeder extends Seeder
   		'cuit' => 30354568459,
   		'razon_social' => 'Huerta S.A.',
   		'direccion' => NULL,
-      'cantaidad_max_envios' => 15,
+      'cantidad_max_envios' => 15,
       'foto' => 'h-1.jpg',
       'destacado' => true,
       'id_tipo_huerta' => 1
@@ -27,7 +27,7 @@ class HuertasSeeder extends Seeder
       'cuit' => 33214569528,
       'razon_social' => 'Gonzales y Perez S.R.L',
       'direccion'=> 'Av. Estado de Israel 4799',
-      'cantaidad_max_envios' => 20,
+      'cantidad_max_envios' => 20,
       'foto' => 'h-2.jpg',
       'destacado' => false,
       'id_tipo_huerta' => 1
@@ -37,7 +37,7 @@ class HuertasSeeder extends Seeder
       'cuit' => 34245632145,
       'razon_social' => 'Tallo S.A.',
       'direccion'=> 'Ruta 192 Km. 8 - Open Door - Luján',
-      'cantaidad_max_envios' => 10,
+      'cantidad_max_envios' => 10,
       'foto' => 'h-3.jpg',
       'destacado' => true,
       'id_tipo_huerta' => 1
@@ -47,7 +47,7 @@ class HuertasSeeder extends Seeder
       'cuit' => 30457896529,
       'razon_social' => 'Gatofer y Asociados',
       'direccion'=> '3 de Febrero 940 San Isidro Buenos ',
-      'cantaidad_max_envios' => 25,
+      'cantidad_max_envios' => 25,
       'foto' => 'h-5.jpg',
       'destacado' => false,
       'id_tipo_huerta' => 1
@@ -57,7 +57,7 @@ class HuertasSeeder extends Seeder
       'cuit' => 30457237829,
       'razon_social' => 'El Jardín',
       'direccion'=> '3 de Febrero 940 San Isidro Buenos ',
-      'cantaidad_max_envios' => 25,
+      'cantidad_max_envios' => 25,
       'foto' => 'h-6.jpg',
       'destacado' => true,
       'id_tipo_huerta' => 1
@@ -67,7 +67,7 @@ class HuertasSeeder extends Seeder
       'cuit' => 30478236529,
       'razon_social' => 'Pedro and Company',
       'direccion'=> '3 de Febrero 940 San Isidro Buenos ',
-      'cantaidad_max_envios' => 25,
+      'cantidad_max_envios' => 25,
       'foto' => 'h-7.jpg',
       'destacado' => true,
       'id_tipo_huerta' => 1
@@ -77,7 +77,7 @@ class HuertasSeeder extends Seeder
       'cuit' => 30457893229,
       'razon_social' => 'Brote y Asociados',
       'direccion'=> '4 de Marzo 940 San Isidro Buenos ',
-      'cantaidad_max_envios' => 25,
+      'cantidad_max_envios' => 25,
       'foto' => 'h-4.jpg',
       'destacado' => true,
       'id_tipo_huerta' => 1
@@ -87,7 +87,7 @@ class HuertasSeeder extends Seeder
       'cuit' => 30453892529,
       'razon_social' => 'Huerta El Mburucuyá',
       'direccion'=> '3 de Febrero 940 San Isidro Buenos ',
-      'cantaidad_max_envios' => 25,
+      'cantidad_max_envios' => 25,
       'foto' => 'h-4.jpg',
       'destacado' => false,
       'id_tipo_huerta' => 1
