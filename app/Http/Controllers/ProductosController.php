@@ -18,6 +18,11 @@ class ProductosController extends Controller
     // Traemos todos los productos
     $productos = Producto::all();
 
+    $productos = Producto::with('unidadDeMedida')->get();
+
+
+    //dd($productos);
+
     // $peliculas = Pelicula::with('director')->get();
 
     //return view('peliculas.listado', [

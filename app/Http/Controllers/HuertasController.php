@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Huerta;
 use App\Models\TipoHuerta;
 use App\Models\Categoria;
+use App\Models\Producto;
 
 use Illuminate\Support\Facades\DB;
 
@@ -79,11 +80,10 @@ class HuertasController extends Controller
   public function show($id)
   {
     $huerta = Huerta::find($id);
-    //$huerta = $this->repoHuerta->find($huerta);
 
-    //dd($huerta->productos);
+    $productos = Producto::with('unidadDeMedida')->get()->where('id_huerta', $id);
 
-    return view('huertas.show', compact('huerta'));
+    return view('huertas.show', compact('huerta', 'productos'));
   }
 
   /**

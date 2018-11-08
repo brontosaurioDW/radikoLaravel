@@ -10,6 +10,13 @@
 
 	<h1>Página productos</h1>
 
+
+	@foreach ($productos as $producto)
+		{{$producto->producto}}
+		{{$producto->unidadDeMedida->unidad }}
+
+	@endforeach
+
 </main>
 
 

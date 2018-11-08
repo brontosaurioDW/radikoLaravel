@@ -10,7 +10,7 @@ class Producto extends Model
 	protected $table = "productos";
 
 	/** @var array Los campos que se pueden cargar de manera masiva. */
-	protected $fillable = ['nombre', 'genero', 'precio', 'anio_estreno'];
+	protected $fillable = ['producto', 'descripcion', 'marca', 'precio', 'foto', 'estado', 'id_huerta', 'id_unidad_de_medida'];
 
 	/** @var array Las reglas de la validación. */
 	// public static $rules = [
@@ -25,4 +25,8 @@ class Producto extends Model
 		return $this->belongsTo(Huerta::class, 'id', 'id');
 	}
 
+	public function unidadDeMedida()
+	{
+		return $this->belongsTo(UnidadDeMedida::class, 'id_unidad_de_medida', 'id');
+	}
 }

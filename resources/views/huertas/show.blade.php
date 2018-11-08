@@ -93,7 +93,7 @@
 								<div class="huerta-productos">
 									<div class="row">
 
-										@foreach ($huerta->productos as $producto)
+										@foreach ($productos as $producto)
 
 										<div class="col-12 col-sm-6 col-md-4">
 											<div class="card">
@@ -102,7 +102,7 @@
 												</a>
 												<div class="card-body">
 													<h4 class="card-title">{{ $producto->producto }}</h4>
-													<p><span class="producto-precio">{{ $producto->precio }}</span> x kg.</p>
+													<p><span class="producto-precio">{{ $producto->precio }}</span> x {{ $producto->unidadDeMedida->unidad }}</p>
 												</div>
 											</div>
 										</div>

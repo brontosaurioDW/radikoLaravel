@@ -29,61 +29,14 @@
         </div>
         <ul class="d-flex justify-content-between">
             @foreach ($categorias as $categoria)
-                <li class="frutas">
-                    <a href="{{ url('/huertas') }}">
-                        <span style="background-image: url(storage/images/categories/{{ $categoria->icono }})" class="cat-img"> {{ $categoria->categoria }} </span>
-                        <span>{{ $categoria->categoria }}</span>
-                    </a>
-                </li>
-            @endforeach
-        </ul>
-        {{-- <ul class="d-flex justify-content-between">
             <li class="frutas">
                 <a href="{{ url('/huertas') }}">
-                    <span>Frutas</span>
+                    <span style="background-image: url(storage/images/categories/{{ $categoria->icono }})" class="cat-img"> {{ $categoria->categoria }} </span>
+                    <span>{{ $categoria->categoria }}</span>
                 </a>
             </li>
-            <li class="verduras">
-                <a href="{{ url('/huertas') }}">
-                    <span>Verduras</span>
-                </a>
-            </li>
-            <li class="harinas">
-                <a href="{{ url('/huertas') }}">
-                    <span>Harinas</span>
-                </a>
-            </li>
-            <li class="granjas">
-                <a href="{{ url('/huertas') }}">
-                    <span>Granja</span>
-                </a>
-            </li>
-            <li class="lacteos">
-                <a href="{{ url('/huertas') }}">
-                    <span>Lácteos</span>
-                </a>
-            </li>
-            <li class="carnes">
-                <a href="{{ url('/huertas') }}">
-                    <span>Carnes</span>
-                </a>
-            </li>
-            <li class="especias">
-                <a href="{{ url('/huertas') }}">
-                    <span>Especias</span>
-                </a>
-            </li>
-            <li class="semillas">
-                <a href="{{ url('/huertas') }}">
-                    <span>Semillas</span>
-                </a>
-            </li>
-            <li class="envasados">
-                <a href="{{ url('/huertas') }}">
-                    <span>Envasados</span>
-                </a>
-            </li>
-        </ul> --}}
+            @endforeach
+        </ul>
     </div>
 </section>
 
@@ -95,143 +48,47 @@
         
         <div class="grid flex-wrap d-flex justify-content-between">
             @foreach ($huertasDestacadas as $huerta)
-                @switch($loop->index)
-                    @case(0)
-                        <?php $class="single-item half title-top-left plus-bottom-right rdk-tomato"; ?>
-                    @break
-                    @case(1)
-                        <?php $class="single-item half title-top-right plus-bottom-left rdk-corn"; ?>
-                    @break
-                    @case(2)
-                        <?php $class="single-item third title-top-left plus-bottom-right rdk-grape"; ?>
-                    @break
-                    @case(3)
-                        <?php $class="single-item third title-bottom-left plus-top-right rdk-pepper"; ?>
-                    @break
-                    @case(4)
-                        <?php $class="single-item third title-top-right plus-bottom-left rdk-tomato"; ?>
-                    @break
-                @endswitch
 
-                <div class="<?php echo $class ?>">
-                    <a href="{{ url('/huertas/1') }}" class="cta-link">
-                        <div class="img-wrapper">
-                            <img src="{{ url('storage/images/red-1.png') }}" alt="Huerta 1" class="img-fluid">
+            @switch($loop->index)
+            @case(0)
+            <?php $class="single-item half title-top-left plus-bottom-right rdk-tomato"; ?>
+            @break
+            @case(1)
+            <?php $class="single-item half title-top-right plus-bottom-left rdk-corn"; ?>
+            @break
+            @case(2)
+            <?php $class="single-item third title-top-left plus-bottom-right rdk-grape"; ?>
+            @break
+            @case(3)
+            <?php $class="single-item third title-bottom-left plus-top-right rdk-pepper"; ?>
+            @break
+            @case(4)
+            <?php $class="single-item third title-top-right plus-bottom-left rdk-tomato"; ?>
+            @break
+            @endswitch
+
+            <div class="<?php echo $class ?>">
+                <a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="cta-link">
+                    <div class="img-wrapper">
+                        {{-- <img src="{{ url('storage/images/red-1.png') }}" alt="{{ $huerta->huerta }}" class="img-fluid"> --}}
+                    </div>
+                    <div class="item-info">
+                        <h3>{{ $huerta->huerta }}</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
                         </div>
-                        <div class="item-info">
-                            <h3>{{ $huerta->huerta }}</h3>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                        
-                        <i class="fas fa-plus"></i>
-                    </a>
-                </div>
+                    </div>
+
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
+
             @endforeach
 
-            {{-- <div class="single-item half title-top-left plus-bottom-right rdk-tomato">
-                <a href="#" class="cta-link">
-                    <div class="img-wrapper">
-                        <img src="../public/images/destacados/red-1.png" alt="Huerta 1" class="img-fluid">
-                    </div>
-                    <div class="item-info">
-                        <h3>La huerta orgánica</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-                    
-                    <i class="fas fa-plus"></i>
-                </a>
-            </div>
-
-            <div class="single-item half title-top-right plus-bottom-left rdk-corn">
-                <a href="#" class="cta-link">
-                    <div class="img-wrapper">
-                        <img src="../public/images/destacados/orange.png" alt="Huerta 1" class="img-fluid">
-                    </div>
-                    <div class="item-info">
-                        <h3>El jardín orgánico</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-                    
-                    <i class="fas fa-plus"></i>
-                </a>
-            </div>
-
-            <div class="single-item third title-top-left plus-bottom-right rdk-grape">
-                <a href="#" class="cta-link">
-                    <div class="img-wrapper">
-                        <img src="../public/images/destacados/violet.png" alt="Huerta 1" class="img-fluid">
-                    </div>
-                    <div class="item-info">
-                        <h3>La orgánica</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-                    <i class="fas fa-plus"></i>
-                </a>
-            </div>
-
-            <div class="single-item third title-bottom-left plus-top-right rdk-pepper">
-                <a href="#" class="cta-link">
-                    <div class="img-wrapper">
-                        <img src="../public/images/destacados/green.png" alt="Huerta 1" class="img-fluid">
-                    </div>
-                    <div class="item-info">
-                        <h3>El brote urbano</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-                    
-                    <i class="fas fa-plus"></i>
-                </a>
-            </div>
-
-            <div class="single-item third title-top-right plus-bottom-left rdk-tomato">
-                <a href="#" class="cta-link">
-                    <div class="img-wrapper">
-                        <img src="../public/images/destacados/red-2.png" alt="Huerta 1" class="img-fluid">
-                    </div>
-                    <div class="item-info">
-                        <h3>Ital</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-                    
-                    <i class="fas fa-plus"></i>
-                </a>
-            </div>  --}}
         </div>
 
         <div class="text-center btn-load">

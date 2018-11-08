@@ -22,11 +22,12 @@ class CrearTablaProductos extends Migration
             $table->string('foto', 255);
             $table->tinyInteger('estado');
             $table->unsignedInteger('id_huerta');
-            $table->softDeletes();
-            $table->timestamps();
 
             $table->unsignedInteger('id_unidad_de_medida');
             $table->foreign('id_unidad_de_medida')->references('id')->on('unidades_de_medida');
+            
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
