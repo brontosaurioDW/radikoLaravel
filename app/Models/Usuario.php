@@ -15,7 +15,7 @@ class Usuario extends Model
     /** @var array Las reglas de la validación. */
     public static $rules = [
         'name' => 'required|min:3',
-        'avatar' => 'sometimes|image'
+        'avatar' => 'sometimes|image' 
     ];
 
 
