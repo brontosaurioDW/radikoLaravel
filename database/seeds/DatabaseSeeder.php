@@ -14,9 +14,10 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $this->call(UsersSeeder::class);
         $this->call(TipoHuertaSeeder::class);
+        $this->call(CategoriasSeeder::class);
+        $this->call(UnidadesDeMedidaSeeder::class);
         $this->call(ProductosSeeder::class);
         $this->call(HuertasSeeder::class);
-        $this->call(CategoriasSeeder::class);
         $this->call(ComentariosSeeder::class);
     }
 }
