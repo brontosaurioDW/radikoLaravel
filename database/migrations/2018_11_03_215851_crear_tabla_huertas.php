@@ -27,6 +27,9 @@ class CrearTablaHuertas extends Migration
 
             $table->unsignedInteger('id_tipo_huerta');
             $table->foreign('id_tipo_huerta')->references('id')->on('tipo_huerta');
+
+            $table->unsignedInteger('id_producto');
+            $table->foreign('id_producto')->references('id')->on('productos');
         });
     }
 
