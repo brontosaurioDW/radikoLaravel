@@ -19,6 +19,7 @@ class CrearTablaComentarios extends Migration
             $table->float('stars', 3, 2);
             $table->timestamps();
             $table->unsignedInteger('huerta_id');
+            $table->unsignedInteger('usuario_id');
         });
     }
 

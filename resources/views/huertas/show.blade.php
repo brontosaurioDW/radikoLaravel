@@ -62,7 +62,7 @@
 	<section class="huerta-options">
 		<div class="container">
 			<div class="tab-content my-3" id="huerta-productos">
-				<div class="tab-pane fade show active" id="huerta-productos-listado" role="tabpanel" aria-labelledby="huerta-productos-listado">
+				<div class="tab-pane fade" id="huerta-productos-listado" role="tabpanel" aria-labelledby="huerta-productos-listado">
 					<div class="row">
 						<div class="col-md-3 offset-md-9">
 							<form class="huerta-form-buscar">
@@ -253,7 +253,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="tab-pane fade" id="huerta-rating" role="tabpanel" aria-labelledby="huerta-rating">
+					<div class="tab-pane fade show active" id="huerta-rating" role="tabpanel" aria-labelledby="huerta-rating">
 
 						@foreach ($huerta->comentarios as $comentario)
 						<div class="media mb-4">

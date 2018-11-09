@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comentario;
 
 class ComentariosController extends Controller
 {
@@ -32,8 +33,26 @@ class ComentariosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
+
+        $inputData = $request->all();
+
+        //dd($inputData);
+
+        //$inputData['id_usuario'] = auth()->id();
+        $inputData['huerta_id'] = $id;
+        //$inputData['starts'] = 3;
+
+        // $request->validate(Comentario::$rules, [
+        //     'comentario.required' => 'El comentario no puede estar vacío.',
+        //     'comentario.min' => 'El comentario de la receta debe tener al menos :min caracteres.'
+        // ]);
+
+        Comentario::create($inputData);
+
+        return back();        
+
         return redirect()->route('huertas');
     }
 
