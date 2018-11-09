@@ -81,7 +81,7 @@ class HuertasController extends Controller
   {
     $huerta = Huerta::find($id);
 
-    $productos = Producto::with('unidadDeMedida')->get()->where('id_huerta', $id);
+    $productos = Producto::with('unidadDeMedida')->get()->where('huerta_id', $id);
 
     return view('huertas.show', compact('huerta', 'productos'));
   }

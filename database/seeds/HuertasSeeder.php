@@ -20,8 +20,8 @@ class HuertasSeeder extends Seeder
       'cantidad_max_envios' => 15,
       'foto' => 'h-1.jpg',
       'destacado' => true,
-      'id_tipo_huerta' => 1,
-      'id_producto' => 1
+      'tipo_huerta_id' => 1,
+      'producto_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'Huertas Orgánicas Urbana',
@@ -31,8 +31,8 @@ class HuertasSeeder extends Seeder
       'cantidad_max_envios' => 20,
       'foto' => 'h-2.jpg',
       'destacado' => false,
-      'id_tipo_huerta' => 1,
-      'id_producto' => 1
+      'tipo_huerta_id' => 1,
+      'producto_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'Tallo Verde',
@@ -42,8 +42,8 @@ class HuertasSeeder extends Seeder
       'cantidad_max_envios' => 10,
       'foto' => 'h-3.jpg',
       'destacado' => true,
-      'id_tipo_huerta' => 1,
-      'id_producto' => 1
+      'tipo_huerta_id' => 1,
+      'producto_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'Estilo Orgánico',
@@ -53,8 +53,8 @@ class HuertasSeeder extends Seeder
       'cantidad_max_envios' => 25,
       'foto' => 'h-5.jpg',
       'destacado' => false,
-      'id_tipo_huerta' => 1,
-      'id_producto' => 1
+      'tipo_huerta_id' => 1,
+      'producto_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'El Jardín',
@@ -64,8 +64,8 @@ class HuertasSeeder extends Seeder
       'cantidad_max_envios' => 25,
       'foto' => 'h-6.jpg',
       'destacado' => true,
-      'id_tipo_huerta' => 1,
-      'id_producto' => 1
+      'tipo_huerta_id' => 1,
+      'producto_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'La Huerta de Pedro',
@@ -75,8 +75,8 @@ class HuertasSeeder extends Seeder
       'cantidad_max_envios' => 25,
       'foto' => 'h-7.jpg',
       'destacado' => true,
-      'id_tipo_huerta' => 1,
-      'id_producto' => 1
+      'tipo_huerta_id' => 1,
+      'producto_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'El Brote Urbano',
@@ -86,8 +86,8 @@ class HuertasSeeder extends Seeder
       'cantidad_max_envios' => 25,
       'foto' => 'h-4.jpg',
       'destacado' => true,
-      'id_tipo_huerta' => 1,
-      'id_producto' => 1
+      'tipo_huerta_id' => 1,
+      'producto_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'Huerta El Mburucuyá',
@@ -97,8 +97,8 @@ class HuertasSeeder extends Seeder
       'cantidad_max_envios' => 25,
       'foto' => 'h-4.jpg',
       'destacado' => false,
-      'id_tipo_huerta' => 1,
-      'id_producto' => 1
+      'tipo_huerta_id' => 1,
+      'producto_id' => 1
     ]);
   }
 }

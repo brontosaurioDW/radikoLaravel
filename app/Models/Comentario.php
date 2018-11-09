@@ -12,6 +12,6 @@ class Comentario extends Model
 
 	public function huerta()
 	{
-		return $this->belongsTo(Huerta::class, 'id', 'id');
+		return $this->belongsTo(Huerta::class);
 	}
 }

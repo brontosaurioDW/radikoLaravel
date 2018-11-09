@@ -23,16 +23,16 @@ class Huerta extends Model
 
 	public function tipoHuerta() 
 	{
-		return $this->belongsTo(TipoHuerta::class, 'id', 'id');
+		return $this->belongsTo(TipoHuerta::class);
 	}
 
 	public function comentarios()
 	{
-		return $this->hasMany(Comentario::class, 'id_huerta', 'id');
+		return $this->hasMany(Comentario::class);
 	}
 
 	public function productos()
 	{
-		return $this->hasMany(Producto::class, 'id_huerta', 'id');
+		return $this->hasMany(Producto::class);
 	}
 }

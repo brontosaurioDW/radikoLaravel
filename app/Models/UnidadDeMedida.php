@@ -15,7 +15,7 @@ class UnidadDeMedida extends Model
 
 	public function productos()
 	{
-		return $this->hasMany(Producto::class, 'id', 'id');
+		return $this->hasMany(Producto::class);
 	}
 }
 

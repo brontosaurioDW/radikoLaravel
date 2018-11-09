@@ -18,10 +18,7 @@ class CrearTablaComentarios extends Migration
             $table->text('comentario');
             $table->float('stars', 3, 2);
             $table->timestamps();
-
-            $table->unsignedInteger('id_huerta');
-            // $table->foreign('id_huerta')->references('id')->on('huertas');
-
+            $table->unsignedInteger('huerta_id');
         });
     }
 

@@ -22,11 +22,11 @@ class Producto extends Model
 
 	public function huerta()
 	{
-		return $this->belongsTo(Huerta::class, 'id', 'id');
+		return $this->belongsTo(Huerta::class);
 	}
 
 	public function unidadDeMedida()
 	{
-		return $this->belongsTo(UnidadDeMedida::class, 'id_unidad_de_medida', 'id');
+		return $this->belongsTo(UnidadDeMedida::class);
 	}
 }

@@ -21,11 +21,8 @@ class CrearTablaProductos extends Migration
             $table->decimal('precio', 6, 2);
             $table->string('foto', 255);
             $table->tinyInteger('estado');
-            $table->unsignedInteger('id_huerta');
-
-            $table->unsignedInteger('id_unidad_de_medida');
-            $table->foreign('id_unidad_de_medida')->references('id')->on('unidades_de_medida');
-            
+            $table->unsignedInteger('huerta_id');
+            $table->unsignedInteger('unidad_de_medida_id');            
             $table->softDeletes();
             $table->timestamps();
         });

@@ -22,14 +22,10 @@ class CrearTablaHuertas extends Migration
             $table->tinyInteger('cantidad_max_envios');
             $table->string('foto', 255);
             $table->boolean('destacado');
+            $table->unsignedInteger('tipo_huerta_id');
+            $table->unsignedInteger('producto_id');
             $table->softDeletes();
             $table->timestamps();
-
-            $table->unsignedInteger('id_tipo_huerta');
-            $table->foreign('id_tipo_huerta')->references('id')->on('tipo_huerta');
-
-            $table->unsignedInteger('id_producto');
-            $table->foreign('id_producto')->references('id')->on('productos');
         });
     }
 
