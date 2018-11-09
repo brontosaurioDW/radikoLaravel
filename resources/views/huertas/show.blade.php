@@ -267,6 +267,57 @@
 						</div>
 						@endforeach
 
+						<hr>
+						<form action="{{ route('huertas.comments' , ['id' => $huerta->id]) }}" method="post">
+
+							@csrf
+							@method('PUT')
+
+							<h2>Comentarios y calificación</h2>
+
+							<div class="form-group">
+								<label for="comentario">Comentario</label>
+								<textarea class="form-control" name="comentario" id="comentario" cols="30" rows="10" placeholder="deja tu comentario aquí"></textarea>
+								<small id="emailHelp" class="form-text text-muted">Contamos tu experiencia con la huerta.</small>
+							</div>
+							<div class="form-group">
+								<label>Calficación</label>
+
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="stars" id="stars1" value="1" checked>
+									<label class="form-check-label" for="stars1">
+										1 Estrella
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="stars" id="stars2" value="2">
+									<label class="form-check-label" for="stars2">
+										2 Estrellas
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="stars" id="stars3" value="3">
+									<label class="form-check-label" for="stars3">
+										3 Estrellas
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="stars" id="stars4" value="4">
+									<label class="form-check-label" for="stars4">
+										4 Estrellas
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="stars" id="stars5" value="5">
+									<label class="form-check-label" for="stars5">
+										5 Estrellas
+									</label>
+								</div>
+							</div>
+							<button type="submit" class="btn btn-primary">Comentar</button>
+						</form>
+
+
 					</div>
 				</div>
 			</div>

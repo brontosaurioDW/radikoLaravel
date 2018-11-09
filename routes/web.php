@@ -28,6 +28,15 @@ Route::get('/huertas/{receta}', [
 	'uses' => 'HuertasController@show',
 ]);
 
+
+/* Comentarios */
+
+Route::put('/huertas/{receta}/comments', [
+    'as' => 'huertas.comments',
+    'uses' => 'ComentariosController@store',
+]);
+
+
 /* --- Productos */
 
 Route::get('productos', [
@@ -120,6 +129,7 @@ Route::middleware('auth')->group(function() {
 // 	]);
 
 // });
+
 
 
 
