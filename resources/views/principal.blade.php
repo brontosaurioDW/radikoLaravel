@@ -70,7 +70,7 @@
             <div class="<?php echo $class ?>">
                 <a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="cta-link">
                     <div class="img-wrapper">
-                        {{-- <img src="{{ url('storage/images/red-1.png') }}" alt="{{ $huerta->huerta }}" class="img-fluid"> --}}
+                        <img src="{{ url('storage/images/red-1.png') }}" alt="{{ $huerta->huerta }}" class="img-fluid">
                     </div>
                     <div class="item-info">
                         <h3>{{ $huerta->huerta }}</h3>

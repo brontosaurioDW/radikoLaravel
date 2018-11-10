@@ -4,6 +4,52 @@ header {
 	right: 0;
 	left: 0;
 	z-index: 10;
+	padding: 15px 0;
+	transition: .4s;
+	background: @tomato;
+
+	.navbar {
+		a {
+			color: @ice;
+			font-size: @regular;
+		}
+	}
+
+	&.is-home {
+		background: transparent;
+
+		h1 {
+			opacity: 0;
+		}
+
+		&.sticky-header {
+
+			h1 {
+				opacity: 1;
+			}
+		}
+	}
+	
+	h1 {
+		transition: .4s;
+		margin: 0;
+
+		a.navbar-brand {
+			background: url(../images/logo.png) no-repeat center center transparent;
+			display: block;
+			width: 70px;
+			height: 33px;
+			margin: 0;
+			background-size: 100%;
+			font-size: 0;
+			color: transparent;
+			padding: 0;
+		}
+	}
+
+	&.sticky-header {
+		background: @tomato;
+	}
 }
 
 // Menu mobile (slide in)
@@ -22,99 +68,124 @@ header {
 		margin: 0;
 		padding: 0;
 
-		&.toggled {
-			-webkit-transform: translateX(250px);
-			transform: translateX(250px);
-		}
-	}
-
-	.navbar.easy-sidebar {
-		transition: 0.2s ease;
-		position: absolute;
-		width: 250px;
-		top: 0;
-		left: -250px;
-		min-height: 100%;
-		border-radius: 0;
-		margin: 0;
-		z-index: 9999;
-
-		.navbar-header {
-			margin: 0 -15px;
-			float: none;
-		}
-
-		.navbar-brand {
-			margin: 0;
-		}
-
 		.navbar-toggle {
-			display: inline-block;
+			display: block;
+			width: 24px;
+			height: 21px;
+			background: transparent;
+			border: 0;
+			padding: 0;
+			position: relative;
+			outline: none;
+			box-shadow: 0;
 
 			span.icon-bar {
+				height: 3px;
+				width: 24px;
+				background: white;
+				display: block;
+				position: absolute;
+
 				&:nth-child(2) {
-					-webkit-transform-origin: 0 50%;
-					transform-origin: 0 50%;
-					-webkit-transform: translate(2px, -5px) rotate(45deg);
-					transform: translate(2px, -5px) rotate(45deg);
+					top: 0;
 				}
 
 				&:nth-child(3) {
-					display: none;
+					top: 9px;
 				}
 
 				&:nth-child(4) {
-					-webkit-transform-origin: 0 50%;
-					transform-origin: 0 50%;
-					-webkit-transform: translate(2px, 4.5px) rotate(-45deg);
-					transform: translate(2px, 4.5px) rotate(-45deg);
+					bottom: 0;
 				}
-
 			}
-
 		}
 
-		.nav.navbar-nav {
-			margin: 7.5px -15px;
-			float: none;
+		&.toggled {
+			-webkit-transform: translateX(250px);
+			transform: translateX(250px);
 
-			>li {
-				float: none;
+			.navbar-toggle {
+				position: static;
+				
+				span.icon-bar {
+					&:nth-child(2) {
+						-webkit-transform-origin: 0 50%;
+						transform-origin: 0 50%;
+						-webkit-transform: translate(2px, -9px) rotate(45deg);
+						transform: translate(2px, -9px) rotate(45deg);
+						top: unset;
+					}
 
-				>a {
-					padding: 10px 15px;
-				}
+					&:nth-child(3) {
+						display: none;
+					}
 
-			}
-
-		}
-
-		.navbar-nav {
-			.open {
-				.dropdown-menu {
-					.divider {
-						box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+					&:nth-child(4) {
+						-webkit-transform-origin: 0 50%;
+						transform-origin: 0 50%;
+						-webkit-transform: translate(2px, 8px) rotate(-45deg);
+						transform: translate(2px, 8px) rotate(-45deg);
+						bottom: unset;
 					}
 				}
 			}
 		}
+	}
 
-		.navbar-form {
-			padding: 10px 15px;
-			margin: 8px -15px;
-			border-top-width: 1px;
-			border-top-style: solid;
-			border-bottom-width: 1px;
-			border-bottom-style: solid;
-			box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .1);
+	.mobile-header {
+		padding: 0 15px;
 
-			.form-group {
-				margin-bottom: 5px;
-				display: block;
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
 
-				.form-control {
+			a {
+				padding: 0;
+				font-size: @x-regular;
+				color: @ice;
+			}
+		}
+	}
+
+	.navbar {
+		background: @charcoal;
+		transition: 0.2s ease;
+		position: absolute;
+		width: 250px;
+		left: -250px;
+		top: 0;
+		border-radius: 0;
+		margin: 0;
+		padding: 15px 0;
+		min-height: 100%;
+		height: 100vh;
+		z-index: 9999;
+		display: block;
+
+		.navbar-nav {
+			margin: 0;
+			width: 100%;
+
+			.dropdown-menu {
+			    display: block!important;
+			    background: transparent;
+			    padding: 0;
+			    margin: 0;
+			    border: 0;
+
+			    a {
+			    	padding: 8px 0 8px 15px;
+			    	font-size: @small;
+			    }
+			}
+
+			& > li {
+				float: none;
+
+				a {
+					padding: 10px 0;
 					display: block;
-					width: 100%;
 				}
 			}
 		}
@@ -137,3 +208,5 @@ header {
 		position: fixed;
 	}
 }
+
+@import url(../tablet/header.less);
