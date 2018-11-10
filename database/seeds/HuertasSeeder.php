@@ -21,7 +21,8 @@ class HuertasSeeder extends Seeder
       'foto' => 'h-1.jpg',
       'destacado' => true,
       'tipo_huerta_id' => 1,
-      'producto_id' => 1
+      'producto_id' => 1,
+      'usuario_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'Huertas Orgánicas Urbana',
@@ -32,7 +33,8 @@ class HuertasSeeder extends Seeder
       'foto' => 'h-2.jpg',
       'destacado' => false,
       'tipo_huerta_id' => 1,
-      'producto_id' => 1
+      'producto_id' => 1,
+      'usuario_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'Tallo Verde',
@@ -43,7 +45,8 @@ class HuertasSeeder extends Seeder
       'foto' => 'h-3.jpg',
       'destacado' => true,
       'tipo_huerta_id' => 1,
-      'producto_id' => 1
+      'producto_id' => 1,
+      'usuario_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'Estilo Orgánico',
@@ -54,7 +57,8 @@ class HuertasSeeder extends Seeder
       'foto' => 'h-5.jpg',
       'destacado' => false,
       'tipo_huerta_id' => 1,
-      'producto_id' => 1
+      'producto_id' => 1,
+      'usuario_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'El Jardín',
@@ -65,7 +69,8 @@ class HuertasSeeder extends Seeder
       'foto' => 'h-6.jpg',
       'destacado' => true,
       'tipo_huerta_id' => 1,
-      'producto_id' => 1
+      'producto_id' => 1,
+      'usuario_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'La Huerta de Pedro',
@@ -76,7 +81,8 @@ class HuertasSeeder extends Seeder
       'foto' => 'h-7.jpg',
       'destacado' => true,
       'tipo_huerta_id' => 1,
-      'producto_id' => 1
+      'producto_id' => 1,
+      'usuario_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'El Brote Urbano',
@@ -87,7 +93,8 @@ class HuertasSeeder extends Seeder
       'foto' => 'h-4.jpg',
       'destacado' => true,
       'tipo_huerta_id' => 1,
-      'producto_id' => 1
+      'producto_id' => 1,
+      'usuario_id' => 1
     ]);
     Huerta::create([
       'huerta' => 'Huerta El Mburucuyá',
@@ -98,7 +105,8 @@ class HuertasSeeder extends Seeder
       'foto' => 'h-4.jpg',
       'destacado' => false,
       'tipo_huerta_id' => 1,
-      'producto_id' => 1
+      'producto_id' => 1,
+      'usuario_id' => 1
     ]);
   }
 }
