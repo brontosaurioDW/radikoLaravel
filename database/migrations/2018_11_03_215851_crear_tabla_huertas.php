@@ -24,6 +24,7 @@ class CrearTablaHuertas extends Migration
             $table->boolean('destacado');
             $table->unsignedInteger('tipo_huerta_id');
             $table->unsignedInteger('producto_id');
+            $table->unsignedInteger('usuario_id');
             $table->softDeletes();
             $table->timestamps();
         });

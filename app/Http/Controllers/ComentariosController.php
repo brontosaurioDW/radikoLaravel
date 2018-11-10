@@ -40,9 +40,8 @@ class ComentariosController extends Controller
 
         //dd($inputData);
 
-        //$inputData['id_usuario'] = auth()->id();
+        $inputData['usuario_id'] = auth()->id();
         $inputData['huerta_id'] = $id;
-        //$inputData['starts'] = 3;
 
         // $request->validate(Comentario::$rules, [
         //     'comentario.required' => 'El comentario no puede estar vacío.',

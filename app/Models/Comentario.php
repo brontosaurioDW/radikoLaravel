@@ -13,7 +13,8 @@ class Comentario extends Model
 	protected $fillable = [
 		'comentario',
 		'stars',
-		'huerta_id'
+		'huerta_id',
+		'usuario_id'
 	];
 
 	protected $guarded = [];
@@ -21,5 +22,10 @@ class Comentario extends Model
 	public function huerta()
 	{
 		return $this->belongsTo(Huerta::class);
+	}
+
+	public function usuario()
+	{
+		return $this->belongsTo(Usuario::class);
 	}
 }

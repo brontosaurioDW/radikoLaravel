@@ -10,7 +10,9 @@ class Usuario extends Model
     protected $table = "users";
 
     /** @var array Los campos que se pueden cargar de manera masiva. */
-    protected $fillable = ['name', 'avatar', 'nivel', 'estado', 'password'];
+    protected $fillable = [
+        'name', 'last_name', 'email', 'password', 'telephone', 'foto', 'estado'
+    ];
 
     /** @var array Las reglas de la validación. */
     public static $rules = [
@@ -18,14 +20,24 @@ class Usuario extends Model
         'avatar' => 'sometimes|image' 
     ];
 
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+
 
     // public function recetas()
     // {
     //     return $this->hasMany(Receta::class, 'id_usuario', 'id' );
     // }
 
-    // public function comentarios()
-    // {
-    //     return $this->hasMany(Comentario::class, 'id_usuario', 'id');
-    // }
+    public function comentarios()
+    {
+        return $this->hasMany(Comentario::class);
+    }
 }

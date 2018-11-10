@@ -259,7 +259,8 @@
 						<div class="media mb-4">
 							<img class="mr-3" src="http://placeholder.pics/svg/64" alt="Generic placeholder image">
 							<div class="media-body">
-								<h5 class="mt-0">Nombre de usuario</h5>
+								<h5 class="mt-0">{{ $comentario->usuario->name }}</h5>
+								<p>foto: {{ $comentario->usuario->foto }}</p>
 								<p>Estrellas: {{$comentario->stars}}</p>
 								<p>{{ $comentario->comentario }}</p>
 
