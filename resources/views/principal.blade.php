@@ -109,7 +109,7 @@
 <section class="features">
     <div class="container">
         <div class="block-feature row">
-            <div class="col-lg-4">    
+            <div class="col-md-4">    
                 <div class="destacado">
                     <div class="img-wrapper">
                         <img src="{{ url('storage/images/feature-1.png') }}" class="img-fluid" alt="">
@@ -125,7 +125,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">    
+            <div class="col-md-4">    
                 <div class="destacado">
                     <div class="img-wrapper">
                         <img src="{{ url('storage/images/feature-2.png') }}" class="img-fluid" alt="">
@@ -139,7 +139,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">    
+            <div class="col-md-4">    
                 <div class="destacado">
                     <div class="img-wrapper">
                         <img src="{{ url('storage/images/feature-3.png') }}" class="img-fluid" alt="">

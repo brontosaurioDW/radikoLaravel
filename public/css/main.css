@@ -6029,6 +6029,11 @@ h4 {
   font-weight: bold;
   text-transform: uppercase;
 }
+@media screen and (min-width: 768px) {
+  .categories ul {
+    margin: 3rem 0 2rem 0;
+  }
+}
 footer {
   background: #272727;
   color: #FFFFFF;
@@ -6434,8 +6439,9 @@ header.sticky-header {
   }
 }
 @media screen and (min-width: 992px) {
-  header {
-    padding: 30px 0;
+  header h1 a.navbar-brand {
+    width: 105px;
+    height: 53px;
   }
   .navbar {
     padding: 0;
@@ -6447,7 +6453,7 @@ header.sticky-header {
 .why-radiko {
   background: url(../images/porque-radiko-bg.jpg) no-repeat top right #272727;
   background-size: cover;
-  min-height: 80vh;
+  min-height: 40vh;
   max-height: 590px;
   background-attachment: fixed;
 }
@@ -6455,7 +6461,7 @@ header.sticky-header {
   color: #FFFFFF;
   text-transform: none;
   font-size: 36px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 1.5rem;
   text-shadow: 3px 3px 0 #272727;
 }
 .download-app {
