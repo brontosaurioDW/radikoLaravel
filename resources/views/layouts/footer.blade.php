@@ -1,13 +1,13 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-lg-3">
                 <div class="d-none d-lg-block">
                     <a href="#" class="logo-foo"> Rádiko </a>
                     <p> Tu nuevo super </p>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4 col-lg-3">
                 <ul>
                     <li>
                         <a href="{{ url('/legales/faq') }}">Preguntas frecuentes</a>
@@ -20,7 +20,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4 col-lg-3">
                 <ul>
                     <li>
                         <a href="#">Contacto</a>
@@ -30,7 +30,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4 col-lg-3">
                 <div class="download-btn">
                     <ul class="d-flex align-items-center justify-content-center">
                         <li>
