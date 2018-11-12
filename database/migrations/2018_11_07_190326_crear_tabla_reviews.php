@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaComentarios extends Migration
+class CrearTablaReviews extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CrearTablaComentarios extends Migration
      */
     public function up()
     {
-        Schema::create('comentarios', function(Blueprint $table) {
+        Schema::create('reviews', function(Blueprint $table) {
             $table->increments('id');
             $table->text('comentario');
-            $table->float('stars', 3, 2);
-            $table->timestamps();
+            $table->unsignedTinyInteger('stars');
             $table->unsignedInteger('huerta_id');
             $table->unsignedInteger('usuario_id');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +30,6 @@ class CrearTablaComentarios extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comentarios');
+        Schema::dropIfExists('reviews');
     }
 }

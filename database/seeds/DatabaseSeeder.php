@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UnidadesDeMedidaSeeder::class);
         $this->call(ProductosSeeder::class);
         $this->call(HuertasSeeder::class);
-        $this->call(ComentariosSeeder::class);
+        $this->call(ReviewsSeeder::class);
     }
 }

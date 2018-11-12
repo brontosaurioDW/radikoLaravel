@@ -7,6 +7,7 @@ use App\Models\Huerta;
 use App\Models\TipoHuerta;
 use App\Models\Categoria;
 use App\Models\Producto;
+use App\Models\Review;
 
 use Illuminate\Support\Facades\DB;
 
@@ -46,8 +47,20 @@ class HuertasController extends Controller
 
     $huertas = DB::table('huertas')->paginate(6);
     $categorias = Categoria::All();
+    $comentarios = Review::All()->where('stars', '>', 3);
+    // $calificacion = Review::All()->groupBy('huerta_id');
+    $calificacion = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
 
-    return view('huertas.index', compact('huertas', 'categorias'));
+    // dd($calificacion);
+    //dd($comentarios);
+
+    // @foreach($calificacion as $cali)
+    // @if ($cali->huerta_id == $huerta->id)
+    // {{ $cali->stars}}
+    // @endif
+    // @endforeach
+
+    return view('huertas.index', compact('huertas', 'categorias','calificacion'));
   }
 
   /**

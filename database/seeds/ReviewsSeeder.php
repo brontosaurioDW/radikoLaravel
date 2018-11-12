@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Comentario;
+use App\Models\Review;
 
-class ComentariosSeeder extends Seeder
+class ReviewsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,102 +12,102 @@ class ComentariosSeeder extends Seeder
      */
     public function run()
     {
-    	Comentario::create([
+    	Review::create([
     		'huerta_id' => 1,
             'usuario_id' => 1,
     		'comentario' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, pariatur!',
     		'stars' => 3
     	]);
-    	Comentario::create([
+    	Review::create([
     		'huerta_id' => 1,
             'usuario_id' => 1,
     		'comentario' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque autem voluptas in adipisci, possimus quidem tempora ea vitae maiores distinctio.',
     		'stars' => 4
     	]);
-        Comentario::create([
+        Review::create([
             'huerta_id' => 1,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet.',
-            'stars' => 3
+            'stars' => 4
         ]);
-        Comentario::create([
+        Review::create([
             'huerta_id' => 1,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veniam voluptate sapiente dolorum corporis, officia ipsum optio voluptatem, assumenda cumque quis ipsa nam laborum beatae libero. Voluptatum sed, asperiores saepe!',
-            'stars' => 3
+            'stars' => 2
         ]);
-        Comentario::create([
-            'huerta_id' => 1,
+        Review::create([
+            'huerta_id' => 4,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nemo odio reprehenderit mollitia, quos.',
             'stars' => 3
         ]);
-        Comentario::create([
+        Review::create([
             'huerta_id' => 1,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet.',
-            'stars' => 3
+            'stars' => 4
         ]);
-        Comentario::create([
-            'huerta_id' => 1,
+        Review::create([
+            'huerta_id' => 2,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet.',
-            'stars' => 3
+            'stars' => 4
         ]);
-        Comentario::create([
-            'huerta_id' => 1,
+        Review::create([
+            'huerta_id' => 5,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quas quam, vel aperiam cumque placeat omnis est, culpa, atque temporibus aut inventore.',
             'stars' => 3
         ]);
-        Comentario::create([
-            'huerta_id' => 1,
+        Review::create([
+            'huerta_id' => 6,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            'stars' => 3
+            'stars' => 2
         ]);
-        Comentario::create([
-            'huerta_id' => 1,
+        Review::create([
+            'huerta_id' => 3,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quas quam, vel aperiam cumque placeat omnis est, culpa, atque temporibus aut inventore.',
-            'stars' => 3
+            'stars' => 1
         ]);        
-        Comentario::create([
-            'huerta_id' => 1,
+        Review::create([
+            'huerta_id' => 4,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet.',
             'stars' => 3
         ]);
-        Comentario::create([
-            'huerta_id' => 1,
+        Review::create([
+            'huerta_id' => 2,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet.',
-            'stars' => 3
+            'stars' => 5
         ]);
-        Comentario::create([
-            'huerta_id' => 1,
+        Review::create([
+            'huerta_id' => 7,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat aspernatur, magnam voluptate accusantium qui obcaecati quasi culpa, consequuntur reiciendis incidunt nam sapiente veniam ducimus perferendis. Beatae quaerat nostrum fugiat fuga.',
-            'stars' => 3
+            'stars' => 4
         ]);
-        Comentario::create([
-            'huerta_id' => 1,
+        Review::create([
+            'huerta_id' => 8,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet.',
             'stars' => 3
         ]);
 
-        Comentario::create([
-            'huerta_id' => 1,
+        Review::create([
+            'huerta_id' => 7,
             'usuario_id' => 1,
             'comentario' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quas quam, vel aperiam cumque placeat omnis est, culpa, atque temporibus aut inventore.',
-            'stars' => 3
+            'stars' => 5
         ]);
-    	Comentario::create([
-    		'huerta_id' => 1,
+    	Review::create([
+    		'huerta_id' => 9,
             'usuario_id' => 1,
     		'comentario' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    		'stars' => 3
+    		'stars' => 2
     	]);
     }
 }

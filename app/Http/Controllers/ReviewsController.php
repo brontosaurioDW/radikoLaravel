@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Comentario;
+use App\Models\Review;
 
-class ComentariosController extends Controller
+class ReviewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -48,7 +48,7 @@ class ComentariosController extends Controller
         //     'comentario.min' => 'El comentario de la receta debe tener al menos :min caracteres.'
         // ]);
 
-        Comentario::create($inputData);
+        Reviews::create($inputData);
 
         return back();        
 

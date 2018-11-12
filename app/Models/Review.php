@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comentario extends Model
+class Review extends Model
 {
 	/** @var string El nombre de la tabla */
-	protected $table = 'comentarios';
+	protected $table = 'reviews';
 
 	/** @var array Los campos que se pueden cargar de manera masiva. */
 	protected $fillable = [
