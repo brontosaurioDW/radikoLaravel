@@ -5,6 +5,14 @@ body {
 	font-family: @primary-font;
 }
 
+main {
+    background: @ice;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.8);
+}
+
 a,
 button {
 	transition: 0.3s;
@@ -24,11 +32,16 @@ button {
 	position: relative;
 }
 
+.static {
+	position: static;
+}
 
 .download-btn  {
+	width: 345px;
+	margin: 0 auto;
 
 	img {
-	    width: 195px;
+	    width: 165px;
 	    height: auto;
 	}
 }
@@ -40,6 +53,16 @@ button {
 		margin: 0 15px;
 		font-size: @x-regular;
 	}
+}
+
+.bg-trama {
+	background-image: url(../images/trama.png);
+	background-repeat: repeat;
+}
+
+.bg-trama-b {
+	background-image: url(../images/trama-b.png);
+	background-repeat: repeat;
 }
 
 /*  Estrellitas para las reviews   */

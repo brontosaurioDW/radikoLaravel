@@ -28,7 +28,7 @@
             <a class="navbar-brand" href="{{ url('/') }}">Rádiko</a>
         </h1>
 
-        <ul class="navbar-nav flex-row">
+        <ul class="navbar-nav flex-row flex-wrap">
             <li>
                 <a href="{{ url('/huertas') }}">Huertas</a>
             </li>

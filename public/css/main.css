@@ -4,6 +4,13 @@ body {
   color: #272727;
   font-family: 'Montserrat', sans-serif;
 }
+main {
+  background: #FFFFFF;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.8);
+}
 a,
 button {
   transition: 0.3s;
@@ -20,8 +27,15 @@ button:hover {
 .relative {
   position: relative;
 }
+.static {
+  position: static;
+}
+.download-btn {
+  width: 345px;
+  margin: 0 auto;
+}
 .download-btn img {
-  width: 195px;
+  width: 165px;
   height: auto;
 }
 .social {
@@ -30,6 +44,14 @@ button:hover {
 .social li {
   margin: 0 15px;
   font-size: 18px;
+}
+.bg-trama {
+  background-image: url(../images/trama.png);
+  background-repeat: repeat;
+}
+.bg-trama-b {
+  background-image: url(../images/trama-b.png);
+  background-repeat: repeat;
 }
 /*  Estrellitas para las reviews   */
 .stars i {
@@ -5875,6 +5897,23 @@ h4 {
   margin: 10px 0;
   font-size: 16px;
 }
+.auth {
+  min-height: 100vh;
+}
+.auth .info {
+  min-height: 20vh;
+  background-color: #50D2A4;
+  width: 100vw;
+  margin: 0 -15px;
+}
+.auth form {
+  margin: 25px 0 0;
+  width: 100%;
+}
+.auth .btn {
+  display: block;
+  width: 100%;
+}
 .card {
   border: 0;
   border-bottom: 3px solid #898989;
@@ -6037,8 +6076,9 @@ h4 {
 footer {
   background: #272727;
   color: #FFFFFF;
-  padding: 1.5rem 0;
+  padding: 4rem 0;
   text-align: center;
+  width: 100%;
 }
 footer ul {
   margin: 0;
@@ -6060,6 +6100,33 @@ footer .download-btn li {
 @media screen and (min-width: 768px) {
   footer {
     text-align: left;
+  }
+  footer .logo-foo {
+    background: url(../images/logo.png) no-repeat 0 0 transparent;
+    display: block;
+    width: 115px;
+    height: 60px;
+    margin: 0 0 10px 0;
+    background-size: 100%;
+    color: transparent;
+    font-size: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  footer {
+    height: 250px;
+    position: relative;
+    z-index: 0;
+  }
+  footer .content {
+    transform: translate(-50%, 0);
+    width: 100%;
+    max-width: 1110px;
+    padding: 0 15px;
+    position: fixed;
+    left: 50%;
+    bottom: 4rem;
+    z-index: 0;
   }
 }
 .form label {
@@ -6163,6 +6230,9 @@ footer .download-btn li {
 }
 .grid-masonry h2 {
   margin-bottom: 1.5rem;
+}
+.grid-masonry .grid {
+  margin-bottom: 2rem;
 }
 .grid-masonry .single-item {
   position: relative;
@@ -6457,46 +6527,57 @@ header.sticky-header {
   }
 }
 .why-radiko {
-  background: #272727;
-  background-size: cover;
-  min-height: 40vh;
-  max-height: 380px;
+  background-color: #7065B0;
+  height: 40vh;
+  min-height: 400px;
   background-attachment: fixed;
   margin-bottom: 1rem;
 }
 .why-radiko h2 {
+  font-size: 37.8px;
   color: #FFFFFF;
-  text-transform: none;
-  font-size: 36px;
+  text-shadow: 3px 3px 0 #5E5593;
+  text-transform: uppercase;
   margin: 0 auto 2rem;
-  text-shadow: 3px 3px 0 #272727;
 }
 .download-app {
-  background: #50D2A4;
+  background-color: #50D2A4;
   color: #FFFFFF;
-  /*& > div:after {
-		content: '';
-	    background: url(../images/mockup.png) top center no-repeat transparent;
-	    width: 345px;
-	    height: 505px;
-	    position: absolute;
-	    right: 5%;
-	    bottom: 0;
-	}*/
+  height: 425px;
 }
-.download-app > div {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.download-app .container,
+.download-app .row {
+  height: 100%;
 }
 .download-app h2 {
-  font-size: 36px;
+  font-size: 37.8px;
   font-weight: bold;
   text-shadow: 3px 3px 0 #43A280;
   letter-spacing: 2px;
 }
 .download-app p {
-  font-size: 20px;
-  margin: 1.5rem 0 2rem;
+  font-size: 23px;
+  margin: 1.5rem auto 2rem;
+  max-width: 540px;
+  font-weight: 600;
+}
+.download-app .download-mockup {
+  position: absolute;
+  bottom: 0;
+}
+@media screen and (max-width: 767px) {
+  .download-app {
+    height: unset;
+    padding: 3rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .why-radiko {
+    margin-bottom: 3rem;
+  }
+  .download-app {
+    margin-top: 6rem;
+  }
 }
 .features {
   padding: 1rem 0;
@@ -6509,9 +6590,12 @@ header.sticky-header {
   overflow: hidden;
 }
 .destacado .text-block {
-  color: #FFFFFF;
-  background: #7065B0;
-  padding: 1rem;
+  color: #272727;
+  position: relative;
+  padding: 20px;
+  padding-bottom: 65px;
+  border: 1px solid #898989;
+  border-top: 0;
 }
 .destacado .text-block h2 {
   font-size: 22px;
@@ -6522,11 +6606,16 @@ header.sticky-header {
   font-size: 14px;
   line-height: 195%;
 }
+.destacado .text-block .btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
 .search {
-  background: #C94B36;
+  background-color: #C94B36;
   color: #FFFFFF;
   padding: 5rem 0 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 .search .logo {
   background: url(../images/logo.png) no-repeat 0 0 transparent;
@@ -6555,10 +6644,7 @@ header.sticky-header {
 }
 @media screen and (min-width: 768px) {
   .search {
-    background: url(../images/hero-search-home.jpg) no-repeat center left #C94B36;
-    background-size: cover;
-    min-height: 640px;
-    border-bottom: 1px solid #898989;
+    padding: 8rem 0 5rem;
     background-attachment: fixed;
   }
   .search .logo {

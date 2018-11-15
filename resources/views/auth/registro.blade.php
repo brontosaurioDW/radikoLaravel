@@ -1,50 +1,56 @@
 @extends ('layouts.auth')
 
-@section ('title', 'Radiko')
+@section ('title', 'Registrate en Radiko')
 
 @section ('content')
 
 <div class="auth">
 	<div class="container-fluid">
-		<div class="d-flex flex info-right">
+		<div class="d-flex flex flex-wrap info-right">
+			<div class="info bg-trama">
+				{{-- <a class="btn btn-link green back-button-registro float-right" href="{{ url('/') }}">
+					<i class="fas fa-chevron-left"></i>
+					Volver
+				</a> --}}
+			</div>
 
 			<form action="{{ route('auth.doRegistro') }}" method="post">
-				@csrf
 				<div class="form">
-					<h1>Registro 2</h1>
+					@csrf
+
+					<h1>Registro</h1>
+
 					<div class="row-form">
-						<label class="sr-only">Email</label>
+						<label for="name">Nombre</label>
+						<input type="text" name="name" id="name" value="{{ old('name') }}" placeholder="Nombre">
+						@if($errors->has('name'))
+							<small class="text-danger">{{ $errors->first('name') }}</small>
+						@endif
+					</div>
+					<div class="row-form">
+						<label for="email">Email</label>
 						<input type="text" name="email" id="email" value="{{ old('email') }}" placeholder="Email">
 						@if($errors->has('email'))
-						<small class="text-danger">{{ $errors->first('email') }}</small>
+							<small class="text-danger">{{ $errors->first('email') }}</small>
 						@endif
 					</div>
 					<div class="row-form">
-						<label class="sr-only">Contraseña</label>
+						<label for="password">Contraseña</label>
 						<input type="password" name="password" id="password"  placeholder="Contraseña">
 						@if($errors->has('password'))
-						<small class="text-danger">{{ $errors->first('password') }}</small>
+							<small class="text-danger">{{ $errors->first('password') }}</small>
 						@endif
 					</div>
 					<div class="row-form">
-						<label for="password_confirmation" class="sr-only">Confirmar contraseña</label>
+						<label for="password_confirmation" for="password_confirmation">Confirmar contraseña</label>
 						<input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmar contraseña">
 					</div>
 					<div class="row-form">
-
-						<button class="btn btn-secondary">Registrarme</button>
-
+						<button class="btn btn-secondary btn-small">Registrarme</button>
 						<a href="{{ url('/login') }}">¿Ya tenés cuenta? <span class="bold uppercase">Ingresá</span></a>
 					</div>
 				</div>
 			</form>
-
-			<div class="info">
-				<a class="btn btn-link green back-button-registro float-right" href="{{ url('/') }}">
-					<i class="fas fa-chevron-left"></i>
-					Volver
-				</a>
-			</div>
 		</div>
 	</div>
 </div>

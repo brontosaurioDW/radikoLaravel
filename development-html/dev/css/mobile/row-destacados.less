@@ -11,9 +11,12 @@
 	}
 
 	.text-block {
-		color: @ice;
-		background: @grape;
-		padding: 1rem;
+		color: @charcoal;
+		position: relative;
+		padding: 20px;
+		padding-bottom: 65px;
+		border: 1px solid @charcoal-lg;
+		border-top: 0;
 
 		h2 {
 			font-size: @large + 2;
@@ -24,6 +27,12 @@
 		p {
 			font-size: @small;
 			line-height: 195%;
+		}
+
+		.btn {
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
 		}
 	}
 }

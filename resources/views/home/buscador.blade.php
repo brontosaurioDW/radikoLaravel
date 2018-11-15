@@ -1,4 +1,4 @@
-<section class="hero search d-flex align-items-center">
+<section class="hero search d-flex align-items-center bg-trama">
     <div class="container">
         <h2 class="logo">
             <span class="sr-only">Bienvenidos a Rádiko</span>

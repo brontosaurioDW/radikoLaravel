@@ -23,3 +23,4 @@ $(window).on('scroll', function(){
         $(headerHome).removeClass('sticky-header');
     }
 });
+
