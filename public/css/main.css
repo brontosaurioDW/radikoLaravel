@@ -31,7 +31,7 @@ button:hover {
   position: static;
 }
 .download-btn {
-  width: 345px;
+  width: 285px;
   margin: 0 auto;
 }
 .download-btn img {
@@ -157,73 +157,73 @@ button:hover {
  *  Pero si a la clase se le suma .text, el color pasa al texto y deja de ser el fondo.
  */
 .rdk-pepper {
-  background: #50D2A4;
+  background-color: #50D2A4;
 }
 .rdk-pepper.text {
-  background: transparent;
+  background-color: transparent;
   color: #50D2A4;
 }
 .rdk-pepper-dk {
-  background: #43A280;
+  background-color: #43A280;
 }
 .rdk-pepper-dk.text {
-  background: transparent;
+  background-color: transparent;
   color: #43A280;
 }
 .rdk-grape {
-  background: #7065B0;
+  background-color: #7065B0;
 }
 .rdk-grape.text {
-  background: transparent;
+  background-color: transparent;
   color: #7065B0;
 }
 .rdk-grape-dk {
-  background: #5E5593;
+  background-color: #5E5593;
 }
 .rdk-grape-dk.text {
-  background: transparent;
+  background-color: transparent;
   color: #5E5593;
 }
 .rdk-tomato {
-  background: #C94B36;
+  background-color: #C94B36;
 }
 .rdk-tomato.text {
-  background: transparent;
+  background-color: transparent;
   color: #C94B36;
 }
 .rdk-tomato-dk {
-  background: #B43F2C;
+  background-color: #B43F2C;
 }
 .rdk-tomato-dk.text {
-  background: transparent;
+  background-color: transparent;
   color: #B43F2C;
 }
 .rdk-corn {
-  background: #DD964D;
+  background-color: #DD964D;
 }
 .rdk-corn.text {
-  background: transparent;
+  background-color: transparent;
   color: #DD964D;
 }
 .rdk-corn-dk {
-  background: #C6823C;
+  background-color: #C6823C;
 }
 .rdk-corn-dk.text {
-  background: transparent;
+  background-color: transparent;
   color: #C6823C;
 }
 .rdk-charcoal {
-  background: #272727;
+  background-color: #272727;
 }
 .rdk-charcoal.text {
-  background: transparent;
+  background-color: transparent;
   color: #272727;
 }
 .rdk-charcoal-lg {
-  background: #898989;
+  background-color: #898989;
 }
 .rdk-charcoal-lg.text {
-  background: transparent;
+  background-color: transparent;
   color: #898989;
 }
 /*!
@@ -5900,9 +5900,20 @@ h4 {
 .auth {
   min-height: 100vh;
 }
+.auth .logo {
+  background: url(../images/logo.png) no-repeat center center transparent;
+  display: block;
+  width: 120px;
+  height: 55px;
+  margin: 0;
+  background-size: 100%;
+  font-size: 0;
+  color: transparent;
+  padding: 0;
+}
 .auth .info {
-  min-height: 20vh;
-  background-color: #50D2A4;
+  min-height: 25vh;
+  background-size: 100%;
   width: 100vw;
   margin: 0 -15px;
 }
@@ -5910,9 +5921,74 @@ h4 {
   margin: 25px 0 0;
   width: 100%;
 }
+.auth h2 {
+  font-size: 20px;
+  text-transform: none;
+  margin-bottom: 30px;
+}
 .auth .btn {
   display: block;
   width: 100%;
+}
+.auth a {
+  padding-top: 15px;
+  display: inline-block;
+  color: #272727;
+}
+@media screen and (min-width: 768px) {
+  .auth form {
+    margin: 70px auto 0;
+    width: 60%;
+  }
+  .auth h2 {
+    font-size: 23px;
+  }
+  .auth .logo {
+    width: 230px;
+    height: 100px;
+  }
+  .auth .btn {
+    float: right;
+    width: auto;
+  }
+  .auth a {
+    clear: both;
+    float: right;
+  }
+}
+@media screen and (min-width: 992px) {
+  .auth .info {
+    position: fixed;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+  }
+  .auth form {
+    width: 40%;
+  }
+  .auth .login .info {
+    left: 0;
+  }
+  .auth .login form {
+    margin: 0 0 0 55%;
+  }
+  .auth .registro .info {
+    right: 0;
+  }
+  .auth .registro form {
+    margin: 0 0 0 5%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .auth form {
+    width: 30%;
+  }
+  .auth .registro form {
+    margin: 5% 0 5% 10%;
+  }
+  .auth .login form {
+    margin: 5% 0 5% 58%;
+  }
 }
 .card {
   border: 0;
@@ -6176,7 +6252,7 @@ footer .download-btn li {
 }
 .checkbox.checkbox {
   font-size: 16px;
-  line-height: 29px;
+  line-height: 27px;
   padding-left: 40px;
   font-weight: normal;
   cursor: pointer;
@@ -6200,8 +6276,8 @@ footer .download-btn li {
   position: absolute;
   top: 0;
   left: 0;
-  height: 27px;
-  width: 27px;
+  height: 25px;
+  width: 25px;
   background-color: #FFFFFF;
   border: 1px solid #DCDCDC;
 }
@@ -6386,6 +6462,9 @@ header h1 a.navbar-brand {
 header.sticky-header {
   background: #C94B36;
 }
+header:not(.is-home) + main {
+  padding-top: 90px;
+}
 @media screen and (max-width: 991px) {
   html.easy-sidebar-active {
     height: 100%;
@@ -6496,6 +6575,7 @@ header.sticky-header {
   }
   .navbar .navbar-nav > li {
     float: none;
+    width: 100%;
   }
   .navbar .navbar-nav > li a {
     padding: 10px 0;

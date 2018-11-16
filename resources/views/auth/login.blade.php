@@ -4,21 +4,24 @@
 
 @section ('content')
 
-<div class="auth">
+<div class="auth d-flex align-items-center">
 	<div class="container-fluid">
-		<div class="d-flex flex flex-wrap info-left">
-			<div class="info bg-trama">
+		<div class="d-flex flex flex-wrap info-left login">
+			<div class="info bg-trama rdk-pepper d-flex align-items-center justify-content-center">
 				{{-- <a class="btn btn-link back-button-login" href="{{ url('/') }}">
 					<i class="fas fa-chevron-left"></i>
 					Volver
 				</a> --}}
+				<h1 class="d-block d-lg-none">
+				    <a href="#" class="logo"> Rádiko </a>
+				</h1>
 			</div>
 
 			<form action="{{ route('auth.doLogin')}}" method="post">
 				<div class="form">
 					@csrf
-					
-					<h1>Login</h1>
+
+					<h2>Login</h2>
 
 					@if(Session::has('status'))
 						<div class="text-danger">{{ Session::get('status') }}</div>
@@ -37,13 +40,13 @@
 							<small class="text-danger">{{ $errors->first('password') }}</small>
 						@endif
 					</div>
-					<div class="row-form">
+					{{-- <div class="row-form">
 						<label class="checkbox remember">
 							Recordarme
 							<input type="checkbox" name="remember">
 							<span class="checkmark"></span>
 						</label>
-					</div>
+					</div> --}}
 					<div class="row-form">
 						<button class="btn btn-secondary btn-small">Ingresar</button>
 						<a href="{{ url('/registro') }}">¿No tenés cuenta? <span class="bold uppercase">Regístrate</span></a>

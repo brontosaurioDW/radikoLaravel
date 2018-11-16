@@ -50,6 +50,10 @@ header {
 	&.sticky-header {
 		background: @tomato;
 	}
+
+	&:not(.is-home) + main{
+		padding-top: 90px;
+	}
 }
 
 // Menu mobile (slide in)
@@ -182,6 +186,7 @@ header {
 
 			& > li {
 				float: none;
+				width: 100%;
 
 				a {
 					padding: 10px 0;

@@ -6,18 +6,18 @@
 
 @section ('content')
 
-<main class="huerta-content mt-5">
+<div class="huerta-content">
 	<section class="huerta-options">
 		<div class="container">
 			<div class="row listado-productos">
 				<div class="col-12 col-md-9">
-					<h2>18 huertas para la categoría seleccionada</h2>
+					<h2>XX huertas para la categoría seleccionada</h2>
 					<div class="huerta-productos">
-						<div class="row">
-							<div class="col-12 col-md-4">
-								<div class="form-group">
+						<form action="" method="" class="form">
+							<div class="row">
+								<div class="col-12 col-md-4 d-none d-lg-block">
 									<label for="filtros" class="sr-only">Filtros</label>
-									<select class="form-control" id="filtros">
+									<select class="select" id="filtros">
 										<option>Mejores puntuados</option>
 										<option>Más valorados</option>
 										<option>De mayor a menor</option>
@@ -25,47 +25,43 @@
 										<option>Los más nuevos</option>
 									</select>
 								</div>
-							</div>
-							<div class="col-md-4 offset-md-4">
-								<form class="huerta-form-buscar">
-									<div class="row-search form-row justify-content-right relative huerta-buscar">
-										<input type="text" name="search" placeholder="¿Qué estás buscando?">
-										<button class="btn-search">
-											<span class="sr-only">Search</span>
-											<i class="fas fa-search"></i>
-										</button>
-									</div>
-								</form>
-							</div>
-						</div>
-						<div class="row">
-
-							@foreach ($huertas as $huerta)
-
-							<div class="col-12 col-sm-6 col-md-4">
-								<div class="card">
-									<a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}">
-										<img class="card-img-top" src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="<?php echo $huerta->huerta ?>">
-										<div class="stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="far fa-star"></i>
-											<i class="far fa-star"></i>
+								<div class="col-md-4 offset-md-4">
+									<form class="huerta-form-buscar">
+										<div class="row-search form-row justify-content-right relative huerta-buscar">
+											<input type="text" name="search" placeholder="¿Qué estás buscando?">
+											<button class="btn-search">
+												<span class="sr-only">Search</span>
+												<i class="fas fa-search"></i>
+											</button>
 										</div>
-									</a>
-									<div class="card-body">
-										<div class="title text-left">
-											<h4 class="card-title huerta">{{ $huerta->huerta }}</h4>
-										</div>
-									</div>
+									</form>
 								</div>
 							</div>
 
+						</form>
+						
+						
+							@foreach ($huertas as $huerta)
+
+								<div class="card no-border">
+									<a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="d-flex">
+										<div class="img-wrapper">
+											<img src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="<?php echo $huerta->huerta ?>" />
+										</div>
+										<div class="card-info">
+											<h3>{{ $huerta->huerta }}</h3>
+											
+											<div class="stars">
+												<i class="fas fa-star"></i>
+												<i class="fas fa-star"></i>
+												<i class="fas fa-star"></i>
+												<i class="far fa-star"></i>
+												<i class="far fa-star"></i>
+											</div>
+										</div>								
+									</a>
+								</div>	
 							@endforeach
-
-						</div>
-
 
 					</div>
 					<div class="row">
@@ -156,7 +152,7 @@
 		</div>
 
 	</section>
-</main>
+</div>
 
 
 @endsection

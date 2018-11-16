@@ -6,19 +6,16 @@
 
 @section ('content')
 
-<main class="huerta-content mt-5">
+<div class="huerta-content">
 
 	<h1>Página productos</h1>
-
 
 	@foreach ($productos as $producto)
 		{{$producto->producto}}
 		{{$producto->unidadDeMedida->unidad }}
-
 	@endforeach
 
-</main>
-
+</div>
 
 @endsection
 

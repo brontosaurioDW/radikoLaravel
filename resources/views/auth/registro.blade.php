@@ -4,21 +4,24 @@
 
 @section ('content')
 
-<div class="auth">
+<div class="auth d-flex align-items-center">
 	<div class="container-fluid">
-		<div class="d-flex flex flex-wrap info-right">
-			<div class="info bg-trama">
+		<div class="d-flex flex flex-wrap info-right registro">
+			<div class="info bg-trama rdk-corn d-flex align-items-center justify-content-center">
 				{{-- <a class="btn btn-link green back-button-registro float-right" href="{{ url('/') }}">
 					<i class="fas fa-chevron-left"></i>
 					Volver
 				</a> --}}
+				<h1 class="d-block d-lg-none">
+				    <a href="#" class="logo"> Rádiko </a>
+				</h1>
 			</div>
 
 			<form action="{{ route('auth.doRegistro') }}" method="post">
 				<div class="form">
 					@csrf
 
-					<h1>Registro</h1>
+					<h2>Registro</h2>
 
 					<div class="row-form">
 						<label for="name">Nombre</label>
