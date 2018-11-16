@@ -8,36 +8,36 @@
             @foreach ($huertasDestacadas as $huerta)
 
             @switch($loop->index)
-                @case(0)
-                    <?php 
-                        $class = "single-item half title-top-left plus-bottom-right rdk-tomato"; 
-                        $img = "red-1";
-                    ?>
-                @break
-                @case(1)
-                    <?php 
-                        $class = "single-item half title-top-right plus-bottom-left rdk-corn"; 
-                        $img = "orange";
-                    ?>
-                @break
-                @case(2)
-                    <?php 
-                        $class = "single-item third title-top-left plus-bottom-right rdk-grape"; 
-                        $img = "violet";
-                    ?>
-                @break
-                @case(3)
-                    <?php 
-                        $class = "single-item third title-bottom-left plus-top-right rdk-pepper"; 
-                        $img = "green";
-                    ?>
-                @break
-                @case(4)
-                    <?php 
-                        $class = "single-item third title-top-right plus-bottom-left rdk-tomato"; 
-                        $img = "red-2";
-                    ?>
-                @break
+            @case(0)
+            <?php 
+            $class = "single-item half title-top-left plus-bottom-right rdk-tomato"; 
+            $img = "red-1";
+            ?>
+            @break
+            @case(1)
+            <?php 
+            $class = "single-item half title-top-right plus-bottom-left rdk-corn"; 
+            $img = "orange";
+            ?>
+            @break
+            @case(2)
+            <?php 
+            $class = "single-item third title-top-left plus-bottom-right rdk-grape"; 
+            $img = "violet";
+            ?>
+            @break
+            @case(3)
+            <?php 
+            $class = "single-item third title-bottom-left plus-top-right rdk-pepper"; 
+            $img = "green";
+            ?>
+            @break
+            @case(4)
+            <?php 
+            $class = "single-item third title-top-right plus-bottom-left rdk-tomato"; 
+            $img = "red-2";
+            ?>
+            @break
             @endswitch
 
             <div class="<?php echo $class ?>">
@@ -47,19 +47,29 @@
                     </div>
                     <div class="item-info">
                         <h3>{{ $huerta->huerta }}</h3>
+
                         <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
+
+                            @foreach ( $reviews as $review )
+
+                            @if ( $review->huerta_id == $huerta->id )
+                            {{-- {{ $review->stars }} --}}
+
+                            @for ($i = 0; $i < 5; ++$i)
+                            <i class="{{ $review->stars <= $i ? 'far' : 'fas' }} fa-star" aria-hidden="true"></i>
+                            @endfor
+
+                            @endif
+
+                            @endforeach
                         </div>
+
                     </div>
 
                     <i class="fas fa-plus"></i>
                 </a>
             </div>
-
+            
             @endforeach
 
         </div>

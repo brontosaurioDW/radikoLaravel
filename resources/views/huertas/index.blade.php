@@ -37,38 +37,44 @@
 									</form>
 								</div>
 							</div>
-
 						</form>
 						
-						
-							@foreach ($huertas as $huerta)
+						@foreach ($huertas as $huerta)
 
-								<div class="card no-border">
-									<a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="d-flex">
-										<div class="img-wrapper">
-											<img src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="<?php echo $huerta->huerta ?>" />
-										</div>
-										<div class="card-info">
-											<h3>{{ $huerta->huerta }}</h3>
-											
-											<div class="stars">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="far fa-star"></i>
-												<i class="far fa-star"></i>
-											</div>
-										</div>								
-									</a>
-								</div>	
-							@endforeach
+						<div class="card no-border">
+							<a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="d-flex">
+								<div class="img-wrapper">
+									<img src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="<?php echo $huerta->huerta ?>" />
+								</div>
+								<div class="card-info">
+									<h3>{{ $huerta->huerta }}</h3>
+
+									<div class="stars">
+										@foreach ( $reviews as $review )
+
+										@if ( $review->huerta_id == $huerta->id )
+										{{ $review->stars }}
+
+										@for ($i = 0; $i < 5; ++$i)
+										<i class="{{ $review->stars <= $i ? 'far' : 'fas' }} fa-star" aria-hidden="true"></i>
+										@endfor
+
+										@endif
+
+										@endforeach
+									</div>
+
+								</div>								
+							</a>
+						</div>	
+						@endforeach
 
 					</div>
 					<div class="row">
 						<div class="col-12">
 							<nav aria-label="navigation" class="huerta-navigation">
 								<ul class="pagination justify-content-center">
-								<?php echo $huertas->links(); ?>
+									<?php echo $huertas->links(); ?>
 									{{-- 									
 									<li class="page-item"><a class="page-link" href="#">1</a></li>
 									<li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -85,7 +91,7 @@
 							<li class="list-group-item list-title">Categorias</li>
 							@foreach ($categorias as $categoria)
 							<li class="list-group-item">
-										<a href="#">{{ $categoria->categoria }}</a>
+								<a href="#">{{ $categoria->categoria }}</a>
 							</li>								
 							@endforeach				
 						</ul>
