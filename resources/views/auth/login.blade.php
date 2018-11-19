@@ -4,14 +4,14 @@
 
 @section ('content')
 
-<div class="auth d-flex align-items-center">
+<div class="auth d-flex">
 	<div class="container-fluid">
 		<div class="d-flex flex flex-wrap info-left login">
 			<div class="info bg-trama rdk-pepper d-flex align-items-center justify-content-center">
-				{{-- <a class="btn btn-link back-button-login" href="{{ url('/') }}">
+				<a href="{{ url('/') }}" class="link">
 					<i class="fas fa-chevron-left"></i>
-					Volver
-				</a> --}}
+					<span>volver</span>
+				</a>
 				<h1 class="d-block d-lg-none">
 				    <a href="#" class="logo"> Rádiko </a>
 				</h1>

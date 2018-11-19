@@ -4,14 +4,14 @@
 
 @section ('content')
 
-<div class="auth d-flex align-items-center">
+<div class="auth d-flex">
 	<div class="container-fluid">
 		<div class="d-flex flex flex-wrap info-right registro">
 			<div class="info bg-trama rdk-corn d-flex align-items-center justify-content-center">
-				{{-- <a class="btn btn-link green back-button-registro float-right" href="{{ url('/') }}">
+				<a href="{{ url('/') }}" class="link">
 					<i class="fas fa-chevron-left"></i>
-					Volver
-				</a> --}}
+					<span>volver</span>
+				</a>
 				<h1 class="d-block d-lg-none">
 				    <a href="#" class="logo"> Rádiko </a>
 				</h1>
@@ -49,7 +49,7 @@
 						<input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmar contraseña">
 					</div>
 					<div class="row-form">
-						<button class="btn btn-secondary btn-small">Registrarme</button>
+						<button class="btn btn-secondary btn-small">Registrarse</button>
 						<a href="{{ url('/login') }}">¿Ya tenés cuenta? <span class="bold uppercase">Ingresá</span></a>
 					</div>
 				</div>

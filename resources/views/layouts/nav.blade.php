@@ -15,7 +15,7 @@
 
     <ul>
         <li>
-            <a href="confirmacion-paso-1.html" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
+            <a href="#" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
                 <i class="fas fa-shopping-cart"></i>
             </a>
         </li>
@@ -54,7 +54,7 @@
             </li>
             @endif
             <li class="d-none d-lg-block">
-                <a href="confirmacion-paso-1.html" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
+                <a href="#" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
             </li>
