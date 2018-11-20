@@ -13,7 +13,7 @@
                         </li>
                         <li>
                             <a href="#">
-                                <img src="{{ url('storage/images/google-play-btn.png') }}" alt="Download in Google Play" class="img-fluid">
+                                <img src="{{ url('storage/images/google-play-btn.png') }}" alt="Download in Google Play" class="fluid-img">
                             </a>
                         </li>
                     </ul>
@@ -21,7 +21,7 @@
             </div>
 
             <div class="col-md-5 col-lg-4 static">
-                <img src="images/mockup2.png" alt="Descargá la app de Radiko!" class="download-mockup d-none d-md-block">
+                <img src="{{ url('storage/images/mockup2.png') }}" alt="Descargá la app de Radiko!" class="download-mockup d-none d-md-block img-fluid">
             </div>
         </div>
     </div>

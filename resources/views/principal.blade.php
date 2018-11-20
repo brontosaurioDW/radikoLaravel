@@ -3,22 +3,24 @@
 @section ('header-class', 'is-home')
 @section ('content')
 
-{{-- HERO - SEARCH --}}
-@include ('home.buscador')
+<div class="main-wrapper relative">
+	{{-- HERO - SEARCH --}}
+	@include ('home.buscador')
 
-{{-- CATEGORIAS --}}
-@include ('home.categorias')
+	{{-- CATEGORIAS --}}
+	@include ('home.categorias')
 
-{{-- DESTACADOS --}}
-@include ('home.destacados')
+	{{-- DESTACADOS --}}
+	@include ('home.destacados')
 
-{{-- BANNER 'SUSCRIBITE' --}}
-@include ('home.suscribite-banner')
+	{{-- BANNER 'SUSCRIBITE' --}}
+	@include ('home.suscribite-banner')
 
-{{-- BLOQUES FONDO VIOLETAS --}}
-@include ('home.bloques-violetas')
+	{{-- BLOQUES FONDO VIOLETAS --}}
+	@include ('home.bloques-violetas')
 
-{{-- DESCARGA LA APP  --}}
-@include ('home.descarga-app')
+	{{-- DESCARGA LA APP  --}}
+	@include ('home.descarga-app')
+</div>
 
 @endsection
