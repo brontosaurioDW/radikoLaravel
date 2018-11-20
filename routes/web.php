@@ -24,7 +24,7 @@ Route::get('huertas', [
 ]);
 
 Route::get('search', [
-	'as' => 'search',
+	'as' => 'huertas.search',
 	'uses' => 'HuertasController@showSearchResults'
 ]);
 

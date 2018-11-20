@@ -47,17 +47,37 @@ class HuertasController extends Controller
   public function showSearchResults(Request $request)
   {
     // Gets the query string from our form submission 
-    $query = Request::input('search'); 
+
+    $inputData = $request->get('search');
+
+    $categorias = Categoria::All();
+    $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
+
+
+    //$query = Request::input('search'); 
+    //dd($query);
     // Returns an array of articles that have the query string located somewhere within 
     // our articles titles. Paginates them so we can break up lots of search results.
 
-    $productos = DB::table('productos')->where('producto', 'LIKE', '%' . $query . '%')->paginate(10);
-        
-    // returns a view and passes the view the list of articles and the original query.
-    //return view('page.search', compact('articles', 'query'));
-    return view('huertas.search');
+    //$productos = DB::table('productos')->where('producto', 'LIKE', '%' . $inputData . '%')->get();
 
-   }
+    $productos =  Producto::with('unidadDeMedida')->where('producto', 'LIKE', '%' . $inputData . '%')->get();
+
+    //$productos = Producto::with('unidadDeMedida')->get()->where('huerta_id', $id);
+
+
+    //$huertas = Huerta::with('productos')->where('producto', 'LIKE', '%' . $inputData . '%');
+
+    //$huertas = Huerta::with('productos')->where('producto', 'LIKE', '%' . $inputData . '%');
+
+    //$huertas = Huerta::with('productos')->paginate(3);
+    $huertas = DB::table('huertas')->paginate(3);
+
+    //dd($productos);
+
+    return view('huertas.search', compact('productos', 'categorias', 'reviews', 'huertas', 'inputData'));
+
+  }
 
 
   /**

@@ -98,6 +98,7 @@
 								<?php echo $huertas->links(); ?>
 							</ul>
 						</nav>
+						
 					</div>
 				</div>
 			</div>
