@@ -1,0 +1,98 @@
+.ratings-cat {
+	list-style: none;
+	margin: 0 0 30px;
+	padding: 0;
+
+    li {
+        padding: 10px 0;
+        font-size: @small;
+        color: @charcoal-lg;
+        overflow: hidden;
+    }
+
+    .name {
+    	width: auto;
+    	position: relative;
+    	text-align: left;
+    	height: 16px;
+    	padding: 0 15px 0 0;
+    	min-width: 110px;
+    }
+
+    .middle {
+    	float: left;
+    	width: 100%;
+    	position: relative;
+    	border-bottom: 1px solid @grey-lg;
+    	height: 15px;
+
+        span {
+        	-webkit-transition: all 0.8s ease-in-out;
+        	-moz-transition: all 0.8s ease-in-out;
+        	-o-transition: all 0.8s ease-in-out;
+        	transition: all 0.8s ease-in-out;
+        	position: absolute;
+        	height: 5px;
+        	width: 0%;
+        	background: @pepper;
+        	bottom: 0;
+        }
+    }
+
+    .amount {
+        float: left;
+        width: 11%;
+        position: relative;
+        text-align: right;
+        height: 15px;
+    }
+}
+
+.list-opiniones {
+	margin: 30px 0 0 0;
+	padding: 0;
+	list-style: none;
+
+	.media-img {
+		width: 55px;
+		height: 55px;
+		overflow: hidden;
+		margin-right: 15px;
+	}
+	
+	.opinion-wrapper {
+		width: 100%;
+	    margin-bottom: 20px;
+	    border-bottom: 1px solid @grey-lg;
+	    padding-bottom: 20px;
+
+		h3 {
+			font-size: @small;
+		}
+	}
+
+	.stars {
+	    background: @charcoal-lg;
+	    color: @ice;
+	    padding: 3px 7px;
+	    text-align: center;
+	    font-size: @x-small;
+	    font-weight: bold;
+	    display: inline-block;
+
+	    i {
+	    	vertical-align: middle;
+	    	margin: 0 0 0 5px;
+	    }
+	}
+
+	& + .form {
+		margin-bottom: 25px;
+	}
+}
+
+.votar {
+	margin-bottom: 20px;
+}
+
+@import url(../tablet/ratings.less);
