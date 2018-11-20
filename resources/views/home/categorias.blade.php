@@ -6,7 +6,7 @@
         <ul class="d-flex justify-content-between">
             @foreach ($categorias as $categoria)
             <li class="frutas">
-                <a href="{{ url('/huertas') }}">
+                <a href="{{ route( 'huertas.categoria', ['id' => $categoria->id] ) }}">
                     <span style="background-image: url(storage/images/categories/{{ $categoria->icono }})" class="cat-img"> {{ $categoria->categoria }} </span>
                     <span>{{ $categoria->categoria }}</span>
                 </a>

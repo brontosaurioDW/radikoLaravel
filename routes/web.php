@@ -28,7 +28,12 @@ Route::get('search', [
 	'uses' => 'HuertasController@showSearchResults'
 ]);
 
-Route::get('/huertas/{receta}', [
+Route::get('/huertas/categoria/{categoria}', [
+	'as' => 'huertas.categoria',
+	'uses' => 'HuertasController@huertasByCategory',
+]);
+
+Route::get('/huertas/{huerta}', [
 	'as' => 'huertas.show',
 	'uses' => 'HuertasController@show',
 ]);
@@ -36,7 +41,7 @@ Route::get('/huertas/{receta}', [
 
 /* Comentarios */
 
-Route::put('/huertas/{receta}/comments', [
+Route::put('/huertas/{huerta}/comments', [
     'as' => 'huertas.comments',
     'uses' => 'ComentariosController@store',
 ]);

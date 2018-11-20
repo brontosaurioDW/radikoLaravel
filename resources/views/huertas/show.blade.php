@@ -278,7 +278,7 @@
 
 									<h3>{{ $review->usuario->name }}</h3>
 
-									<p>{{ $review->review }} asdfdghjhjesdf asiodA JKLD ASDJIAS DIPASD hajsd AUJ HO</p>
+									<p>{{ $review->comentario }}</p>
 
 									<span class="stars">
 										<span>

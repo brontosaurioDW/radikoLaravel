@@ -106,6 +106,40 @@ class HuertasController extends Controller
     return view('huertas.index', compact('huertas', 'categorias','reviews'));
   }
 
+
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function huertasByCategory( $id )
+  {
+
+    //$huertas = DB::table('huertas')->where('categoria', $id)->paginate(6);
+    $huertas = DB::table('huertas')->paginate(6);
+
+    //dd($huertas);
+
+    $categorias = Categoria::All();
+    $comentarios = Review::All()->where('stars', '>', 3);
+    // $calificacion = Review::All()->groupBy('huerta_id');
+    $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
+
+    // dd($calificacion);
+    //dd($comentarios);
+
+    // @foreach($calificacion as $cali)
+    // @if ($cali->huerta_id == $huerta->id)
+    // {{ $cali->stars}}
+    // @endif
+    // @endforeach
+
+    return view('huertas.index', compact('huertas', 'categorias','reviews'));
+  }
+
+
+
+
   /**
    * Show the form for creating a new resource.
    *
