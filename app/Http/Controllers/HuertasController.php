@@ -47,7 +47,7 @@ class HuertasController extends Controller
   public function showSearchResults(Request $request)
   {
     // Gets the query string from our form submission 
-    $query = Request::input('search');
+    $query = Request::input('search'); 
     // Returns an array of articles that have the query string located somewhere within 
     // our articles titles. Paginates them so we can break up lots of search results.
 
