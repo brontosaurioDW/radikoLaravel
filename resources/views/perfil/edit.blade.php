@@ -11,8 +11,6 @@
 		<div class="col">
 			<h2 class="mb-4">Editar perfil de usuario</h2>
 
-
-
 			<form action="{{ route('perfil.update', ['id' => $usuario->id]) }}" method="post">
 				@csrf
 
