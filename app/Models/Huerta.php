@@ -26,7 +26,7 @@ class Huerta extends Model
 		return $this->belongsTo(TipoHuerta::class);
 	}
 
-	public function comentarios()
+	public function reviews()
 	{
 		return $this->hasMany(Review::class);
 	}

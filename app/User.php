@@ -43,6 +43,7 @@ class User extends Authenticatable
      * @var array
      */
     public static $rules_register = [
+        'name' => 'required|min:3',
         'email' => 'required|max:255|email|unique:users',
         'password' => 'required|min:3|confirmed',
     ];

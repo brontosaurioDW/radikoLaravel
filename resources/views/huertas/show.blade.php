@@ -29,7 +29,6 @@
 						</div>
 					</div>
 
-
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -37,7 +36,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<div class="huerta-nav">
 		<div class="container">
@@ -62,7 +60,7 @@
 	<section class="huerta-options">
 		<div class="container">
 			<div class="tab-content my-3" id="huerta-productos">
-				<div class="tab-pane fade" id="huerta-productos-listado" role="tabpanel" aria-labelledby="huerta-productos-listado">
+				<div class="tab-pane fade show active" id="huerta-productos-listado" role="tabpanel" aria-labelledby="huerta-productos-listado">
 					<div class="row">
 						<div class="col-md-3 offset-md-9">
 							<form class="huerta-form-buscar">
@@ -223,7 +221,7 @@
 										<li class="list-group-item"><b>Razón social:</b> {{$huerta->razon_social}}</li>
 										<li class="list-group-item"><b>Dirección:</b> {{$huerta->direccion}}</li>
 										<li class="list-group-item"><b>Cantidad máxima de envios:</b> {{$huerta->cantidad_max_envios}}</li>
-										<li class="list-group-item"><b>Foto:</b> {{$huerta->foto}}</li>
+										<li class="list-group-item"><b>Foto:</b> <img src="{{ url("storage/images/huertas/$huerta->foto") }}" alt=""></li>
 									</ul>
 								</div>
 							</div>
@@ -253,22 +251,29 @@
 							</div>
 						</div>
 					</div>
-					<div class="tab-pane fade show active" id="huerta-rating" role="tabpanel" aria-labelledby="huerta-rating">
+					<div class="tab-pane fade" id="huerta-rating" role="tabpanel" aria-labelledby="huerta-rating">
 
-						@foreach ($huerta->comentarios as $comentario)
+						@foreach ($huerta->reviews as $review)
 						<div class="media mb-4">
 							<img class="mr-3" src="http://placeholder.pics/svg/64" alt="Generic placeholder image">
 							<div class="media-body">
-								<h5 class="mt-0">{{ $comentario->usuario->name }}</h5>
-								<p>foto: {{ $comentario->usuario->foto }}</p>
-								<p>Estrellas: {{$comentario->stars}}</p>
-								<p>{{ $comentario->comentario }}</p>
+								<h5 class="mt-0">{{ $review->usuario->name }}</h5>
+								<p>foto: {{ $review->usuario->foto }}</p>
+								<p>Estrellas: {{$review->stars}}</p>
+								<p>{{ $review->review }}</p>
 
 							</div>
 						</div>
 						@endforeach
 
 						<hr>
+
+
+
+
+
+						@if(Auth::check())
+
 						<form action="{{ route('huertas.comments' , ['id' => $huerta->id]) }}" method="post">
 
 							@csrf
@@ -318,6 +323,9 @@
 							<button type="submit" class="btn btn-primary">Comentar</button>
 						</form>
 
+						@else
+						<p>Para dejar un comentario debes <a href="{{ route( 'login' ) }}">iniciar sesion</a></p>
+						@endif
 
 					</div>
 				</div>

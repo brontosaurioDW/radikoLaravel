@@ -24,6 +24,7 @@ class HuertasController extends Controller
 
     $huertasDestacadas = Huerta::All()->where('destacado', true);
     $categorias = Categoria::All();
+    $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
 
     // $huertas = Huerta::where('id', '1')->paginate(2);
     // $huertas = DB::table('huertas')->simplePaginate(2);
@@ -34,7 +35,7 @@ class HuertasController extends Controller
 
     // return view('principal', compact('huertas'));
 
-    return view( 'principal', compact('huertasDestacadas', 'categorias') );
+    return view( 'principal', compact('huertasDestacadas', 'categorias', 'reviews') );
   }  
 
   /**
@@ -49,7 +50,7 @@ class HuertasController extends Controller
     $categorias = Categoria::All();
     $comentarios = Review::All()->where('stars', '>', 3);
     // $calificacion = Review::All()->groupBy('huerta_id');
-    $calificacion = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
+    $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
 
     // dd($calificacion);
     //dd($comentarios);
@@ -60,7 +61,7 @@ class HuertasController extends Controller
     // @endif
     // @endforeach
 
-    return view('huertas.index', compact('huertas', 'categorias','calificacion'));
+    return view('huertas.index', compact('huertas', 'categorias','reviews'));
   }
 
   /**

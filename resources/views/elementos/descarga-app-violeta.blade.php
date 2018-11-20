@@ -1,4 +1,4 @@
-<section class="download-app bg-trama-b">
+<section class="download-app purple bg-trama-b">
     <div class="container relative d-flex align-items-center">
         <div class="row align-items-center w-100">
             <div class="col-md-7 col-lg-8 text-center">
@@ -21,7 +21,7 @@
             </div>
 
             <div class="col-md-5 col-lg-4 static">
-                <img src="images/mockup.png" alt="Descargá la app de Radiko!" class="download-mockup d-none d-md-block">
+                <img src="images/mockup2.png" alt="Descargá la app de Radiko!" class="download-mockup d-none d-md-block">
             </div>
         </div>
     </div>
