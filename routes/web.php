@@ -23,6 +23,11 @@ Route::get('huertas', [
 	'uses' => 'HuertasController@index'
 ]);
 
+Route::get('search', [
+	'as' => 'search',
+	'uses' => 'HuertasController@showSearchResults'
+]);
+
 Route::get('/huertas/{receta}', [
 	'as' => 'huertas.show',
 	'uses' => 'HuertasController@show',

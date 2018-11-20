@@ -36,7 +36,29 @@ class HuertasController extends Controller
     // return view('principal', compact('huertas'));
 
     return view( 'principal', compact('huertasDestacadas', 'categorias', 'reviews') );
-  }  
+  } 
+
+
+  /**
+   * Front - Muestra los resultados de busqueda
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function showSearchResults(Request $request)
+  {
+    // Gets the query string from our form submission 
+    $query = Request::input('search');
+    // Returns an array of articles that have the query string located somewhere within 
+    // our articles titles. Paginates them so we can break up lots of search results.
+
+    $productos = DB::table('productos')->where('producto', 'LIKE', '%' . $query . '%')->paginate(10);
+        
+    // returns a view and passes the view the list of articles and the original query.
+    //return view('page.search', compact('articles', 'query'));
+    return view('huertas.search');
+
+   }
+
 
   /**
    * Display a listing of the resource.
