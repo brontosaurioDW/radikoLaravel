@@ -6059,7 +6059,7 @@ h4 {
   width: auto;
 }
 .card .card-info {
-  border-left: 15px solid #7065B0;
+  border-left: 10px solid #7065B0;
   width: 65%;
   padding: 1.2rem;
   position: relative;
@@ -6833,7 +6833,7 @@ header:not(.is-home) + main .main-wrapper {
   position: relative;
   text-align: left;
   height: 16px;
-  padding: 0 15px 0 0;
+  padding: 0 0 10px 0;
   min-width: 110px;
 }
 .ratings-cat .middle {
@@ -6862,7 +6862,7 @@ header:not(.is-home) + main .main-wrapper {
   height: 15px;
 }
 .list-opiniones {
-  margin: 30px 0 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -6875,20 +6875,25 @@ header:not(.is-home) + main .main-wrapper {
 .list-opiniones .opinion-wrapper {
   width: 100%;
   margin-bottom: 20px;
-  border-bottom: 1px solid #F5F5F5;
+  border-bottom: 1px solid #DCDCDC;
   padding-bottom: 20px;
 }
 .list-opiniones .opinion-wrapper h3 {
   font-size: 14px;
+  margin: 5px 0 15px 0;
+}
+.list-opiniones .opinion-wrapper p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 180%;
 }
 .list-opiniones .stars {
-  background: #898989;
-  color: #FFFFFF;
-  padding: 3px 7px;
+  color: #898989;
   text-align: center;
   font-size: 12px;
   font-weight: bold;
   display: inline-block;
+  float: right;
 }
 .list-opiniones .stars i {
   vertical-align: middle;
@@ -6896,20 +6901,53 @@ header:not(.is-home) + main .main-wrapper {
 }
 .list-opiniones + .form {
   margin-bottom: 25px;
+  margin-top: 40px;
 }
-.votar {
+.star-rating {
   margin-bottom: 20px;
+  font-size: 0;
+}
+.star-rating label {
+  font-weight: normal;
+  margin-right: 5px;
+}
+.star-rating .star-rating-wrap {
+  display: inline-block;
+  font-size: 1rem;
+}
+.star-rating .star-rating-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.star-rating .star-rating-wrap .star-font {
+  float: right;
+  padding-left: 2px;
+  cursor: pointer;
+  color: #FFB300;
+}
+.star-rating .star-font:last-child {
+  padding-left: 0;
+}
+.star-rating .star-input {
+  display: none;
+}
+.star-rating .star-font:hover:before,
+.star-rating .star-font:hover ~ .star-font:before,
+.star-rating .star-input:checked ~ .star-font:before {
+  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
-  .ratings-cat .name {
-    float: left;
-  }
   .ratings-cat .middle {
-    width: 75%;
+    width: 85%;
   }
   .list-opiniones .opinion-wrapper {
-    border: 1px solid #F5F5F5;
+    border: 1px solid #DCDCDC;
     padding: 15px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .list-opiniones .opinion-wrapper {
     width: 49%;
   }
 }

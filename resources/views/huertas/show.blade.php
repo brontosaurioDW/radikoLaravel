@@ -223,131 +223,120 @@
 						</div>
 					</div>
 
-					<div class="tab-pane fade show active" id="huerta-rating" role="tabpanel" aria-labelledby="huerta-rating">
-					
-																
-					<ul class="ratings-cat">
-						<li>
-							<div class="name">Excelente</div>
-							<div class="middle">
-								<span style="width: 58.0336%;"></span>
-							</div>
-							<div class="amount d-none d-md-block">242</div>
-						</li>
-						<li>
-							<div class="name">Muy bueno</div>
-							<div class="middle">
-								<span style="width: 27.3381%;"></span>
-							</div>
-							<div class="amount d-none d-md-block">114</div>
-						</li>
-						<li>
-							<div class="name">Normal</div>
-							<div class="middle">
-								<span style="width: 5.7554%;"></span>
-							</div>
-							<div class="amount d-none d-md-block">24</div>
-						</li>
-						<li>
-							<div class="name">Regular</div>
-							<div class="middle">
-								<span style="width: 4.31655%;"></span>
-							</div>
-							<div class="amount d-none d-md-block">18</div>
-						</li>
-						<li>
-							<div class="name">Malo</div>
-							<div class="middle">
-								<span style="width: 4.55635%;"></span>
-							</div>
-							<div class="amount d-none d-md-block">19</div>
-						</li>
-					</ul>
-
-					<ul class="list-opiniones d-flex justify-content-between flex-wrap">
-						@foreach ($huerta->reviews as $review)
-							<li class="opinion-wrapper media">
-								<div class="media-img">
-									@if ( !empty($review->usuario->foto) ) 
-										<img class="mr-3 img-fluid" src="{{ $review->usuario->foto }}" alt="{{ $review->usuario->name }}">
-									@else
-										<img class="mr-3 img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $review->usuario->name }}">
-									@endif
-								</div>
-								<div class="media-body">
-
-									<h3>{{ $review->usuario->name }}</h3>
-
-									<p>{{ $review->comentario }}</p>
-
-									<span class="stars">
-										<span>
-											{{$review->stars}}.0
-										</span>
-										<i class="fas fa-star" aria-hidden="true"></i>
-									</span>
-									
-								</div>
-							</li>
-						@endforeach
-					</ul>
-
-					@if(Auth::check())
-
-						<form action="{{ route('huertas.comments' , ['id' => $huerta->id]) }}" method="post" class="form form-bg">
-
-							@csrf
-							@method('PUT')
-
-							<h2>Dejanos tu opinón</h2>
-
-							<div class="form-group">
-								<label for="comentario" class="sr-only">Comentario</label>
-								<textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Contanos tu experiencia con la huerta."></textarea>
+					<div class="tab-pane fade show active" id="huerta-rating" role="tabpanel" aria-labelledby="huerta-rating">				
+							
+						<div class="row">
+							<div class="col-xs-12 col-md-4">
+								<ul class="ratings-cat">
+									<li>
+										<div class="name">Excelente</div>
+										<div class="middle">
+											<span style="width: 58.0336%;"></span>
+										</div>
+										<div class="amount d-none d-md-block">242</div>
+									</li>
+									<li>
+										<div class="name">Muy bueno</div>
+										<div class="middle">
+											<span style="width: 27.3381%;"></span>
+										</div>
+										<div class="amount d-none d-md-block">114</div>
+									</li>
+									<li>
+										<div class="name">Normal</div>
+										<div class="middle">
+											<span style="width: 5.7554%;"></span>
+										</div>
+										<div class="amount d-none d-md-block">24</div>
+									</li>
+									<li>
+										<div class="name">Regular</div>
+										<div class="middle">
+											<span style="width: 4.31655%;"></span>
+										</div>
+										<div class="amount d-none d-md-block">18</div>
+									</li>
+									<li>
+										<div class="name">Malo</div>
+										<div class="middle">
+											<span style="width: 4.55635%;"></span>
+										</div>
+										<div class="amount d-none d-md-block">19</div>
+									</li>
+								</ul>
 							</div>
 
-							<label class="sr-only">Calficación</label>
+							<div class="col-xs-12 col-md-8">
+								<ul class="list-opiniones d-flex justify-content-between flex-wrap">
+									@foreach ($huerta->reviews as $review)
+										<li class="opinion-wrapper media">
+											<div class="media-img">
+												@if ( !empty($review->usuario->foto) ) 
+													<img class="mr-3 img-fluid" src="{{ $review->usuario->foto }}" alt="{{ $review->usuario->name }}">
+												@else
+													<img class="mr-3 img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $review->usuario->name }}">
+												@endif
+											</div>
+											<div class="media-body">
+												<span class="stars">
+													<span>
+														{{$review->stars}}.0
+													</span>
+													<i class="fas fa-star" aria-hidden="true"></i>
+												</span>
 
-							<div class="d-flex votar">
-								<div>
-									<input type="radio" name="ranking" id="stars1" value="1">
-									<label class="sr-only" for="stars1">
-										1 Estrella
-									</label>
-								</div>
-								<div>
-									<input type="radio" name="ranking" id="stars2" value="2">
-									<label class="sr-only" for="stars2">
-										2 Estrellas
-									</label>
-								</div>
-								<div>
-									<input type="radio" name="ranking" id="stars3" value="3">
-									<label class="sr-only" for="stars3">
-										3 Estrellas
-									</label>
-								</div>
-								<div>
-									<input type="radio" name="ranking" id="stars4" value="4">
-									<label class="sr-only" for="stars4">
-										4 Estrellas
-									</label>
-								</div>
-								<div>
-									<input type="radio" name="ranking" id="stars5" value="5">
-									<label class="sr-only" for="stars5">
-										5 Estrellas
-									</label>
-								</div>
+												<h3>{{ $review->usuario->name }}</h3>
+
+												<p>{{ $review->comentario }}</p>												
+											</div>
+										</li>
+									@endforeach
+								</ul>
+
+								@if(Auth::check())
+
+									<form action="{{ route('huertas.comments' , ['id' => $huerta->id]) }}" method="post" class="form form-bg">
+
+										@csrf
+										@method('PUT')
+
+										<h2>Dejanos tu opinón</h2>
+
+										<div class="form-group">
+											<label for="comentario" class="sr-only">Comentario</label>
+											<textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Contanos tu experiencia con la huerta."></textarea>
+										</div>
+
+										<label class="sr-only">Calficación</label>
+
+										<div class="star-rating">
+											<div class="star-rating-wrap">
+												
+												<input class="star-input" type="radio" name="ranking" id="stars1" value="1">
+												<label class="star-font far fa-star" for="stars1"></label>
+											
+												<input class="star-input" type="radio" name="ranking" id="stars2" value="2">
+												<label class="star-font far fa-star" for="stars2"></label>
+											
+												<input class="star-input" type="radio" name="ranking" id="stars3" value="3">
+												<label class="star-font far fa-star" for="stars3"></label>
+											
+												<input class="star-input" type="radio" name="ranking" id="stars4" value="4">
+												<label class="star-font far fa-star" for="stars4"></label>
+											
+												<input class="star-input" type="radio" name="ranking" id="stars5" value="5">
+												<label class="star-font far fa-star" for="stars5"></label>
+											</div>									
+										</div>
+
+										<button type="submit" class="btn btn-primary btn-medium">Comentar</button>
+									</form>
+
+								@else
+									<p>Para dejar un comentario debes <a href="{{ route( 'login' ) }}" class="link">iniciar sesion</a></p>
+								@endif	
 							</div>
-
-							<button type="submit" class="btn btn-primary btn-medium">Comentar</button>
-						</form>
-
-					@else
-						<p>Para dejar un comentario debes <a href="{{ route( 'login' ) }}" class="link">iniciar sesion</a></p>
-					@endif								
-
+						</div>									
 					</div>
 				</div>
 			</div>
