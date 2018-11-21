@@ -58,6 +58,22 @@ header {
 	}
 }
 
+.dropdown-menu {
+	i {
+		margin-right: 10px;
+		font-size: @x-small;
+	}
+}
+
+.dropdown-item:hover, 
+.dropdown-item:focus,
+.dropdown-item.active, 
+.dropdown-item:active {
+    color: @ice;
+    opacity: 0.9;
+    background-color: transparent;
+}
+
 // Menu mobile (slide in)
 @media screen and (max-width: 991px) {
 	html.easy-sidebar-active {

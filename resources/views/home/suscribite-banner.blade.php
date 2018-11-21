@@ -3,6 +3,6 @@
         <div class="title">
             <h2>Unite a Radiko y sumate a una vida más sana</h2>
         </div>
-        <button class="btn-primary btn btn-medium"> Registrate </button>
+        <a href="{{ url('/registro') }}" class="btn-primary btn btn-medium"> Registrate </a>
     </div>
 </section>

@@ -29,7 +29,7 @@
 								</div>
 							</div>
 
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<button type="button" class="closes" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
@@ -48,13 +48,22 @@
 				<div class="container">
 					<ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#huerta-productos-listado" role="tab" aria-controls="huerta-productos-listado" aria-selected="true">Productos</a>
+							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#huerta-productos-listado" role="tab" aria-controls="huerta-productos-listado" aria-selected="true">
+								<span class="d-none d-sm-block">Productos</span>
+								<i class="far fa-shopping-cart d-md-none"></i>
+							</a>
 						</li>
 						<li class="nav-item disabledTab">
-							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#huerta-informacion" role="tab" aria-controls="huerta-informacion" aria-selected="false">Información</a>
+							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#huerta-informacion" role="tab" aria-controls="huerta-informacion" aria-selected="false">
+								<span class="d-none d-sm-block">Información</span>
+								<i class="far fa-info-circle d-md-none"></i>
+							</a>
 						</li>
 						<li class="nav-item disabledTab">
-							<a class="nav-link" id="contact-tab" data-toggle="tab" href="#huerta-rating" role="tab" aria-controls="huerta-rating" aria-selected="false">Rating</a>
+							<a class="nav-link" id="contact-tab" data-toggle="tab" href="#huerta-rating" role="tab" aria-controls="huerta-rating" aria-selected="false">
+								<span class="d-none d-sm-block">Rating</span>
+								<i class="far fa-star d-md-none"></i>
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -63,7 +72,7 @@
 		
 			<div class="container">
 				<div class="tab-content">
-					<div class="tab-pane fade" id="huerta-productos-listado" role="tabpanel" aria-labelledby="huerta-productos-listado">
+					<div class="tab-pane fade show active" id="huerta-productos-listado" role="tabpanel" aria-labelledby="huerta-productos-listado">
 
 						{{-- @foreach ($huerta->productos as $producto)
 						
@@ -157,7 +166,7 @@
 													<div class="card-info dark-border">
 														<h3>{{ $producto->producto }}</h3>
 														<div class="more-info">
-															<span class="categoria d-block">{{ $producto->producto }}</span>
+															{{-- <span class="categoria d-block">{{ $producto->producto }}</span> --}}
 															<span class="precio d-block">
 																<span class="bold">{{ $producto->precio }}</span> x {{ $producto->unidadDeMedida->unidad }}.
 															</span>
@@ -180,50 +189,121 @@
 					</div>
 
 					<div class="tab-pane fade" id="huerta-informacion" role="tabpanel" aria-labelledby="huerta-informacion">
-						<div class="row">
-							<div class="col col-md-4">
-								<div class="card">
-									<div class="card-header">
-										Información
+						<div class="huerta-informacion">
+							<div class="row">
+								<div class="col-xs-12 col-md-4 d-none d-md-block">
+
+									<!-- Horarios de envio desktop -->
+									<div class="horarios-envios">
+										<h2>Horarios de de envío Capital Federal</h2>
+										
+										<ul class="simple-list">
+											<li class="d-flex justify-content-between flex-wrap">
+												<span class="datecol semi-bold">Martes</span>
+												<span class="hourscol">
+													<span class="open">11:00</span> - <span class="closes">04:00</span>
+												</span>
+											</li>
+											<li clas class="d-flex justify-content-between flex-wrap"s="selected">
+												<span class="datecol semi-bold">Miércoles</span>
+												<span class="hourscol">
+													<span class="open">09:00</span> - <span class="closes">12:00</span>
+													| <span class="open">16:00</span> - <span class="closes">20:00</span>
+												</span>
+											</li>
+											<li class="d-flex justify-content-between flex-wrap">
+												<span class="datecol semi-bold">Jueves</span>
+												<span class="hourscol">
+													<span class="open">09:00</span> - <span class="closes">12:00</span>
+													| <span class="open">16:00</span> - <span class="closes">20:00</span>
+												</span>
+											</li>
+											<li class="d-flex justify-content-between flex-wrap">
+												<span class="datecol semi-bold">Viernes</span>
+												<span class="hourscol">
+													<span class="open">09:00</span> - <span class="closes">12:00</span>
+													| <span class="open">16:00</span> - <span class="closes">20:00</span>
+												</span>
+											</li>
+											<li class="d-flex justify-content-between flex-wrap">
+												<span class="datecol semi-bold">Sábado</span>
+												<span class="hourscol">
+													<span class="open">19:00</span> - <span class="closes">16:00</span>
+												</span>
+											</li>
+										</ul>
 									</div>
-									<ul class="list-group list-group-flush">
-										<li class="list-group-item"><b>Nombre:</b> {{$huerta->huerta}}</li>
-										<li class="list-group-item"><b>Cuit:</b> {{$huerta->cuit}}</li>
-										<li class="list-group-item"><b>Razón social:</b> {{$huerta->razon_social}}</li>
-										<li class="list-group-item"><b>Dirección:</b> {{$huerta->direccion}}</li>
-										<li class="list-group-item"><b>Cantidad máxima de envios:</b> {{$huerta->cantidad_max_envios}}</li>
-										<li class="list-group-item"><b>Foto:</b> <img src="{{ url("storage/images/huertas/$huerta->foto") }}" alt=""></li>
-									</ul>
+								</div>
+								
+								<div class="col-xs-12 col-md-8">
+									<div class="d-flex flex-wrap">
+										<h2>Datos de {{$huerta->huerta}}</h2>
+										<ul class="simple-list datos">
+											<li class="d-flex justify-content-between flex-wrap">
+												<span class="semi-bold">Cuit:</span> 
+												<span>{{$huerta->cuit}}</span>
+											</li>
+											<li class="d-flex justify-content-between flex-wrap">
+												<span class="semi-bold">Razón social:</span>
+												<span> {{$huerta->razon_social}}</span>
+											</li>
+										</ul>
+									</div>
+
+									<!-- Horarios de envio mobile -->
+									<div class="d-block d-md-none">
+										<div class="horarios-envios">
+											<h2>Horarios de de envío Capital Federal</h2>
+											
+											<ul class="simple-list">
+												<li class="d-flex justify-content-between flex-wrap">
+													<span class="datecol semi-bold">Martes</span>
+													<span class="hourscol">
+														<span class="open">11:00</span> - <span class="closes">04:00</span>
+													</span>
+												</li>
+												<li clas class="d-flex justify-content-between flex-wrap"s="selected">
+													<span class="datecol semi-bold">Miércoles</span>
+													<span class="hourscol">
+														<span class="open">09:00</span> - <span class="closes">12:00</span>
+														| <span class="open">16:00</span> - <span class="closes">20:00</span>
+													</span>
+												</li>
+												<li class="d-flex justify-content-between flex-wrap">
+													<span class="datecol semi-bold">Jueves</span>
+													<span class="hourscol">
+														<span class="open">09:00</span> - <span class="closes">12:00</span>
+														| <span class="open">16:00</span> - <span class="closes">20:00</span>
+													</span>
+												</li>
+												<li class="d-flex justify-content-between flex-wrap">
+													<span class="datecol semi-bold">Viernes</span>
+													<span class="hourscol">
+														<span class="open">09:00</span> - <span class="closes">12:00</span>
+														| <span class="open">16:00</span> - <span class="closes">20:00</span>
+													</span>
+												</li>
+												<li class="d-flex justify-content-between flex-wrap">
+													<span class="datecol semi-bold">Sábado</span>
+													<span class="hourscol">
+														<span class="open">19:00</span> - <span class="closes">16:00</span>
+													</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<!-- Mapa desktop -->
+									<iframe class="d-none d-md-block" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26303.959583819764!2d-59.081505781772584!3d-34.50301235307769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1542803566910" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 								</div>
 							</div>
-							<div class="col col-md-4">
-								<div class="card">
-									<div class="card-header">
-										Featured
-									</div>
-									<ul class="list-group list-group-flush">
-										<li class="list-group-item">Cras justo odio</li>
-										<li class="list-group-item">Dapibus ac facilisis in</li>
-										<li class="list-group-item">Vestibulum at eros</li>
-									</ul>
-								</div>
-							</div>
-							<div class="col col-md-4">
-								<div class="card">
-									<div class="card-header">
-										Featured
-									</div>
-									<ul class="list-group list-group-flush">
-										<li class="list-group-item">Cras justo odio</li>
-										<li class="list-group-item">Dapibus ac facilisis in</li>
-										<li class="list-group-item">Vestibulum at eros</li>
-									</ul>
-								</div>
-							</div>
+							
+							<!-- Mapa mobile -->
+							<iframe class="d-block d-md-none" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26303.959583819764!2d-59.081505781772584!3d-34.50301235307769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1542803566910" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 						</div>
 					</div>
 
-					<div class="tab-pane fade show active" id="huerta-rating" role="tabpanel" aria-labelledby="huerta-rating">				
+					<div class="tab-pane fade" id="huerta-rating" role="tabpanel" aria-labelledby="huerta-rating">				
 							
 						<div class="row">
 							<div class="col-xs-12 col-md-4">
@@ -272,9 +352,9 @@
 										<li class="opinion-wrapper media">
 											<div class="media-img">
 												@if ( !empty($review->usuario->foto) ) 
-													<img class="mr-3 img-fluid" src="{{ $review->usuario->foto }}" alt="{{ $review->usuario->name }}">
+													<img class="img-fluid" src="{{ $review->usuario->foto }}" alt="{{ $review->usuario->name }}">
 												@else
-													<img class="mr-3 img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $review->usuario->name }}">
+													<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $review->usuario->name }}">
 												@endif
 											</div>
 											<div class="media-body">
@@ -351,7 +431,7 @@
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content block">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="closes" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>

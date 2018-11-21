@@ -40,8 +40,14 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="{{ route('perfil.detalle' , Auth::user()->id ) }}">Perfil</a>
-                        <a class="dropdown-item" href="{{ route('logout') }}">Cerrar sesión</a>
+                        <a class="dropdown-item" href="{{ route('perfil.detalle' , Auth::user()->id ) }}">
+                            <i class="fas fa-user"></i>
+                            <span>Perfil</span>
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Cerrar sesión</span>
+                        </a>
                     </div>
                 </div>
             </li>

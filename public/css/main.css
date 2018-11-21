@@ -5836,7 +5836,7 @@ readers do not read off random characters that represent icons */
 }
 .nav-tabs .nav-link {
   display: block;
-  padding: 0 40px;
+  padding: 0 35px;
   line-height: 45px;
   border-radius: 0;
   text-transform: uppercase;
@@ -5899,7 +5899,7 @@ h4 {
 }
 .simple-list li {
   margin: 10px 0;
-  font-size: 16px;
+  font-size: 14px;
 }
 .auth {
   min-height: 100vh;
@@ -6526,6 +6526,18 @@ header.sticky-header {
 header:not(.is-home) + main .main-wrapper {
   padding-top: 100px;
 }
+.dropdown-menu i {
+  margin-right: 10px;
+  font-size: 12px;
+}
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #FFFFFF;
+  opacity: 0.9;
+  background-color: transparent;
+}
 @media screen and (max-width: 991px) {
   html.easy-sidebar-active {
     height: 100%;
@@ -6669,6 +6681,22 @@ header:not(.is-home) + main .main-wrapper {
   .navbar ul li {
     margin-left: 2.5rem;
   }
+  .navbar-nav .dropdown-menu {
+    position: absolute;
+    background: transparent;
+    border: 0;
+    padding: 15px;
+    background: #B43F2C;
+    border-radius: 0;
+    margin-top: 29px;
+  }
+  .navbar-nav .dropdown-menu a {
+    font-size: 14px;
+    padding: 0;
+  }
+  .navbar-nav .dropdown-menu a:first-of-type {
+    padding-bottom: 15px;
+  }
 }
 .why-radiko {
   background-color: #7065B0;
@@ -6756,6 +6784,31 @@ header:not(.is-home) + main .main-wrapper {
 .header-huerta .diagonal {
   width: 100%;
 }
+.huerta-informacion iframe {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  height: 50vh;
+}
+.huerta-informacion h2 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+}
+.huerta-informacion .horarios-envios {
+  padding: 25px 0 15px;
+  border-bottom: 1px solid #DCDCDC;
+}
+.huerta-informacion .horarios-envios li > span {
+  display: block;
+  width: 100%;
+}
+.huerta-informacion .datos {
+  width: 100%;
+  padding: 15px;
+  background: #50D2A4;
+  color: #FFFFFF;
+  margin: 0;
+}
 @media screen and (min-width: 768px) {
   .top h2 {
     font-size: 24px;
@@ -6763,6 +6816,13 @@ header:not(.is-home) + main .main-wrapper {
   }
   .huerta-productos .card {
     width: 48%;
+  }
+  .huerta-informacion .horarios-envios {
+    margin-top: 0;
+  }
+  .huerta-informacion .datos {
+    width: 55%;
+    margin: 0;
   }
 }
 @media screen and (min-width: 992px) {
@@ -6851,7 +6911,7 @@ header:not(.is-home) + main .main-wrapper {
   position: absolute;
   height: 5px;
   width: 0%;
-  background: #50D2A4;
+  background: #7065B0;
   bottom: 0;
 }
 .ratings-cat .amount {
@@ -6966,7 +7026,7 @@ header:not(.is-home) + main .main-wrapper {
   position: relative;
   padding: 20px;
   padding-bottom: 65px;
-  border: 1px solid #898989;
+  border: 1px solid #DCDCDC;
   border-top: 0;
 }
 .destacado .text-block h2 {
