@@ -79,8 +79,11 @@ class PerfilController extends Controller
         //     'preparacion.required' => 'Debés ingresar la preparación'
         // ]);    
 
+
+
         $inputData = $request->input();
 
+        //dd($inputData);
         $usuario = User::find($id);
 
         $usuario->update($inputData);
