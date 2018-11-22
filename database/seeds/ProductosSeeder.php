@@ -20,6 +20,7 @@ class ProductosSeeder extends Seeder
       'unidad_de_medida_id' => 1,
       'foto' => 'p-1.jpg',
       'estado' => 1,
+      'categoria_id' => 1,
       'huerta_id' => 1
     ]);
     Producto::create([
@@ -30,6 +31,7 @@ class ProductosSeeder extends Seeder
       'unidad_de_medida_id' => 1,
       'foto' => 'p-2.jpg',
       'estado' => 1,
+      'categoria_id' => 1,
       'huerta_id' => 1
     ]);
     Producto::create([
@@ -40,6 +42,7 @@ class ProductosSeeder extends Seeder
       'unidad_de_medida_id' => 1,
       'foto' => 'p-3.jpg',
       'estado' => 1,
+      'categoria_id' => 1,
       'huerta_id' => 1
     ]);
     Producto::create([
@@ -50,6 +53,7 @@ class ProductosSeeder extends Seeder
       'unidad_de_medida_id' => 1,
       'foto' => 'p-4.jpg',
       'estado' => 1,
+      'categoria_id' => 1,
       'huerta_id' => 1
     ]);
     Producto::create([
@@ -60,6 +64,7 @@ class ProductosSeeder extends Seeder
       'unidad_de_medida_id' => 1,
       'foto' => 'p-5.jpg',
       'estado' => 1,
+      'categoria_id' => 1,
       'huerta_id' => 1
     ]);
     Producto::create([
@@ -70,6 +75,7 @@ class ProductosSeeder extends Seeder
       'unidad_de_medida_id' => 1,
       'foto' => 'p-6.jpg',
       'estado' => 1,
+      'categoria_id' => 1,
       'huerta_id' => 1
     ]);
     Producto::create([
@@ -80,6 +86,7 @@ class ProductosSeeder extends Seeder
       'unidad_de_medida_id' => 1,
       'foto' => 'p-7.jpg',
       'estado' => 1,
+      'categoria_id' => 1,
       'huerta_id' => 1
     ]);
     Producto::create([
@@ -90,7 +97,63 @@ class ProductosSeeder extends Seeder
       'unidad_de_medida_id' => 1,
       'foto' => 'p-8.jpg',
       'estado' => 1,
+      'categoria_id' => 1,
       'huerta_id' => 1
+    ]);
+    Producto::create([
+      'producto' => 'Ajo',
+      'descripcion' => 'Lorem ipsum dolor sit.',
+      'marca' => 'marca test',
+      'precio' => 150.00,
+      'unidad_de_medida_id' => 1,
+      'foto' => 'p-9.jpg',
+      'estado' => 1,
+      'categoria_id' => 2,
+      'huerta_id' => 2
+    ]);
+    Producto::create([
+      'producto' => 'Ajo 2',
+      'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit explicabo illo saepe, error? Explicabo, dolorum, molestiae! Laborum iure totam nesciunt. Facilis eius ea temporibus veritatis quo non maxime cum dolor repellendus in. Cum, dolore deleniti alias. Natus sint quidem, nesciunt consequuntur impedit quaerat accusamus earum sequi fuga incidunt, quis pariatur.',
+      'marca' => 'marca test',
+      'precio' => 150.00,
+      'unidad_de_medida_id' => 1,
+      'foto' => 'p-9.jpg',
+      'estado' => 1,
+      'categoria_id' => 3,
+      'huerta_id' => 3
+    ]);
+    Producto::create([
+      'producto' => 'Manzana',
+      'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit explicabo illo saepe, error? Explicabo, dolorum, molestiae! Laborum iure totam nesciunt. Facilis eius ea temporibus veritatis quo non maxime cum dolor repellendus in. Cum, dolore deleniti alias. Natus sint quidem, nesciunt consequuntur impedit quaerat accusamus earum sequi fuga incidunt, quis pariatur.',
+      'marca' => 'marca test',
+      'precio' => 150.00,
+      'unidad_de_medida_id' => 1,
+      'foto' => 'p-9.jpg',
+      'estado' => 1,
+      'categoria_id' => 4,
+      'huerta_id' => 1
+    ]);
+    Producto::create([
+      'producto' => 'Pera',
+      'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit explicabo illo saepe, error? Explicabo, dolorum, molestiae! Laborum iure totam nesciunt. Facilis eius ea temporibus veritatis quo non maxime cum dolor repellendus in. Cum, dolore deleniti alias. Natus sint quidem, nesciunt consequuntur impedit quaerat accusamus earum sequi fuga incidunt, quis pariatur.',
+      'marca' => 'marca test',
+      'precio' => 150.00,
+      'unidad_de_medida_id' => 1,
+      'foto' => 'p-9.jpg',
+      'estado' => 1,
+      'categoria_id' => 4,
+      'huerta_id' => 6
+    ]);
+    Producto::create([
+      'producto' => 'Calabaza',
+      'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit explicabo illo saepe, error? Explicabo, dolorum, molestiae! Laborum iure totam nesciunt. Facilis eius ea temporibus veritatis quo non maxime cum dolor repellendus in. Cum, dolore deleniti alias. Natus sint quidem, nesciunt consequuntur impedit quaerat accusamus earum sequi fuga incidunt, quis pariatur.',
+      'marca' => 'marca test',
+      'precio' => 150.00,
+      'unidad_de_medida_id' => 1,
+      'foto' => 'p-9.jpg',
+      'estado' => 1,
+      'categoria_id' => 5,
+      'huerta_id' => 7
     ]);
     Producto::create([
       'producto' => 'Ajo',
@@ -100,7 +163,19 @@ class ProductosSeeder extends Seeder
       'unidad_de_medida_id' => 1,
       'foto' => 'p-9.jpg',
       'estado' => 1,
-      'huerta_id' => 1
+      'categoria_id' => 6,
+      'huerta_id' => 4
+    ]);
+    Producto::create([
+      'producto' => 'Ajo',
+      'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit explicabo illo saepe, error? Explicabo, dolorum, molestiae! Laborum iure totam nesciunt. Facilis eius ea temporibus veritatis quo non maxime cum dolor repellendus in. Cum, dolore deleniti alias. Natus sint quidem, nesciunt consequuntur impedit quaerat accusamus earum sequi fuga incidunt, quis pariatur.',
+      'marca' => 'marca test',
+      'precio' => 150.00,
+      'unidad_de_medida_id' => 1,
+      'foto' => 'p-9.jpg',
+      'estado' => 1,
+      'categoria_id' => 6,
+      'huerta_id' => 3
     ]);
   }
 }
