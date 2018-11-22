@@ -23,6 +23,7 @@ class CrearTablaProductos extends Migration
             $table->tinyInteger('estado');
             $table->unsignedInteger('huerta_id');
             $table->unsignedInteger('unidad_de_medida_id');            
+            $table->unsignedInteger('categoria_id');            
             $table->softDeletes();
             $table->timestamps();
         });
