@@ -38,7 +38,7 @@
 			</div>
 
 			<div class="container">
-				<a href="{{ url('/') }}" class="link">
+				<a href="{{ url()->previous() }}" class="link">
 					<i class="fas fa-chevron-left"></i>
 					<span>volver</span>
 				</a>

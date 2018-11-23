@@ -26,15 +26,6 @@ class HuertasController extends Controller
     $categorias = Categoria::All();
     $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
 
-    // $huertas = Huerta::where('id', '1')->paginate(2);
-    // $huertas = DB::table('huertas')->simplePaginate(2);
-
-    // $huertas = Huerta::with('tipoHuerta')->get(); 
-
-    // dd($huertas);
-
-    // return view('principal', compact('huertas'));
-
     return view( 'principal', compact('huertasDestacadas', 'categorias', 'reviews') );
   } 
 
@@ -89,19 +80,16 @@ class HuertasController extends Controller
   {
 
     $huertas = DB::table('huertas')->paginate(6);
+
+
+
+
     $categorias = Categoria::All();
     $comentarios = Review::All()->where('stars', '>', 3);
-    // $calificacion = Review::All()->groupBy('huerta_id');
     $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
 
-    // dd($calificacion);
-    //dd($comentarios);
 
-    // @foreach($calificacion as $cali)
-    // @if ($cali->huerta_id == $huerta->id)
-    // {{ $cali->stars}}
-    // @endif
-    // @endforeach
+
 
     return view('huertas.index', compact('huertas', 'categorias','reviews'));
   }
@@ -115,29 +103,27 @@ class HuertasController extends Controller
   public function huertasByCategory( $id )
   {
 
-    //$huertas = DB::table('huertas')->where('categoria', $id)->paginate(6);
-    $huertas = DB::table('huertas')->paginate(6);
+    //dd($id);
+
+    //$var = $id;
+
+    //dd($var);
+
+    $huertas = Huerta::whereHas('productos', function ($query) use ($id) {
+      $query->where('categoria_id', $id);
+    })->paginate(1);
 
     //dd($huertas);
 
     $categorias = Categoria::All();
+    $categoriaSeleccionada = Categoria::find($id);
     $comentarios = Review::All()->where('stars', '>', 3);
-    // $calificacion = Review::All()->groupBy('huerta_id');
     $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
 
-    // dd($calificacion);
-    //dd($comentarios);
+    //dd($categoriaSeleccionada);
 
-    // @foreach($calificacion as $cali)
-    // @if ($cali->huerta_id == $huerta->id)
-    // {{ $cali->stars}}
-    // @endif
-    // @endforeach
-
-    return view('huertas.index', compact('huertas', 'categorias','reviews'));
+    return view('huertas.por-categoria', compact('huertas', 'categorias','reviews', 'categoriaSeleccionada'));
   }
-
-
 
 
   /**
