@@ -75,6 +75,12 @@ button:hover {
   color: #272727;
   text-decoration: none;
 }
+.link-simple {
+  color: #7065B0;
+}
+.link-simple:hover {
+  color: #7065B0;
+}
 .btn {
   color: #FFFFFF;
   border-radius: 0;
@@ -5895,6 +5901,15 @@ h4 {
 .light {
   color: #898989;
 }
+.sub-title {
+  margin: 25px 0;
+  padding: 25px 0;
+  border-top: 1px solid #DCDCDC;
+  border-bottom: 1px solid #DCDCDC;
+}
+.privacy {
+  padding-bottom: 10%;
+}
 .no-bullets {
   list-style: none;
   margin: 0;
@@ -5908,6 +5923,32 @@ h4 {
 .simple-list li {
   margin: 10px 0;
   font-size: 14px;
+}
+.big-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.big-list h3,
+.big-list h4 {
+  text-transform: none;
+}
+.big-list h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.big-list h4 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+.big-list > li {
+  margin-bottom: 25px;
+}
+.big-list ul {
+  list-style: disc;
+}
+.big-list ul li {
+  margin: 10px 0;
 }
 .auth {
   min-height: 100vh;
@@ -6228,6 +6269,11 @@ footer ul li {
   margin: 15px 0;
 }
 footer ul a {
+  color: #FFFFFF;
+  transition: .3s;
+}
+footer ul a:hover {
+  opacity: .8;
   color: #FFFFFF;
 }
 footer .download-btn li {

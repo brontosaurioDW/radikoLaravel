@@ -2,8 +2,6 @@
 
 @section ('title', 'Radiko')
 
-@section ('header-class', 'huerta-detalle')
-
 @section ('content')
 
 	<div class="main-wrapper relative">

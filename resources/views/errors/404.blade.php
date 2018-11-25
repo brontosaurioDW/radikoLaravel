@@ -2,8 +2,6 @@
 
 @section ('title', 'Radiko')
 
-@section ('header-class', 'huerta-detalle')
-
 @section ('content')
 
 <div style="min-height: calc(100vh - 90px - 250px)">
