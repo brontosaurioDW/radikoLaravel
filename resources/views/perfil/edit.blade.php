@@ -72,13 +72,13 @@
 							@endif
 						</div>
 
-						<div class="row-form">
+						{{-- <div class="row-form">
 							<label for="last_name">Contraseña</label>
 							<input type="password" name="password" id="password"  value="">
 							@if($errors->has('password'))
 							<small class="text-danger">{{ $errors->first('password') }}</small>
 							@endif
-						</div>
+						</div> --}}
 
 						<div class="row-form">
 							<label for="last_name">Teléfono</label>

@@ -48,7 +48,7 @@ class ReviewsController extends Controller
         //     'comentario.min' => 'El comentario de la receta debe tener al menos :min caracteres.'
         // ]);
 
-        Reviews::create($inputData);
+        Review::create($inputData);
 
         return back();        
 

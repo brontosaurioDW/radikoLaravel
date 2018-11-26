@@ -18,7 +18,7 @@
 			</p>
 
 			<div class="row">		
-				<div class="col-6">		
+				<div class="col-xs-6 col-lg-6">		
 					<ul class="big-list">
 						<li>
 							<h3>1. La información que recolectamos</h3>
@@ -89,7 +89,7 @@
 					</ul>
 				</div>
 
-				<div class="col-6">
+				<div class="col-xs-6 col-lg-6">
 					<ul class="big-list">
 						<li>
 							<h4>6.1. Bloquear o eliminar las Cookies</h4>

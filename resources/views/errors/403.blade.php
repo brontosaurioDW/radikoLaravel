@@ -23,7 +23,7 @@
 			</div>
 
 			<div class="error-msg">
-				<h3> La página que buscas no existe... </h3>
+				<h3> No tenés acceso a esta página... </h3>
 				<p>No te preocupes! podés volver al inicio y encontrar lo que estás buscando</p>
 				<button href="#" class="btn btn-primary btn-small">Volver al inicio</button>
 			</div>

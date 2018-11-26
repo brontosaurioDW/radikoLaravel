@@ -20,7 +20,7 @@
 			</p>
 
 			<div class="row">		
-				<div class="col-6">		
+				<div class="col-xs-12 col-lg-6">		
 					<ul class="big-list">
 						<li>
 							<h3>1. Definiciones</h3>
@@ -207,7 +207,7 @@
 					</ul>
 				</div>
 
-				<div class="col-6">
+				<div class="col-xs-12 col-lg-6">
 					<ul class="big-list">
 						<li>
 							<h4>5.2. Plataforma de pago </h4>
