@@ -392,19 +392,19 @@
 										<div class="star-rating">
 											<div class="star-rating-wrap">
 												
-												<input class="star-input" type="radio" name="ranking" id="stars1" value="1">
+												<input class="star-input" type="radio" name="stars" id="stars1" value="1">
 												<label class="star-font far fa-star" for="stars1"></label>
 											
-												<input class="star-input" type="radio" name="ranking" id="stars2" value="2">
+												<input class="star-input" type="radio" name="stars" id="stars2" value="2">
 												<label class="star-font far fa-star" for="stars2"></label>
 											
-												<input class="star-input" type="radio" name="ranking" id="stars3" value="3">
+												<input class="star-input" type="radio" name="stars" id="stars3" value="3">
 												<label class="star-font far fa-star" for="stars3"></label>
 											
-												<input class="star-input" type="radio" name="ranking" id="stars4" value="4">
+												<input class="star-input" type="radio" name="stars" id="stars4" value="4">
 												<label class="star-font far fa-star" for="stars4"></label>
 											
-												<input class="star-input" type="radio" name="ranking" id="stars5" value="5">
+												<input class="star-input" type="radio" name="stars" id="stars5" value="5">
 												<label class="star-font far fa-star" for="stars5"></label>
 											</div>									
 										</div>

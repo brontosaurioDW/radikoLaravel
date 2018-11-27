@@ -43,7 +43,7 @@ Route::get('/huertas/{huerta}', [
 
 Route::put('/huertas/{huerta}/comments', [
     'as' => 'huertas.comments',
-    'uses' => 'ComentariosController@store',
+    'uses' => 'ReviewsController@store',
 ]);
 
 
