@@ -33,7 +33,7 @@ php artisan storage:link
 
 ## Base de datos
 
-Es posible que al momento de realizar una migración con la base de datos no arroje un error del tipo SQLSTATE[42000]. Para corregir este error tenemos que editar el achivo __AppServiceProvider.php__ y colocar __Schema::defaultStringLength(191);__ dentro de la funccion boot().
+Es posible que al momento de realizar una migración con la base de datos nos arroje un error del tipo SQLSTATE[42000]. Para corregir este error tenemos que editar el achivo __AppServiceProvider.php__ y colocar __Schema::defaultStringLength(191);__ dentro de la funccion boot().
 
 ```php
 public function boot()

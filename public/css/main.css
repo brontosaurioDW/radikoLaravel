@@ -7,6 +7,7 @@ body {
 .main-wrapper {
   background: #FFFFFF;
   height: 100%;
+  min-height: 100vh;
   z-index: 1;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.8);
 }
@@ -52,6 +53,9 @@ button:hover {
   background-image: url(../images/trama-b.png);
   background-repeat: repeat;
 }
+.small-height {
+  padding-bottom: 5rem;
+}
 /*  Estrellitas para las reviews   */
 .stars i {
   font-size: 11px;
@@ -71,6 +75,12 @@ button:hover {
 .link:hover {
   color: #272727;
   text-decoration: none;
+}
+.link-simple {
+  color: #7065B0;
+}
+.link-simple:hover {
+  color: #7065B0;
 }
 .btn {
   color: #FFFFFF;
@@ -149,6 +159,11 @@ button:hover {
   line-height: 60px;
   height: 60px;
   font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+  .btn {
+    width: 100%;
+  }
 }
 /*
  *  Colores:
@@ -5887,6 +5902,15 @@ h4 {
 .light {
   color: #898989;
 }
+.sub-title {
+  margin: 25px 0;
+  padding: 25px 0;
+  border-top: 1px solid #DCDCDC;
+  border-bottom: 1px solid #DCDCDC;
+}
+.privacy {
+  padding-bottom: 10%;
+}
 .no-bullets {
   list-style: none;
   margin: 0;
@@ -5900,6 +5924,32 @@ h4 {
 .simple-list li {
   margin: 10px 0;
   font-size: 14px;
+}
+.big-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.big-list h3,
+.big-list h4 {
+  text-transform: none;
+}
+.big-list h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.big-list h4 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+.big-list > li {
+  margin-bottom: 25px;
+}
+.big-list ul {
+  list-style: disc;
+}
+.big-list ul li {
+  margin: 10px 0;
 }
 .auth {
   min-height: 100vh;
@@ -5916,7 +5966,7 @@ h4 {
   padding: 0;
 }
 .auth .info {
-  min-height: 25vh;
+  min-height: 40vh;
   background-size: 100%;
   width: 100vw;
   margin: 0 -15px;
@@ -6204,6 +6254,76 @@ h4 {
     margin: 3rem 0 2rem 0;
   }
 }
+.error h2 {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 95%;
+  margin: 0;
+}
+.error .error-msg {
+  padding-top: 2rem;
+  text-align: center;
+  width: 100%;
+}
+.error .error-msg h3 {
+  text-transform: none;
+  font-size: 1rem;
+}
+.error .error-msg .btn {
+  margin: 35px auto 0;
+  float: none;
+}
+@media screen and (min-width: 768px) {
+  .error h2 {
+    width: 75%;
+    text-align: left;
+    margin: 0;
+    font-weight: 600;
+    line-height: 140%;
+  }
+  .error h2 span {
+    display: block;
+    font-size: 4rem;
+    font-weight: 700;
+  }
+  .error .error-msg {
+    margin: 0 0 0 60%;
+    position: relative;
+    z-index: 1;
+    width: 35%;
+    text-align: left;
+  }
+  .error .error-msg .btn {
+    margin: 35px 0 0;
+    float: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  .error .error-msg {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .error h2 {
+    font-size: 3.5rem;
+  }
+  .error h2 span {
+    font-size: 6rem;
+  }
+  .error .error-msg {
+    margin: 0 0 0 58%;
+    width: 30%;
+  }
+  .error .error-msg h3 {
+    font-size: 1.5rem;
+  }
+  .error .error-msg p {
+    font-size: 1.2rem;
+  }
+}
 footer {
   background: #272727;
   color: #FFFFFF;
@@ -6220,6 +6340,11 @@ footer ul li {
   margin: 15px 0;
 }
 footer ul a {
+  color: #FFFFFF;
+  transition: .3s;
+}
+footer ul a:hover {
+  opacity: .8;
   color: #FFFFFF;
 }
 footer .download-btn li {
@@ -6819,6 +6944,7 @@ header:not(.is-home) + main .main-wrapper {
   }
   .huerta-informacion .horarios-envios {
     margin-top: 0;
+    padding-top: 0;
   }
   .huerta-informacion .datos {
     width: 55%;
@@ -6877,6 +7003,23 @@ header:not(.is-home) + main .main-wrapper {
   border-radius: 0;
   border: 0;
 }
+.user-info {
+  margin-bottom: 20px;
+}
+.user-info ul {
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+.orders li {
+  position: relative;
+}
+.orders li a {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
 .ratings-cat {
   list-style: none;
   margin: 0 0 30px;
@@ -6921,33 +7064,53 @@ header:not(.is-home) + main .main-wrapper {
   text-align: right;
   height: 15px;
 }
-.list-opiniones {
+.list-opiniones,
+.list-boxed {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.list-opiniones .media-img {
+.list-opiniones li,
+.list-boxed li {
+  margin: 15px 0;
+}
+.list-opiniones li > span:first-child,
+.list-boxed li > span:first-child {
+  width: 185px;
+}
+.list-opiniones .media-img,
+.list-boxed .media-img {
   width: 55px;
   height: 55px;
   overflow: hidden;
   margin-right: 15px;
 }
-.list-opiniones .opinion-wrapper {
+.list-opiniones .opinion-wrapper,
+.list-boxed .opinion-wrapper,
+.list-opiniones .list-wrapper,
+.list-boxed .list-wrapper {
   width: 100%;
   margin-bottom: 20px;
   border-bottom: 1px solid #DCDCDC;
   padding-bottom: 20px;
 }
-.list-opiniones .opinion-wrapper h3 {
+.list-opiniones .opinion-wrapper h3,
+.list-boxed .opinion-wrapper h3,
+.list-opiniones .list-wrapper h3,
+.list-boxed .list-wrapper h3 {
   font-size: 14px;
   margin: 5px 0 15px 0;
 }
-.list-opiniones .opinion-wrapper p {
+.list-opiniones .opinion-wrapper p,
+.list-boxed .opinion-wrapper p,
+.list-opiniones .list-wrapper p,
+.list-boxed .list-wrapper p {
   margin: 0;
   font-size: 12px;
   line-height: 180%;
 }
-.list-opiniones .stars {
+.list-opiniones .stars,
+.list-boxed .stars {
   color: #898989;
   text-align: center;
   font-size: 12px;
@@ -6955,11 +7118,13 @@ header:not(.is-home) + main .main-wrapper {
   display: inline-block;
   float: right;
 }
-.list-opiniones .stars i {
+.list-opiniones .stars i,
+.list-boxed .stars i {
   vertical-align: middle;
   margin: 0 0 0 5px;
 }
-.list-opiniones + .form {
+.list-opiniones + .form,
+.list-boxed + .form {
   margin-bottom: 25px;
   margin-top: 40px;
 }
@@ -7001,14 +7166,12 @@ header:not(.is-home) + main .main-wrapper {
   .ratings-cat .middle {
     width: 85%;
   }
-  .list-opiniones .opinion-wrapper {
+  .list-opiniones .opinion-wrapper,
+  .list-boxed .opinion-wrapper,
+  .list-opiniones .list-wrapper,
+  .list-boxed .list-wrapper {
     border: 1px solid #DCDCDC;
     padding: 15px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .list-opiniones .opinion-wrapper {
-    width: 49%;
   }
 }
 .features {

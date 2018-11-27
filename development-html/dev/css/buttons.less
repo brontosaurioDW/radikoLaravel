@@ -17,6 +17,14 @@
 	}
 }
 
+.link-simple {
+	color: @grape;
+
+	&:hover {
+		color: @grape;
+	}
+}
+
 .btn {
 	color: @ice;
 	border-radius: 0;
@@ -106,4 +114,10 @@
 	line-height: 60px;
 	height: 60px;
 	font-size: @regular;
+}
+
+@media screen and (max-width: 767px) {
+	.btn {
+		width: 100%;
+	}
 }

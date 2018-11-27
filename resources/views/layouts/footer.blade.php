@@ -10,9 +10,9 @@
                 </div>
                 <div class="col-md-3">
                     <ul>
-                        <li>
+                        {{-- <li>
                             <a href="{{ url('/legales/faq') }}">Preguntas frecuentes</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="{{ url('/legales/politica-privacidad') }}">Política de privacidad</a>
                         </li>

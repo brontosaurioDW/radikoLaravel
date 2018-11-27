@@ -2,8 +2,6 @@
 
 @section ('title', 'Radiko')
 
-{{-- @section ('header-class', 'huerta-detalle') --}}
-
 @section ('content')
 		
 	<div class="main-wrapper relative">
@@ -236,19 +234,22 @@
 								</div>
 								
 								<div class="col-xs-12 col-md-8">
-									<div class="d-flex flex-wrap">
-										<h2>Datos de {{$huerta->huerta}}</h2>
-										<ul class="simple-list datos">
-											<li class="d-flex justify-content-between flex-wrap">
-												<span class="semi-bold">Cuit:</span> 
-												<span>{{$huerta->cuit}}</span>
-											</li>
-											<li class="d-flex justify-content-between flex-wrap">
-												<span class="semi-bold">Razón social:</span>
-												<span> {{$huerta->razon_social}}</span>
-											</li>
-										</ul>
-									</div>
+									<h2>Datos de {{$huerta->huerta}}</h2>										
+
+									<ul class="list-boxed">
+										<li class="d-flex flex-wrap">
+											<span class="semi-bold">Cuit:</span> 
+											<span>{{$huerta->cuit}}</span>
+										</li>
+										<li class="d-flex flex-wrap">
+											<span class="semi-bold">Razón social:</span>
+											<span> {{$huerta->razon_social}}</span>
+										</li>
+										<li class="d-flex flex-wrap">
+											<span class="semi-bold">Dirección:</span>
+											<span> {{$huerta->direccion}}</span>
+										</li>
+									</ul>
 
 									<!-- Horarios de envio mobile -->
 									<div class="d-block d-md-none">
@@ -347,7 +348,7 @@
 							</div>
 
 							<div class="col-xs-12 col-md-8">
-								<ul class="list-opiniones d-flex justify-content-between flex-wrap">
+								<ul class="list-boxed">
 									@foreach ($huerta->reviews as $review)
 										<li class="opinion-wrapper media">
 											<div class="media-img">
