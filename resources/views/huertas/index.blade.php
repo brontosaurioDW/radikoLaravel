@@ -11,13 +11,13 @@
 				<div class="container">
 					<div class="row align-items-center">			
 						<div class="col-xs-12 col-md-3">
-							<a href="{{ url('/') }}" class="link">
+							<a href="{{ url()->previous() }}" class="link">
 								<i class="fas fa-chevron-left"></i>
 								<span>volver</span>
 							</a>
 						</div>
 						<div class="col-xs-12 col-md-9">
-							<h2 class="bold">XX huertas para la categoría seleccionada</h2>
+							<h2 class="bold">Conocé las huertas</h2>
 						</div>
 					</div>
 				</div>

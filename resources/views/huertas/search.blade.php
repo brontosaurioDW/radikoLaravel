@@ -11,7 +11,7 @@
 			<div class="container">
 				<div class="row align-items-center">			
 					<div class="col-xs-12 col-md-3">
-						<a href="{{ url('/') }}" class="link">
+						<a href="{{ url()->previous() }}" class="link">
 							<i class="fas fa-chevron-left"></i>
 							<span>volver</span>
 						</a>
