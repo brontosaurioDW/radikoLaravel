@@ -159,7 +159,7 @@
 											<div class="card no-border">
 												<a href="#" class="d-flex" data-toggle="modal" data-target="#producto-detalle">
 													<div class="img-wrapper">
-														<img class="card-img-top" src="{{ url('storage/images/'.$producto->foto) }}" alt="Card image cap">
+														<img class="card-img-top" src="{{ url('storage/images/productos/'.$producto->foto) }}" alt="Card image cap">
 													</div>
 													<div class="card-info dark-border">
 														<h3>{{ $producto->producto }}</h3>
