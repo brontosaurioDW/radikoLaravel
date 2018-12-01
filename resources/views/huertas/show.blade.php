@@ -7,7 +7,7 @@
 	<div class="main-wrapper relative">
 		<section class="huerta-detalle">
 			<div class="container-fluid">
-				<div class="header-huerta rdk-grape bg-trama-b d-flex justify-content-end">
+				<div class="header-huerta rdk-charcoal d-flex justify-content-end" style="background-image: url('../images/header-huerta.jpg');">
 					<div class="diagonal bg-trama">
 						<h2 class="huerta-title	">{{$huerta->huerta}}</h2>
 					</div>
@@ -159,7 +159,7 @@
 											<div class="card no-border">
 												<a href="#" class="d-flex" data-toggle="modal" data-target="#producto-detalle">
 													<div class="img-wrapper">
-														<img class="card-img-top" src="{{ url('storage/images/'.$producto->foto) }}" alt="Card image cap">
+														<img class="card-img-top" src="{{ url('storage/images/productos/'.$producto->foto) }}" alt="Card image cap">
 													</div>
 													<div class="card-info dark-border">
 														<h3>{{ $producto->producto }}</h3>
@@ -438,13 +438,13 @@
 					</button>
 
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-4 col-lg-6">
 							<div class="product-img">
 								<img class="img-fluid" src="{{ url('storage/images/p-1.jpg') }}" alt="tomates">
 								<span>Tallo Verde</span>
 							</div>
 						</div>
-						<div class="col-md-6 relative product-info">
+						<div class="col-md-8 col-lg-6 relative product-info">
 							<div class="card no-border">
 								<h2>Tomate</h2>
 

@@ -107,11 +107,3 @@
 	</div>
 
 @endsection
-
-
-
-
-
-
-
-

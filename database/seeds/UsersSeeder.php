@@ -13,6 +13,7 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
+		//#1
     	User::create([
     		'name' => 'Laura',
     		'last_name' => 'Mitono',
@@ -22,6 +23,7 @@ class UsersSeeder extends Seeder
     		'foto' => NULL,
     		'estado' => 'activo'
     	]);
+		//#2
         User::create([
             'name' => 'Florencia',
             'last_name' => 'Ederli',
@@ -31,6 +33,7 @@ class UsersSeeder extends Seeder
             'foto' => NULL,
             'estado' => 'activo'
         ]);
+		//#3
     	User::create([
     		'name' => 'Florencia',
     		'last_name' => 'Sepúlveda',
@@ -40,6 +43,7 @@ class UsersSeeder extends Seeder
     		'foto' => NULL,
     		'estado' => 'activo'
     	]);
+		//#4
     	User::create([
     		'name' => 'Emiliano',
     		'last_name' => 'Hotes',
@@ -49,6 +53,7 @@ class UsersSeeder extends Seeder
     		'foto' => 'emi.jpg',
     		'estado' => 'activo'
     	]);
+		//#5
     	User::create([
     		'name' => 'Germán',
     		'last_name' => 'Rodríguez',
@@ -58,6 +63,7 @@ class UsersSeeder extends Seeder
     		'foto' => NULL,
     		'estado' => 'activo'
     	]);
+		//#6
     	User::create([
     		'name' => 'Federico',
     		'last_name' => 'Noto',
@@ -67,6 +73,7 @@ class UsersSeeder extends Seeder
     		'foto' => 'fede.jpg',
     		'estado' => 'suspendido'
     	]);
+		//#7
     	User::create([
     		'name' => 'Santiago',
     		'last_name' => 'Gallino',
@@ -76,6 +83,7 @@ class UsersSeeder extends Seeder
     		'foto' => NULL,
     		'estado' => 'suspendido'
     	]);
+		//#8
     	User::create([
     		'name' => 'Mabel',
     		'last_name' => 'García',
@@ -85,6 +93,7 @@ class UsersSeeder extends Seeder
     		'foto' => NULL,
     		'estado' => 'activo'
     	]);
+		//#9
     	User::create([
     		'name' => 'Carlos',
     		'last_name' => 'Gomez',
@@ -94,6 +103,7 @@ class UsersSeeder extends Seeder
     		'foto' => 'carlos.jpg',
     		'estado' => 'activo'
     	]);
+		//#10
     	User::create([
     		'name' => 'Pedro',
     		'last_name' => 'Martinez',
@@ -103,23 +113,65 @@ class UsersSeeder extends Seeder
     		'foto' => 'pedro.png',
     		'estado' => 'suspendido'
     	]);
+		//#11
     	User::create([
     		'name' => 'Oscar',
     		'last_name' => 'Lopez',
     		'email' => 'huerta@talloverde.com',
     		'password' => \Hash::make('123'),
-    		'telephone' => '0-800-88-82556',
+    		'telephone' => '0-800-88-8256',
     		'foto' => 'oscar.png',
     		'estado' => 'pendiente de pago'
     	]);
+		//#12
     	User::create([
     		'name' => 'Mariano',
     		'last_name' => 'Pedraza',
     		'email' => 'info@estilorganico.com',
     		'password' => \Hash::make('123'),
-    		'telephone' => '15-2839-83358',
+    		'telephone' => '15-2839-8358',
     		'foto' => 'mariano.jpg',
     		'estado' => 'dado de baja'
+    	]);
+		//#13
+    	User::create([
+    		'name' => 'Clara',
+    		'last_name' => 'Diaz',
+    		'email' => 'info@eljardin.com',
+    		'password' => \Hash::make('123'),
+    		'telephone' => '15-2025-1564',
+    		'foto' => 'clara.jpg',
+    		'estado' => 'activo'
+    	]);
+		//#14
+    	User::create([
+    		'name' => 'Pedro',
+    		'last_name' => 'Mendoza',
+    		'email' => 'info@huertadepedro.com',
+    		'password' => \Hash::make('123'),
+    		'telephone' => '15-8974-6325',
+    		'foto' => 'pedro.jpg',
+    		'estado' => 'activo'
+    	]);
+		//#15
+    	User::create([
+    		'name' => 'Lara',
+    		'last_name' => 'Mugas',
+    		'email' => 'huerta@broteurbano.com',
+    		'password' => \Hash::make('123'),
+    		'telephone' => '15-6548-3214',
+    		'foto' => 'lara.jpg',
+    		'estado' => 'activo'
+    	]);
+		//#16
+    	User::create([
+    		'name' => 'Tomás',
+    		'last_name' => 'Laucier',
+    		'email' => 'huerta@mburucuyá.com',
+    		'password' => \Hash::make('123'),
+    		'telephone' => '15-8745-9632',
+    		'foto' => 'tomas.jpg',
+    		'estado' => 'activo'
     	]);
     }
 }

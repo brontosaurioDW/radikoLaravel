@@ -12,9 +12,11 @@ class TipoHuertaSeeder extends Seeder
      */
     public function run()
     {
+		//#1	
     	TipoHuerta::create([
-    		'tipo' => 'báscia'
+    		'tipo' => 'básica'
     	]);
+		//#2
     	TipoHuerta::create([
     		'tipo' => 'premium'
     	]);
