@@ -166,7 +166,7 @@
 														<div class="more-info">
 															{{-- <span class="categoria d-block">{{ $producto->producto }}</span> --}}
 															<span class="precio d-block">
-																<span class="bold">{{ $producto->precio }}</span> x {{ $producto->unidadDeMedida->unidad }}.
+																<span class="bold">$ {{ $producto->precio }}</span> x {{ $producto->unidadDeMedida->unidad }}.
 															</span>
 															<i class="far fa-chevron-right"></i>
 														</div>
@@ -431,46 +431,43 @@
 	<div class="modal fade" id="producto-detalle" tabindex="-1" role="dialog" aria-labelledby="producto-detalle" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content block">
-				<div class="modal-header">
-					<button type="button" class="closes" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
 				<div class="modal-body modal-producto">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-md-6">
-								<img class="img-fluid mb-3" src="{{ url('storage/images/p-1.jpg') }}" alt="tomates">
+
+					<button type="button" class="closes" data-dismiss="modal" aria-label="Close">
+						<i class="far fa-times"></i>
+					</button>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="product-img">
+								<img class="img-fluid" src="{{ url('storage/images/p-1.jpg') }}" alt="tomates">
+								<span>Tallo Verde</span>
 							</div>
-							<div class="col-md-6">
-								<h3 class="producto-title">Tomate</h3>
-								<h4 class="producto-title huerta"><a href="detalle-huerta.html">Tallo Verde</a></h4>
-				
-								<p class="producto-precio"><span>$40</span> x kg.</p>
+						</div>
+						<div class="col-md-6 relative product-info">
+							<div class="card no-border">
+								<h2>Tomate</h2>
+
+								<span class="precio d-block">
+									<span class="bold">$ 36.00</span> x kg.
+								</span>
 
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut error officia placeat illo alias cum minima dignissimos accusantium earum incidunt.</p>
 
-								<form method="" action="">
-									<div class="form-group row">
-										<label for="cantidad" class="col-12 col-lg-3 col-form-label">Cantidad</label>
-										<div class="col-12 col-lg-9">
-											<select class=" form-control custom-select mr-sm-2" id="cantidad">
+								<form method="" action="" class="form">
+									<div class="form">
+										<div class="row-form d-flex align-items-center flex-wrap justify-content-between">
+											<label for="cantidad">Cantidad</label>
+											<select class="select" id="cantidad">
 												<option selected>Elegir...</option>
 												<option value="1">1 kg</option>
 												<option value="2">2 kg</option>
 												<option value="3">3 kg</option>
 											</select>
 										</div>
-									</div>
-									<div class="form-group row">
-
-										<div class="col-12 boton-agregar">
-											<button class="btn btn-terciary btn-small" id="js-btn-agregar" data-dismiss="modal" onclick="myFunction()">Agregar</button>
-
-											{{-- <div class="col-12">
-												<a href="confirmacion-paso-1.html" class="btn btn-terciary btn-small">Agregar</a>
-											</div> --}}
-										</div>
+										<div class="row-form">
+											<button disabeld  class="btn btn-primary btn-medium" data-dismiss="modal" data-toggle="tooltip" data-placement="top" title="Próximamente" >Agregar al carrito</button>
+										</div>										
 									</div>
 								</form>
 							</div>
