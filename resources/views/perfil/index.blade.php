@@ -1,4 +1,4 @@
-@extends ('layouts.master')
+	@extends ('layouts.master')
 
 @section ('title', 'Radiko - Información usuario')
 
@@ -12,8 +12,8 @@
 						<h2>Mi perfil</h2>
 						
 						<div class="user-info">
-							@if ( !empty($usuario->foto) ) 
-								<img class="img-fluid" src="{{ $usuario->foto }}" alt="{{ $usuario->name }}">
+							@if ( !empty($usuario->foto) )
+								<img class="img-fluid" src="{{ url('storage/images/'.$usuario->foto) }}" alt="{{ $usuario->name }}">
 							@else
 								<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $usuario->name }}">
 							@endif
@@ -34,14 +34,6 @@
 								<li>
 									<span class="semi-bold">Teléfono:</span> 
 									<span>{{ $usuario->telephone }}</span>
-								</li>
-								<li>
-									<span class="semi-bold">Foto:</span> 
-									<span>{{ $usuario->foto }}</span>
-								</li>
-								<li>
-									<span class="semi-bold">Estado:</span> 
-									<span>{{ $usuario->estado }}</span>
 								</li>
 							</ul>
 
