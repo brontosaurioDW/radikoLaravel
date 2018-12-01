@@ -26,21 +26,21 @@
                         <li>
                             <a href="#">Contacto</a>
                         </li>
-                        <li>
-                            <a href="#">Tengo una huerta</a>
-                        </li>
+                        <!-- <li>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Próximamente">Tengo una huerta</a>
+                        </li> -->
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <div class="download-btn">
                         <ul class="d-flex align-items-center justify-content-center">
                             <li>
-                                <a href="#">
+                                <a href="#" data-toggle="tooltip" data-placement="top" title="Próximamente" class="d-block">
                                     <img src="{{ url('storage/images/google-play-btn.png') }}" alt="Download in Google Play" class="img-fluid">
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#" data-toggle="tooltip" data-placement="top" title="Próximamente" class="d-block">
                                     <img src="{{ url('storage/images/app-store-btn.png') }}" alt="Download in App Store" class="img-fluid">
                                 </a>
                             </li>
@@ -49,13 +49,13 @@
                     <div class="social">
                         <ul class="d-flex align-items-center justify-content-center">
                             <li>
-                                <a href="#">
+                                <a href="https://instagram.com/radiko.ok" target="_blank">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
+                                <a href="https://pinterest.com/radiko_ok" target="_blank">
+                                    <i class="fab fa-pinterest"></i>
                                 </a>
                             </li>
                         </ul>

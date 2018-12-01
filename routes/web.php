@@ -250,3 +250,9 @@ Route::middleware('auth')->group(function() {
 	});
 
 });
+
+// Página en mantenimiento
+
+	Route::get('mantenimiento', function() {
+		return view('errors.mantenimiento');
+	});

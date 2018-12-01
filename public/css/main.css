@@ -6027,7 +6027,7 @@ h4 {
   }
   .auth .info {
     position: fixed;
-    width: 55%;
+    width: 60%;
     top: 0;
     bottom: 0;
   }
@@ -6273,14 +6273,17 @@ h4 {
   font-size: 1rem;
 }
 .error .error-msg .btn {
-  margin: 35px auto 0;
+  color: #FFFFFF;
+  display: inline-block;
   float: none;
+  margin: 35px auto 0;
+  padding: 0 15px;
+  width: auto;
 }
 @media screen and (min-width: 768px) {
   .error h2 {
-    width: 75%;
     text-align: left;
-    margin: 0;
+    margin: 0 40px;
     font-weight: 600;
     line-height: 140%;
   }
@@ -6290,10 +6293,9 @@ h4 {
     font-weight: 700;
   }
   .error .error-msg {
-    margin: 0 0 0 60%;
+    margin: 25px;
     position: relative;
     z-index: 1;
-    width: 35%;
     text-align: left;
   }
   .error .error-msg .btn {
@@ -6303,7 +6305,24 @@ h4 {
 }
 @media screen and (min-width: 992px) {
   .error .error-msg {
+    margin: 0 0 0 60%;
+    width: 35%;
     padding: 0;
+  }
+  .error h2 {
+    margin: 0 0 0 10%;
+  }
+  .error .info-right .error-msg {
+    margin: 0 0 0 5%;
+    width: 40%;
+  }
+  .error .info-right h2 {
+    width: 65%;
+    text-align: right;
+    font-size: 3.6rem;
+    font-weight: 700;
+    margin-right: 10%;
+    line-height: 100%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -6322,6 +6341,10 @@ h4 {
   }
   .error .error-msg p {
     font-size: 1.2rem;
+  }
+  .error .info-right h2 {
+    font-size: 4.5rem;
+    font-weight: 900;
   }
 }
 footer {
@@ -7236,6 +7259,11 @@ header:not(.is-home) + main .main-wrapper {
   right: 15px;
   top: 15px;
   color: #898989;
+  background: transparent;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
 }
 .search-sm {
   margin-bottom: 25px;
