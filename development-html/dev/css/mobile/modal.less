@@ -16,14 +16,18 @@
 	    z-index: 10;
 	}
 
+	.modal-body {
+		padding-top: 3rem;
+	}
+
 	.modal-content {
 		border: 0;
 		border-bottom: 5px solid @charcoal;
 		border-radius: 0;
 		box-shadow: none;
 
-		.product-info {
-			padding-bottom: 70px;
+		.product-img {
+			margin-bottom: 1.5rem;
 		}
 
 		.card {
@@ -54,6 +58,7 @@
 		}
 
 		.btn {
+			position: static;
 			bottom: 0;
 		    left: 15px;
 		    right: unset;
@@ -75,3 +80,5 @@
 	    text-shadow: 1px 1px 0 @charcoal;
 	}
 }
+
+@import url(../tablet/modal.less);

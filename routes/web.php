@@ -256,3 +256,9 @@ Route::middleware('auth')->group(function() {
 	Route::get('mantenimiento', function() {
 		return view('errors.mantenimiento');
 	});
+
+// Contacto
+
+	Route::get('contacto', function() {
+		return view('contacto.contacto');
+	});

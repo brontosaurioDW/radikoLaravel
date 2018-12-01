@@ -19,17 +19,20 @@
                         <li>
                             <a href="{{ url('/legales/terminos-condiciones') }}">Términos y condiciones</a>
                         </li>
+                        <li>
+                            <a href="{{ url('/contacto') }}">Contacto</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <ul>
+                    {{-- <ul>
                         <li>
                             <a href="#">Contacto</a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a href="#" data-toggle="tooltip" data-placement="top" title="Próximamente">Tengo una huerta</a>
-                        </li> -->
-                    </ul>
+                        </li>
+                    </ul> --}}
                 </div>
                 <div class="col-md-4">
                     <div class="download-btn">
