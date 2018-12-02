@@ -7185,6 +7185,7 @@ header:not(.is-home) + main .main-wrapper {
 }
 .user-info {
   margin-bottom: 20px;
+  margin-top: 45px;
 }
 .user-info ul {
   padding: 10px 0;

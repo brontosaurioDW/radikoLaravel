@@ -40,7 +40,7 @@ class UsersSeeder extends Seeder
     		'email' => 'flor@mail.com',
     		'password' => \Hash::make('123'),
     		'telephone' => '2365-4578',
-    		'foto' => NULL,
+    		'foto' => 'flors.jpg',
     		'estado' => 'activo'
     	]);
 		//#4

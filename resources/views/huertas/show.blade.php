@@ -348,9 +348,9 @@
 								<li class="opinion-wrapper media">
 									<div class="media-img">
 										@if ( !empty($review->usuario->foto) ) 
-										<img class="img-fluid" src="{{ url('storage/images/'.$review->usuario->foto) }}" alt="{{ $review->usuario->name }}">
+											<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$review->usuario->foto) }}" alt="{{ $review->usuario->name }}">
 										@else
-										<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $review->usuario->name }}">
+											<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $review->usuario->name }}">
 										@endif
 									</div>
 									<div class="media-body">

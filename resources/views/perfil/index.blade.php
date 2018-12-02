@@ -13,7 +13,7 @@
 						
 						<div class="user-info">
 							@if ( !empty($usuario->foto) )
-								<img class="img-fluid" src="{{ url('storage/images/'.$usuario->foto) }}" alt="{{ $usuario->name }}">
+								<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$usuario->foto) }}" alt="{{ $usuario->name }}">
 							@else
 								<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $usuario->name }}">
 							@endif
