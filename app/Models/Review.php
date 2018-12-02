@@ -17,6 +17,11 @@ class Review extends Model
 		'usuario_id'
 	];
 
+	public static $rules = [
+		'stars' => 'required',
+		'comentario' => 'required'
+	];
+
 	protected $guarded = [];
 
 	public function huerta()

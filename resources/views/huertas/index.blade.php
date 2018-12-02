@@ -46,9 +46,9 @@
 									</select>
 								</div>
 								<div class="col-md-4 offset-md-4">
-									<form method="" action="">
+									<form action="{{ route('huertas.search') }}" method="get">
 										<div class="relative search-sm">
-											<input type="text" name="search" placeholder="¿Qué estás buscando?">
+											<input type="text" name="search" id="search" placeholder="¿Qué estás buscando?">
 											<button class="btn-search">
 												<span class="sr-only">Search</span>
 												<i class="fas fa-search"></i>

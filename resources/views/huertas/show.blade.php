@@ -168,8 +168,15 @@
 
 									@endforeach
 
+
+
 								</div>
 							</div>							
+							<nav aria-label="navigation">
+								<ul class="pagination">
+									<?php echo $productos->links(); ?>
+								</ul>
+							</nav>
 						</div>
 					</div>
 				</div>
