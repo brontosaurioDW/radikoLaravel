@@ -353,61 +353,41 @@ button:hover {
   margin-left: .3em;
 }
 .fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
 }
 .fa-pulse {
-  -webkit-animation: fa-spin 1s infinite steps(8);
   animation: fa-spin 1s infinite steps(8);
-}
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
 }
 @keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
-  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
-  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
-  -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-  -webkit-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 .fa-flip-horizontal.fa-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-  -webkit-transform: scale(-1, -1);
   transform: scale(-1, -1);
 }
 :root .fa-rotate-90,
@@ -6033,7 +6013,8 @@ h4 {
     -webkit-box-align: center;
     -ms-flex-align: center;
     -ms-grid-row-align: center;
-    align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
   }
   .auth .info {
     position: fixed;
@@ -6219,15 +6200,11 @@ h4 {
   bottom: 0;
 }
 .categories:before {
-  background: -moz-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
-  background: -webkit-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
   background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
   left: 0;
 }
 .categories:after {
-  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
-  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=1);
   right: 0;
@@ -6741,16 +6718,13 @@ header:not(.is-home) + main .main-wrapper {
     bottom: 0;
   }
   body.toggled {
-    -webkit-transform: translateX(250px);
     transform: translateX(250px);
   }
   body.toggled .navbar-toggle {
     position: static;
   }
   body.toggled .navbar-toggle span.icon-bar:nth-child(2) {
-    -webkit-transform-origin: 0 50%;
     transform-origin: 0 50%;
-    -webkit-transform: translate(2px, -9px) rotate(45deg);
     transform: translate(2px, -9px) rotate(45deg);
     top: unset;
   }
@@ -6758,9 +6732,7 @@ header:not(.is-home) + main .main-wrapper {
     display: none;
   }
   body.toggled .navbar-toggle span.icon-bar:nth-child(4) {
-    -webkit-transform-origin: 0 50%;
     transform-origin: 0 50%;
-    -webkit-transform: translate(2px, 8px) rotate(-45deg);
     transform: translate(2px, 8px) rotate(-45deg);
     bottom: unset;
   }
@@ -6816,7 +6788,6 @@ header:not(.is-home) + main .main-wrapper {
     display: block;
   }
   .navbar.easy-sidebar.toggled {
-    -webkit-transform: translateX(250px);
     transform: translateX(250px);
   }
   .easy-sidebar .btn {
@@ -7141,7 +7112,7 @@ header:not(.is-home) + main .main-wrapper {
   margin-bottom: 0;
 }
 .modal .modal-content .product-info {
-  padding-bottom: 70px;
+  padding-bottom: 50px;
 }
 .modal .modal-content .btn {
   position: absolute;
@@ -7212,9 +7183,6 @@ header:not(.is-home) + main .main-wrapper {
   height: 15px;
 }
 .ratings-cat .middle span {
-  -webkit-transition: all 0.8s ease-in-out;
-  -moz-transition: all 0.8s ease-in-out;
-  -o-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
   position: absolute;
   height: 5px;

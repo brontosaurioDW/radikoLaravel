@@ -65,7 +65,7 @@
 										</li>
 									</ul>		
 
-									<a href="#" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
+									<a href="javascript:void(0)" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
 								</div>
 							</li>
 
@@ -87,7 +87,7 @@
 										</li>
 									</ul>		
 
-									<a href="#" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
+									<a href="javascript:void(0)" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
 								</div>
 							</li>
 
@@ -109,7 +109,7 @@
 										</li>
 									</ul>		
 
-									<a href="#" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
+									<a href="javascript:void(0)" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
 								</div>
 							</li>
 						</ul>

@@ -138,14 +138,14 @@
 							
 							<p>
 								<span class="bold">Registro de Huertas</span> 
-								ADIKO gestionará el Registro de las <span class="bold">Huertas</span> en la <span class="bold">Aplicación</span> y les proporcionará un nombre de usuario (username) y una clave de acceso (password) con los que podrá ingresar al sistema previa verificación de la documentación que acredite que es una huerta orgánica certificada. Para conocer la documentación requerida para aplicar como <span class="bold">Huerta</span> ingrese <a href="#" class="link-simple">aquí</a>.
+								ADIKO gestionará el Registro de las <span class="bold">Huertas</span> en la <span class="bold">Aplicación</span> y les proporcionará un nombre de usuario (username) y una clave de acceso (password) con los que podrá ingresar al sistema previa verificación de la documentación que acredite que es una huerta orgánica certificada. Para conocer la documentación requerida para aplicar como <span class="bold">Huerta</span> ingrese <a href="javascript:void(0)" class="link-simple">aquí</a>.
 							</p>
 							
 							<p>En ambos casos, tanto el username como el password son estrictamente confidenciales, personales e intransferibles.</p>
 							
 							<p>El <span class="bold">Usuario Registrado</span> se compromete a no divulgar los datos relativos a su cuenta ni hacerlos accesibles a terceros. El <span class="bold">Usuario Registrado</span> será el único responsable en caso de uso de dichos datos por terceros, incluidas las manifestaciones vertidas en la <span class="bold">Aplicación</span>, o cualquier otra actuación que se lleve a cabo mediante el uso del username y/o password.</p>
 							
-							<p>RADIKO no puede garantizar la identidad de los <span class="bold">Usuarios Registrados</span>, por tanto, no será responsable del uso de la identidad de un <span class="bold">Usuario Registrado</span> por terceros no registrados. Los <span class="bold">Usuarios Registrados</span> se obligan a poner inmediatamente en conocimiento de RADIKO la sustracción, divulgación o pérdida de su username o password,  comunicándolo a través del <a href="#" class="link-simple">Formulario de Contacto</a>.</p>
+							<p>RADIKO no puede garantizar la identidad de los <span class="bold">Usuarios Registrados</span>, por tanto, no será responsable del uso de la identidad de un <span class="bold">Usuario Registrado</span> por terceros no registrados. Los <span class="bold">Usuarios Registrados</span> se obligan a poner inmediatamente en conocimiento de RADIKO la sustracción, divulgación o pérdida de su username o password,  comunicándolo a través del <a href="javascript:void(0)" class="link-simple">Formulario de Contacto</a>.</p>
 
 							<h4>4.1. Perfil</h4>
 
@@ -202,7 +202,7 @@
 							<p> El <span class="bold">Cliente</span> deberá comprobar los productos que la <span class="bold">Huerta</span> le entregue en la dirección de entrega antes de proceder a firmar y ratificar la compra. Con la firma, el <span class="bold">Cliente</span> confirma y ratifica la compra o servicio realizado en su nombre. Asimismo, el <span class="bold">Cliente</span> manifiesta que un tercero podrá ratificar la compra en su nombre, por ejemplo en aquellos supuestos en que el <span class="bold">Cliente</span> no se encuentre en la dirección final de entrega o haya designado a un tercero para la recogida y firma. Así, recae sobre el <span class="bold">Cliente</span> y/o dicho tercero la responsabilidad de verificar la adecuación del servicio, así como de en su caso, recabar las evidencias suficientes para justificar lo contrario.</p>
 							</p>
 
-							<p> En todo caso, será potestad de la <span class="bold">Huerta</span> determinar en cada caso la procedencia de la devolución por lo que en caso de disputa, el <span class="bold">Cliente</span> deberá ponerlo en conocimiento de RADIKO a través del <a href="#" class="link-simple">Formulario de Contacto.</a></p>
+							<p> En todo caso, será potestad de la <span class="bold">Huerta</span> determinar en cada caso la procedencia de la devolución por lo que en caso de disputa, el <span class="bold">Cliente</span> deberá ponerlo en conocimiento de RADIKO a través del <a href="javascript:void(0)" class="link-simple">Formulario de Contacto.</a></p>
 						</li>
 					</ul>
 				</div>
@@ -269,13 +269,13 @@
 							
 							<p> El <span class="bold">Usuario</span> es responsable de mantener los datos de su cuenta de manera confidencial. </p>
 							
-							<p> Ver <a href="#" class="link-simple">Políticas de Privacidad.</a> </p>
+							<p> Ver <a href="javascript:void(0)" class="link-simple">Políticas de Privacidad.</a> </p>
 						</li>
 
 						<li>
 							<h3> 9. Notificaciones </h3>
 
-							<p> RADIKO podrá realizar las notificaciones oportunas al <span class="bold">Usuario Registrado</span> a través de una notificación general en la <span class="bold">Aplicación</span>, a través de mensajes de texto y la dirección de correo electrónico facilitada por el <span class="bold">Usuario</span> en su <span class="bold">Cuenta</span>. El <span class="bold">Usuario</span> podrá notificar a RADIKO mediante el envío de un correo electrónico a la dirección <a href="#" class="link-simple">hola@radiko.com.ar</a>	</p>
+							<p> RADIKO podrá realizar las notificaciones oportunas al <span class="bold">Usuario Registrado</span> a través de una notificación general en la <span class="bold">Aplicación</span>, a través de mensajes de texto y la dirección de correo electrónico facilitada por el <span class="bold">Usuario</span> en su <span class="bold">Cuenta</span>. El <span class="bold">Usuario</span> podrá notificar a RADIKO mediante el envío de un correo electrónico a la dirección <a href="javascript:void(0)" class="link-simple">hola@radiko.com.ar</a>	</p>
 						</li>
 
 						<li>
@@ -295,7 +295,7 @@
 
 							<p> RADIKO recomienda a los <span class="bold">Usuarios</span> verificar este documento regularmente para asegurarse de conocer la versión actual. </p> 
 
-							<p> Cualquier duda acerca de las condiciones de uso nos puede enviar un correo a la siguiente dirección: <a href="#" class="link-simple"> terminos@radiko.com.ar</a> </p>
+							<p> Cualquier duda acerca de las condiciones de uso nos puede enviar un correo a la siguiente dirección: <a href="javascript:void(0)" class="link-simple"> terminos@radiko.com.ar</a> </p>
 						</li>	
 					</ul>
 				</div>

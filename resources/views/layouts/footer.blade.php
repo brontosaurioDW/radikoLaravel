@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="d-none d-lg-block">
-                        <a href="#" class="logo-foo"> Rádiko </a>
+                        <a href="javascript:void(0)" class="logo-foo"> Rádiko </a>
                         <p> Tu huerta cerca </p>
                     </div>
                 </div>
@@ -27,10 +27,10 @@
                 <div class="col-md-3">
                     {{-- <ul>
                         <li>
-                            <a href="#">Contacto</a>
+                            <a href="javascript:void(0)">Contacto</a>
                         </li>
                         <li>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Próximamente">Tengo una huerta</a>
+                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Próximamente">Tengo una huerta</a>
                         </li>
                     </ul> --}}
                 </div>
@@ -38,12 +38,12 @@
                     <div class="download-btn">
                         <ul class="d-flex align-items-center justify-content-center">
                             <li>
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="Próximamente" class="d-block">
+                                <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Próximamente" class="d-block">
                                     <img src="{{ url('storage/images/google-play-btn.png') }}" alt="Download in Google Play" class="img-fluid">
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="Próximamente" class="d-block">
+                                <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Próximamente" class="d-block">
                                     <img src="{{ url('storage/images/app-store-btn.png') }}" alt="Download in App Store" class="img-fluid">
                                 </a>
                             </li>

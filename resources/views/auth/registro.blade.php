@@ -13,7 +13,7 @@
 					<span>volver</span>
 				</a>
 				<h1 class="d-block d-lg-none">
-				    <a href="#" class="logo"> Rádiko </a>
+				    <a href="javascript:void(0)" class="logo"> Rádiko </a>
 				</h1>
 			</div>
 
