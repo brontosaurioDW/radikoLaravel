@@ -35,6 +35,10 @@ class ReviewsController extends Controller
      */
     public function store(Request $request, $id)
     {
+        $request->validate(Review::$rules, [
+            'stars.required' => 'Debes elegir una cantidad de estrellas',
+            'comentario.required' => 'El campo comentario no puede estar vacio'
+        ]);
 
         $inputData = $request->all();
 

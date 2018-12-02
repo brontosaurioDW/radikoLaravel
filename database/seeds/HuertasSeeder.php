@@ -27,7 +27,7 @@ class HuertasSeeder extends Seeder
     ]);
 	//#2
     Huerta::create([
-		'huerta' => 'Huertas Orgánicas Urbana',
+		'huerta' => 'Huertas Orgánicas Urbanas',
 		'cuit' => 33214569528,
 		'razon_social' => 'Gonzales y Perez S.R.L',
 		'direccion'=> 'Av. Estado de Israel 4799',

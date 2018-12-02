@@ -33,7 +33,7 @@
 
 				<div class="col-xs-12 col-lg-9">
 					<div class="huerta-productos">
-						@if (!$huertas->isEmpty())
+						@if (!$huertas->isEmpty()) 
 							<div class="form">
 								<div class="row">
 									<div class="col-xs-12 col-md-4 d-none d-md-block">
@@ -47,7 +47,7 @@
 										</select>
 									</div>
 									<div class="col-md-4 offset-md-4">
-										<form method="" action="">
+										<form action="{{ route('huertas.search') }}" method="get">
 											<div class="relative search-sm">
 												<input type="text" name="search" placeholder="¿Qué estás buscando?">
 												<button class="btn-search">
