@@ -28,7 +28,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Array con las reglas de validación
+     * Array con las reglas de validación para el login
      *
      * @var array
      */
@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Array con las reglas de validación
+     * Array con las reglas de validación para el registro
      *
      * @var array
      */
@@ -46,6 +46,16 @@ class User extends Authenticatable
         'name' => 'required|min:3',
         'email' => 'required|max:255|email|unique:users',
         'password' => 'required|min:3|confirmed',
+    ];
+
+
+    /**
+     * Array con las reglas de validación para el formulario de edición
+     *
+     * @var array
+     */
+    public static $rules_edit = [
+        'name' => 'required|min:3'
     ];
 
 }

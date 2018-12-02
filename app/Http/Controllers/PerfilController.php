@@ -72,21 +72,16 @@ class PerfilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $request->validate(Receta::$rules_edit, [
-        //     'titulo.required' => 'El título de la receta no puede estar vacío.',
-        //     'titulo.min' => 'El título de la receta debe tener al menos :min caracteres.',
-        //     'ingredientes.required' => 'Debés ingresar los ingredientes',
-        //     'preparacion.required' => 'Debés ingresar la preparación'
-        // ]);    
+        $request->validate(User::$rules_edit, [
+            'name.required' => 'El nombre es requerido.',
+            'name.min' => 'El nombre debe tener al menos :min caracteres.'
+        ]);    
 
         $inputData = $request->input();
 
         $usuario = User::find($id);
 
         $usuario->update($inputData);
-
-        //dd($inputData);
-        //dd($usuario);
 
         return redirect()->route('perfil.detalle', $id )
         ->with(
