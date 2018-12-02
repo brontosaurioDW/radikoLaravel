@@ -4,16 +4,16 @@
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-/******/
+	/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
+	/******/ 			return installedModules[moduleId].exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
+	/******/ 			i: moduleId,
+	/******/ 			l: false,
+	/******/ 			exports: {}
 /******/ 		};
 /******/
 /******/ 		// Execute the module function
@@ -35,22 +35,22 @@
 /******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
+	/******/ 		if(!__webpack_require__.o(exports, name)) {
+		/******/ 			Object.defineProperty(exports, name, {
+			/******/ 				configurable: false,
+			/******/ 				enumerable: true,
+			/******/ 				get: getter
+		/******/ 			});
+	/******/ 		}
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
+	/******/ 		var getter = module && module.__esModule ?
+	/******/ 			function getDefault() { return module['default']; } :
+	/******/ 			function getModuleExports() { return module; };
+	/******/ 		__webpack_require__.d(getter, 'a', getter);
+	/******/ 		return getter;
 /******/ 	};
 /******/
 /******/ 	// Object.prototype.hasOwnProperty.call
@@ -64,16 +64,16 @@
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+	/* 0 */
+	/***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(1);
-module.exports = __webpack_require__(2);
+		__webpack_require__(1);
+		module.exports = __webpack_require__(2);
 
 
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
+	/***/ }),
+	/* 1 */
+	/***/ (function(module, exports) {
 
 
 /**
@@ -102,32 +102,39 @@ module.exports = __webpack_require__(2);
 /* 
 	AJAX de productos
 	*/
-var productos = document.querySelectorAll('[data-id]');
+	var productos = document.querySelectorAll('[data-id]');
 
-for (var i = 0; i < productos.length; i++) {
-	productoSeleccionado = productos[i];
-	productoSeleccionado.addEventListener('click', function () {
+	for (var i = 0; i < productos.length; i++) {
+		productoSeleccionado = productos[i];
+		productoSeleccionado.addEventListener('click', function () {
 
-		var idProducto = this.getAttribute('data-id');
+			var idProducto = this.getAttribute('data-id');
 
-		fetch('/api/huerta/producto/' + idProducto).then(function (response) {
-			return response.json();
-		}).then(function (data) {
+			fetch('http://localhost/proyectos/radikoLaravel/public/api/huerta/producto/' + idProducto, {
+				headers: {
+					"Content-Type": "application/json"
+				},
+			})
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (data) {
 
-			var productName = document.querySelector('[data-product-name]');
-			var productImage = document.querySelector('[data-product-image]');
-			var productPrice = document.querySelector('[data-product-price]');
-			var productDescription = document.querySelector('[data-product-description]');
+				var productName = document.querySelector('[data-product-name]');
+				var productImage = document.querySelector('[data-product-image]');
+				var productPrice = document.querySelector('[data-product-price]');
+				var productDescription = document.querySelector('[data-product-description]');
 
-			productName.innerHTML = data.producto;
-			productPrice.innerHTML = data.precio;
-			productDescription.innerHTML = data.descripcion;
-			productImage.setAttribute('src', 'http://localhost:8000/storage/images/productos/' + data.foto);
-		}).then(function (response) {
-			return $('#producto-detalle').modal('show');
+				productName.innerHTML = data.producto;
+				productPrice.innerHTML = data.precio;
+				productDescription.innerHTML = data.descripcion;
+				productImage.setAttribute('src', 'http://localhost/proyectos/radikoLaravel/public/images/productos/' + data.foto);
+			})
+			.then(function (response) {
+				return $('#producto-detalle').modal('show');
+			});
 		});
-	});
-}
+	}
 
 /* 
 	Listado de categorias
@@ -144,10 +151,10 @@ for (var i = 0; i < productos.length; i++) {
 // }
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports) {
+	/* 2 */
+	/***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ })
-/******/ ]);
+	/******/ ]);
