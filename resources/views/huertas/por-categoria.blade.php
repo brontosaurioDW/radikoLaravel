@@ -33,7 +33,7 @@
 
 				<div class="col-xs-12 col-lg-9">
 					<div class="huerta-productos">
-						@if (!$huertas->isEmpty())
+						@if (!$huertas->isEmpty()) 
 							<div class="form">
 								<div class="row">
 									<div class="col-xs-12 col-md-4 d-none d-md-block">
