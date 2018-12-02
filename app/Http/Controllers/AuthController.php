@@ -98,9 +98,10 @@ class AuthController extends Controller
         $input['password'] = \Hash::make($input['password']);
         $user = User::create($input);
 
-        return redirect('/')
+        return redirect()->route('login')
         ->with('status', 'Usuario registrado con éxito!');
     }
+
 
     /**
     * Realiza el logout del usuario
