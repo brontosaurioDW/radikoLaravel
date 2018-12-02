@@ -5,9 +5,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,8 +15,34 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
+// const app = new Vue({
+//     el: '#app'
+// });
+
+var productos = document.querySelectorAll('[data-id]');
+
+for (var i = 0; i < productos.length; i++) {
+	productoSeleccionado = productos[i]
+	productoSeleccionado.addEventListener('click', function() {
+
+		var idProducto = this.getAttribute('data-id')
+
+		fetch('/api/huerta/producto/' + idProducto)
+		.then(respuesta => respuesta.json())
+		.then(data => {
+			console.log("Data: ", data)
+
+		var productName = document.querySelector('[data-product-name]')
+		var productImage = document.querySelector('[data-product-image]')
+		var productDescription = document.querySelector('[data-product-description]')
+
+		productName.innerHTML = data.producto
+		productDescription.innerHTML = data.descripcion
+		productImage.setAttribute('src', 'http://localhost:8000/storage/images/productos/' + data.foto)
+
+		});
+	})
+}
+

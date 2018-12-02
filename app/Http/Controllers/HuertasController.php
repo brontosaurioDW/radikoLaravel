@@ -89,6 +89,22 @@ class HuertasController extends Controller
 
 
   /**
+   * API Huerta - traer producto por id
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function getProductobyId( $id )
+  {
+
+    $productoSeleccionado = Producto::find($id);
+
+    //dd('a');
+
+    return response()->json($productoSeleccionado);
+  }
+
+
+  /**
    * Show the form for creating a new resource.
    *
    * @return \Illuminate\Http\Response

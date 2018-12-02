@@ -83,6 +83,10 @@
 
 						@endforeach --}}
 
+						<p>{{ $productoSeleccionado or 'no se ha seleccionado' }}</p>
+
+
+
 						<div class="row">
 							<div class="col-xs-12 d-none d-lg-block col-lg-3">
 								{{-- FILTROS LATERALES  --}}
@@ -157,7 +161,7 @@
 										@foreach ($productos as $producto)
 
 											<div class="card no-border">
-												<a href="#" class="d-flex" data-toggle="modal" data-target="#producto-detalle">
+												<a href="#" class="d-flex" data-toggle="modal" data-target="#producto-detalle" data-id="{{$producto->id}}">
 													<div class="img-wrapper">
 														<img class="card-img-top" src="{{ url('storage/images/productos/'.$producto->foto) }}" alt="Card image cap">
 													</div>
@@ -440,19 +444,19 @@
 					<div class="row">
 						<div class="col-md-4 col-lg-6">
 							<div class="product-img">
-								<img class="img-fluid" src="{{ url('storage/images/p-1.jpg') }}" alt="tomates">
+								<img class="img-fluid" src="{{ url('storage/images/p-1.jpg') }}" alt="tomates" data-product-image>
 								<span>Tallo Verde</span>
 							</div>
 						</div>
 						<div class="col-md-8 col-lg-6 relative product-info">
 							<div class="card no-border">
-								<h2>Tomate</h2>
+								<h2 data-product-name>Tomate</h2>
 
 								<span class="precio d-block">
 									<span class="bold">$ 36.00</span> x kg.
 								</span>
 
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut error officia placeat illo alias cum minima dignissimos accusantium earum incidunt.</p>
+								<p data-product-description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut error officia placeat illo alias cum minima dignissimos accusantium earum incidunt.</p>
 
 								<form method="" action="" class="form">
 									<div class="form">
