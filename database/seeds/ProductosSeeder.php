@@ -64,7 +64,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Jardín Orgánico',
 		'precio' => 125.90,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-6.jpg',
+		'foto' => 'dur01.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 1,
 		'huerta_id' => 1
@@ -76,7 +76,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Mitden',
 		'precio' => 36.00,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-1.jpg',
+		'foto' => 'tom01.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 2,
 		'huerta_id' => 1
@@ -87,7 +87,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Mitden',
 		'precio' => 75.50,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-2.jpg',
+		'foto' => 'lec01.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 2,
 		'huerta_id' => 1
@@ -98,7 +98,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Jardín Orgánico',
 		'precio' => 44.00,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-3.jpg',
+		'foto' => 'mor01.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 2,
 		'huerta_id' => 1
@@ -109,7 +109,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Mitden',
 		'precio' => 29.99,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-4.jpg',
+		'foto' => 'zan01.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 2,
 		'huerta_id' => 1
@@ -120,7 +120,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Jardín Orgánico',
 		'precio' => 39.00,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-7.jpg',
+		'foto' => 'pal01.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 1,
 		'huerta_id' => 1
@@ -132,7 +132,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'marca test',
 		'precio' => 115.00,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-8.jpg',
+		'foto' => 'pep01.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 2,
 		'huerta_id' => 1
@@ -144,7 +144,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Ecoville',
 		'precio' => 122.00,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-1.jpg',
+		'foto' => 'pan01.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 3,
 		'huerta_id' => 1
@@ -155,7 +155,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Ecoville',
 		'precio' => 99.90,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-1.jpg',
+		'foto' => 'pan02.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 3,
 		'huerta_id' => 1
@@ -167,7 +167,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Coeco',
 		'precio' => 299.99,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-1.jpg',
+		'foto' => 'gra01.jpg',
 		'estado' => 1,
 		'categoria_id' => 4,
 		'huerta_id' => 1
@@ -178,7 +178,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Coeco',
 		'precio' => 453.80,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-1.jpg',
+		'foto' => 'gra02.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 4,
 		'huerta_id' => 1
@@ -190,7 +190,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Cabras de Cafayate',
 		'precio' => 170.50,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-1.jpg',
+		'foto' => 'lac01.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 5,
 		'huerta_id' => 1
@@ -201,7 +201,7 @@ class ProductosSeeder extends Seeder
 		'marca' => 'Soyana',
 		'precio' => 138.90,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-1.jpg',
+		'foto' => 'lac05.jpg', //ok
 		'estado' => 1,
 		'categoria_id' => 5,
 		'huerta_id' => 1
@@ -240,8 +240,111 @@ class ProductosSeeder extends Seeder
 		'categoria_id' => 6,
 		'huerta_id' => 1
     ]);
-	
-	
+		//Especias
+	Producto::create([
+		'producto' => 'Pimentón ahumado',
+		'descripcion' => 'Producto sin conservantes ni aditivos. 100 % natural, ápto para celíacos y con certificación Kosher - parve.
+		Este producto es rico en vitamina K, vitamina B5 y vitamina B6.
+		Su alto contenido de hierro ayuda a prevenir la anemia. Favorece a la buena circulación y mejora la presión arterial.',
+		'marca' => 'Arytza',
+		'precio' => 98.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'esp01.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 7,
+		'huerta_id' => 1
+    ]);	
+	Producto::create([
+		'producto' => 'Mix dulce - Sabor Toffee',
+		'descripcion' => 'Para saborizar bebidas frías, calientes y pastelería. Contiene Cacao, sabor caramelo y crema.',
+		'marca' => 'Saros',
+		'precio' => 127.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'esp02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 7,
+		'huerta_id' => 1
+    ]);	
+	Producto::create([
+		'producto' => 'Mix dulce - Sabor marroqui',
+		'descripcion' => 'Con canela, jengibre, nuez moscada, cardamomo y clavo de olor
+		Un aroma irresistible, donde el dulzor de la canela y el distintivo sabor del jengibre se mezclan con notas de finas especias dulces como la nuez moscada y el cardamomo, mas una pizca de clavo de olor.',
+		'marca' => 'Saros',
+		'precio' => 127.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'esp03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 7,
+		'huerta_id' => 1
+    ]);	
+		//Semillas
+	Producto::create([
+		'producto' => 'Arroz Blanco',
+		'descripcion' => 'Producto sin conservantes ni aditivos. 100 % natural, ápto para celíacos.',
+		'marca' => 'Terrasana - Sabores de la tierra',
+		'precio' => 70.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'sem01.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 8,
+		'huerta_id' => 1
+    ]);	
+	Producto::create([
+		'producto' => 'Arroz integral',
+		'descripcion' => 'Producto sin conservantes ni aditivos. 100 % natural, ápto para celíacos.',
+		'marca' => 'Terrasana - Sabores de la tierra',
+		'precio' => 73.50,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'sem02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 8,
+		'huerta_id' => 1
+    ]);	
+	Producto::create([
+		'producto' => 'Arroz Yamaní',
+		'descripcion' => 'Producto sin conservantes ni aditivos. 100 % natural, ápto para celíacos.',
+		'marca' => 'Terrasana - Sabores de la tierra',
+		'precio' => 85.70,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'sem03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 8,
+		'huerta_id' => 1
+    ]);		
+		//Embasados
+	Producto::create([
+		'producto' => 'Aceto balsámico',
+		'descripcion' => 'Elaborado en barricas de roble en forma artesanal. Ingredientes: vino orgánico, mosto de uva orgánico. Libre de gluten.',
+		'marca' => 'Terrasana - Sabores de la tierra',
+		'precio' => 175.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'emb01.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 9,
+		'huerta_id' => 1
+    ]);	
+	Producto::create([
+		'producto' => 'Aceite de oliva extra virgen',
+		'descripcion' => 'Aceite de Oliva, Extra Virgen, prensado en frío.',
+		'marca' => 'Esencias de la Tierra',
+		'precio' => 296.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'emb02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 9,
+		'huerta_id' => 1
+    ]);	
+	Producto::create([
+		'producto' => 'Vinagre de uva blanco',
+		'descripcion' => 'Vino orgánico..',
+		'marca' => 'Terrasana - Sabores de la tierra',
+		'precio' => 121.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'emb03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 9,
+		'huerta_id' => 1
+    ]);	
 	
 	
 	//Productos huerta #2

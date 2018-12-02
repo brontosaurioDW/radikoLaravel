@@ -15,7 +15,7 @@
 
     <ul>
         <li>
-            <a href="#" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
+            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
                 <i class="fas fa-shopping-cart"></i>
             </a>
         </li>
@@ -35,7 +35,7 @@
             @if(Auth::check())
             <li>
                 <div class="dropdown show">
-                    <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                        
+                    <a href="javascript:void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                        
                         Bienvenido/a {{ Auth::user()->name }}                    
                     </a>
 
@@ -60,7 +60,7 @@
             </li>
             @endif
             <li class="d-none d-lg-block">
-                <a href="#" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
+                <a href="javascript:void(0)" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
             </li>

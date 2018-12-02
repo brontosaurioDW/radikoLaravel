@@ -145,7 +145,7 @@
 									@foreach ($productos as $producto)
 
 									<div class="card no-border">
-										<a href="#" class="d-flex" data-target="#producto-detalle" data-id="{{$producto->id}}">
+										<a href="javascript:void(0)" class="d-flex" data-target="#producto-detalle" data-id="{{$producto->id}}">
 											<div class="img-wrapper">
 												<img class="card-img-top" src="{{ url('storage/images/productos/'.$producto->foto) }}" alt="Card image cap">
 											</div>
@@ -160,10 +160,10 @@
 												</div>
 											</div>								
 										</a>
-										<span class="envio">
+										{{-- <span class="envio">
 											<i class="fal fa-truck"></i>
 											<span>Costo de envío: $150 / $195</span>
-										</span>
+										</span> --}}
 									</div>
 
 									@endforeach
@@ -429,7 +429,6 @@
 					<div class="col-md-4 col-lg-6">
 						<div class="product-img">
 							<img class="img-fluid" src="{{ url('storage/images/p-1.jpg') }}" alt="tomates" data-product-image>
-							<span>Tallo Verde</span>
 						</div>
 					</div>
 					<div class="col-md-8 col-lg-6 relative product-info">

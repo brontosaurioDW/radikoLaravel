@@ -5964,6 +5964,9 @@ h4 {
 .auth {
   min-height: 100vh;
 }
+.auth .msg-alert {
+  margin-bottom: 15px;
+}
 .auth .logo {
   background: url(../images/logo.png) no-repeat center center transparent;
   display: block;
@@ -6007,6 +6010,15 @@ h4 {
   display: inline-block;
   color: #272727;
 }
+.auth .accept {
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+}
+.auth .accept a {
+  float: none;
+  padding: 0;
+}
 @media screen and (min-width: 768px) {
   .auth form {
     margin: 70px auto 0;
@@ -6027,6 +6039,9 @@ h4 {
     clear: both;
     float: right;
   }
+  .auth .accept {
+    width: 50%;
+  }
 }
 @media screen and (min-width: 992px) {
   .auth {
@@ -6037,7 +6052,7 @@ h4 {
   }
   .auth .info {
     position: fixed;
-    width: 60%;
+    width: 55%;
     top: 0;
     bottom: 0;
   }
@@ -7141,7 +7156,7 @@ header:not(.is-home) + main .main-wrapper {
   margin-bottom: 0;
 }
 .modal .modal-content .product-info {
-  padding-bottom: 70px;
+  padding-bottom: 50px;
 }
 .modal .modal-content .btn {
   position: absolute;

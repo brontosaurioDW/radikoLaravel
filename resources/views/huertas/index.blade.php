@@ -33,7 +33,7 @@
 
 				<div class="col-xs-12 col-lg-9">
 					<div class="huerta-productos">
-						<form action="" method="" class="form">
+						<div class="form">
 							<div class="row">
 								<div class="col-xs-12 col-md-4 d-none d-md-block">
 									<label for="filtros" class="sr-only">Filtros</label>
@@ -57,7 +57,7 @@
 									</form>
 								</div>
 							</div>
-						</form>
+						</div>
 
 						<div class="d-flex flex-wrap justify-content-between">
 							@foreach ($huertas as $huerta)

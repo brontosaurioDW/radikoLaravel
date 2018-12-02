@@ -7,12 +7,12 @@
                 <div class="download-btn">
                     <ul class="no-bullets d-flex align-items-center justify-content-between">
                         <li>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Próximamente" class="d-block">
+                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Próximamente" class="d-block">
                                 <img src="{{ url('storage/images/app-store-btn.png') }}" alt="Download in App Store" class="img-fluid">
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Próximamente" class="d-block">
+                            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Próximamente" class="d-block">
                                 <img src="{{ url('storage/images/google-play-btn.png') }}" alt="Download in Google Play" class="img-fluid">
                             </a>
                         </li>
