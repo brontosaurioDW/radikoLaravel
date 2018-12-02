@@ -5964,6 +5964,9 @@ h4 {
 .auth {
   min-height: 100vh;
 }
+.auth .msg-alert {
+  margin-bottom: 15px;
+}
 .auth .logo {
   background: url(../images/logo.png) no-repeat center center transparent;
   display: block;

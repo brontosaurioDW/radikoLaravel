@@ -24,7 +24,7 @@
 					<h2>Login</h2>
 
 					@if(Session::has('status'))
-						<div class="text-danger">{{ Session::get('status') }}</div>
+						<div class="text-danger msg-alert">{{ Session::get('status') }}</div>
 					@endif
 					<div class="row-form">
 						<label class="sr-only">Usuario o email</label>
