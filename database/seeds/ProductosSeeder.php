@@ -185,7 +185,7 @@ class ProductosSeeder extends Seeder
     ]);
 		//Lacteos
     Producto::create([
-		'producto' => 'Queso de cabra semiduro sabor provenzal',
+		'producto' => 'Queso de cabra sabor provenzal',
 		'descripcion' => 'Ingredientes: Leche de cabra, sal, cuajos, fermentos lácticos.',
 		'marca' => 'Cabras de Cafayate',
 		'precio' => 170.50,
@@ -348,41 +348,262 @@ class ProductosSeeder extends Seeder
 	
 	
 	//Productos huerta #2
+		//Frutas
+	Producto::create([
+		'producto' => 'Manzana roja',
+		'descripcion' => 'Sabrosas y super frescas. Ideales para preparar tartas de manzana.',
+		'marca' => 'Riol',
+		'precio' => 65.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'man02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 2
+    ]);
+	Producto::create([
+		'producto' => 'Naranaja',
+		'descripcion' => 'Realmente ricas en vitamina C y B. Imperdibles para realizar sabrosos jugos.',
+		'marca' => 'Riol',
+		'precio' => 47.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'nar02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 2
+    ]);
+	Producto::create([
+		'producto' => 'Frutilla',
+		'descripcion' => 'Ideales para comer con crema y poder realizar tartas exquisitas.',
+		'marca' => 'Riol',
+		'precio' => 30.50,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'fru02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 2
+    ]);
+		//Verduras
     Producto::create([
 		'producto' => 'Ajo',
-		'descripcion' => 'Lorem ipsum dolor sit.',
-		'marca' => 'marca test',
-		'precio' => 150.00,
+		'descripcion' => 'Mejora la circulación: El ajo tiene efectos positivos sobre la actividad cardiovascular. Su consumo reduce los niveles de colesterol y de triglicéridos. Además, desacelera la velocidad de la coagulación y tiene propiedades antioxidantes.',
+		'marca' => 'Riol',
+		'precio' => 38.00,
 		'unidad_de_medida_id' => 1,
-		'foto' => 'p-9.jpg',
+		'foto' => 'ajo01.jpg',
 		'estado' => 1,
 		'categoria_id' => 2,
 		'huerta_id' => 2
     ]);
-	//Productos huerta #3
-    Producto::create([
-      'producto' => 'Ajo 2',
-      'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit explicabo illo saepe, error? Explicabo, dolorum, molestiae! Laborum iure totam nesciunt. Facilis eius ea temporibus veritatis quo non maxime cum dolor repellendus in. Cum, dolore deleniti alias. Natus sint quidem, nesciunt consequuntur impedit quaerat accusamus earum sequi fuga incidunt, quis pariatur.',
-      'marca' => 'marca test',
-      'precio' => 150.00,
-      'unidad_de_medida_id' => 1,
-      'foto' => 'p-9.jpg',
-      'estado' => 1,
-      'categoria_id' => 3,
-      'huerta_id' => 3
+	Producto::create([
+		'producto' => 'Tomate perita',
+		'descripcion' => 'Este fruto, alberga vitaminas C, B5, B2 y B1 y varios minerales.',
+		'marca' => 'Riol',
+		'precio' => 37.30,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'tom02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 2,
+		'huerta_id' => 2
     ]);
-    
+    Producto::create([
+		'producto' => 'Lechuga criolla',
+		'descripcion' => 'Con un verde que irradia esta lechuga es super fresca y con un sabor muy delicado, ideal para acompañar las ensaladas',
+		'marca' => 'Riol',
+		'precio' => 83.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'lec02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 2,
+		'huerta_id' => 2
+    ]);
+	//Harinas
+    Producto::create([
+		'producto' => 'Pan lacteado',
+		'descripcion' => 'Sin conservantes ni aditivos químicos.',
+		'marca' => 'Locta',
+		'precio' => 95.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'pan03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 3,
+		'huerta_id' => 2
+    ]);
+	//Granjas
+    Producto::create([
+		'producto' => 'Pechugas de pollo',
+		'descripcion' => 'Pechugas sin piel muy magras',
+		'marca' => 'Tenus',
+		'precio' => 260.30,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'gra03.jpg',
+		'estado' => 1,
+		'categoria_id' => 4,
+		'huerta_id' => 2
+    ]);
+	//Lacteos
+    Producto::create([
+		'producto' => 'Queso de cabra',
+		'descripcion' => 'Queso fresco a base de leche de cabra.',
+		'marca' => 'Tenus',
+		'precio' => 136.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'lac02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 5,
+		'huerta_id' => 2
+    ]);
+	//Carnes
+    Producto::create([
+		'producto' => 'Carne picada orgánica',
+		'descripcion' => 'Producto: Refrigerado y envasado al vacío por unidad.',
+		'marca' => 'Carlitos',
+		'precio' => 595.50,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'car04.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 6,
+		'huerta_id' => 2
+    ]);
+	//Especias
+	Producto::create([
+		'producto' => 'Mix de vegetales deshidratados pesto',
+		'descripcion' => 'Blend de hierbas y especias: Sabores regionales Condimentos 100% naturales, SIN SAL SIN GMS (las aromáticas que se utilizan son orgánicas).',
+		'marca' => 'Saros',
+		'precio' => 107.50,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'esp04.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 7,
+		'huerta_id' => 2
+    ]);	
+	
+	
+	//Productos huerta #3
+		//Frutas
+	Producto::create([
+		'producto' => 'Manzana',
+		'descripcion' => 'Las mejores manzanas orgánicas. Cosechadas sin ningún producto químico.',
+		'marca' => 'Tallo Verde',
+		'precio' => 75.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'man03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 3
+    ]);
+		//Verduras
+    Producto::create([
+		'producto' => 'Tomate',
+		'descripcion' => 'Tomates deliciosos de estación. Es un alimento con escasa cantidad de calorías. El tomate es una fuente importante de ciertos minerales (como el potasio y el magnesio).',
+		'marca' => 'Tallo Verde',
+		'precio' => 38.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'tom03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 2,
+		'huerta_id' => 3
+    ]);
+    Producto::create([
+		'producto' => 'Lechuga criolla',
+		'descripcion' => 'La lechuga, desde el punto de vista alimentario, es especialmente apreciada por su frescura, gran digestibilidad y contenido de agua.',
+		'marca' => 'Tallo Verde',
+		'precio' => 46.50,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'lec03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 2,
+		'huerta_id' => 3
+    ]);
     Producto::create([
       'producto' => 'Pera',
-      'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit explicabo illo saepe, error? Explicabo, dolorum, molestiae! Laborum iure totam nesciunt. Facilis eius ea temporibus veritatis quo non maxime cum dolor repellendus in. Cum, dolore deleniti alias. Natus sint quidem, nesciunt consequuntur impedit quaerat accusamus earum sequi fuga incidunt, quis pariatur.',
-      'marca' => 'marca test',
+      'descripcion' => 'Muy beneficiosa. Entre las vitaminas que contiene la palta podemos resaltar la A, C, folato o B9, E, niacina o B3, piridoxxina o B6, riboflavina o B2 y tiamina o B1.',
+      'marca' => 'Tallo Verde',
       'precio' => 150.00,
       'unidad_de_medida_id' => 1,
-      'foto' => 'p-9.jpg',
+      'foto' => 'pal02.jpg',
       'estado' => 1,
-      'categoria_id' => 4,
-      'huerta_id' => 6
+      'categoria_id' => 2,
+      'huerta_id' => 3
     ]);
+		//Harinas
+    Producto::create([
+		'producto' => 'Pan de campo',
+		'descripcion' => 'Muy delicioso, sin conservantes ni aditivos químicos.',
+		'marca' => 'Carolu',
+		'precio' => 105.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'pan04.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 3,
+		'huerta_id' => 3
+    ]);
+		//Granjas
+    Producto::create([
+		'producto' => 'Salchichas de pollo',
+		'descripcion' => 'Salchicha elaborada con patamuslo Pastoríl y tocino.',
+		'marca' => 'Carolu',
+		'precio' => 300.80,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'gra04.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 4,
+		'huerta_id' => 3
+    ]);
+	//Lacteos
+    Producto::create([
+		'producto' => 'Queso de cabra',
+		'descripcion' => 'Queso estacionado fresco realizado con cabras de primera calidad.',
+		'marca' => 'Carolu',
+		'precio' => 154.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'lac03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 5,
+		'huerta_id' => 3
+    ]);
+	//Carnes
+    Producto::create([
+		'producto' => 'Milanesas de peceto sin rebozar',
+		'descripcion' => 'Carne de novillos criados y alimentados sobre pasturas de campos orgánicos certificados, únicos en el país.',
+		'marca' => 'Carolu',
+		'precio' => 595.50,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'car05.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 6,
+		'huerta_id' => 3
+    ]);
+	
+	
+	
+	
+	//Productos huerta #4
+	//Frutas
+	Producto::create([
+		'producto' => 'Manzana',
+		'descripcion' => 'Manzanas deliciosas que sirven para jugos y tartas.',
+		'marca' => 'Gatofer',
+		'precio' => 68.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'man04.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 4
+    ]);
+	Producto::create([
+		'producto' => 'Durazno',
+		'descripcion' => 'Aportan vitaminas, entre las que destaca la vitamina C y de minerales, y proporciones moderadas de carotenoides con actividad provitamínica A como alfa-caroteno, beta-caroteno y criptoxantina, así como de otros carotenoides sin esta actividad como luteína y zeaxantina.',
+		'marca' => 'Gatofer',
+		'precio' => 68.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'dur02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 4
+    ]);
+	
+	
+	
     Producto::create([
       'producto' => 'Calabaza',
       'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit explicabo illo saepe, error? Explicabo, dolorum, molestiae! Laborum iure totam nesciunt. Facilis eius ea temporibus veritatis quo non maxime cum dolor repellendus in. Cum, dolore deleniti alias. Natus sint quidem, nesciunt consequuntur impedit quaerat accusamus earum sequi fuga incidunt, quis pariatur.',
