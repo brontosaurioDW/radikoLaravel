@@ -34,31 +34,31 @@
 				<div class="col-xs-12 col-lg-9">
 					<div class="huerta-productos">
 						@if (!$productos->isEmpty())
-						<form action="" method="" class="form">
-							<div class="row">
-								<div class="col-xs-12 col-md-4 d-none d-md-block">
-									<label for="filtros" class="sr-only">Filtros</label>
-									<select class="select" id="filtros">
-										<option>Mejores puntuados</option>
-										<option>Más valorados</option>
-										<option>De mayor a menor</option>
-										<option>De menor a mayor</option>
-										<option>Los más nuevos</option>
-									</select>
-								</div>
-								<div class="col-md-4 offset-md-4">
-									<form method="" action="">
-										<div class="relative search-sm">
-											<input type="text" name="search" placeholder="¿Qué estás buscando?">
-											<button class="btn-search">
-												<span class="sr-only">Search</span>
-												<i class="fas fa-search"></i>
-											</button>
-										</div>
-									</form>
+							<div class="form">
+								<div class="row">
+									<div class="col-xs-12 col-md-4 d-none d-md-block">
+										<label for="filtros" class="sr-only">Filtros</label>
+										<select class="select" id="filtros">
+											<option>Mejores puntuados</option>
+											<option>Más valorados</option>
+											<option>De mayor a menor</option>
+											<option>De menor a mayor</option>
+											<option>Los más nuevos</option>
+										</select>
+									</div>
+									<div class="col-md-4 offset-md-4">
+										<form method="" action="">
+											<div class="relative search-sm">
+												<input type="text" name="search" placeholder="¿Qué estás buscando?">
+												<button class="btn-search">
+													<span class="sr-only">Search</span>
+													<i class="fas fa-search"></i>
+												</button>
+											</div>
+										</form>
+									</div>
 								</div>
 							</div>
-						</form>
 						@endif
 
 						<div class="d-flex flex-wrap justify-content-between">			

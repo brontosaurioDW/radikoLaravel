@@ -49,7 +49,14 @@
 						<input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmar contraseña">
 					</div>
 					<div class="row-form">
-						<button class="btn btn-secondary btn-small">Registrarse</button>
+						<div class="d-flex justify-content-between align-items-center flex-wrap">
+							<span class="accept">
+								Al registrarme acepto los 
+								<a href="{{ url('/legales/terminos-condiciones') }}" target="_blank" class="link">términos y condiciones</a> 
+								de Radiko
+							</span>
+							<button class="btn btn-secondary btn-small">Registrarse</button>
+						</div>
 						<a href="{{ url('/login') }}">¿Ya tenés cuenta? <span class="bold uppercase">Ingresá</span></a>
 					</div>
 				</div>
