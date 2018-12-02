@@ -98,6 +98,10 @@ module.exports = __webpack_require__(2);
 //     el: '#app'
 // });
 
+
+/* 
+	AJAX de productos
+	*/
 var productos = document.querySelectorAll('[data-id]');
 
 for (var i = 0; i < productos.length; i++) {
@@ -106,21 +110,38 @@ for (var i = 0; i < productos.length; i++) {
 
 		var idProducto = this.getAttribute('data-id');
 
-		fetch('/api/huerta/producto/' + idProducto).then(function (respuesta) {
-			return respuesta.json();
+		fetch('/api/huerta/producto/' + idProducto).then(function (response) {
+			return response.json();
 		}).then(function (data) {
-			console.log("Data: ", data);
 
 			var productName = document.querySelector('[data-product-name]');
 			var productImage = document.querySelector('[data-product-image]');
+			var productPrice = document.querySelector('[data-product-price]');
 			var productDescription = document.querySelector('[data-product-description]');
 
 			productName.innerHTML = data.producto;
+			productPrice.innerHTML = data.precio;
 			productDescription.innerHTML = data.descripcion;
 			productImage.setAttribute('src', 'http://localhost:8000/storage/images/productos/' + data.foto);
+		}).then(function (response) {
+			return $('#producto-detalle').modal('show');
 		});
 	});
 }
+
+/* 
+	Listado de categorias
+	*/
+// var categorias = document.querySelectorAll('[data-product-cateogry]');
+
+// console.log(categorias[1])
+// console.log(productos[1])
+
+// for (var i = 0; i < categorias.length; i++) {
+// 	categorias[i].addEventListener('click', function() {
+// 		console.log('check')
+// 	})
+// }
 
 /***/ }),
 /* 2 */

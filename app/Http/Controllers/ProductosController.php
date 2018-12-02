@@ -20,12 +20,6 @@ class ProductosController extends Controller
 
     $productos = Producto::with('unidadDeMedida')->get();
 
-
-    //dd($productos);
-
-    // $peliculas = Pelicula::with('director')->get();
-
-    //return view('peliculas.listado', [
     return view('productos/list', [
       'productos' => $productos
     ]);

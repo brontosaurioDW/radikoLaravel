@@ -38,21 +38,13 @@ class ReviewsController extends Controller
 
         $inputData = $request->all();
 
-        //dd($inputData);
-
         $inputData['usuario_id'] = auth()->id();
         $inputData['huerta_id'] = $id;
 
-        // $request->validate(Comentario::$rules, [
-        //     'comentario.required' => 'El comentario no puede estar vacío.',
-        //     'comentario.min' => 'El comentario de la receta debe tener al menos :min caracteres.'
-        // ]);
-
         Review::create($inputData);
 
-        return back();        
-
-        return redirect()->route('huertas');
+        return redirect()->back()
+        ->with('status', 'comment');
     }
 
     /**

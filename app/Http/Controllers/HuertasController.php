@@ -40,10 +40,10 @@ class HuertasController extends Controller
 
     $inputData = $request->get('search');
 
+    $huertas = Huerta::All();
     $categorias = Categoria::All();
     $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
-    $productos =  Producto::with('unidadDeMedida')->where('producto', 'LIKE', '%' . $inputData . '%')->get();
-    $huertas = DB::table('huertas')->paginate(3);
+    $productos =  Producto::with('unidadDeMedida')->where('producto', 'LIKE', '%' . $inputData . '%')->paginate(8);
 
     return view('huertas.search', compact('productos', 'categorias', 'reviews', 'huertas', 'inputData'));
 
@@ -77,7 +77,7 @@ class HuertasController extends Controller
 
     $huertas = Huerta::whereHas('productos', function ($query) use ($id) {
       $query->where('categoria_id', $id);
-    })->paginate(1);
+    })->paginate(6);
 
     $categorias = Categoria::All();
     $categoriaSeleccionada = Categoria::find($id);
@@ -97,8 +97,6 @@ class HuertasController extends Controller
   {
 
     $productoSeleccionado = Producto::find($id);
-
-    //dd('a');
 
     return response()->json($productoSeleccionado);
   }
