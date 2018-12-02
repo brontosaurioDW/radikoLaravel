@@ -48,9 +48,14 @@ class Handler extends ExceptionHandler
     {
 
         if ($exception instanceof \ErrorException) {
-            $response = response()->view('errors.404', [], 500);
+            $response = response()->view('errors.403', [], 500);
             return  $this->toIlluminateResponse($response,$exception);
         }
+
+        if($exception instanceof HttpException && $exception->getStatusCode() == 403){
+            $response = response()->view('errors.403', [], 403);
+            return  $this->toIlluminateResponse($response,$exception);
+        }    
 
         return parent::render($request, $exception);
     }

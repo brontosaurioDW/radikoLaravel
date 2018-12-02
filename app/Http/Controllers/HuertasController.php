@@ -97,6 +97,7 @@ class HuertasController extends Controller
   {
 
     $productoSeleccionado = Producto::find($id);
+    $categoria = Producto::find($id);
 
     return response()->json($productoSeleccionado);
   }
