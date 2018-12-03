@@ -80,8 +80,11 @@ class PerfilController extends Controller
             'name.min' => 'El nombre debe tener al menos :min caracteres.'
         ]);    
 
+
+
         $inputData = $request->input();
 
+        //dd($inputData);
         $usuario = User::find($id);
 
         if($request->hasFile('foto')) {
