@@ -5858,6 +5858,10 @@ readers do not read off random characters that represent icons */
 }
 .nav-tabs {
   margin-bottom: 30px;
+  outline: none;
+}
+.nav-tabs:focus {
+  outline: none;
 }
 .nav-tabs .nav-link {
   display: block;
@@ -5868,6 +5872,10 @@ readers do not read off random characters that represent icons */
   color: #898989;
   font-weight: 600;
   letter-spacing: 1px;
+  box-shadow: none;
+  outline: none;
+  border: 0;
+  border-bottom: 4px solid transparent;
 }
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {

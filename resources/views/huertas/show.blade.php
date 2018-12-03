@@ -51,13 +51,13 @@
 							<i class="far fa-shopping-cart d-md-none"></i>
 						</a>
 					</li>
-					<li class="nav-item disabledTab">
+					<li class="nav-item">
 						<a class="nav-link" id="profile-tab" data-toggle="tab" href="#huerta-informacion" role="tab" aria-controls="huerta-informacion" aria-selected="false">
 							<span class="d-none d-sm-block">Información</span>
 							<i class="far fa-info-circle d-md-none"></i>
 						</a>
 					</li>
-					<li class="nav-item disabledTab">
+					<li class="nav-item">
 						<a class="nav-link @if(Session::has('status')) active @endif" id="contact-tab" data-toggle="tab" href="#huerta-rating" role="tab" aria-controls="huerta-rating" aria-selected="false">
 							<span class="d-none d-sm-block">Rating</span>
 							<i class="far fa-star d-md-none"></i>
