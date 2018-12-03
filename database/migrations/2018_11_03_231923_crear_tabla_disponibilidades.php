@@ -19,6 +19,8 @@ class CrearTablaDisponibilidades extends Migration
             $table->enum('dias', ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sábado', 'domingo']);
             $table->datetime('inicio');
             $table->datetime('final');
+			$table->tinyInteger('activo');
+			$table->unsignedInteger('huerta_id');			
             $table->softDeletes();
             $table->timestamps();
         });
