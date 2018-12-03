@@ -388,7 +388,7 @@
 							@else
 							<p>
 								Para dejar un comentario debes 
-								<a href="{{ route( 'login' ) }}" class="link">iniciar sesion</a>
+								<a href="{{ route( 'login' ) }}" class="link">iniciar sesión</a>
 							</p>
 							@endif	
 						</div>
