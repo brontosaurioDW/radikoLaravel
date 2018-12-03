@@ -43,20 +43,7 @@
 				<i class="fas fa-chevron-left"></i>
 				<span>volver</span>
 			</a>
-
-			@if(true)
-			<p>test</p>
-			@endif
-
-
-			@if(!$errors->isEmpty() or Session::has('status'))
-			<p>test with errors</p>
-			@endif
-
-
 		</div>
-
-
 
 		<div class="tabs-outline">
 			<div class="container">
