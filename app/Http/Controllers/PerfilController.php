@@ -94,7 +94,7 @@ class PerfilController extends Controller
                 $constraint->aspectRatio();
             });
             $fotoName = $request->file('foto')->hashName('');
-            $filepath = $request->file('foto')->hashName('images/usuarios');
+            $filepath = $request->file('foto')->hashName('public/images/usuarios');
             Storage::put($filepath, (string) $image->encode());   
             $inputData['foto'] = $fotoName;
         } 
