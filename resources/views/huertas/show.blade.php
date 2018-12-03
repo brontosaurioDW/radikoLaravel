@@ -158,43 +158,22 @@
 
 								<!-- Horarios de envio desktop -->
 								<div class="horarios-envios">
-									<h2>Horarios de de envío Capital Federal</h2>
+									@if ($huerta->disponibilidad->isEmpty()) 
+			   							<p class="text-danger">No hay horarios disponibles para esta huerta</p>
+									@else
+										<h2>Horarios de de envío Capital Federal</h2>
 
-									<ul class="simple-list">
-										<li class="d-flex justify-content-between flex-wrap">
-											<span class="datecol semi-bold">Martes</span>
-											<span class="hourscol">
-												<span class="open">11:00</span> - <span class="closes">04:00</span>
-											</span>
-										</li>
-										<li clas class="d-flex justify-content-between flex-wrap"s="selected">
-											<span class="datecol semi-bold">Miércoles</span>
-											<span class="hourscol">
-												<span class="open">09:00</span> - <span class="closes">12:00</span>
-												| <span class="open">16:00</span> - <span class="closes">20:00</span>
-											</span>
-										</li>
-										<li class="d-flex justify-content-between flex-wrap">
-											<span class="datecol semi-bold">Jueves</span>
-											<span class="hourscol">
-												<span class="open">09:00</span> - <span class="closes">12:00</span>
-												| <span class="open">16:00</span> - <span class="closes">20:00</span>
-											</span>
-										</li>
-										<li class="d-flex justify-content-between flex-wrap">
-											<span class="datecol semi-bold">Viernes</span>
-											<span class="hourscol">
-												<span class="open">09:00</span> - <span class="closes">12:00</span>
-												| <span class="open">16:00</span> - <span class="closes">20:00</span>
-											</span>
-										</li>
-										<li class="d-flex justify-content-between flex-wrap">
-											<span class="datecol semi-bold">Sábado</span>
-											<span class="hourscol">
-												<span class="open">19:00</span> - <span class="closes">16:00</span>
-											</span>
-										</li>
-									</ul>
+										<ul class="simple-list">
+											@foreach ($huerta->disponibilidad as $disponibilidad)
+												<li class="d-flex justify-content-between flex-wrap">
+													<span class="datecol semi-bold">{{ $disponibilidad->dias }}</span>
+													<span class="hourscol">
+														{{  $disponibilidad->inicio }} - {{  $disponibilidad->final }}
+													</span>
+												</li>
+											@endforeach										
+										</ul>
+									@endif
 								</div>
 							</div>
 
