@@ -58,16 +58,18 @@ class AuthController extends Controller
             'password.min' => 'La contraseña debe tener al menos :min caracteres'
         ]);
 
-
         $input = $request->input();
 
         if (!Auth::attempt(
-          [
-            'password' => $input['password'], 
-            'email' => $input['email']
-        ])) {
-            return redirect()->route('login')
-            ->with('status', 'E-mail y/o password incorrectos.');
+            [
+                'password' => $input['password'], 
+                'email' => $input['email']
+            ])
+        ) {
+            return redirect()->route('login')->with([
+                'status' => 'E-mail y/o password incorrectos.',
+                'class' => 'alert-danger'
+            ]);
         }
 
         return redirect()->intended('/');
@@ -99,8 +101,10 @@ class AuthController extends Controller
         $input['password'] = \Hash::make($input['password']);
         $user = User::create($input);
 
-        return redirect()->route('login')
-        ->with('status', 'Usuario registrado con éxito!');
+        return redirect()->route('login')->with([
+            'status' => 'Usuario registrado con éxito!',
+            'class' => 'alert-success'
+        ]);
     }
 
 

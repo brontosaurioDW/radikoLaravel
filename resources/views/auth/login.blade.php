@@ -24,8 +24,13 @@
 					<h2>Login</h2>
 
 					@if(Session::has('status'))
-						<div class="text-danger msg-alert">{{ Session::get('status') }}</div>
+						<div class=""></div>
+
+						<div class="alert {{ Session::get('class') }}  msg-alert" role="alert">
+						  {{ Session::get('status') }}
+						</div>
 					@endif
+
 					<div class="row-form">
 						<label class="sr-only">Usuario o email</label>
 						<input type="text" id="email" name="email" value="{{ old('email')}}" placeholder="Usuario o email">
@@ -33,6 +38,7 @@
 							<small class="text-danger">{{ $errors->first('email') }}</small>
 						@endif
 					</div>
+
 					<div class="row-form">
 						<label class="sr-only">Contraseña</label>
 						<input type="password" name="password" id="password" placeholder="Contraseña">
@@ -40,13 +46,7 @@
 							<small class="text-danger">{{ $errors->first('password') }}</small>
 						@endif
 					</div>
-					{{-- <div class="row-form">
-						<label class="checkbox remember">
-							Recordarme
-							<input type="checkbox" name="remember">
-							<span class="checkmark"></span>
-						</label>
-					</div> --}}
+
 					<div class="row-form">
 						<button class="btn btn-secondary btn-small">Ingresar</button>
 						<a href="{{ url('/registro') }}">¿No tenés cuenta? <span class="bold uppercase">Regístrate</span></a>

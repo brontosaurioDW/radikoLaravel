@@ -7193,7 +7193,6 @@ header:not(.is-home) + main .main-wrapper {
 }
 .user-info {
   margin-bottom: 20px;
-  margin-top: 45px;
 }
 .user-info ul {
   padding: 10px 0;
@@ -7208,6 +7207,11 @@ header:not(.is-home) + main .main-wrapper {
   position: absolute;
   bottom: 15px;
   right: 15px;
+}
+.profile h2,
+.profile h3 {
+  font-size: 28px;
+  margin-bottom: 30px;
 }
 .ratings-cat {
   list-style: none;

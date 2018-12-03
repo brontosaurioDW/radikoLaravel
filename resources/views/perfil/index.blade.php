@@ -5,7 +5,7 @@
 @section ('content')
 
 	<div class="main-wrapper relative small-height">
-		<section class="container">
+		<section class="container profile">
 
 				<div class="row">
 					<div class="col-xs-12 col-md-5 col-lg-3">
