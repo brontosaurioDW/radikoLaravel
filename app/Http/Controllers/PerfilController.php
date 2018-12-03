@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Models\Usuario;
 use App\user;
 
+use Storage;
+use Image;
+
 class PerfilController extends Controller
 {
     /**
@@ -81,7 +84,23 @@ class PerfilController extends Controller
 
         $usuario = User::find($id);
 
+        if($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $image = Image::make($file);
+            $image->resize(500, 500, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            $fotoName = $request->file('foto')->hashName('');
+            $filepath = $request->file('foto')->hashName('images/usuarios');
+            Storage::put($filepath, (string) $image->encode());   
+            $inputData['foto'] = $fotoName;
+        } 
+
         $usuario->update($inputData);
+
+        if(isset($file) && !empty($file)) {
+            Storage::delete($file);
+        }
 
         return redirect()->route('perfil.detalle', $id )
         ->with(
