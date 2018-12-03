@@ -15,7 +15,7 @@
 		@endforeach
 	</ul>
 
-	<h3>Categoría</h3>
+	{{-- <h3>Categoría</h3>
 	<ul>
 		@foreach ($categorias as $categoria)
 		<li>
@@ -27,5 +27,5 @@
 			</label>
 		</li>
 		@endforeach
-	</ul>
+	</ul> --}}
 </div>
