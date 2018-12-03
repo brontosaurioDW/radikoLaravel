@@ -15,6 +15,8 @@ class AuthController extends Controller
     */
     public function showLogin()
     {
+        $prevRoute = url()->previous();
+
         return view('auth.login');
     } 
 
@@ -56,17 +58,18 @@ class AuthController extends Controller
             'password.min' => 'La contraseña debe tener al menos :min caracteres'
         ]);
 
-
         $input = $request->input();
 
         if (!Auth::attempt(
-          [
-            'password' => $input['password'], 
-            'email' => $input['email']
-        ])) {
-            return redirect()->route('login')
-            ->withInput()
-            ->with('status', 'E-mail y/o password incorrectos.');
+            [
+                'password' => $input['password'], 
+                'email' => $input['email']
+            ])
+        ) {
+            return redirect()->route('login')->with([
+                'status' => 'E-mail y/o password incorrectos.',
+                'class' => 'alert-danger'
+            ]);
         }
 
         return redirect()->intended('/');
@@ -83,7 +86,7 @@ class AuthController extends Controller
 
         $request->validate(User::$rules_register, [
             'name.required' => 'El campo de nombre es requerido',
-            'name.min' => 'El nombre no puede tener menos de :min caracteres',
+            'name.min' => 'El nombre debe tener menos de :min caracteres',
             'email.required' => 'El campo email es requerido',
             'email.max' => 'La dirección de mail no puede tener más de :max caracteres',
             'email.email' => 'La dirección de mail ingresada no es válida',
@@ -98,9 +101,12 @@ class AuthController extends Controller
         $input['password'] = \Hash::make($input['password']);
         $user = User::create($input);
 
-        return redirect('/')
-        ->with('status', 'Usuario registrado con éxito!');
+        return redirect()->route('login')->with([
+            'status' => 'Usuario registrado con éxito!',
+            'class' => 'alert-success'
+        ]);
     }
+
 
     /**
     * Realiza el logout del usuario

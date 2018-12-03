@@ -7,6 +7,7 @@ body {
 .main-wrapper {
   background: #FFFFFF;
   height: 100%;
+  min-height: 100vh;
   z-index: 1;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.8);
 }
@@ -60,6 +61,16 @@ button:hover {
   font-size: 11px;
   margin-right: 3px;
 }
+/*  Contacto  */
+.contact {
+  padding-bottom: 6rem;
+}
+.contact h2 {
+  margin-bottom: 1rem;
+}
+.contact i {
+  margin-right: 10px;
+}
 .link {
   color: #272727;
   font-weight: 600;
@@ -74,6 +85,12 @@ button:hover {
 .link:hover {
   color: #272727;
   text-decoration: none;
+}
+.link-simple {
+  color: #7065B0;
+}
+.link-simple:hover {
+  color: #7065B0;
 }
 .btn {
   color: #FFFFFF;
@@ -5841,6 +5858,10 @@ readers do not read off random characters that represent icons */
 }
 .nav-tabs {
   margin-bottom: 30px;
+  outline: none;
+}
+.nav-tabs:focus {
+  outline: none;
 }
 .nav-tabs .nav-link {
   display: block;
@@ -5851,6 +5872,10 @@ readers do not read off random characters that represent icons */
   color: #898989;
   font-weight: 600;
   letter-spacing: 1px;
+  box-shadow: none;
+  outline: none;
+  border: 0;
+  border-bottom: 4px solid transparent;
 }
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
@@ -5895,6 +5920,15 @@ h4 {
 .light {
   color: #898989;
 }
+.sub-title {
+  margin: 25px 0;
+  padding: 25px 0;
+  border-top: 1px solid #DCDCDC;
+  border-bottom: 1px solid #DCDCDC;
+}
+.privacy {
+  padding-bottom: 10%;
+}
 .no-bullets {
   list-style: none;
   margin: 0;
@@ -5909,8 +5943,37 @@ h4 {
   margin: 10px 0;
   font-size: 14px;
 }
+.big-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.big-list h3,
+.big-list h4 {
+  text-transform: none;
+}
+.big-list h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.big-list h4 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+.big-list > li {
+  margin-bottom: 25px;
+}
+.big-list ul {
+  list-style: disc;
+}
+.big-list ul li {
+  margin: 10px 0;
+}
 .auth {
   min-height: 100vh;
+}
+.auth .msg-alert {
+  margin-bottom: 15px;
 }
 .auth .logo {
   background: url(../images/logo.png) no-repeat center center transparent;
@@ -5924,7 +5987,7 @@ h4 {
   padding: 0;
 }
 .auth .info {
-  min-height: 25vh;
+  min-height: 40vh;
   background-size: 100%;
   width: 100vw;
   margin: 0 -15px;
@@ -5955,6 +6018,15 @@ h4 {
   display: inline-block;
   color: #272727;
 }
+.auth .accept {
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+}
+.auth .accept a {
+  float: none;
+  padding: 0;
+}
 @media screen and (min-width: 768px) {
   .auth form {
     margin: 70px auto 0;
@@ -5974,6 +6046,9 @@ h4 {
   .auth a {
     clear: both;
     float: right;
+  }
+  .auth .accept {
+    width: 50%;
   }
 }
 @media screen and (min-width: 992px) {
@@ -6212,6 +6287,99 @@ h4 {
     margin: 3rem 0 2rem 0;
   }
 }
+.error h2 {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 95%;
+  margin: 0;
+}
+.error .error-msg {
+  padding-top: 2rem;
+  text-align: center;
+  width: 100%;
+}
+.error .error-msg h3 {
+  text-transform: none;
+  font-size: 1rem;
+}
+.error .error-msg .btn {
+  color: #FFFFFF;
+  display: inline-block;
+  float: none;
+  margin: 35px auto 0;
+  padding: 0 15px;
+  width: auto;
+}
+@media screen and (min-width: 768px) {
+  .error h2 {
+    text-align: left;
+    margin: 0 40px;
+    font-weight: 600;
+    line-height: 140%;
+  }
+  .error h2 span {
+    display: block;
+    font-size: 4rem;
+    font-weight: 700;
+  }
+  .error .error-msg {
+    margin: 25px;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+  }
+  .error .error-msg .btn {
+    margin: 35px 0 0;
+    float: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  .error .error-msg {
+    margin: 0 0 0 60%;
+    width: 35%;
+    padding: 0;
+  }
+  .error h2 {
+    margin: 0 0 0 10%;
+  }
+  .error .info-right .error-msg {
+    margin: 0 0 0 5%;
+    width: 40%;
+  }
+  .error .info-right h2 {
+    width: 65%;
+    text-align: right;
+    font-size: 3.6rem;
+    font-weight: 700;
+    margin-right: 10%;
+    line-height: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .error h2 {
+    font-size: 3.5rem;
+  }
+  .error h2 span {
+    font-size: 6rem;
+  }
+  .error .error-msg {
+    margin: 0 0 0 58%;
+    width: 30%;
+  }
+  .error .error-msg h3 {
+    font-size: 1.5rem;
+  }
+  .error .error-msg p {
+    font-size: 1.2rem;
+  }
+  .error .info-right h2 {
+    font-size: 4.5rem;
+    font-weight: 900;
+  }
+}
 footer {
   background: #272727;
   color: #FFFFFF;
@@ -6227,7 +6395,15 @@ footer ul {
 footer ul li {
   margin: 15px 0;
 }
+footer ul li:first-child {
+  margin-top: 0;
+}
 footer ul a {
+  color: #FFFFFF;
+  transition: .3s;
+}
+footer ul a:hover {
+  opacity: .8;
   color: #FFFFFF;
 }
 footer .download-btn li {
@@ -6766,6 +6942,47 @@ header:not(.is-home) + main .main-wrapper {
     margin-top: 6rem;
   }
 }
+.no-results {
+  width: 100%;
+}
+.no-results p {
+  font-size: 20px;
+  color: #FFFFFF;
+  background: #50D2A4;
+  padding: 15px;
+  margin: 0;
+  width: 100%;
+}
+.no-results h2 {
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+}
+.no-results .search-form {
+  margin-top: 20px;
+  padding: 20px;
+  background: #C94B36;
+}
+.no-results .search-form input {
+  padding: 0 15px;
+  line-height: 60px;
+  height: 60px;
+}
+.no-results .search-form .btn-search {
+  font-size: 20px;
+  color: #898989;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: transparent;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+.no-results .search-form .form-row {
+  margin: 0;
+}
 .top {
   padding-bottom: 15px;
   border-bottom: 1px solid #DCDCDC;
@@ -6783,6 +7000,8 @@ header:not(.is-home) + main .main-wrapper {
   margin-top: 30px;
 }
 .header-huerta {
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   margin: -40px -15px 30px;
   padding: 65px 0;
@@ -6792,7 +7011,13 @@ header:not(.is-home) + main .main-wrapper {
 .header-huerta .diagonal {
   width: 100%;
 }
-.huerta-informacion iframe {
+.header-huerta h2 {
+  text-shadow: 4px 4px 0 black;
+  font-size: 3rem;
+  line-height: 100%;
+  font-weight: 700;
+}
+.huerta-informacion #map {
   width: 100%;
   margin-top: 25px;
   margin-bottom: 30px;
@@ -6854,15 +7079,95 @@ header:not(.is-home) + main .main-wrapper {
     width: 0;
     height: 0;
     border-width: 0 150px 230px 0;
-    border-color: transparent #5E5593 transparent transparent;
+    border-color: transparent #272727 transparent transparent;
     left: -150px;
   }
   .header-huerta h2 {
     font-size: 40px;
+    background: #272727;
     margin: 0;
     padding: 90px 25px 90px 30px;
-    background: #5E5593;
   }
+}
+.modal-backdrop.show {
+  opacity: 0.8;
+}
+.modal .closes {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  line-height: normal;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+.modal .modal-body {
+  padding-top: 3rem;
+}
+.modal .modal-content {
+  border: 0;
+  border-bottom: 5px solid #272727;
+  border-radius: 0;
+  box-shadow: none;
+}
+.modal .modal-content .product-img {
+  margin-bottom: 1.5rem;
+}
+.modal .modal-content .card {
+  position: static;
+}
+.modal .modal-content h2 {
+  font-weight: bold;
+}
+.modal .modal-content .precio + p {
+  line-height: 165%;
+  margin: 15px 0;
+  padding: 15px 0;
+  border-top: 1px solid #DCDCDC;
+  border-bottom: 1px solid #DCDCDC;
+}
+.modal .modal-content label {
+  min-height: unset;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+.modal .modal-content .select {
+  width: 75%;
+}
+.modal .modal-content .btn {
+  position: static;
+  bottom: 0;
+  left: 15px;
+  right: unset;
+  top: unset;
+}
+.product-img {
+  position: relative;
+}
+.product-img span {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 0 #272727;
+}
+.modal .modal-body {
+  padding-top: 15px;
+}
+.modal .modal-content .product-img {
+  margin-bottom: 0;
+}
+.modal .modal-content .product-info {
+  padding-bottom: 50px;
+}
+.modal .modal-content .btn {
+  position: absolute;
 }
 .pagination {
   margin: 20px auto 40px;
@@ -6902,6 +7207,11 @@ header:not(.is-home) + main .main-wrapper {
   position: absolute;
   bottom: 15px;
   right: 15px;
+}
+.profile h2,
+.profile h3 {
+  font-size: 28px;
+  margin-bottom: 30px;
 }
 .ratings-cat {
   list-style: none;
@@ -7119,6 +7429,11 @@ header:not(.is-home) + main .main-wrapper {
   right: 15px;
   top: 15px;
   color: #898989;
+  background: transparent;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
 }
 .search-sm {
   margin-bottom: 25px;

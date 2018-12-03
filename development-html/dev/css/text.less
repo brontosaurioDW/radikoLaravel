@@ -36,6 +36,16 @@ h4 {
 	color: @charcoal-lg;
 }
 
+.sub-title {
+    margin: 25px 0;
+    padding: 25px 0;
+    border-top: 1px solid @grey-md;
+    border-bottom: 1px solid @grey-md;
+}
+
+.privacy {
+	padding-bottom: 10%;
+}
 
 // Listas
 
@@ -53,5 +63,38 @@ h4 {
 		li {
 			margin: 10px 0;
 			font-size: @small;
+		}
+	}
+
+	.big-list {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		h3,
+		h4 {
+			text-transform: none;
+		}
+
+		h3 {
+			font-size: 1.2rem;
+		    margin-bottom: 20px;
+		}
+
+		h4 {
+			font-size: 1rem;
+			margin-bottom: 15px;
+		}
+
+		& > li {
+			margin-bottom: 25px;
+		}
+
+		ul {
+			list-style: disc;
+
+			li {
+				margin: 10px 0;
+			}
 		}
 	}

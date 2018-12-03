@@ -1,19 +1,19 @@
-@extends ('layouts.master')
+	@extends ('layouts.master')
 
 @section ('title', 'Radiko - Información usuario')
 
 @section ('content')
 
 	<div class="main-wrapper relative small-height">
-		<section class="container">
+		<section class="container profile">
 
 				<div class="row">
 					<div class="col-xs-12 col-md-5 col-lg-3">
 						<h2>Mi perfil</h2>
 						
 						<div class="user-info">
-							@if ( !empty($usuario->foto) ) 
-								<img class="img-fluid" src="{{ $usuario->foto }}" alt="{{ $usuario->name }}">
+							@if ( !empty($usuario->foto) )
+								<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$usuario->foto) }}" alt="{{ $usuario->name }}">
 							@else
 								<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $usuario->name }}">
 							@endif
@@ -34,14 +34,6 @@
 								<li>
 									<span class="semi-bold">Teléfono:</span> 
 									<span>{{ $usuario->telephone }}</span>
-								</li>
-								<li>
-									<span class="semi-bold">Foto:</span> 
-									<span>{{ $usuario->foto }}</span>
-								</li>
-								<li>
-									<span class="semi-bold">Estado:</span> 
-									<span>{{ $usuario->estado }}</span>
 								</li>
 							</ul>
 
@@ -73,7 +65,7 @@
 										</li>
 									</ul>		
 
-									<a href="#" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
+									<a href="javascript:void(0)" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
 								</div>
 							</li>
 
@@ -95,7 +87,7 @@
 										</li>
 									</ul>		
 
-									<a href="#" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
+									<a href="javascript:void(0)" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
 								</div>
 							</li>
 
@@ -117,7 +109,7 @@
 										</li>
 									</ul>		
 
-									<a href="#" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
+									<a href="javascript:void(0)" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
 								</div>
 							</li>
 						</ul>

@@ -13,7 +13,7 @@
                             <br>
                             Escribinos y te explicamos que necesitás. ¡Es súper simple!
                         </p>
-                        <a class="btn-primary btn btn-small" href="#">Contactate</a>
+                        <button data-toggle="tooltip" data-placement="top" title="Próximamente" class="btn-primary btn btn-small" href="javascript:void(0)">Contactate</button>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                         <p>
                             Si tenés un restaurante y querés comprar productos por mayor para tu cocina escribinos y te ponemos en contacto con una huerta.
                         </p>
-                        <a class="btn-primary btn btn-small" href="#">Contactate</a>
+                        <button data-toggle="tooltip" data-placement="top" title="Próximamente" class="btn-primary btn btn-small" href="javascript:void(0)">Contactate</button>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                         <p>
                             Si querés empezar a armar tu huerta pero no sabés como, ponete en contacto con nosotros que te vamos a ayudar en todo lo que necesites.
                         </p>
-                        <a class="btn-primary btn btn-small" href="#">Contactate</a>
+                        <button data-toggle="tooltip" data-placement="top" title="Próximamente" class="btn-primary btn btn-small" href="javascript:void(0)">Contactate</button>
                     </div>
                 </div>
             </div>

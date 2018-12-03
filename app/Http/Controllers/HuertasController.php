@@ -37,34 +37,13 @@ class HuertasController extends Controller
    */
   public function showSearchResults(Request $request)
   {
-    // Gets the query string from our form submission 
 
     $inputData = $request->get('search');
 
+    $huertas = Huerta::All();
     $categorias = Categoria::All();
     $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
-
-
-    //$query = Request::input('search'); 
-    //dd($query);
-    // Returns an array of articles that have the query string located somewhere within 
-    // our articles titles. Paginates them so we can break up lots of search results.
-
-    //$productos = DB::table('productos')->where('producto', 'LIKE', '%' . $inputData . '%')->get();
-
-    $productos =  Producto::with('unidadDeMedida')->where('producto', 'LIKE', '%' . $inputData . '%')->get();
-
-    //$productos = Producto::with('unidadDeMedida')->get()->where('huerta_id', $id);
-
-
-    //$huertas = Huerta::with('productos')->where('producto', 'LIKE', '%' . $inputData . '%');
-
-    //$huertas = Huerta::with('productos')->where('producto', 'LIKE', '%' . $inputData . '%');
-
-    //$huertas = Huerta::with('productos')->paginate(3);
-    $huertas = DB::table('huertas')->paginate(3);
-
-    //dd($productos);
+    $productos =  Producto::with('unidadDeMedida')->where('producto', 'LIKE', '%' . $inputData . '%')->paginate(8);
 
     return view('huertas.search', compact('productos', 'categorias', 'reviews', 'huertas', 'inputData'));
 
@@ -80,16 +59,9 @@ class HuertasController extends Controller
   {
 
     $huertas = DB::table('huertas')->paginate(6);
-
-
-
-
     $categorias = Categoria::All();
     $comentarios = Review::All()->where('stars', '>', 3);
     $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
-
-
-
 
     return view('huertas.index', compact('huertas', 'categorias','reviews'));
   }
@@ -103,26 +75,31 @@ class HuertasController extends Controller
   public function huertasByCategory( $id )
   {
 
-    //dd($id);
-
-    //$var = $id;
-
-    //dd($var);
-
     $huertas = Huerta::whereHas('productos', function ($query) use ($id) {
       $query->where('categoria_id', $id);
-    })->paginate(1);
-
-    //dd($huertas);
+    })->paginate(6);
 
     $categorias = Categoria::All();
     $categoriaSeleccionada = Categoria::find($id);
     $comentarios = Review::All()->where('stars', '>', 3);
     $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
 
-    //dd($categoriaSeleccionada);
-
     return view('huertas.por-categoria', compact('huertas', 'categorias','reviews', 'categoriaSeleccionada'));
+  }
+
+
+  /**
+   * API Huerta - traer producto por id
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function getProductobyId( $id )
+  {
+
+    $productoSeleccionado = Producto::find($id);
+    $categoria = Producto::find($id);
+
+    return response()->json($productoSeleccionado);
   }
 
 
@@ -157,7 +134,7 @@ class HuertasController extends Controller
   {
     $huerta = Huerta::find($id);
 
-    $productos = Producto::with('unidadDeMedida')->get()->where('huerta_id', $id);
+    $productos = Producto::with('unidadDeMedida')->where('huerta_id', $id)->paginate(8);
 
     return view('huertas.show', compact('huerta', 'productos'));
   }

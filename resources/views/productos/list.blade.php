@@ -2,8 +2,6 @@
 
 @section ('title', 'Radiko - Productos')
 
-@section ('header-class', 'huerta-detalle')
-
 @section ('content')
 
 <div class="huerta-content">

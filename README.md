@@ -25,7 +25,7 @@ Luego de haber creado el archivo generamos la clave de seguridad.
 php artisan key:generate
 ```
 
-Solo queda copiar la carpeta images dentro de _radiko-html/dist_ y pegarla en _storage/app/public_ y vincular el storage con la carpeta public.
+Solo queda copiar la carpeta images dentro de _development-html/dev_ y pegarla en _storage/app/public_ y vincular el storage con la carpeta public.
 
 ```
 php artisan storage:link
@@ -33,13 +33,17 @@ php artisan storage:link
 
 ## Base de datos
 
-Es posible que al momento de realizar una migración con la base de datos no arroje un error del tipo SQLSTATE[42000]. Para corregir este error tenemos que editar el achivo __AppServiceProvider.php__ y colocar __Schema::defaultStringLength(191);__ dentro de la funccion boot().
+Es posible que al momento de realizar una migración con la base de datos nos arroje un error del tipo SQLSTATE[42000]. Para corregir este error tenemos que editar el achivo __AppServiceProvider.php__ y colocar __Schema::defaultStringLength(191);__ dentro de la funccion boot().
 
 ```php
 public function boot()
 {
 	Schema::defaultStringLength(191);
 }
+```
+
+Crear la base y hacer los seeders
+php artisan migrate:fresh --seed
 ```
 
 ## funciones últiles	
