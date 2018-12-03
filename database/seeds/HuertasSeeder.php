@@ -27,7 +27,7 @@ class HuertasSeeder extends Seeder
     ]);
 	//#2
     Huerta::create([
-		'huerta' => 'Huertas Orgánicas Urbanas',
+		'huerta' => 'Orgánica Urbana',
 		'cuit' => 33214569528,
 		'razon_social' => 'Gonzales y Perez S.R.L',
 		'direccion'=> 'Av. Estado de Israel 4799',
@@ -102,19 +102,6 @@ class HuertasSeeder extends Seeder
 		'tipo_huerta_id' => 2,
 		'producto_id' => 1,
 		'usuario_id' => 15
-    ]);
-	//#8
-    Huerta::create([
-		'huerta' => 'Huerta El Mburucuyá',
-		'cuit' => 30453892529,
-		'razon_social' => 'Huerta El Mburucuyá',
-		'direccion'=> '3 de Febrero 940 San Isidro Buenos ',
-		'cantidad_max_envios' => 25,
-		'foto' => 'h-4.jpg',
-		'destacado' => false,
-		'tipo_huerta_id' => 1,
-		'producto_id' => 1,
-		'usuario_id' => 16
     ]);
   }
 }
