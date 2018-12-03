@@ -1,5 +1,10 @@
 .nav-tabs {
 	margin-bottom: 30px;
+	outline: none;
+
+	&:focus {	
+		outline: none;
+	}
 
 	.nav-link {
 	    display: block;
@@ -10,6 +15,10 @@
 		color: @charcoal-lg;
 		font-weight: 600;
 		letter-spacing: 1px;
+		box-shadow: none;
+		outline: none;
+		border: 0;
+		border-bottom: 4px solid transparent;
 
 		&:hover,
 		&:focus {

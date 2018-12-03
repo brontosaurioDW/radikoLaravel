@@ -109,7 +109,7 @@
 }
 
 .star-rating {
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 	font-size: 0;
 
 	label {
@@ -126,18 +126,20 @@
 			display: table;
 			clear: both;
 		}
-	}
+	
+		.star-font {
+			float: right;
+			padding-left: 2px;
+			cursor: pointer;
+			color: #FFB300;
+			line-height: normal;
+			margin-bottom: 0;
+			min-height: unset;
+		}
 
-	.star-rating-wrap
-	.star-font {
-		float: right;
-		padding-left: 2px;
-		cursor: pointer;
-		color: #FFB300;
-	}
-
-	.star-font:last-child{
-		padding-left: 0;
+		.star-font:last-child{
+			padding-left: 0;
+		}
 	}
 
 	.star-input {

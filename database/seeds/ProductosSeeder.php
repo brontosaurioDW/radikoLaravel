@@ -601,41 +601,356 @@ class ProductosSeeder extends Seeder
 		'categoria_id' => 1,
 		'huerta_id' => 4
     ]);
+	//Verduras
+    Producto::create([
+		'producto' => 'Tomate redondo',
+		'descripcion' => 'Tomates deliciosos de estación. Es un alimento con escasa cantidad de calorías. El tomate es una fuente importante de ciertos minerales (como el potasio y el magnesio).',
+		'marca' => 'Gatofer',
+		'precio' => 39.30,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'tom04.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 2,
+		'huerta_id' => 4
+    ]);
+    Producto::create([
+		'producto' => 'Lechuga criolla',
+		'descripcion' => 'La lechuga, desde el punto de vista alimentario, es especialmente apreciada por su frescura, gran digestibilidad y contenido de agua.',
+		'marca' => 'Gatofer',
+		'precio' => 70.50,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'lec04.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 2,
+		'huerta_id' => 4
+    ]);
+	//Harinas
+    Producto::create([
+		'producto' => 'Pan Baguet',
+		'descripcion' => 'Sin conservantes ni aditivos químicos.',
+		'marca' => 'Gatofer',
+		'precio' => 80.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'pan05.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 3,
+		'huerta_id' => 4
+    ]);
+	//Granjas
+    Producto::create([
+		'producto' => 'Suprema deshuesada',
+		'descripcion' => 'Se entrega en bolsas térmicas para mantener la temperatura -2 y - 8 grados. La temperatura de frezado es de -18 grados. Una vez recibido puede frezarlo.',
+		'marca' => 'Gatofer',
+		'precio' => 125,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'gra05.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 4,
+		'huerta_id' => 4
+    ]);
+		//Lacteos
+    Producto::create([
+		'producto' => 'Queso pategrás',
+		'descripcion' => 'Quesos 100% orgánicos de Tandil.
+		Elaborados desde la aplicación de métodos no contaminantes en la producción, sin aditivos químicos ni sustancias de origen sintético, pero además, representan una producción en sintonía con el cuidado del medio ambiente y el desarrollo sustentable.',
+		'marca' => 'Gatofer',
+		'precio' => 189.50,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'lac06.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 5,
+		'huerta_id' => 4
+    ]);
+	//Especias
+	Producto::create([
+		'producto' => 'Mix especias Parisino',
+		'descripcion' => 'Un aromático y delicado sabor para todas tus comidas.',
+		'marca' => 'Gatofer',
+		'precio' => 140.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'esp05.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 7,
+		'huerta_id' => 4
+    ]);	
+	//Semillas
+	Producto::create([
+		'producto' => 'Quinoa roja',
+		'descripcion' => 'Contiene más contenido de fibra dietética que la Quinua Blanca.
+		La quinua es el único grano que contiene todos los nueve aminoácidos esenciales para la nutrición humana.',
+		'marca' => 'Gatofer',
+		'precio' => 160.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'sem04.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 8,
+		'huerta_id' => 4
+    ]);	
+	Producto::create([
+		'producto' => 'Quinoa Blanca',
+		'descripcion' => 'Rica en fibra dietética; mejora el control del azúcar en la sangre.
+		La quinua es el único grano que contiene todos los nueve aminoácidos esenciales para la nutrición humana.',
+		'marca' => 'Gatofer',
+		'precio' => 155.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'sem05.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 8,
+		'huerta_id' => 4
+    ]);	
+	
+	//Productos huerta #5
+	//Frutas
+	Producto::create([
+		'producto' => 'Manzana',
+		'descripcion' => 'Manzanas deliciosas que sirven para jugos y tartas.',
+		'marca' => 'El Jardín',
+		'precio' => 68.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'man05.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 5
+    ]);
+	Producto::create([
+		'producto' => 'Durazno',
+		'descripcion' => 'Aportan vitaminas, entre las que destaca la vitamina C y de minerales, y proporciones moderadas de carotenoides con actividad provitamínica A como alfa-caroteno, beta-caroteno y criptoxantina, así como de otros carotenoides sin esta actividad como luteína y zeaxantina.',
+		'marca' => 'El Jardín',
+		'precio' => 115,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'dur03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 5
+    ]);
+	//Verduras
+    Producto::create([
+		'producto' => 'Tomate',
+		'descripcion' => 'Tomates deliciosos de estación. Es un alimento con escasa cantidad de calorías. El tomate es una fuente importante de ciertos minerales (como el potasio y el magnesio).',
+		'marca' => 'El Jardín',
+		'precio' => 30.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'tom05.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 2,
+		'huerta_id' => 5
+    ]);
+    Producto::create([
+		'producto' => 'Morrón rojo',
+		'descripcion' => 'Los morrones rojos son ricos en fibra, lo que ayuda a producir sensación de saciedad, al mismo tiempo que combate el estreñimiento. En este aspecto también resulta beneficioso la gran cantidad de agua que poseen.',
+		'marca' => 'El Jardín',
+		'precio' => 40.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'mor02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 2,
+		'huerta_id' => 5
+    ]);
+		//Harinas
+    Producto::create([
+		'producto' => 'Pan saborizado',
+		'descripcion' => 'Sin conservantes ni aditivos químicos.',
+		'marca' => 'El Jardín',
+		'precio' => 85.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'pan06.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 3,
+		'huerta_id' => 5
+    ]);
+		//Granjas
+    Producto::create([
+		'producto' => 'Pollo entero orgánico',
+		'descripcion' => 'Pollo fresco sin aditivos ni conservantes',
+		'marca' => 'El Jardín',
+		'precio' => 156.99,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'gra06.jpg',
+		'estado' => 1,
+		'categoria_id' => 4,
+		'huerta_id' => 5
+    ]);
+		//Semillas
+	Producto::create([
+		'producto' => 'Copos de maíz ',
+		'descripcion' => 'Producto sin certificación orgánica.
+		Los productos garantizados libres de TACC, sin gluten, sólo son provistos en paquetes individuales de 100 gr cada uno y cuentan en su frente con la identificación del logo.',
+		'marca' => 'El Jardín',
+		'precio' => 85.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'sem06.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 8,
+		'huerta_id' => 5
+    ]);	
+	
+	
+	//Productos huerta #6
+	//Frutas
+	Producto::create([
+		'producto' => 'Naranja',
+		'descripcion' => 'Naranjas deliciosas ideales para jugos y batidos.',
+		'marca' => 'Company',
+		'precio' => 65.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'man03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 6
+    ]);
+	Producto::create([
+		'producto' => 'Durazno',
+		'descripcion' => 'Duraznos frescos y de estación super deliciosos.',
+		'marca' => 'Company',
+		'precio' => 65.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'dur04.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 6
+    ]);
+	//Harinas
+    Producto::create([
+		'producto' => 'Pan de campo',
+		'descripcion' => 'Sin conservantes ni aditivos químicos.',
+		'marca' => 'Company',
+		'precio' => 68.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'pan07.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 3,
+		'huerta_id' => 6
+    ]);
+	Producto::create([
+		'producto' => 'Pan baguete',
+		'descripcion' => 'Sin conservantes ni aditivos químicos.',
+		'marca' => 'Company',
+		'precio' => 85.90,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'pan08.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 3,
+		'huerta_id' => 6
+    ]);
+		//Lacteos
+    Producto::create([
+		'producto' => 'Queso de cabra',
+		'descripcion' => 'Ingredientes: Leche de cabra, sal, cuajos, fermentos lácticos.',
+		'marca' => 'Company',
+		'precio' => 120,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'lac04.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 5,
+		'huerta_id' => 6
+    ]);
+	Producto::create([
+		'producto' => 'Queso de cabra sabor ají',
+		'descripcion' => 'Ingredientes: Leche de cabra, sal, cuajos, fermentos lácticos..',
+		'marca' => 'Company',
+		'precio' => 170.90,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'lac07.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 5,
+		'huerta_id' => 6
+    ]);
 	
 	
 	
-    Producto::create([
-      'producto' => 'Calabaza',
-      'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit explicabo illo saepe, error? Explicabo, dolorum, molestiae! Laborum iure totam nesciunt. Facilis eius ea temporibus veritatis quo non maxime cum dolor repellendus in. Cum, dolore deleniti alias. Natus sint quidem, nesciunt consequuntur impedit quaerat accusamus earum sequi fuga incidunt, quis pariatur.',
-      'marca' => 'marca test',
-      'precio' => 150.00,
-      'unidad_de_medida_id' => 1,
-      'foto' => 'p-9.jpg',
-      'estado' => 1,
-      'categoria_id' => 5,
-      'huerta_id' => 7
+	//Productos huerta #7
+	//Frutas
+	Producto::create([
+		'producto' => 'Kiwi',
+		'descripcion' => 'El kiwi también tiene potasio, sodio, pocas calorías, hidratos de carbono, calcio o hierro.',
+		'marca' => 'Brote',
+		'precio' => 85.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'kiw02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 7
+    ]);
+	Producto::create([
+		'producto' => 'Frutilla',
+		'descripcion' => 'La fresa es una fruta del bosque adecuada en regímenes dietéticos.',
+		'marca' => 'Brote',
+		'precio' => 85.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'fru03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 1,
+		'huerta_id' => 7
+    ]);
+		//Verduras
+	Producto::create([
+		'producto' => 'Morrón',
+		'descripcion' => 'Beneficiosos por la gran cantidad de agua que poseen',
+		'marca' => 'Brote',
+		'precio' => 44.00,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'mor03.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 2,
+		'huerta_id' => 7
     ]);
     Producto::create([
-      'producto' => 'Ajo',
-      'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit explicabo illo saepe, error? Explicabo, dolorum, molestiae! Laborum iure totam nesciunt. Facilis eius ea temporibus veritatis quo non maxime cum dolor repellendus in. Cum, dolore deleniti alias. Natus sint quidem, nesciunt consequuntur impedit quaerat accusamus earum sequi fuga incidunt, quis pariatur.',
-      'marca' => 'marca test',
-      'precio' => 150.00,
-      'unidad_de_medida_id' => 1,
-      'foto' => 'p-9.jpg',
-      'estado' => 1,
-      'categoria_id' => 6,
-      'huerta_id' => 4
+		'producto' => 'Zanahoria',
+		'descripcion' => 'Ideal para hacer jugos de zanahoria.',
+		'marca' => 'Brote',
+		'precio' => 29.99,
+		'unidad_de_medida_id' => 1,
+		'foto' => 'zan02.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 2,
+		'huerta_id' => 7
     ]);
-    Producto::create([
-      'producto' => 'Ajo',
-      'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit explicabo illo saepe, error? Explicabo, dolorum, molestiae! Laborum iure totam nesciunt. Facilis eius ea temporibus veritatis quo non maxime cum dolor repellendus in. Cum, dolore deleniti alias. Natus sint quidem, nesciunt consequuntur impedit quaerat accusamus earum sequi fuga incidunt, quis pariatur.',
-      'marca' => 'marca test',
-      'precio' => 150.00,
-      'unidad_de_medida_id' => 1,
-      'foto' => 'p-9.jpg',
-      'estado' => 1,
-      'categoria_id' => 6,
-      'huerta_id' => 3
-    ]);
+		//Especias
+	Producto::create([
+		'producto' => 'Pimentón',
+		'descripcion' => 'Producto sin agro-químicos y pesticidas.',
+		'marca' => 'De Mi Campo',
+		'precio' => 85.90,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'esp06.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 7,
+		'huerta_id' => 7
+    ]);	
+	Producto::create([
+		'producto' => 'Ají molido',
+		'descripcion' => 'Producto Natural, sin conservantes ni aditivos.',
+		'marca' => 'De Mi Campo',
+		'precio' => 44.50,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'esp07.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 7,
+		'huerta_id' => 7
+    ]);	
+		//Embasados
+	Producto::create([
+		'producto' => 'Aceite de coco',
+		'descripcion' => 'Es muy bueno para frituras y salteados por su resistencia al calor. Disminuye el nivel de colesterol en sangre. Posee propiedades antioxidantes, anticancerígenas, antivirales, antifúngicas y antibacterianas. Se recomienda 3 cucharadas diarias.',
+		'marca' => 'Napus',
+		'precio' => 200.50,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'emb04.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 9,
+		'huerta_id' => 7
+    ]);	
+	Producto::create([
+		'producto' => 'Aceite de coco virgen',
+		'descripcion' => 'Proveniente de plantaciones Filipinas de cocos frescos recién recolectados y prensados en frío se explime la pulpa blanca carnosa de este fruto, logrando un aceite intenso y delicioso de excelente calidad, conservando el 100% de sus propiedades.',
+		'marca' => 'Napus',
+		'precio' => 258.50,
+		'unidad_de_medida_id' => 5,
+		'foto' => 'emb05.jpg', //ok
+		'estado' => 1,
+		'categoria_id' => 9,
+		'huerta_id' => 7
+    ]);	
+	
   }
 }

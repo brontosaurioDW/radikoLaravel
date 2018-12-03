@@ -14,11 +14,13 @@ class CrearTablaDisponibilidades extends Migration
     public function up()
     {
         Schema::create('disponibilidades', function(Blueprint $table) {
-            $table->increments('id');
-            $table->string('zona', 45);
+            $table->increments('id');/*
+            $table->string('zona', 45);*/
             $table->enum('dias', ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sábado', 'domingo']);
-            $table->datetime('inicio');
-            $table->datetime('final');
+            $table->time('inicio');
+            $table->time('final');
+			$table->tinyInteger('activo');
+			$table->unsignedInteger('huerta_id');			
             $table->softDeletes();
             $table->timestamps();
         });

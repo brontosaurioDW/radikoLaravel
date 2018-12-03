@@ -18,7 +18,7 @@ class Review extends Model
 	];
 
 	public static $rules = [
-		'stars' => 'required',
+		'stars' => 'required|in:1,2,3,4,5',
 		'comentario' => 'required'
 	];
 

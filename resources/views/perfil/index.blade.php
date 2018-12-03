@@ -5,7 +5,7 @@
 @section ('content')
 
 	<div class="main-wrapper relative small-height">
-		<section class="container">
+		<section class="container profile">
 
 				<div class="row">
 					<div class="col-xs-12 col-md-5 col-lg-3">
@@ -13,7 +13,7 @@
 						
 						<div class="user-info">
 							@if ( !empty($usuario->foto) )
-								<img class="img-fluid" src="{{ url('storage/images/'.$usuario->foto) }}" alt="{{ $usuario->name }}">
+								<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$usuario->foto) }}" alt="{{ $usuario->name }}">
 							@else
 								<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $usuario->name }}">
 							@endif

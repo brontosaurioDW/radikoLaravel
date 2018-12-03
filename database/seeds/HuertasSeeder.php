@@ -17,7 +17,7 @@ class HuertasSeeder extends Seeder
 		'huerta' => 'Jardín Orgánico',
   		'cuit' => 30354568459,
   		'razon_social' => 'Huerta S.A.',
-  		'direccion' => NULL,
+  		'direccion' => 'Sáenz Peña 419, B1823 Remedios de Escalada, Buenos Aires',
 		'cantidad_max_envios' => 15,
 		'foto' => 'h-1.jpg',
 		'destacado' => true,
@@ -27,7 +27,7 @@ class HuertasSeeder extends Seeder
     ]);
 	//#2
     Huerta::create([
-		'huerta' => 'Huertas Orgánicas Urbanas',
+		'huerta' => 'Orgánica Urbana',
 		'cuit' => 33214569528,
 		'razon_social' => 'Gonzales y Perez S.R.L',
 		'direccion'=> 'Av. Estado de Israel 4799',
@@ -56,7 +56,7 @@ class HuertasSeeder extends Seeder
 		'huerta' => 'Estilo Orgánico',
 		'cuit' => 30457896529,
 		'razon_social' => 'Gatofer y Asociados',
-		'direccion'=> '3 de Febrero 940 San Isidro Buenos ',
+		'direccion'=> 'Sta Magdalena 1998-1900, B1839BWB 9 de Abril, Buenos Aires',
 		'cantidad_max_envios' => 25,
 		'foto' => 'h-5.jpg',
 		'destacado' => false,
@@ -69,7 +69,7 @@ class HuertasSeeder extends Seeder
 		'huerta' => 'El Jardín',
 		'cuit' => 30457237829,
 		'razon_social' => 'El Jardín',
-		'direccion'=> '3 de Febrero 940 San Isidro Buenos ',
+		'direccion'=> '3 de Febrero 940, San Isidro, Buenos Aires',
 		'cantidad_max_envios' => 25,
 		'foto' => 'h-6.jpg',
 		'destacado' => true,
@@ -82,7 +82,7 @@ class HuertasSeeder extends Seeder
 		'huerta' => 'La Huerta de Pedro',
 		'cuit' => 30478236529,
 		'razon_social' => 'Pedro and Company',
-		'direccion'=> '3 de Febrero 940 San Isidro Buenos ',
+		'direccion'=> 'Don Bosco 8798-8600, B1740DTP Cuartel V, Buenos Aires',
 		'cantidad_max_envios' => 25,
 		'foto' => 'h-7.jpg',
 		'destacado' => true,
@@ -95,26 +95,13 @@ class HuertasSeeder extends Seeder
 		'huerta' => 'El Brote Urbano',
 		'cuit' => 30457893229,
 		'razon_social' => 'Brote y Asociados',
-		'direccion'=> '4 de Marzo 940 San Isidro Buenos ',
+		'direccion'=> 'Av. Córdoba 4706, C1414BAS CABA',
 		'cantidad_max_envios' => 25,
 		'foto' => 'h-4.jpg',
 		'destacado' => true,
 		'tipo_huerta_id' => 2,
 		'producto_id' => 1,
 		'usuario_id' => 15
-    ]);
-	//#8
-    Huerta::create([
-		'huerta' => 'Huerta El Mburucuyá',
-		'cuit' => 30453892529,
-		'razon_social' => 'Huerta El Mburucuyá',
-		'direccion'=> '3 de Febrero 940 San Isidro Buenos ',
-		'cantidad_max_envios' => 25,
-		'foto' => 'h-4.jpg',
-		'destacado' => false,
-		'tipo_huerta_id' => 1,
-		'producto_id' => 1,
-		'usuario_id' => 16
     ]);
   }
 }

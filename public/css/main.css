@@ -30,6 +30,9 @@ button:hover {
 .static {
   position: static;
 }
+.overflow-hidden {
+  overflow: hidden;
+}
 .download-btn {
   width: 285px;
   margin: 0 auto;
@@ -5858,6 +5861,10 @@ readers do not read off random characters that represent icons */
 }
 .nav-tabs {
   margin-bottom: 30px;
+  outline: none;
+}
+.nav-tabs:focus {
+  outline: none;
 }
 .nav-tabs .nav-link {
   display: block;
@@ -5868,6 +5875,10 @@ readers do not read off random characters that represent icons */
   color: #898989;
   font-weight: 600;
   letter-spacing: 1px;
+  box-shadow: none;
+  outline: none;
+  border: 0;
+  border-bottom: 4px solid transparent;
 }
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
@@ -6344,7 +6355,7 @@ h4 {
   .error .info-right h2 {
     width: 65%;
     text-align: right;
-    font-size: 3.6rem;
+    font-size: 2.9rem;
     font-weight: 700;
     margin-right: 10%;
     line-height: 100%;
@@ -6368,8 +6379,8 @@ h4 {
     font-size: 1.2rem;
   }
   .error .info-right h2 {
-    font-size: 4.5rem;
-    font-weight: 900;
+    font-size: 4.1rem;
+    font-weight: 700;
   }
 }
 footer {
@@ -7009,7 +7020,7 @@ header:not(.is-home) + main .main-wrapper {
   line-height: 100%;
   font-weight: 700;
 }
-.huerta-informacion iframe {
+.huerta-informacion #map {
   width: 100%;
   margin-top: 25px;
   margin-bottom: 30px;
@@ -7192,6 +7203,9 @@ header:not(.is-home) + main .main-wrapper {
   border-bottom: 1px solid #ddd;
   margin-bottom: 10px;
 }
+.user-info .btn {
+  width: 100%;
+}
 .orders li {
   position: relative;
 }
@@ -7199,6 +7213,34 @@ header:not(.is-home) + main .main-wrapper {
   position: absolute;
   bottom: 15px;
   right: 15px;
+}
+.profile h2,
+.profile h3 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+.file-btn i {
+  margin-right: 10px;
+}
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.inputfile + label {
+  font-size: 16px;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.inputfile + label * {
+  pointer-events: none;
 }
 .ratings-cat {
   list-style: none;
@@ -7309,7 +7351,7 @@ header:not(.is-home) + main .main-wrapper {
   margin-top: 40px;
 }
 .star-rating {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 0;
 }
 .star-rating label {
@@ -7330,8 +7372,11 @@ header:not(.is-home) + main .main-wrapper {
   padding-left: 2px;
   cursor: pointer;
   color: #FFB300;
+  line-height: normal;
+  margin-bottom: 0;
+  min-height: unset;
 }
-.star-rating .star-font:last-child {
+.star-rating .star-rating-wrap .star-font:last-child {
   padding-left: 0;
 }
 .star-rating .star-input {

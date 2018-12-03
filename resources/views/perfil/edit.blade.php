@@ -5,28 +5,42 @@
 @section ('content')
 
 <div class="main-wrapper relative small-height">
-	<section class="container">
+	<section class="container profile">
 
-		<div class="row">
+		<h2>Editar tu perfil</h2>
+		
+		<form action="{{ route('perfil.update', ['id' => $usuario->id]) }}" method="post" class="form" enctype="multipart/form-data">
+			@csrf
+			@method('PUT')
 
-			<div class="col-xs-12 col-md-5 col-lg-3">
-				<h2>Mis datos</h2>
+			<div class="row">
 
-				<a href="{{ url()->previous() }}" class="link">
-					<i class="fas fa-chevron-left"></i>
-					<span>volver</span>
-				</a>
+				<div class="col-xs-12 col-md-5 col-lg-3">
+					<div class="user-info">
+						@if ( !empty($usuario->foto) )
+						<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$usuario->foto) }}" alt="{{ $usuario->name }}">
+						@else
+						<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $usuario->name }}">
+						@endif
+					</div>
+					
+					<div class="row-form">
+						<input class="inputfile" type="file" accept="image/*" id="foto" name="foto" value="{{ old('$usuario->foto') }}">
+						<label for="foto" class="file-btn">
+							<span class="link">
+								<i class="fas fa-cloud-upload"></i>
+								Elige una imagen
+							</span>
+						</label>
+						<span class="archivos"></span>
 
-			</div>
+						@if($errors->has('foto'))
+							<small class="text-danger">{{ $errors->first('foto') }}</small>
+						@endif
+					</div>
+				</div>
 
-			<div class="col-xs-12 col-md-7 col-lg-9">
-				<h2>Editar tu perfil</h2>
-
-				<form action="{{ route('perfil.update', ['id' => $usuario->id]) }}" method="post" class="form">
-					@csrf
-
-					@method('PUT')
-
+				<div class="col-xs-12 col-md-7 col-lg-9">
 					<div class="row-form">
 						<label for="name">Nombre</label>
 						<input type="text" name="name" id="name"  value="{{ old('name', $usuario->name) }}">
@@ -52,9 +66,9 @@
 					</div>
 
 					<button class="btn btn-primary btn-medium">Guardar cambios</button>
-				</form>
+				</div>
 			</div>
-		</div>
+		</form>
 	</section>
 </div>
 

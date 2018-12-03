@@ -1,6 +1,6 @@
 <section class="download-app purple bg-trama-b">
-    <div class="container relative d-flex align-items-center">
-        <div class="row align-items-center w-100">
+    <div class="container relative">
+        <div class="row align-items-center">
             <div class="col-md-7 col-lg-8 text-center">
                 <h2>Descargá la app</h2>
                 <p>Descargate la aplicación  de Rádiko y hacé tu pedido dónde y cuándo quieras.</p>
@@ -13,7 +13,7 @@
                         </li>
                         <li>
                             <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Próximamente" class="d-block">
-                                <img src="{{ url('storage/images/google-play-btn.png') }}" alt="Download in Google Play" class="fluid-img">
+                                <img src="{{ url('storage/images/google-play-btn.png') }}" alt="Download in Google Play" class="img-fluid">
                             </a>
                         </li>
                     </ul>

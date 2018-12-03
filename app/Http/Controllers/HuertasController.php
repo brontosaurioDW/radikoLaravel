@@ -8,6 +8,7 @@ use App\Models\TipoHuerta;
 use App\Models\Categoria;
 use App\Models\Producto;
 use App\Models\Review;
+use App\Models\Disponibilidad;
 
 use Illuminate\Support\Facades\DB;
 
@@ -25,8 +26,9 @@ class HuertasController extends Controller
     $huertasDestacadas = Huerta::All()->where('destacado', true);
     $categorias = Categoria::All();
     $reviews = Review::selectRaw('round(avg(stars),1) as stars, huerta_id')->groupBy('huerta_id')->get();
+    $disponibilidad = Disponibilidad::All();
 
-    return view( 'principal', compact('huertasDestacadas', 'categorias', 'reviews') );
+    return view( 'principal', compact('huertasDestacadas', 'categorias', 'reviews', 'disponibilidad') );
   } 
 
 
@@ -134,9 +136,13 @@ class HuertasController extends Controller
   {
     $huerta = Huerta::find($id);
 
+    $categorias = Categoria::All();
+
+    //dd($categorias);
+
     $productos = Producto::with('unidadDeMedida')->where('huerta_id', $id)->paginate(8);
 
-    return view('huertas.show', compact('huerta', 'productos'));
+    return view('huertas.show', compact('huerta', 'productos','categorias'));
   }
 
   /**

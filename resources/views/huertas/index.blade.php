@@ -5,7 +5,7 @@
 @section ('content')
 
 <div class="main-wrapper relative">
-	<section>
+	<section class="overflow-hidden">
 
 		<div class="top">
 			<div class="container">
