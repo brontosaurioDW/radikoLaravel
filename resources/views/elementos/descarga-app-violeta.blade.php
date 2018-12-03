@@ -1,6 +1,6 @@
 <section class="download-app purple bg-trama-b">
-    <div class="container relative d-flex align-items-center">
-        <div class="row align-items-center w-100">
+    <div class="container relative">
+        <div class="row align-items-center">
             <div class="col-md-7 col-lg-8 text-center">
                 <h2>Descargá la app</h2>
                 <p>Descargate la aplicación  de Rádiko y hacé tu pedido dónde y cuándo quieras.</p>

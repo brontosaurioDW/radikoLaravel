@@ -4,9 +4,6 @@
 
 @section ('content')
 
-
-
-
 <div class="main-wrapper relative">
 	<section class="huerta-detalle">
 		<div class="container-fluid">
@@ -348,40 +345,44 @@
 
 								<h2>Dejanos tu opinón</h2>
 
-								<div class="form-group">
+								<div class="row-form">
 									<label for="comentario" class="sr-only">Comentario</label>
 									<textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Contanos tu experiencia con la huerta.">{{ old('comentario') }}</textarea>
 									@if($errors->has('comentario'))
 									<small class="text-danger">{{ $errors->first('comentario') }}</small>
 									@endif
 								</div>
+								
+								<div class="row-form">
+									<label class="sr-only">Calficación</label>
 
-								<label class="sr-only">Calficación</label>
+									<div class="star-rating">
+										<div class="star-rating-wrap">
+											<input class="star-input" type="radio" name="stars" id="stars1" value="5" @if(old('stars') == 5) checked @endif >
+											<label class="star-font far fa-star" for="stars1"></label>
 
-								<div class="star-rating">
-									<div class="star-rating-wrap">
-										<input class="star-input" type="radio" name="stars" id="stars1" value="5" @if(old('stars') == 5) checked @endif >
-										<label class="star-font far fa-star" for="stars1"></label>
+											<input class="star-input" type="radio" name="stars" id="stars2" value="4" @if(old('stars') == 4) checked @endif >
+											<label class="star-font far fa-star" for="stars2"></label>
 
-										<input class="star-input" type="radio" name="stars" id="stars2" value="4" @if(old('stars') == 4) checked @endif >
-										<label class="star-font far fa-star" for="stars2"></label>
+											<input class="star-input" type="radio" name="stars" id="stars3" value="3" @if(old('stars') == 3) checked @endif >
+											<label class="star-font far fa-star" for="stars3"></label>
 
-										<input class="star-input" type="radio" name="stars" id="stars3" value="3" @if(old('stars') == 3) checked @endif >
-										<label class="star-font far fa-star" for="stars3"></label>
+											<input class="star-input" type="radio" name="stars" id="stars4" value="2" @if(old('stars') == 2) checked @endif >
+											<label class="star-font far fa-star" for="stars4"></label>
 
-										<input class="star-input" type="radio" name="stars" id="stars4" value="2" @if(old('stars') == 2) checked @endif >
-										<label class="star-font far fa-star" for="stars4"></label>
-
-										<input class="star-input" type="radio" name="stars" id="stars5" value="1" @if(old('stars') == 1) checked @endif >
-										<label class="star-font far fa-star" for="stars5"></label>														
+											<input class="star-input" type="radio" name="stars" id="stars5" value="1" @if(old('stars') == 1) checked @endif >
+											<label class="star-font far fa-star" for="stars5"></label>														
+										</div>
 									</div>
+
+									@if($errors->has('stars'))
+									<small class="text-danger">{{ $errors->first('stars') }}</small>
+									@endif									
 								</div>
 
-								@if($errors->has('stars'))
-								<small class="text-danger">{{ $errors->first('stars') }}</small>
-								@endif
-
-								<button type="submit" class="btn btn-primary btn-medium">Comentar</button>
+								<div class="row-form">
+									<button type="submit" class="btn btn-primary btn-medium">Comentar</button>
+								</div>
 							</form>
 
 							@else

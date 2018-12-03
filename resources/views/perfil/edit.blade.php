@@ -23,11 +23,21 @@
 						<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $usuario->name }}">
 						@endif
 					</div>
+					
+					<div class="row-form">
+						<input class="inputfile" type="file" accept="image/*" id="foto" name="foto" value="{{ old('$usuario->foto') }}">
+						<label for="foto" class="file-btn">
+							<span class="link">
+								<i class="fas fa-cloud-upload"></i>
+								Elige una imagen
+							</span>
+						</label>
+						<span class="archivos"></span>
 
-					<input type="file" accept="image/*" id="foto" name="foto" value="{{ old('$usuario->foto') }}">
-					@if($errors->has('foto'))
-					<small class="text-danger">{{ $errors->first('foto') }}</small>
-					@endif
+						@if($errors->has('foto'))
+							<small class="text-danger">{{ $errors->first('foto') }}</small>
+						@endif
+					</div>
 				</div>
 
 				<div class="col-xs-12 col-md-7 col-lg-9">
