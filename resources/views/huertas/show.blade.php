@@ -77,46 +77,16 @@
 							<div class="sidebar-filtros">
 								<h3>Categoría</h3>
 								<ul>
+									@foreach ($categorias as $categoria)
 									<li>
-										<label class="checkbox clearfix">
-											<input type="checkbox" name="cat-1">
+										<label class="checkbox clearfix">			
+											<input type="checkbox" name="cat-1" data-product-cateogry @if ( isset($categoriaSeleccionada->id) and $categoriaSeleccionada->id == $categoria->id) checked	@endif >
 											<span class="checkmark"></span>
-											<span class="float-left">Frutas</span>
-											<span class="light float-right">(85)</span>
+											<span class="float-left">{{ $categoria->categoria }}</span>
+											<span class="light float-right">({{ $categoria->productos->count() }})</span>
 										</label>
 									</li>
-									<li>
-										<label class="checkbox clearfix">
-											<input type="checkbox" name="cat-1">
-											<span class="checkmark"></span>
-											<span class="float-left">Verduras</span>
-											<span class="light float-right">(85)</span>
-										</label>
-									</li>
-									<li>
-										<label class="checkbox clearfix">
-											<input type="checkbox" name="cat-1">
-											<span class="checkmark"></span>
-											<span class="float-left">Harinas</span>
-											<span class="light float-right">(85)</span>
-										</label>
-									</li>
-									<li>
-										<label class="checkbox clearfix">
-											<input type="checkbox" name="cat-1">
-											<span class="checkmark"></span>
-											<span class="float-left">Granja</span>
-											<span class="light float-right">(85)</span>
-										</label>
-									</li>
-									<li>
-										<label class="checkbox clearfix">
-											<input type="checkbox" name="cat-1">
-											<span class="checkmark"></span>
-											<span class="float-left">Lácteos</span>
-											<span class="light float-right">(85)</span>
-										</label>
-									</li>
+									@endforeach
 								</ul>
 							</div>
 						</div>
@@ -348,9 +318,9 @@
 								<li class="opinion-wrapper media">
 									<div class="media-img">
 										@if ( !empty($review->usuario->foto) ) 
-											<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$review->usuario->foto) }}" alt="{{ $review->usuario->name }}">
+										<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$review->usuario->foto) }}" alt="{{ $review->usuario->name }}">
 										@else
-											<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $review->usuario->name }}">
+										<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $review->usuario->name }}">
 										@endif
 									</div>
 									<div class="media-body">
@@ -371,48 +341,48 @@
 
 							@if(Auth::check())
 
-								<form action="{{ route('huertas.comments' , ['id' => $huerta->id]) }}" method="post" class="form form-bg">
+							<form action="{{ route('huertas.comments' , ['id' => $huerta->id]) }}" method="post" class="form form-bg">
 
-									@csrf
-									@method('PUT')
+								@csrf
+								@method('PUT')
 
-									<h2>Dejanos tu opinón</h2>
+								<h2>Dejanos tu opinón</h2>
 
-									<div class="form-group">
-										<label for="comentario" class="sr-only">Comentario</label>
-										<textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Contanos tu experiencia con la huerta."></textarea>
-									</div>
+								<div class="form-group">
+									<label for="comentario" class="sr-only">Comentario</label>
+									<textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Contanos tu experiencia con la huerta."></textarea>
+								</div>
 
-									<label class="sr-only">Calficación</label>
+								<label class="sr-only">Calficación</label>
 
-									<div class="star-rating">
-										<div class="star-rating-wrap">
+								<div class="star-rating">
+									<div class="star-rating-wrap">
 
-											<input class="star-input" type="radio" name="stars" id="stars1" value="1">
-											<label class="star-font far fa-star" for="stars1"></label>
+										<input class="star-input" type="radio" name="stars" id="stars1" value="1">
+										<label class="star-font far fa-star" for="stars1"></label>
 
-											<input class="star-input" type="radio" name="stars" id="stars2" value="2">
-											<label class="star-font far fa-star" for="stars2"></label>
+										<input class="star-input" type="radio" name="stars" id="stars2" value="2">
+										<label class="star-font far fa-star" for="stars2"></label>
 
-											<input class="star-input" type="radio" name="stars" id="stars3" value="3">
-											<label class="star-font far fa-star" for="stars3"></label>
+										<input class="star-input" type="radio" name="stars" id="stars3" value="3">
+										<label class="star-font far fa-star" for="stars3"></label>
 
-											<input class="star-input" type="radio" name="stars" id="stars4" value="4">
-											<label class="star-font far fa-star" for="stars4"></label>
+										<input class="star-input" type="radio" name="stars" id="stars4" value="4">
+										<label class="star-font far fa-star" for="stars4"></label>
 
-											<input class="star-input" type="radio" name="stars" id="stars5" value="5">
-											<label class="star-font far fa-star" for="stars5"></label>
-										</div>									
-									</div>
+										<input class="star-input" type="radio" name="stars" id="stars5" value="5">
+										<label class="star-font far fa-star" for="stars5"></label>
+									</div>									
+								</div>
 
-									<button type="submit" class="btn btn-primary btn-medium">Comentar</button>
-								</form>
+								<button type="submit" class="btn btn-primary btn-medium">Comentar</button>
+							</form>
 
 							@else
-								<p>
-									Para dejar un comentario debes 
-									<a href="{{ route( 'login' ) }}" class="link">iniciar sesion</a>
-								</p>
+							<p>
+								Para dejar un comentario debes 
+								<a href="{{ route( 'login' ) }}" class="link">iniciar sesion</a>
+							</p>
 							@endif	
 						</div>
 					</div>									
