@@ -55,7 +55,8 @@ class User extends Authenticatable
      * @var array
      */
     public static $rules_edit = [
-        'name' => 'required|min:3'
+        'name' => 'required|min:3',
+        'foto' => 'sometimes|image'
     ];
 
 }

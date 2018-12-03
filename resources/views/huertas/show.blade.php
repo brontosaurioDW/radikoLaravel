@@ -4,6 +4,9 @@
 
 @section ('content')
 
+
+
+
 <div class="main-wrapper relative">
 	<section class="huerta-detalle">
 		<div class="container-fluid">
@@ -40,13 +43,26 @@
 				<i class="fas fa-chevron-left"></i>
 				<span>volver</span>
 			</a>
+
+			@if(true)
+			<p>test</p>
+			@endif
+
+
+			@if(!$errors->isEmpty() or Session::has('status'))
+			<p>test with errors</p>
+			@endif
+
+
 		</div>
+
+
 
 		<div class="tabs-outline">
 			<div class="container">
 				<ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
 					<li class="nav-item">
-						<a class="nav-link @if(!Session::has('status')) active @endif" id="home-tab" data-toggle="tab" href="#huerta-productos-listado" role="tab" aria-controls="huerta-productos-listado" aria-selected="true">
+						<a class="nav-link @if(!Session::has('status') and $errors->isEmpty()) active @endif" id="home-tab" data-toggle="tab" href="#huerta-productos-listado" role="tab" aria-controls="huerta-productos-listado" aria-selected="true">
 							<span class="d-none d-sm-block">Productos</span>
 							<i class="far fa-shopping-cart d-md-none"></i>
 						</a>
@@ -58,7 +74,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link @if(Session::has('status')) active @endif" id="contact-tab" data-toggle="tab" href="#huerta-rating" role="tab" aria-controls="huerta-rating" aria-selected="false">
+						<a class="nav-link @if(Session::has('status') or !$errors->isEmpty()) active @endif" id="contact-tab" data-toggle="tab" href="#huerta-rating" role="tab" aria-controls="huerta-rating" aria-selected="false">
 							<span class="d-none d-sm-block">Rating</span>
 							<i class="far fa-star d-md-none"></i>
 						</a>
@@ -69,7 +85,7 @@
 
 		<div class="container">
 			<div class="tab-content">
-				<div class="tab-pane fade @if(!Session::has('status')) show active @endif" id="huerta-productos-listado" role="tabpanel" aria-labelledby="huerta-productos-listado">
+				<div class="tab-pane fade @if(!Session::has('status') and $errors->isEmpty()) show active @endif" id="huerta-productos-listado" role="tabpanel" aria-labelledby="huerta-productos-listado">
 
 					<div class="row">
 						<div class="col-xs-12 d-none d-lg-block col-lg-3">
@@ -266,7 +282,7 @@
 					</div>
 				</div>
 
-				<div class="tab-pane fade @if(Session::has('status')) show active @endif" id="huerta-rating" role="tabpanel" aria-labelledby="huerta-rating">				
+				<div class="tab-pane fade @if(Session::has('status') or !$errors->isEmpty()) show active @endif" id="huerta-rating" role="tabpanel" aria-labelledby="huerta-rating">				
 
 					<div class="row">
 						<div class="col-xs-12 col-md-4">
@@ -347,29 +363,36 @@
 
 								<div class="form-group">
 									<label for="comentario" class="sr-only">Comentario</label>
-									<textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Contanos tu experiencia con la huerta."></textarea>
+									<textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Contanos tu experiencia con la huerta.">{{ old('comentario') }}</textarea>
+									@if($errors->has('comentario'))
+									<small class="text-danger">{{ $errors->first('comentario') }}</small>
+									@endif
 								</div>
 
 								<label class="sr-only">Calficación</label>
 
 								<div class="star-rating">
 									<div class="star-rating-wrap">
-
-										<input class="star-input" type="radio" name="stars" id="stars1" value="5">
+										<input class="star-input" type="radio" name="stars" id="stars1" value="5" @if(old('stars') == 5) checked @endif >
 										<label class="star-font far fa-star" for="stars1"></label>
 
-										<input class="star-input" type="radio" name="stars" id="stars2" value="4">
+										<input class="star-input" type="radio" name="stars" id="stars2" value="4" @if(old('stars') == 4) checked @endif >
 										<label class="star-font far fa-star" for="stars2"></label>
 
-										<input class="star-input" type="radio" name="stars" id="stars3" value="3">
+										<input class="star-input" type="radio" name="stars" id="stars3" value="3" @if(old('stars') == 3) checked @endif >
 										<label class="star-font far fa-star" for="stars3"></label>
 
-										<input class="star-input" type="radio" name="stars" id="stars4" value="2">
+										<input class="star-input" type="radio" name="stars" id="stars4" value="2" @if(old('stars') == 2) checked @endif >
 										<label class="star-font far fa-star" for="stars4"></label>
 
-										<input class="star-input" type="radio" name="stars" id="stars5" value="1">
-										<label class="star-font far fa-star" for="stars5"></label>																
+										<input class="star-input" type="radio" name="stars" id="stars5" value="1" @if(old('stars') == 1) checked @endif >
+										<label class="star-font far fa-star" for="stars5"></label>														
+									</div>
 								</div>
+
+								@if($errors->has('stars'))
+								<small class="text-danger">{{ $errors->first('stars') }}</small>
+								@endif
 
 								<button type="submit" class="btn btn-primary btn-medium">Comentar</button>
 							</form>

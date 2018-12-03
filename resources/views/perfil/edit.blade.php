@@ -18,13 +18,16 @@
 				<div class="col-xs-12 col-md-5 col-lg-3">
 					<div class="user-info">
 						@if ( !empty($usuario->foto) )
-							<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$usuario->foto) }}" alt="{{ $usuario->name }}">
+						<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$usuario->foto) }}" alt="{{ $usuario->name }}">
 						@else
-							<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $usuario->name }}">
+						<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $usuario->name }}">
 						@endif
 					</div>
 
 					<input type="file" accept="image/*" id="foto" name="foto" value="{{ old('$usuario->foto') }}">
+					@if($errors->has('foto'))
+					<small class="text-danger">{{ $errors->first('foto') }}</small>
+					@endif
 				</div>
 
 				<div class="col-xs-12 col-md-7 col-lg-9">

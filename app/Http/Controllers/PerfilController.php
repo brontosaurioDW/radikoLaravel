@@ -77,14 +77,12 @@ class PerfilController extends Controller
     {
         $request->validate(User::$rules_edit, [
             'name.required' => 'El nombre es requerido.',
-            'name.min' => 'El nombre debe tener al menos :min caracteres.'
-        ]);    
-
-
+            'name.min' => 'El nombre debe tener al menos :min caracteres.',
+            'foto.image' => 'Debe seleccionar un archivo .jpg o .png'
+        ]);
 
         $inputData = $request->input();
 
-        //dd($inputData);
         $usuario = User::find($id);
 
         if($request->hasFile('foto')) {
