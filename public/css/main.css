@@ -6007,6 +6007,20 @@ h4 {
   margin: 25px 0 0;
   width: 100%;
 }
+.auth form ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ccc;
+  opacity: 1;
+  /* Firefox */
+}
+.auth form :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ccc;
+}
+.auth form ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #ccc;
+}
 .auth h2 {
   font-size: 20px;
   text-transform: none;

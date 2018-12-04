@@ -25,28 +25,28 @@
 
 					<div class="row-form">
 						<label for="name">Nombre</label>
-						<input type="text" name="name" id="name" value="{{ old('name') }}" placeholder="Nombre">
+						<input type="text" name="name" id="name" value="{{ old('name') }}" placeholder="José Ramirez">
 						@if($errors->has('name'))
 							<small class="text-danger">{{ $errors->first('name') }}</small>
 						@endif
 					</div>
 					<div class="row-form">
 						<label for="email">Email</label>
-						<input type="text" name="email" id="email" value="{{ old('email') }}" placeholder="Email">
+						<input type="text" name="email" id="email" value="{{ old('email') }}" placeholder="jose@mail.com">
 						@if($errors->has('email'))
 							<small class="text-danger">{{ $errors->first('email') }}</small>
 						@endif
 					</div>
 					<div class="row-form">
 						<label for="password">Contraseña</label>
-						<input type="password" name="password" id="password"  placeholder="Contraseña">
+						<input type="password" name="password" id="password"  placeholder="*****">
 						@if($errors->has('password'))
 							<small class="text-danger">{{ $errors->first('password') }}</small>
 						@endif
 					</div>
 					<div class="row-form">
 						<label for="password_confirmation" for="password_confirmation">Confirmar contraseña</label>
-						<input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmar contraseña">
+						<input type="password" name="password_confirmation" id="password_confirmation" placeholder="*****">
 					</div>
 					<div class="row-form">
 						<div class="d-flex justify-content-between align-items-center flex-wrap">

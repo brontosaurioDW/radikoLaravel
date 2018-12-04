@@ -57,7 +57,7 @@
 									<ul class="simple-list">
 										<li>
 											<span class="bold">Día y hora</span>
-											<span>22/05/2018 | 20.00hs</span>
+											<span>22/05/2018 | 15.26hs</span>
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
@@ -74,16 +74,16 @@
 									<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="">
 								</div>
 								<div class="media-body">
-									<h4>El jardín orgánico</h4>
+									<h4>Brote urbano</h4>
 
 									<ul class="simple-list">
 										<li>
 											<span class="bold">Día y hora</span>
-											<span>22/05/2018 | 20.00hs</span>
+											<span>16/06/2018 | 17.32hs</span>
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
-											<span>$ 785.00</span>
+											<span>$ 522.00</span>
 										</li>
 									</ul>		
 
@@ -96,16 +96,16 @@
 									<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="">
 								</div>
 								<div class="media-body">
-									<h4>El jardín orgánico</h4>
+									<h4>La huerta orgánica</h4>
 
 									<ul class="simple-list">
 										<li>
 											<span class="bold">Día y hora</span>
-											<span>22/05/2018 | 20.00hs</span>
+											<span>29/06/2018 | 12.15hs</span>
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
-											<span>$ 785.00</span>
+											<span>$ 225.00</span>
 										</li>
 									</ul>		
 
