@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Models\Usuario;
+use Models\Pedido;
 use App\user;
 
 use Storage;
@@ -51,7 +52,9 @@ class PerfilController extends Controller
     public function show($id)
     {
         $usuario = User::find($id);
-        return view('perfil.index', compact('usuario'));
+		$pedidos = Pedido::all();
+        return view('perfil.index', compact('usuario', 'pedidos'));
+		
     }
 
     /**
@@ -125,6 +128,7 @@ class PerfilController extends Controller
       );
 
     }
+
 
     /**
      * Remove the specified resource from storage.
