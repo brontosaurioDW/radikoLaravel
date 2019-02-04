@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Models\Usuario;
-use Models\Pedido;
+use App\Models\Pedido;
 use App\user;
 
 use Storage;

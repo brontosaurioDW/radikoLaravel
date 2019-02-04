@@ -42,7 +42,10 @@
 							</a>	
 						</div>
 					</div>
-
+						
+					@foreach ($pedidos as $pedido)
+						{{$pedido->observaciones}}
+					@endforeach	
 					<div class="col-xs-12 col-md-7 col-lg-9">
 						<h3>Pedidos pendientes</h3>
 
