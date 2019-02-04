@@ -42,8 +42,8 @@ Route::get('/huertas/{huerta}', [
 /* Comentarios */
 
 Route::put('/huertas/{huerta}/comments', [
-    'as' => 'huertas.comments',
-    'uses' => 'ReviewsController@store',
+	'as' => 'huertas.comments',
+	'uses' => 'ReviewsController@store',
 ]);
 
 
@@ -68,8 +68,6 @@ Route::get('/legales/politica-privacidad', function () {
 Route::get('/legales/terminos-condiciones', function () {
 	return view('legales.terminos-condiciones');
 });
-
-
 
 
 /* --- Auth */
@@ -129,8 +127,6 @@ Route::middleware('auth')->group(function() {
 		'uses' => 'PerfilController@update'
 	]);
 
-
-
 	// @MARTA: ruta de detalles pedidos 
 	//esta es una ruta temporal para ver los pedidos
 
@@ -139,18 +135,20 @@ Route::middleware('auth')->group(function() {
 		'uses' => 'PerfilController@marta'
 	]);
 
-
-
 });
 
 // Página en mantenimiento
 
-	Route::get('mantenimiento', function() {
-		return view('errors.mantenimiento');
-	});
+Route::get('mantenimiento', function() {
+	return view('errors.mantenimiento');
+});
 
 // Contacto
 
-	Route::get('contacto', function() {
-		return view('contacto.contacto');
-	});
+Route::get('contacto', function() {
+	return view('contacto.contacto');
+});
+
+Route::get('/cpanel', function() {
+	return view('cpanel.index');
+});
