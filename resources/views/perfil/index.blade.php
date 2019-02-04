@@ -44,6 +44,32 @@
 					</div>
 
 					<div class="col-xs-12 col-md-7 col-lg-9">
+						<h3>Pedidos pendientes</h3>
+
+						<ul class="list-boxed orders mb-5">
+							<li class="list-wrapper media">
+								<div class="media-img">
+									<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="">
+								</div>
+								<div class="media-body">
+									<h4>El jardín orgánico</h4>
+
+									<ul class="simple-list">
+										<li>
+											<span class="bold">Día y hora</span>
+											<span>22/05/2018 | 15.26hs</span>
+										</li>
+										<li class="total">
+											<span class="bold">Precio</span>
+											<span>$ 785.00</span>
+										</li>
+									</ul>		
+
+									<a href="{{ route('perfil.detalle-pedido' , Auth::user()->id ) }}" class="link-fwd">Ver detalle</a>							
+								</div>
+							</li>
+						</ul>
+
 						<h3>Pedidos realizados</h3>
 
 						<ul class="list-boxed orders">
@@ -57,7 +83,7 @@
 									<ul class="simple-list">
 										<li>
 											<span class="bold">Día y hora</span>
-											<span>22/05/2018 | 20.00hs</span>
+											<span>22/05/2018 | 15.26hs</span>
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
@@ -65,7 +91,7 @@
 										</li>
 									</ul>		
 
-									<a href="javascript:void(0)" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
+									<a href="{{ route('perfil.detalle-pedido' , Auth::user()->id ) }}" class="link-fwd">Ver detalle</a>							
 								</div>
 							</li>
 
@@ -74,20 +100,20 @@
 									<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="">
 								</div>
 								<div class="media-body">
-									<h4>El jardín orgánico</h4>
+									<h4>Brote urbano</h4>
 
 									<ul class="simple-list">
 										<li>
 											<span class="bold">Día y hora</span>
-											<span>22/05/2018 | 20.00hs</span>
+											<span>16/06/2018 | 17.32hs</span>
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
-											<span>$ 785.00</span>
+											<span>$ 522.00</span>
 										</li>
 									</ul>		
 
-									<a href="javascript:void(0)" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
+									<a href="{{ route('perfil.detalle-pedido' , Auth::user()->id ) }}" class="link-fwd">Ver detalle</a>							
 								</div>
 							</li>
 
@@ -96,24 +122,24 @@
 									<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="">
 								</div>
 								<div class="media-body">
-									<h4>El jardín orgánico</h4>
+									<h4>La huerta orgánica</h4>
 
 									<ul class="simple-list">
 										<li>
 											<span class="bold">Día y hora</span>
-											<span>22/05/2018 | 20.00hs</span>
+											<span>29/06/2018 | 12.15hs</span>
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
-											<span>$ 785.00</span>
+											<span>$ 225.00</span>
 										</li>
 									</ul>		
 
-									<a href="javascript:void(0)" class="link">Ver detalle <i class="fas fa-chevron-right"></i></a>							
+									<a href="{{ route('perfil.detalle-pedido' , Auth::user()->id ) }}" class="link-fwd">Ver detalle</a>							
 								</div>
 							</li>
 						</ul>
-					</div>				
+					</div>					
 				</div>		
 		</section>
 	</div>

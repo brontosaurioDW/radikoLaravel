@@ -32,16 +32,16 @@
 					@endif
 
 					<div class="row-form">
-						<label class="sr-only">Usuario o email</label>
-						<input type="text" id="email" name="email" value="{{ old('email')}}" placeholder="Usuario o email">
+						<label>Email</label>
+						<input type="text" id="email" name="email" value="{{ old('email')}}" placeholder="jose@mail.com">
 						@if($errors->has('email'))
 							<small class="text-danger">{{ $errors->first('email') }}</small>
 						@endif
 					</div>
 
 					<div class="row-form">
-						<label class="sr-only">Contraseña</label>
-						<input type="password" name="password" id="password" placeholder="Contraseña">
+						<label>Contraseña</label>
+						<input type="password" name="password" id="password" placeholder="*****">
 						@if($errors->has('password'))
 							<small class="text-danger">{{ $errors->first('password') }}</small>
 						@endif

@@ -95,6 +95,51 @@ button:hover {
 .link-simple:hover {
   color: #7065B0;
 }
+.link-back,
+.link-fwd {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #50D2A4;
+  font-size: 14px;
+  -webkit-transition: .2s all;
+  -webkit-transition-delay: .2s;
+  -moz-transition: .2s all;
+  -moz-transition-delay: .2s;
+  -ms-transition: .2s all;
+  -ms-transition-delay: .2s;
+  -o-transition: .2s all;
+  -o-transition-delay: .2s;
+  transition: .2s all;
+  transition-delay: .2s;
+}
+.link-back:hover,
+.link-fwd:hover {
+  color: #C6823C;
+  cursor: pointer;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  -ms-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.link-back:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f0d9";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+  margin-right: 5px;
+}
+.link-fwd:after {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f0da";
+  display: inline-block;
+  padding-left: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+  margin-right: 5px;
+}
 .btn {
   color: #FFFFFF;
   border-radius: 0;
@@ -5906,22 +5951,22 @@ h2 {
   font-size: 28px;
 }
 h3 {
-  font-size: 24px;
-}
-h4 {
   font-size: 20px;
 }
+h4 {
+  font-size: 18px;
+}
 .bold {
-  font-weight: 700;
+  font-weight: 700!important;
 }
 .semi-bold {
-  font-weight: 600;
+  font-weight: 600!important;
 }
 .italic {
-  font-style: italic;
+  font-style: italic!important;
 }
 .light {
-  color: #898989;
+  color: #898989 !important;
 }
 .sub-title {
   margin: 25px 0;
@@ -6006,6 +6051,20 @@ h4 {
 .auth form {
   margin: 25px 0 0;
   width: 100%;
+}
+.auth form ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ccc;
+  opacity: 1;
+  /* Firefox */
+}
+.auth form :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ccc;
+}
+.auth form ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #ccc;
 }
 .auth h2 {
   font-size: 20px;
@@ -6289,6 +6348,57 @@ h4 {
   .categories ul {
     margin: 3rem 0 2rem 0;
   }
+}
+.detalle-pedido .title h2 {
+  min-width: unset;
+  font-size: 20px;
+  line-height: 35px;
+  margin-bottom: 5px;
+}
+.detalle-pedido .total {
+  margin-top: 15px;
+}
+.detalle-pedido .total .title {
+  margin-bottom: 50px;
+}
+.detalle-pedido .total .title h2 {
+  line-height: 50px;
+  margin: 0 15px 0 0;
+}
+.detalle-pedido .price {
+  font-size: 20px;
+  color: #50D2A4;
+  font-weight: bold;
+}
+.grey-box {
+  background: #fafafa;
+  padding: 25px 30px;
+  margin-bottom: 20px;
+}
+.grey-box.no-bg {
+  background: transparent;
+  padding: 0;
+}
+.grey-box h3 {
+  min-width: unset;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+.grey-box ul {
+  margin: 15px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+.grey-box ul + ul {
+  margin-top: 20px;
+}
+.grey-box li {
+  font-size: 14px;
+  line-height: 185%;
+}
+.grey-box .price-black {
+  font-size: 16px;
 }
 .error h2 {
   color: #FFFFFF;
@@ -7216,8 +7326,8 @@ header:not(.is-home) + main .main-wrapper {
 }
 .profile h2,
 .profile h3 {
-  font-size: 28px;
-  margin-bottom: 30px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 .file-btn i {
   margin-right: 10px;
@@ -7398,6 +7508,48 @@ header:not(.is-home) + main .main-wrapper {
     border: 1px solid #DCDCDC;
     padding: 15px;
   }
+}
+/* RESULTADOS DE BUSQURDA */
+.resultado-text {
+  font-weight: 600;
+  background: #50D2A4;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  margin-right: 1rem;
+}
+.resultados-busqueda {
+  margin: 3rem 0;
+}
+.resultado-text,
+.objeto-buscado {
+  font-size: 20px;
+}
+.objeto-buscado {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.card-title.huerta {
+  background-color: #DD964E;
+}
+.form-control {
+  border-radius: 0;
+  box-shadow: 5px 5px 0 #707070;
+}
+.huerta-options .huerta-form-buscar {
+  margin-bottom: 0;
+}
+.huerta-options .form-group {
+  margin: 10px 0 0 0;
+}
+.huerta-options .card a {
+  position: relative;
+  overflow: hidden;
+}
+.huerta-options .stars {
+  position: absolute;
+  bottom: 10px;
+  margin: 0;
+  left: 10px;
 }
 .features {
   padding: 1rem 0;

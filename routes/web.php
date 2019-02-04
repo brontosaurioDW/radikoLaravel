@@ -129,6 +129,18 @@ Route::middleware('auth')->group(function() {
 		'uses' => 'PerfilController@update'
 	]);
 
+
+
+	// @MARTA: ruta de detalles pedidos 
+	//esta es una ruta temporal para ver los pedidos
+
+	Route::get('/perfil/{perfil}/pedido', [
+		'as' => 'perfil.detalle-pedido',
+		'uses' => 'PerfilController@marta'
+	]);
+
+
+
 });
 
 // Página en mantenimiento

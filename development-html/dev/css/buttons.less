@@ -25,6 +25,60 @@
 	}
 }
 
+.link-back,
+.link-fwd {
+	display: inline-block;
+    margin-bottom: 15px;
+	color: @pepper;
+    font-size: 14px;
+    -webkit-transition: .2s all;   
+    -webkit-transition-delay: .2s; 
+    -moz-transition: .2s all;   
+    -moz-transition-delay: .2s; 
+    -ms-transition: .2s all;   
+    -ms-transition-delay: .2s; 
+    -o-transition: .2s all;   
+    -o-transition-delay: .2s; 
+    transition: .2s all;   
+    transition-delay: .2s; 
+
+    &:hover {
+    	color: @corn-dk;
+    	cursor: pointer;
+    	-webkit-transition-delay: 0.1s;
+	    -moz-transition-delay: 0.1s;
+	    -ms-transition-delay: 0.1s;
+	    -o-transition-delay: 0.1s;
+	    transition-delay: 0.1s;
+    }
+}
+
+.link-back {
+ 	&:before {
+		font-family: "Font Awesome 5 Pro";
+	   	content: "\f0d9";
+	   	display: inline-block;
+	   	padding-right: 3px;
+	   	vertical-align: middle;
+   		font-weight: 900;
+		margin-right: 5px;
+	}
+}
+
+.link-fwd {
+	&:after {
+		font-family: "Font Awesome 5 Pro";
+	   	content: "\f0da";
+	   	display: inline-block;
+	   	padding-left: 3px;
+	   	vertical-align: middle;
+   		font-weight: 900;
+		margin-right: 5px;
+	}
+}
+
+
+
 .btn {
 	color: @ice;
 	border-radius: 0;
