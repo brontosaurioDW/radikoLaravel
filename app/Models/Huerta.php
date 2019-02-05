@@ -40,4 +40,9 @@ class Huerta extends Model
 	{
 		return $this->hasMany(Disponibilidad::class);
 	}
+	
+	public function pedidos()
+	{
+		return $this->hasMany(Pedido::class);
+	}
 }

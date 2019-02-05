@@ -8,6 +8,7 @@ use App\user;
 
 use Storage;
 use Image;
+use DB;
 
 class PerfilController extends Controller
 {
@@ -51,9 +52,11 @@ class PerfilController extends Controller
     public function show($id)
     {
         $usuario = User::find($id);
-		$pedidos = Pedido::all();
-        return view('perfil.index', compact('usuario', 'pedidos'));
-		
+		$pedidosPendientes = DB::table('pedidos')->where('id_cliente', $id)->get();
+		$pedidosRealizados = DB::table('pedidos')->where('id_cliente', $id)->get();
+		//$pedidosPendientes = Pedido::all()->where('id_cliente', $id);
+		//$pedidosRealizados = Pedido::all()->where('id_cliente', $id);
+        return view('perfil.index', compact('usuario', 'pedidosPendientes', 'pedidosRealizados'));
     }
 
     /**
