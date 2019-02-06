@@ -55,12 +55,12 @@
 								</div>
 								<div class="media-body">
 									<h4>Huerta {{$pedido->id_huerta}}</h4>
+									<span>Estado {{$pedido->id_estado_pedido}}</span>
 
 									<ul class="simple-list">
 										<li>
 											<span class="bold">Día y hora</span>
-											<!--<span>22/05/2018 | 15.26hs</span>-->
-											<span>{{$pedido->fecha_pedido}}</span>
+											<span>{{ date('d/m/Y', strtotime($pedido->fecha_pedido)) }} | {{ date('H:i', strtotime($pedido->fecha_pedido)) }}</span>
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
@@ -88,7 +88,7 @@
 									<ul class="simple-list">
 										<li>
 											<span class="bold">Día y hora</span>
-											<span>{{$pedidoR->fecha_pedido}}</span>
+											<span>{{ date('d/m/Y', strtotime($pedidoR->fecha_pedido)) }} | {{ date('H:i', strtotime($pedidoR->fecha_pedido)) }}</span>
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
