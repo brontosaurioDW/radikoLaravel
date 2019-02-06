@@ -18,4 +18,9 @@ class Pedido extends Model
 	{
 		return $this->belongsTo(Huerta::class, 'id_huerta', 'id_huerta');
 	}
+	
+	public function estado()
+	{
+		return $this->belongsTo(EstadoPedido::class);
+	}
 }

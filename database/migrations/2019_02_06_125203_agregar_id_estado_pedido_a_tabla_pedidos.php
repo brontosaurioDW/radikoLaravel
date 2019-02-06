@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaEstadoPedido extends Migration
+class AgregarIdEstadoPedidoATablaPedidos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CrearTablaEstadoPedido extends Migration
      */
     public function up()
     {
-        Schema::create('estados_pedidos', function(Blueprint $table) {
-            $table->increments('id');
-            $table->string('estado', 50);
-            $table->timestamps();
-      });
+		Schema::table('pedidos', function(Blueprint $table) {
+			$table->unsignedInteger('id_estado_pedido');
+			$table->foreign('id_estado_pedido')->references('id')->on('estados_pedidos');
+		});	
     }
-
+	
     /**
      * Reverse the migrations.
      *
@@ -27,6 +26,6 @@ class CrearTablaEstadoPedido extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estados_pedidos');
+        //
     }
 }

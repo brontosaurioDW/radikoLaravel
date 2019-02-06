@@ -19,6 +19,7 @@ class PedidosSeeder extends Seeder
 			'observaciones' => 'pedido numero #1',
 			'id_cliente'=>5,
 			'id_huerta'=>1,
+			'id_estado_pedido'=>2,
 		]);
 		
 		//#2	
@@ -28,6 +29,7 @@ class PedidosSeeder extends Seeder
 			'observaciones' => 'pedido numero #2',
 			'id_cliente'=>6,
 			'id_huerta'=>3,
+			'id_estado_pedido'=>1,
 		]);
 		
 		//#3	
@@ -37,6 +39,7 @@ class PedidosSeeder extends Seeder
 			'observaciones' => 'pedido numero #3',
 			'id_cliente'=>7,
 			'id_huerta'=>2,
+			'id_estado_pedido'=>3,
 		]);
 		
 		//#4	
@@ -46,6 +49,7 @@ class PedidosSeeder extends Seeder
 			'observaciones' => 'pedido numero #4',
 			'id_cliente'=>8,
 			'id_huerta'=>2,
+			'id_estado_pedido'=>4,
 		]);
 		
 		//#5	
@@ -55,6 +59,7 @@ class PedidosSeeder extends Seeder
 			'observaciones' => 'pedido numero #5',
 			'id_cliente'=>8,
 			'id_huerta'=>1,
+			'id_estado_pedido'=>1,
 		]);
 		
 		//#6	
@@ -64,6 +69,7 @@ class PedidosSeeder extends Seeder
 			'observaciones' => 'pedido numero #6',
 			'id_cliente'=>5,
 			'id_huerta'=>1,
+			'id_estado_pedido'=>2,
 		]);
 		
 		//#7	
@@ -73,6 +79,7 @@ class PedidosSeeder extends Seeder
 			'observaciones' => 'pedido numero #7',
 			'id_cliente'=>7,
 			'id_huerta'=>1,
+			'id_estado_pedido'=>2,
 		]);
 		
 		//#8	
@@ -82,6 +89,7 @@ class PedidosSeeder extends Seeder
 			'observaciones' => 'pedido numero #8',
 			'id_cliente'=>6,
 			'id_huerta'=>1,
+			'id_estado_pedido'=>1,
 		]);
 		
 		//#9	
@@ -91,6 +99,7 @@ class PedidosSeeder extends Seeder
 			'observaciones' => 'pedido numero #9',
 			'id_cliente'=>8,
 			'id_huerta'=>3,
+			'id_estado_pedido'=>2,
 		]);
     }
 }

@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class EstadoPedido extends Model
 {
-    /** @var string El nombre de la tabla */
-	protected $table = "estado_pedido";
+   	protected $table = "estados_pedidos";
+	
+	public function pedidos()
+	{
+		return $this->hasMany(Pedido::class);
+	}
 	
 }

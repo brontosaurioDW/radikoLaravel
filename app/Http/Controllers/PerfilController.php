@@ -52,10 +52,12 @@ class PerfilController extends Controller
     public function show($id)
     {
         $usuario = User::find($id);
-		$pedidosPendientes = DB::table('pedidos')->where('id_cliente', $id)->get();
-		$pedidosRealizados = DB::table('pedidos')->where('id_cliente', $id)->get();
+		$pedidosPendientes = DB::table('pedidos')->where('id_cliente', $id)->whereIn('id_estado_pedido', [1, 2])->get(); //pedidos pendiente de entrega y de pago
+		$pedidosRealizados = DB::table('pedidos')->where('id_cliente', $id)->where('id_estado_pedido', 3)->get(); //pedidos entregados
+		
 		//$pedidosPendientes = Pedido::all()->where('id_cliente', $id);
 		//$pedidosRealizados = Pedido::all()->where('id_cliente', $id);
+		
         return view('perfil.index', compact('usuario', 'pedidosPendientes', 'pedidosRealizados'));
     }
 
