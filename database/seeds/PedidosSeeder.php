@@ -49,7 +49,7 @@ class PedidosSeeder extends Seeder
 			'observaciones' => 'pedido numero #4',
 			'id_cliente'=>8,
 			'id_huerta'=>2,
-			'id_estado_pedido'=>4,
+			'id_estado_pedido'=>2,
 		]);
 		
 		//#5	
@@ -99,7 +99,7 @@ class PedidosSeeder extends Seeder
 			'observaciones' => 'pedido numero #9',
 			'id_cliente'=>8,
 			'id_huerta'=>3,
-			'id_estado_pedido'=>2,
+			'id_estado_pedido'=>3,
 		]);
     }
 }
