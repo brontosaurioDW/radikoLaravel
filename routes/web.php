@@ -152,3 +152,21 @@ Route::get('contacto', function() {
 Route::get('/cpanel', function() {
 	return view('cpanel.index');
 });
+
+Route::get('/cpanel/huerta', function() {
+	return view('cpanel.huerta.index');
+});
+
+Route::get('/cpanel/productos', function() {
+	return view('cpanel.productos.index');
+});
+
+Route::get('/cpanel/pedidos', function() {
+	return view('cpanel.pedidos.index');
+});
+
+
+Route::get('/cpanel/perfil/{perfil}', [
+	'as' => 'cpanel.perfil.index',
+	'uses' => 'CpanelPerfilController@show'
+]);

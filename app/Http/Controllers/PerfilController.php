@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pedido;
-use App\user;
+use App\User;
 
 use Storage;
 use Image;
