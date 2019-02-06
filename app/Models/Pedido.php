@@ -23,4 +23,9 @@ class Pedido extends Model
 	{
 		return $this->belongsTo(EstadoPedido::class);
 	}
+	
+	public function pago()
+	{
+		return $this->belongsTo(TipoPago::class);
+	}
 }

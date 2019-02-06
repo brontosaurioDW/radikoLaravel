@@ -20,6 +20,7 @@ class PedidosSeeder extends Seeder
 			'id_cliente'=>5,
 			'id_huerta'=>1,
 			'id_estado_pedido'=>2,
+			'id_tipo_pago'=>1,
 		]);
 		
 		//#2	
@@ -30,6 +31,7 @@ class PedidosSeeder extends Seeder
 			'id_cliente'=>6,
 			'id_huerta'=>3,
 			'id_estado_pedido'=>1,
+			'id_tipo_pago'=>1,
 		]);
 		
 		//#3	
@@ -40,6 +42,7 @@ class PedidosSeeder extends Seeder
 			'id_cliente'=>7,
 			'id_huerta'=>2,
 			'id_estado_pedido'=>3,
+			'id_tipo_pago'=>1,
 		]);
 		
 		//#4	
@@ -50,6 +53,7 @@ class PedidosSeeder extends Seeder
 			'id_cliente'=>8,
 			'id_huerta'=>2,
 			'id_estado_pedido'=>2,
+			'id_tipo_pago'=>1,
 		]);
 		
 		//#5	
@@ -60,6 +64,7 @@ class PedidosSeeder extends Seeder
 			'id_cliente'=>8,
 			'id_huerta'=>1,
 			'id_estado_pedido'=>1,
+			'id_tipo_pago'=>1,
 		]);
 		
 		//#6	
@@ -70,6 +75,7 @@ class PedidosSeeder extends Seeder
 			'id_cliente'=>5,
 			'id_huerta'=>1,
 			'id_estado_pedido'=>2,
+			'id_tipo_pago'=>1,
 		]);
 		
 		//#7	
@@ -80,6 +86,7 @@ class PedidosSeeder extends Seeder
 			'id_cliente'=>7,
 			'id_huerta'=>1,
 			'id_estado_pedido'=>2,
+			'id_tipo_pago'=>1,
 		]);
 		
 		//#8	
@@ -90,6 +97,7 @@ class PedidosSeeder extends Seeder
 			'id_cliente'=>6,
 			'id_huerta'=>1,
 			'id_estado_pedido'=>1,
+			'id_tipo_pago'=>1,
 		]);
 		
 		//#9	
@@ -100,6 +108,7 @@ class PedidosSeeder extends Seeder
 			'id_cliente'=>8,
 			'id_huerta'=>3,
 			'id_estado_pedido'=>3,
+			'id_tipo_pago'=>1,
 		]);
     }
 }

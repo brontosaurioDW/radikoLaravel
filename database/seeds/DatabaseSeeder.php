@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ReviewsSeeder::class);
         $this->call(DisponibilidadesSeeder::class);
 		$this->call(EstadosPedidosSeeder::class);
+		$this->call(TiposPagosSeeder::class);
 		$this->call(PedidosSeeder::class);
     }
 }
