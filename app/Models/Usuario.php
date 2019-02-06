@@ -29,20 +29,18 @@ class Usuario extends Model
         'password', 'remember_token',
     ];
 
-
-
-    // public function recetas()
-    // {
-    //     return $this->hasMany(Receta::class, 'id_usuario', 'id' );
-    // }
-
     public function comentarios()
     {
         return $this->hasMany(Review::class);
     }
-	
-	public function pedidos()
+    
+    public function pedidos()
     {
         return $this->hasMany(Pedido::class);
+    }
+
+    public function huerta()
+    {
+        return $this->hasOne(Huerta::class);
     }
 }

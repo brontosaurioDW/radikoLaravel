@@ -19,7 +19,7 @@
 			</div>
 
 			<div class="col-9">	
-				<h3>Perfil del usuario que tiene una huerta</h3>
+				<h3>Index de la huerta</h3>
 			</div>
 		</div>
 	</section>

@@ -12,7 +12,7 @@ class Huerta extends Model
 	/** @var array Los campos que se pueden cargar de manera masiva. */
 	protected $fillable = [
 		'huerta',
-		'cuti',
+		'cuit',
 		'razon_social',
 		'direccion',
 		'cantidad_max_envios',
