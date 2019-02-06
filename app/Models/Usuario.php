@@ -39,7 +39,7 @@ class Usuario extends Model
     public function comentarios()
     {
         return $this->hasMany(Review::class);
-    };
+    }
 	
 	public function pedidos()
     {
