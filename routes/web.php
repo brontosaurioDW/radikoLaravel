@@ -170,3 +170,14 @@ Route::get('/cpanel/perfil/{perfil}', [
 	'as' => 'cpanel.perfil.index',
 	'uses' => 'CpanelPerfilController@show'
 ]);
+
+
+// @SILVIA: ruta de carrito
+//esta es una ruta temporal para ver el carrito
+
+Route::get('/carrito', [
+	'as' => 'carrito.index',
+	'uses' => 'CarritoController@cart'
+]);
+
+Route::post('/carrito', 'Front@cart');

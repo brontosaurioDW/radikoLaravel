@@ -15,5 +15,9 @@
                 </div>
             </form>
         </div>
+    
+
+        <a href="{{ route('carrito.index') }}" class="link-fwd">Vamo al carro</a>
+
     </div>
 </section>
