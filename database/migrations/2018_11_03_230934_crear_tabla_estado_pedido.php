@@ -14,7 +14,7 @@ class CrearTablaEstadoPedido extends Migration
     public function up()
     {
         Schema::create('estados_pedidos', function(Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_estado_pedido');
             $table->string('estado', 50);
             $table->timestamps();
       });

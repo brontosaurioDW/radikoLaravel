@@ -16,12 +16,12 @@ class Pedido extends Model
 	
 	public function huerta()
 	{
-		return $this->belongsTo(Huerta::class, 'id_huerta', 'id_huerta');
+		return $this->belongsTo(Huerta::class, 'id_huerta', 'id');
 	}
 	
 	public function estado()
 	{
-		return $this->belongsTo(EstadoPedido::class);
+		return $this->belongsTo(EstadoPedido::class, 'id_estado_pedido', 'id_estado_pedido');
 	}
 	
 	public function pago()

@@ -54,8 +54,8 @@
 									<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="">
 								</div>
 								<div class="media-body">
-									<h4>Huerta {{$pedido->id_huerta}}</h4>
-									<span>Estado {{$pedido->id_estado_pedido}}</span>
+									<h4>{{$pedido->huerta->huerta}}</h4>
+									<span style="color:red">{{$pedido->estado->estado}}</span>
 
 									<ul class="simple-list">
 										<li>
@@ -64,7 +64,7 @@
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
-											<span>$ 785.00</span>
+											<span style="color:red">$ 785.00</span>
 										</li>
 									</ul>		
 
@@ -83,7 +83,7 @@
 									<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="">
 								</div>
 								<div class="media-body">
-									<h4>Huerta {{$pedidoR->id_huerta}}</h4>
+									<h4>{{$pedidoR->huerta->huerta}}</h4>
 
 									<ul class="simple-list">
 										<li>
@@ -92,7 +92,7 @@
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
-											<span>$ 785.00</span>
+											<span style="color:red">$ 785.00</span>
 										</li>
 									</ul>		
 

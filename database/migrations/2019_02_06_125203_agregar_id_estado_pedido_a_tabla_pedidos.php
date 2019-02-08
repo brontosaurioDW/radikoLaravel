@@ -15,7 +15,7 @@ class AgregarIdEstadoPedidoATablaPedidos extends Migration
     {
 		Schema::table('pedidos', function(Blueprint $table) {
 			$table->unsignedInteger('id_estado_pedido');
-			$table->foreign('id_estado_pedido')->references('id')->on('estados_pedidos');
+			$table->foreign('id_estado_pedido')->references('id_estado_pedido')->on('estados_pedidos');
 		});	
     }
 	
