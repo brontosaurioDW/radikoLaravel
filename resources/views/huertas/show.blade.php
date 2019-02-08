@@ -421,7 +421,7 @@
 									<div class="row-form">
 										<button disabeld  class="btn btn-primary btn-medium" data-dismiss="modal" data-toggle="tooltip" data-placement="top" title="Próximamente" >Agregar al carrito</button>
 
-										<p>{{$producto->id}}</p>
+										<p data-product-id>{{$producto->id}}</p>
 										
 									</div>										
 

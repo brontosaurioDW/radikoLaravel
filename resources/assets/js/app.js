@@ -41,11 +41,14 @@
 				var productImage = document.querySelector('[data-product-image]')
 				var productPrice = document.querySelector('[data-product-price]')
 				var productDescription = document.querySelector('[data-product-description]')
+				var productId = document.querySelector('[data-product-id]')
 
 				productName.innerHTML = data.producto
 				productPrice.innerHTML = data.precio
 				productDescription.innerHTML = data.descripcion
 				productImage.setAttribute('src', 'http://localhost:8000/storage/images/productos/' + data.foto)
+
+				productId.innerHTML = idProducto
 
 			})
 			.then( response => $('#producto-detalle').modal('show') );
