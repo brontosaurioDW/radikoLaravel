@@ -119,13 +119,14 @@ for (var i = 0; i < productos.length; i++) {
 			var productPrice = document.querySelector('[data-product-price]');
 			var productDescription = document.querySelector('[data-product-description]');
 			var productId = document.querySelector('[data-product-id]');
+			var productUnidad = document.querySelector('[data-product-unidad-medida]');
 
 			productName.innerHTML = data.producto;
 			productPrice.innerHTML = data.precio;
 			productDescription.innerHTML = data.descripcion;
 			productImage.setAttribute('src', 'http://localhost:8000/storage/images/productos/' + data.foto);
-
 			productId.innerHTML = idProducto;
+			productUnidad.innerHTML = data.unidad_de_medida.unidad;
 		}).then(function (response) {
 			return $('#producto-detalle').modal('show');
 		});
