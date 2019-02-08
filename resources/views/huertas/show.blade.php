@@ -402,7 +402,7 @@
 							<h2 data-product-name>Tomate</h2>
 
 							<span class="precio d-block">
-								<span class="bold" data-product-price>$ 36.00</span> x <span data-product-unidad-medida></span>.
+								<span class="bold" data-product-price>$ 36.00</span> x kg.
 							</span>
 
 							<p data-product-description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut error officia placeat illo alias cum minima dignissimos accusantium earum incidunt.</p>

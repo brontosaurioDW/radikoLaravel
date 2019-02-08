@@ -97,8 +97,8 @@ class HuertasController extends Controller
    */
   public function getProductobyId( $id )
   {
-    // $productoSeleccionado = Producto::find($id);
-    $productoSeleccionado = Producto::with('unidadDeMedida')->find($id);
+
+    $productoSeleccionado = Producto::find($id);
     $categoria = Producto::find($id);
 
     return response()->json($productoSeleccionado);
