@@ -20,10 +20,6 @@
 
 			<div class="col-9">	
 				<h3>Detalles de la huerta 22</h3>
-
-				{{Auth::check()}}
-				{{Auth::user()}}
-
 			</div>
 		</div>
 	</section>

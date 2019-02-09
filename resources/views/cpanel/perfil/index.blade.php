@@ -32,13 +32,12 @@
 						</ul>
 					</div>
 					<div class="col-4">
-						<img class="img-fluid" alt="{{Auth::user()->name}}" src="{{ url('storage/images/usuarios/pedro.png')}}">
+						<img class="img-fluid" alt="{{Auth::user()->name}}" src="{{ url('storage/images/usuarios/'.Auth::user()->foto)}}">
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col">
-						<a href="#" class="btn btn-primary btn-medium">Editar perfil</a>
+						<a href="{{ route('cpanel.perfil.edit') }}" class="btn btn-primary btn-medium">Editar perfil</a>
 					</div>
 				</div>
 				@endif

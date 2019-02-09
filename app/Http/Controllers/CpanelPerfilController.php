@@ -51,14 +51,8 @@ class CpanelPerfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        // $usuario = User::find($id);
-        // $pedidosPendientes = DB::table('pedidos')->where('id_cliente', $id)->get();
-        // $pedidosRealizados = DB::table('pedidos')->where('id_cliente', $id)->get();
-        //$pedidosPendientes = Pedido::all()->where('id_cliente', $id);
-        //$pedidosRealizados = Pedido::all()->where('id_cliente', $id);
-        // return view('cpanel.index', compact('usuario'));
         return view('cpanel.perfil.index');
     }
 
@@ -69,9 +63,9 @@ class CpanelPerfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('cpanel.perfil.edit');
     }
 
     /**

@@ -167,10 +167,21 @@ Route::get('/cpanel/pedidos', function() {
 	return view('cpanel.pedidos.index');
 });
 
+// Cpanel Perfil
 
-Route::get('/cpanel/perfil/{perfil}', [
+Route::get('/cpanel/perfil', [
 	'as' => 'cpanel.perfil.index',
 	'uses' => 'CpanelPerfilController@show'
+]);
+
+Route::get('/cpanel/perfil/editar', [
+	'as' => 'cpanel.perfil.edit',
+	'uses' => 'CpanelPerfilController@edit'
+]);
+
+Route::put('/cpanel/perfil/{usuario}/editar', [
+	'as' => 'cpanel.perfil.update',
+	'uses' => 'CpanelPerfilController@edit'
 ]);
 
 
