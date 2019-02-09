@@ -181,7 +181,7 @@ Route::get('/cpanel/perfil/editar', [
 
 Route::put('/cpanel/perfil/{usuario}/editar', [
 	'as' => 'cpanel.perfil.update',
-	'uses' => 'CpanelPerfilController@edit'
+	'uses' => 'CpanelPerfilController@update'
 ]);
 
 

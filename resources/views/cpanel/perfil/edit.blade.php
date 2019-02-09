@@ -21,8 +21,9 @@
 			<div class="col-9">	
 				<h3>Editar perfil del usuario (huerta)</h3>
 
-				<form method="POST" action="{{ route('cpanel.perfil.update', ['id' => Auth::user()->id]) }}">
+				<form method="post" action="{{ route('cpanel.perfil.update', ['id' => Auth::user()->id]) }}" enctype="multipart/form-data">
 					@csrf
+					@method('PUT')
 
 					<div class="user-info">
 						@if ( !empty(Auth::user()->foto) )
@@ -42,11 +43,11 @@
 					</div>
 					<div class="form-group">
 						<label for="last_name">Apellido</label>
-						<input type="text" class="form-control" id="last_name" name="last_n ame" value="{{ Auth::user()->last_name }}">
+						<input type="text" class="form-control" id="last_name" name="last_name" value="{{ Auth::user()->last_name }}">
 					</div>
 					<div class="form-group">
 						<label for="telephone">Teléfono</label>
-						<input type="text" class="form-control" id="telephone" value="{{ Auth::user()->telephone }}">
+						<input type="text" class="form-control" id="telephone" name="telephone" value="{{ Auth::user()->telephone }}">
 					</div>
 
 					<button type="submit" class="btn btn-primary btn-medium">Guardar cambios</button>

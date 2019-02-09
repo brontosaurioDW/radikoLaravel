@@ -36,14 +36,21 @@
             <li>
                 <div class="dropdown show">
                     <a href="javascript:void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                        
-                        Bienvenido/a {{ Auth::user()->name }}                    
+                        Bienvenido/a {{ Auth::user()->name }}                 
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        @if(Auth::user()->tipo == 'huerta')
+                        <a class="dropdown-item" href="{{ route('cpanel.perfil.index') }}">
+                            <i class="fas fa-user"></i>
+                            <span>Perfil huerta</span>
+                        </a>
+                        @else                        
                         <a class="dropdown-item" href="{{ route('perfil.detalle' , Auth::user()->id ) }}">
                             <i class="fas fa-user"></i>
                             <span>Perfil</span>
                         </a>
+                        @endif
                         <a class="dropdown-item" href="{{ route('logout') }}">
                             <i class="fas fa-sign-out-alt"></i>
                             <span>Cerrar sesión</span>

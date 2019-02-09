@@ -130,7 +130,6 @@ class PerfilController extends Controller
               'class' => 'warning'
           ]
       );
-
     }
 
 
