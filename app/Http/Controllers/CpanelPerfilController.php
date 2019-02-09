@@ -112,8 +112,6 @@ class CpanelPerfilController extends Controller
               'class' => 'warning'
           ]
       );
-
-        // return view('cpanel.perfil.index');
     }
 
     /**

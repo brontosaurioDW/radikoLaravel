@@ -11,6 +11,15 @@ use Storage;
 use Image;
 use DB;
 
+use App\Models\Huerta;
+use App\Models\TipoHuerta;
+use App\Models\Categoria;
+use App\Models\Producto;
+use App\Models\Review;
+use App\Models\Disponibilidad;
+
+// use Illuminate\Support\Facades\DB;
+
 class CpanelHuertaController extends Controller
 {
     /**
@@ -50,9 +59,15 @@ class CpanelHuertaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+    $huerta = Huerta::find('1');
+    $categorias = Categoria::All();
+    $productos = Producto::with('unidadDeMedida')->where('huerta_id', 1)->paginate(8);
+
+    print_r($huerta);
+    
+    return view('cpanel.huerta.index', compact('huerta', 'productos','categorias'));
     }
 
     /**

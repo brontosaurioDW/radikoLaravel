@@ -155,9 +155,6 @@ Route::get('/cpanel', function() {
 	return view('cpanel.index');
 });
 
-Route::get('/cpanel/huerta', function() {
-	return view('cpanel.huerta.index');
-});
 
 Route::get('/cpanel/productos', function() {
 	return view('cpanel.productos.index');
@@ -166,6 +163,17 @@ Route::get('/cpanel/productos', function() {
 Route::get('/cpanel/pedidos', function() {
 	return view('cpanel.pedidos.index');
 });
+
+// Cpanel Huerta
+
+// Route::get('/cpanel/huerta', function() {
+// 	return view('cpanel.huerta.index');
+// });
+
+Route::get('/cpanel/huerta', [
+	'as' => 'cpanel.huerta.index',
+	'uses' => 'CpanelHuertaController@show'
+]);
 
 // Cpanel Perfil
 
@@ -183,7 +191,6 @@ Route::put('/cpanel/perfil/{usuario}/editar', [
 	'as' => 'cpanel.perfil.update',
 	'uses' => 'CpanelPerfilController@update'
 ]);
-
 
 // @SILVIA: ruta de carrito
 //esta es una ruta temporal para ver el carrito
