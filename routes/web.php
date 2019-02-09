@@ -149,6 +149,8 @@ Route::get('contacto', function() {
 	return view('contacto.contacto');
 });
 
+// Cpanel
+
 Route::get('/cpanel', function() {
 	return view('cpanel.index');
 });
