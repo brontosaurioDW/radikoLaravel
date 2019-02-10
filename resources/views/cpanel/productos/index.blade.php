@@ -15,6 +15,12 @@
 			<div class="col-9">	
 				<h3>Productos de la  huerta</h3>
 
+				@if(Session::has('status'))
+				@component('components.alert', ['tipo' => Session::get('class')])
+				{!! Session::get('status') !!}
+				@endcomponent
+				@endif
+
 				<a class="btn btn-primary btn-medium mb-3" href="{{ route( 'cpanel.productos.create') }}">Crear producto</a>
 
 				<table class="table">
