@@ -10,7 +10,7 @@ class UnidadDeMedida extends Model
 	protected $table = 'unidades_de_medida';
 
 	/** @var array Los campos que se pueden cargar de manera masiva. */
-	protected $fillable = ['unidad'];
+	// protected $fillable = ['unidad'];
 
 
 	public function productos()
