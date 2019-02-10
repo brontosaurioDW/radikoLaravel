@@ -155,20 +155,23 @@ Route::get('/cpanel', function() {
 	return view('cpanel.index');
 });
 
-
-Route::get('/cpanel/productos', function() {
-	return view('cpanel.productos.index');
-});
-
 Route::get('/cpanel/pedidos', function() {
 	return view('cpanel.pedidos.index');
 });
 
-// Cpanel Huerta
+// Cpanel Productos
 
-// Route::get('/cpanel/huerta', function() {
-// 	return view('cpanel.huerta.index');
-// });
+Route::get('/cpanel/productos', [
+	'as' => 'cpanel.productos.index',
+	'uses' => 'CpanelProductosController@index'
+]);
+
+Route::get('/cpanel/productos/{prodcuto}', [
+	'as' => 'cpanel.productos.show',
+	'uses' => 'CpanelProductosController@show'
+]);
+
+// Cpanel Huerta
 
 Route::get('/cpanel/huerta', [
 	'as' => 'cpanel.huerta.index',
