@@ -6,16 +6,10 @@
 
 <div class="main-wrapper relative small-height">
 	<section class="container profile">
-
-		<h2 class="mb-4">usuario tipo huerta</h2>
-
 		<div class="row">
 
-
 			<div class="col-3">
-
 				@include ('cpanel.nav')
-
 			</div>
 
 			<div class="col-9">	
@@ -53,6 +47,7 @@
 					<button type="submit" class="btn btn-primary btn-medium">Guardar cambios</button>
 				</form>
 			</div>
+			
 		</div>
 	</section>
 </div>
