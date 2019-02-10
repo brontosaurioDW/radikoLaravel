@@ -166,6 +166,16 @@ Route::get('/cpanel/productos', [
 	'uses' => 'CpanelProductosController@index'
 ]);
 
+Route::get('/cpanel/productos/nuevo', [
+	'as' => 'cpanel.productos.create',
+	'uses' => 'CpanelProductosController@create'
+]);
+
+Route::post('/cpanel/productos/nuevo', [
+	'as' => 'cpanel.productos.store',
+	'uses' => 'CpanelProductosController@store'
+]);
+
 Route::get('/cpanel/productos/{prodcuto}', [
 	'as' => 'cpanel.productos.show',
 	'uses' => 'CpanelProductosController@show'

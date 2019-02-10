@@ -73,9 +73,6 @@ class PerfilController extends Controller
         return view('perfil.edit', compact('usuario'));
     }
 
-
-
-
     // @MARTA: controller de detalles pedidos 
     //esta es un controller temporal para ver los pedidos
 
@@ -84,7 +81,6 @@ class PerfilController extends Controller
         $usuario = User::find($id);
         return view('perfil.detalle-pedido', compact('usuario'));
     }        
-
 
     /**
      * Update the specified resource in storage.

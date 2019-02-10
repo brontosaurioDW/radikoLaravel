@@ -11,21 +11,26 @@ class Producto extends Model
 
 	/** @var array Los campos que se pueden cargar de manera masiva. */
 	protected $fillable = [
-		'producto', 'descripcion',
+		'producto', 
+		'descripcion',
 		'marca',
 		'precio',
 		'foto',
 		'estado',
-		'id_huerta',
-		'id_unidad_de_medida'
+		'huerta_id',
+		'unidad_de_medida_id',
+		'categoria_id'
 	];
 
 	/** @var array Las reglas de la validación. */
-	// public static $rules = [
-	// 	'nombre' => 'required|min:2',
-	// 	'genero' => 'required|min:3',
-	// 	'precio' => 'required|numeric',
-	// ];
+	public static $rules = [
+		'producto' => 'required| min:2',
+		'descripcion' => 'required',
+		'marca' => 'required',
+		'precio' => 'required',
+		'foto' => 'sometimes|image'
+
+	];
 
 
 	public function huerta()

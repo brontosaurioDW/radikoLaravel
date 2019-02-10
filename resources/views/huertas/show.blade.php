@@ -138,8 +138,6 @@
 
 									@endforeach
 
-
-
 								</div>
 							</div>							
 							<nav aria-label="navigation">
@@ -383,7 +381,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="producto-detalle" tabindex="-1" role="dialog" aria-labelledby="producto-detalle" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content block">
 			<div class="modal-body modal-producto">
 
@@ -423,9 +421,7 @@
 
 										<p data-product-id>{{$producto->id}}</p>
 										
-									</div>										
-
-									
+									</div>							
 
 								</div>
 							</form>
