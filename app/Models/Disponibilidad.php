@@ -12,4 +12,9 @@ class Disponibilidad extends Model
 	{
 		return $this->belongsTo(Huerta::class);
 	}
+	
+	public function pedidos()
+	{
+		return $this->hasMany(Pedido::class, 'id_disponibilidad', 'id');
+	}
 }

@@ -28,4 +28,9 @@ class Pedido extends Model
 	{
 		return $this->belongsTo(TipoPago::class);
 	}
+	
+	public function disponibilidad()
+	{
+		return $this->belongsTo(Disponibilidad::class, 'id_disponibilidad', 'id');
+	}
 }

@@ -21,6 +21,7 @@ class PedidosSeeder extends Seeder
 			'id_huerta'=>1,
 			'id_estado_pedido'=>2,
 			'id_tipo_pago'=>1,
+			'id_disponibilidad'=>1
 		]);
 		
 		//#2	
@@ -32,6 +33,7 @@ class PedidosSeeder extends Seeder
 			'id_huerta'=>3,
 			'id_estado_pedido'=>1,
 			'id_tipo_pago'=>1,
+			'id_disponibilidad'=>8
 		]);
 		
 		//#3	
@@ -43,6 +45,7 @@ class PedidosSeeder extends Seeder
 			'id_huerta'=>2,
 			'id_estado_pedido'=>3,
 			'id_tipo_pago'=>1,
+			'id_disponibilidad'=>5
 		]);
 		
 		//#4	
@@ -54,6 +57,7 @@ class PedidosSeeder extends Seeder
 			'id_huerta'=>2,
 			'id_estado_pedido'=>2,
 			'id_tipo_pago'=>1,
+			'id_disponibilidad'=>6
 		]);
 		
 		//#5	
@@ -65,6 +69,7 @@ class PedidosSeeder extends Seeder
 			'id_huerta'=>1,
 			'id_estado_pedido'=>1,
 			'id_tipo_pago'=>1,
+			'id_disponibilidad'=>4
 		]);
 		
 		//#6	
@@ -76,6 +81,7 @@ class PedidosSeeder extends Seeder
 			'id_huerta'=>1,
 			'id_estado_pedido'=>2,
 			'id_tipo_pago'=>1,
+			'id_disponibilidad'=>2
 		]);
 		
 		//#7	
@@ -87,6 +93,7 @@ class PedidosSeeder extends Seeder
 			'id_huerta'=>1,
 			'id_estado_pedido'=>2,
 			'id_tipo_pago'=>1,
+			'id_disponibilidad'=>1
 		]);
 		
 		//#8	
@@ -98,6 +105,7 @@ class PedidosSeeder extends Seeder
 			'id_huerta'=>1,
 			'id_estado_pedido'=>1,
 			'id_tipo_pago'=>1,
+			'id_disponibilidad'=>3
 		]);
 		
 		//#9	
@@ -109,6 +117,7 @@ class PedidosSeeder extends Seeder
 			'id_huerta'=>3,
 			'id_estado_pedido'=>3,
 			'id_tipo_pago'=>1,
+			'id_disponibilidad'=>9
 		]);
     }
 }
