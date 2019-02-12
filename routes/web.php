@@ -107,12 +107,17 @@ Route::get('logout', [
 
 Route::middleware('auth')->group(function() {
 
-	Route::get('/perfil', [
+	/*Route::get('/perfil', [
 		'as' => 'perfil',
 		'uses' => 'PerfilController@index'
+	]);*/
+	
+	Route::get('/perfil/pedido/{pedido}', [
+		'as' => 'perfil.pedidoDetalle',
+		'uses' => 'PerfilController@detallePedido'
 	]);
 
-	Route::get('/perfil/{perfil}', [
+	Route::get('/perfil', [
 		'as' => 'perfil.detalle',
 		'uses' => 'PerfilController@show'
 	]);
@@ -125,14 +130,6 @@ Route::middleware('auth')->group(function() {
 	Route::put('/perfil/{perfil}/editar', [
 		'as' => 'perfil.update',
 		'uses' => 'PerfilController@update'
-	]);
-
-	// @MARTA: ruta de detalles pedidos 
-	//esta es una ruta temporal para ver los pedidos
-
-	Route::get('/perfil/{perfil}/pedido', [
-		'as' => 'perfil.detalle-pedido',
-		'uses' => 'PerfilController@marta'
 	]);
 
 });

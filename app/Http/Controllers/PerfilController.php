@@ -49,16 +49,16 @@ class PerfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        $usuario = User::find($id);
-		/*$pedidosPendientes = DB::table('pedidos')->where('id_cliente', $id)->whereIn('id_estado_pedido', [1, 2])->get(); //pedidos pendiente de entrega y de pago
-		$pedidosRealizados = DB::table('pedidos')->where('id_cliente', $id)->where('id_estado_pedido', 3)->get(); //pedidos entregados*/
+        $userId = auth()->user()->id;
+		/*$pedidosPendientes = DB::table('pedidos')->where('usuario_id', $userId)->whereIn('id_estado_pedido', [1, 2])->get(); //pedidos pendiente de entrega y de pago
+		$pedidosRealizados = DB::table('pedidos')->where('usuario_id', $userId)->where('id_estado_pedido', 3)->get(); //pedidos entregados*/
 		
-		$pedidosPendientes = Pedido::where('id_cliente', $id)->whereIn('id_estado_pedido', [1, 2])->get();
-		$pedidosRealizados = Pedido::where('id_cliente', $id)->where('id_estado_pedido', 3)->get();
+		$pedidosPendientes = Pedido::where('usuario_id', $userId)->whereIn('id_estado_pedido', [1, 2])->get();
+		$pedidosRealizados = Pedido::where('usuario_id', $userId)->where('id_estado_pedido', 3)->get();
 		
-        return view('perfil.index', compact('usuario', 'pedidosPendientes', 'pedidosRealizados'));
+        return view('perfil.index', compact('pedidosPendientes', 'pedidosRealizados'));
     }
 
     /**
@@ -76,10 +76,11 @@ class PerfilController extends Controller
     // @MARTA: controller de detalles pedidos 
     //esta es un controller temporal para ver los pedidos
 
-    public function marta($id)
+    public function detallePedido($pedido)
     {
-        $usuario = User::find($id);
-        return view('perfil.detalle-pedido', compact('usuario'));
+        $userId = auth()->user()->id;
+		$pedido = Pedido::where('usuario_id', $userId)->find($pedido);
+        return view('perfil.detalle-pedido', compact('pedido'));
     }        
 
     /**
