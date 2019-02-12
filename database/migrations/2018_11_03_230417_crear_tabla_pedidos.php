@@ -14,17 +14,15 @@ class CrearTablaPedidos extends Migration
     public function up()
     {
         Schema::create('pedidos', function(Blueprint $table) {
-            $table->increments('id_pedido');
+            $table->increments('id');
             $table->dateTime('fecha_pedido');
             $table->decimal('subtotal', 8, 2);
             $table->text('observaciones')->nullable();
             $table->timestamps();
 			
-			$table -> unsignedInteger('id_cliente');
-			$table -> foreign('id_cliente')->references('id')->on('users');
+			$table -> unsignedInteger('usuario_id');
 			
-			$table -> unsignedInteger('id_huerta');
-			$table -> foreign('id_huerta')->references('id')->on('huertas');
+			$table -> unsignedInteger('huerta_id');
       });
     }
 

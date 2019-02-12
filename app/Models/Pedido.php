@@ -11,12 +11,12 @@ class Pedido extends Model
 	
 	public function usuario()
 	{
-		return $this->belongsTo(Usuario::class, 'id_cliente', 'id_cliente');
+		return $this->belongsTo(Usuario::class);
 	}
 	
 	public function huerta()
 	{
-		return $this->belongsTo(Huerta::class, 'id_huerta', 'id');
+		return $this->belongsTo(Huerta::class);
 	}
 	
 	public function estado()

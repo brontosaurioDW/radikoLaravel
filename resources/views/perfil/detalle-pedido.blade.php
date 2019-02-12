@@ -7,6 +7,7 @@
 	<div class="main-wrapper relative small-height">
 		<section class="container detalle-pedido">
 
+		{{$pedido}}
 			<a href="#" class="link-back">volver a Perfil</a>
 
 			<div class="row justify-content-between">
