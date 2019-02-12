@@ -33,6 +33,9 @@
 
 			var idProducto = this.getAttribute('data-id')
 
+
+
+
 			fetch('/api/huerta/producto/' + idProducto)
 			.then(response => response.json())
 			.then(data => {
@@ -43,6 +46,11 @@
 				var productDescription = document.querySelector('[data-product-description]')
 				var productId = document.querySelector('[data-product-id]')
 				var productUnidad = document.querySelector('[data-product-unidad-medida]')
+				var productUnidad2 = document.querySelector('[data-product-unidad-medida2]')
+				var productUnidad3 = document.querySelector('[data-product-unidad-medida3]')
+
+
+				var unidadita = data.unidad_de_medida.unidad
 
 				productName.innerHTML = data.producto
 				productPrice.innerHTML = data.precio
@@ -51,8 +59,11 @@
 
 				productId.setAttribute('value', idProducto)
 
-
 				productUnidad.innerHTML = data.unidad_de_medida.unidad
+
+				productUnidad2.setAttribute('value', unidadita)
+
+				productUnidad3.innerHTML = data.unidad_de_medida.unidad
 
 			})
 			.then( response => $('#producto-detalle').modal('show') );

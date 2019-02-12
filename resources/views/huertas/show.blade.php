@@ -408,28 +408,19 @@
 							<form method="POST" action="{{route('carrito.agregar')}}" class="form">
 								<div class="form">
 									<div class="row-form d-flex align-items-center flex-wrap justify-content-between">
-										
-										
-
-
 										<input type="hidden" name="product_id" value="" data-product-id>
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
 										<input type="hidden" name="huerta_id" value="{{$huerta->id}}">
-
-
+										<input type="hidden" name="unidad" value="" data-product-unidad-medida2>
 										<label for="cantidad">Cantidad</label>
-										<input type="number" name="product_qty">
-
+										<input type="number" name="product_qty"> <span data-product-unidad-medida3></span>
 									</div>
 									<div class="row-form">
-
 										<button type="submit" class="btn btn-primary btn-medium">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                Add to cart
-                                            </button>
-										
+                                            <i class="fa fa-shopping-cart"></i>
+                                                Agregar al carrito
+                                        </button>
 									</div>							
-
 								</div>
 							</form>
 						</div>

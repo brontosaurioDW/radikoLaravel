@@ -202,9 +202,6 @@ Route::put('/cpanel/perfil/{usuario}/editar', [
 	'uses' => 'CpanelPerfilController@update'
 ]);
 
-// @SILVIA: ruta de carrito
-//esta es una ruta temporal para ver el carrito
-
 Route::get('/carrito', [
 	'as' => 'carrito.index',
 	'uses' => 'CarritoController@cart'
@@ -219,5 +216,3 @@ Route::post('/carrito/agregar', [
 	'as' => 'carrito.agregar',
 	'uses' => 'CarritoController@agregar'
 ]);
-
-//Route::post('/carrito', 'Front@cart');

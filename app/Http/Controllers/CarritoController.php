@@ -31,10 +31,6 @@ public function cart() {
     //Cart::add('2', 'Naranja', 1, 45.00);
     //Cart::add('17', 'Tofu', 3, 138.90);
 
-
-
-
-
     
     // aumenta la cantidad del producto
 
@@ -76,17 +72,18 @@ public function cart() {
         Cart::remove($rowId);
 
     }
+    if((Request::get('vaciar')) == 1) {
 
 
+        Cart::destroy();
+
+    }
 
 
     $cart = Cart::content();
 
 
-
-
-
-     return view('carrito.index');
+    return view('carrito.index');
 
 }
 
@@ -96,6 +93,7 @@ public function agregar() {
             $product_id = Request::get('product_id');
             $product_qty = Request::get('product_qty');
             $product_huerta = Request::get('huerta_id');
+            $product_unidad = Request::get('unidad');
             $product = Producto::find($product_id);
 
 
@@ -105,13 +103,11 @@ public function agregar() {
                 'id' => $product_id, 
                 'name' => $product->producto, 
                 'qty' => $product_qty, 
-                'price' => $product->precio
+                'price' => $product->precio,
+                'options' => ['unidad' => $product_unidad]
             ]);
 
         }
-
-
-
 
 
         $cart = Cart::content();
