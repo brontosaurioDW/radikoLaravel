@@ -52,7 +52,11 @@
 							
 							<li class="list-wrapper media">
 								<div class="media-img">
-									<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="">
+									@if ( !empty($pedido->huerta->foto) )
+									<img class="img-fluid" src="{{ url('storage/images/huertas/'.$pedido->huerta->foto) }}" alt="{{$pedido->huerta->huerta}}">
+									@else
+									<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{$pedido->huerta->huerta}}">
+									@endif
 								</div>
 								<div class="media-body">
 									<h4>{{$pedido->huerta->huerta}}</h4>
@@ -81,7 +85,11 @@
 							@foreach ($pedidosRealizados as $pedidoR)
 							<li class="list-wrapper media">
 								<div class="media-img">
-									<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="">
+									@if ( !empty($pedidoR->huerta->foto) )
+									<img class="img-fluid" src="{{ url('storage/images/huertas/'.$pedidoR->huerta->foto) }}" alt="{{$pedidoR->huerta->huerta}}">
+									@else
+									<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{$pedidoR->huerta->huerta}}">
+									@endif
 								</div>
 								<div class="media-body">
 									<h4>{{$pedidoR->huerta->huerta}}</h4>

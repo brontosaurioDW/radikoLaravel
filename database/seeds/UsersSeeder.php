@@ -110,7 +110,7 @@ class UsersSeeder extends Seeder
         'telephone' => '11 4568-1223',
         'foto' => 'carlos.jpg',
         'estado' => 'activo',
-        'tipo' => 'admin'
+        'tipo' => 'huerta'
       ]);
 		//#10
       User::create([

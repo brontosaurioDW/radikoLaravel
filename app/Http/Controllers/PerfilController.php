@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pedido;
+use App\Models\Huerta;
+use App\Models\Usuario;
 use App\User;
 
 use Storage;
@@ -80,7 +82,7 @@ class PerfilController extends Controller
     {
         $userId = auth()->user()->id;
 		$pedido = Pedido::where('usuario_id', $userId)->find($pedido);
-        return view('perfil.detalle-pedido', compact('pedido'));
+		return view('perfil.detalle-pedido', compact('pedido'));
     }        
 
     /**

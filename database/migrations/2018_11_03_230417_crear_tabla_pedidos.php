@@ -17,6 +17,8 @@ class CrearTablaPedidos extends Migration
             $table->increments('id');
             $table->dateTime('fecha_pedido');
             $table->decimal('subtotal', 8, 2);
+            $table->decimal('costo_envio', 8, 2);
+			$table->decimal('total', 8, 2);
             $table->text('observaciones')->nullable();
             $table->timestamps();
 			
