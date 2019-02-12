@@ -40,7 +40,32 @@
                		<p><strong><?php echo $row->name; ?></strong></p>
                		<p><?php echo ($row->options->has('size') ? $row->options->size : ''); ?></p>
            		</td>
-           		<td><input type="text" value="<?php echo $row->qty; ?>"></td>
+           		
+
+
+
+           		<td>
+           			<form method="GET" action="{{route('carrito.updetear')}}">
+
+           				<input type="hidden" name="product_id" value="{{$row->id}}">	
+
+
+
+           			<a class="cart_quantity_up" href='{{url("carrito?product_id=$row->id&increment=1")}}'> + </a>
+
+           			<input class="cart_quantity_input" type="text" name="quantity" value="{{$row->qty}}" autocomplete="off" size="2">
+
+           			<a class="cart_quantity_down" href='{{url("carrito?product_id=$row->id&decrease=1")}}'> - </a>
+
+           			<a href='{{url("carrito?product_id=$row->id&borrar=1")}}'> Borrar </a>
+
+					<button type="submit">UPDETEAR</button>
+
+           			</form>
+           		</td>
+
+
+
            		<td>$<?php echo $row->price; ?></td>
            		<td>$<?php echo $row->total; ?></td>
        		</tr>
@@ -57,9 +82,15 @@
    		</tr>
    		<tr>
    			<td colspan="2">&nbsp;</td>
+   			<td>Costo de envío</td>
+   			<td>$130</td>
+   		</tr>
+   		<tr>
+   			<td colspan="2">&nbsp;</td>
    			<td>Total</td>
    			<td><?php echo Cart::total(); ?></td>
    		</tr>
+
    	</tfoot>
 </table>
 

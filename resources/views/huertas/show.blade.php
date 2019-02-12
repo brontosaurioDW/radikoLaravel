@@ -405,21 +405,28 @@
 
 							<p data-product-description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut error officia placeat illo alias cum minima dignissimos accusantium earum incidunt.</p>
 
-							<form method="" action="" class="form">
+							<form method="POST" action="{{route('carrito.agregar')}}" class="form">
 								<div class="form">
 									<div class="row-form d-flex align-items-center flex-wrap justify-content-between">
+										
+										
+
+
+										<input type="hidden" name="product_id" value="" data-product-id>
+										<input type="hidden" name="_token" value="{{ csrf_token() }}">
+										<input type="hidden" name="huerta_id" value="{{$huerta->id}}">
+
+
 										<label for="cantidad">Cantidad</label>
-										<select class="select" id="cantidad">
-											<option selected>Elegir...</option>
-											<option value="1">1 kg</option>
-											<option value="2">2 kg</option>
-											<option value="3">3 kg</option>
-										</select>
+										<input type="number" name="product_qty">
+
 									</div>
 									<div class="row-form">
-										<button disabeld  class="btn btn-primary btn-medium" data-dismiss="modal" data-toggle="tooltip" data-placement="top" title="Próximamente" >Agregar al carrito</button>
 
-										<p data-product-id>{{$producto->id}}</p>
+										<button type="submit" class="btn btn-primary btn-medium">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                Add to cart
+                                            </button>
 										
 									</div>							
 

@@ -48,7 +48,10 @@
 				productPrice.innerHTML = data.precio
 				productDescription.innerHTML = data.descripcion
 				productImage.setAttribute('src', 'http://localhost:8000/storage/images/productos/' + data.foto)
-				productId.innerHTML = idProducto
+
+				productId.setAttribute('value', idProducto)
+
+
 				productUnidad.innerHTML = data.unidad_de_medida.unidad
 
 			})

@@ -213,4 +213,14 @@ Route::get('/carrito', [
 	'uses' => 'CarritoController@cart'
 ]);
 
-Route::post('/carrito', 'Front@cart');
+Route::get('/carrito/updetear', [
+	'as' => 'carrito.updetear',
+	'uses' => 'CarritoController@updetear'
+]);
+
+Route::post('/carrito/agregar', [
+	'as' => 'carrito.agregar',
+	'uses' => 'CarritoController@agregar'
+]);
+
+//Route::post('/carrito', 'Front@cart');
