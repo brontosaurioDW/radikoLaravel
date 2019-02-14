@@ -7663,3 +7663,41 @@ header:not(.is-home) + main .main-wrapper {
   list-style: none;
   font-size: 15px;
 }
+
+
+/* Sección Pedido */
+@media screen and (min-width: 768px) {
+	.pedido .huerta-title span{
+		display: block;
+		font-size: 18px;
+	}
+	.pedido-productos .card {
+		width: 100%;
+	}
+	.pedido-productos .card .card-info {
+		width:100%;
+	}
+	.pedido-productos .card .card-title  h3{
+		width:90%;
+	}
+	.pedido-productos .card .modificar-cantidad{
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.pedido-productos .card .modificar-cantidad a{
+		color: #707070;
+		margin: 0 15px;
+	}
+	.detalle-carrito{
+		border-bottom: 1px solid #898989;
+		margin-bottom: 20px;
+	}
+	.detalle-carrito .importe{
+		font-size: 18px;
+		
+	}
+	
+	
+	
+}	
