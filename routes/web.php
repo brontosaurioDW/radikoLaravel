@@ -216,3 +216,23 @@ Route::post('/carrito/agregar', [
 	'as' => 'carrito.agregar',
 	'uses' => 'CarritoController@agregar'
 ]);
+
+Route::get('/carrito/paso2', [
+	'as' => 'carrito.paso2',
+	'uses' => 'CarritoController@paso2'
+]);
+
+Route::get('/carrito/paso3', [
+	'as' => 'carrito.paso3',
+	'uses' => 'CarritoController@paso3'
+]);
+
+Route::get('/carrito/paso4', [
+	'as' => 'carrito.paso4',
+	'uses' => 'CarritoController@paso4'
+]);
+
+Route::get('/carrito/confirmacion', [
+	'as' => 'carrito.confirmacion',
+	'uses' => 'CarritoController@finalizar'
+]);

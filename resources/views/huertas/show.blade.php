@@ -14,7 +14,7 @@
 			</div>
 		</div>		
 
-		<div class="d-none" id="js-dummy-alert">
+		<div class="d-none" id="js-dummy-alert js-carrito-alert">
 			<div class="row">
 				<div class="col-12">
 					<div class="alert dummy-alert alert-dismissible fade show" role="alert">
