@@ -105,42 +105,42 @@ module.exports = __webpack_require__(2);
 var productos = document.querySelectorAll('[data-id]');
 
 for (var i = 0; i < productos.length; i++) {
-	productoSeleccionado = productos[i];
-	productoSeleccionado.addEventListener('click', function () {
+				productoSeleccionado = productos[i];
+				productoSeleccionado.addEventListener('click', function () {
 
-		var idProducto = this.getAttribute('data-id');
+								var idProducto = this.getAttribute('data-id');
 
-		fetch('/api/huerta/producto/' + idProducto).then(function (response) {
-			return response.json();
-		}).then(function (data) {
+								fetch('/api/huerta/producto/' + idProducto).then(function (response) {
+												return response.json();
+								}).then(function (data) {
 
-			var productName = document.querySelector('[data-product-name]');
-			var productImage = document.querySelector('[data-product-image]');
-			var productPrice = document.querySelector('[data-product-price]');
-			var productDescription = document.querySelector('[data-product-description]');
-			var productId = document.querySelector('[data-product-id]');
-			var productUnidad = document.querySelector('[data-product-unidad-medida]');
-			var productUnidad2 = document.querySelector('[data-product-unidad-medida2]');
-			var productUnidad3 = document.querySelector('[data-product-unidad-medida3]');
+												var productName = document.querySelector('[data-product-name]');
+												var productImage = document.querySelector('[data-product-image]');
+												var productPrice = document.querySelector('[data-product-price]');
+												var productDescription = document.querySelector('[data-product-description]');
+												var productId = document.querySelector('[data-product-id]');
+												var productUnidad = document.querySelector('[data-product-unidad-medida]');
+												var productUnidad2 = document.querySelector('[data-product-unidad-medida2]');
+												var productUnidad3 = document.querySelector('[data-product-unidad-medida3]');
 
-			var unidadita = data.unidad_de_medida.unidad;
+												var unidadita = data.unidad_de_medida.unidad;
 
-			productName.innerHTML = data.producto;
-			productPrice.innerHTML = data.precio;
-			productDescription.innerHTML = data.descripcion;
-			productImage.setAttribute('src', 'http://localhost:8000/storage/images/productos/' + data.foto);
+												productName.innerHTML = data.producto;
+												productPrice.innerHTML = data.precio;
+												productDescription.innerHTML = data.descripcion;
+												productImage.setAttribute('src', 'http://localhost:8000/storage/images/productos/' + data.foto);
 
-			productId.setAttribute('value', idProducto);
+												productId.setAttribute('value', idProducto);
 
-			productUnidad.innerHTML = data.unidad_de_medida.unidad;
+												productUnidad.innerHTML = data.unidad_de_medida.unidad;
 
-			productUnidad2.setAttribute('value', unidadita);
+												productUnidad2.setAttribute('value', unidadita);
 
-			productUnidad3.innerHTML = data.unidad_de_medida.unidad;
-		}).then(function (response) {
-			return $('#producto-detalle').modal('show');
-		});
-	});
+												productUnidad3.innerHTML = data.unidad_de_medida.unidad;
+								}).then(function (response) {
+												return $('#producto-detalle').modal('show');
+								});
+				});
 }
 
 /* 

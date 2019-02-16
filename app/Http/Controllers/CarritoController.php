@@ -97,18 +97,16 @@ class CarritoController extends Controller
                 'name' => $product->producto, 
                 'qty' => $product_qty, 
                 'price' => $product->precio,
-                'options' => ['unidad' => $product_unidad, 'foto' => $product->foto ]
+                'options' => ['unidad' => $product_unidad, 'foto' => $product->foto]
             ]);
 
         }
 
-        $cart = Cart::content();
-        
-        return view('carrito.index');
+        $cart = Cart::content();        
 
         //$id_huerta = Request::get('huerta_id');
 
-        //return view('huertas.show');
+        return view('carrito.index');
 
     } 
 

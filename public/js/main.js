@@ -79,3 +79,13 @@ function GeocodingAdress() {
         });
     }
 }
+
+// Carrito
+function ConfirmarBorrado(event) {
+    var confirmacion = confirm('Estas seguro?');
+    if (!confirmacion) {
+        return false;
+    } else {
+        return true;
+    }
+}

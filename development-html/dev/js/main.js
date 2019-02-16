@@ -32,7 +32,6 @@ $(document).ready(function(){
             }
         });
     });
-
 });
 
 $(window).on('scroll', function(){
@@ -78,5 +77,15 @@ function GeocodingAdress() {
                 console.log('Geocode was not successful for the following reason: ' + status);
             }
         });
+    }
+}
+
+// Carrito
+function ConfirmarBorrado(event) {
+    var confirmacion = confirm('Estas seguro?');
+    if (!confirmacion) {
+        return false;
+    } else {
+        return true;
     }
 }
