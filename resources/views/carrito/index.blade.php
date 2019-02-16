@@ -4,9 +4,6 @@
 
 @section ('content')
 
-
-
-
 <section class="huerta-title-wrapper">
   <div class="container-fluid">
     <div class="row justify-content-center align-items-center">
@@ -110,3 +107,4 @@
     </div>
   </div>        
 </section>
+@endsection
