@@ -59,12 +59,11 @@
                             <span>Cerrar sesión</span>
                         </a>
                     </div>   
-                </div>
             </div>
         </li>
         <li class="d-none d-lg-block">
             <a href="{{ route('carrito.index') }}">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-shopping-basket"></i>
             </a>
         </li>
         @else
