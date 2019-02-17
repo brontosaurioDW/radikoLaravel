@@ -121,6 +121,11 @@ Route::middleware('auth')->group(function() {
 		'as' => 'perfil.detalle',
 		'uses' => 'PerfilController@show'
 	]);
+	
+	Route::get('/perfil/direcciones', [
+		'as' => 'perfil.direcciones',
+		'uses' => 'PerfilController@showDirecciones'
+	]);
 
 	Route::get('/perfil/{perfil}/editar', [
 		'as' => 'perfil.edit',

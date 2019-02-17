@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pedido;
 use App\Models\Huerta;
 use App\Models\Usuario;
+use App\Models\Direccion;
 use App\User;
 
 use Storage;
@@ -63,6 +64,13 @@ class PerfilController extends Controller
         return view('perfil.index', compact('pedidosPendientes', 'pedidosRealizados'));
     }
 
+	public function showDirecciones()
+    {
+        $userId = auth()->user()->id;	
+		$direcciones = Direccion::where('usuario_id', $userId)->get();	
+		
+        return view('perfil.direcciones', compact('direcciones'));
+    }
     /**
      * Show the form for editing the specified resource.
      *

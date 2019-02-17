@@ -51,6 +51,10 @@
                             <i class="fas fa-user"></i>
                             <span>Perfil</span>
                         </a>
+						<a class="dropdown-item" href="{{ route('perfil.direcciones' , Auth::user()->id ) }}">
+                            <i class="fas fa-user"></i>
+                            <span>Mis direcciones</span>
+                        </a>
                         <a class="dropdown-item" href="{{ route('logout') }}">
                             <i class="fas fa-sign-out-alt"></i>
                             <span>Cerrar sesión</span>
