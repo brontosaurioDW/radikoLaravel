@@ -21,6 +21,8 @@
 							<li class="list-group-item"><b>Cuit:</b> {{$usuarioHuerta->huerta->cuit}}</li>
 							<li class="list-group-item"><b>Razón Social:</b> {{$usuarioHuerta->huerta->razon_social}}</li>
 							<li class="list-group-item"><b>Dirección:</b> {{$usuarioHuerta->huerta->direccion}}</li>
+							<li class="list-group-item"><b>Teléfono:</b> {{$usuarioHuerta->huerta->telefono}}</li>
+							<li class="list-group-item"><b>E-mail:</b> {{$usuarioHuerta->huerta->email}}</li>
 						</ul>
 					</div>
 					<div class="col-3">
