@@ -1,0 +1,74 @@
+.cart {
+	padding-bottom: 5rem;
+
+	.tabs-outline {
+	    margin-bottom: 45px;
+	}
+
+	h2 {
+	    font-size: 22px;
+	    font-weight: 700;
+	    margin-bottom: 15px;
+	    letter-spacing: 1px;
+	}
+
+	.btn {
+		min-width: 170px;
+	}
+
+	.update {
+	    background: transparent;
+	    border: 0;
+	    width: 22px;
+	    height: 22px;
+	    padding: 0;
+	    cursor: pointer;
+	}
+
+	.qnt {
+		input[type="text"] {
+			text-align: center;
+			max-width: 60px;
+			margin: 0;
+			border: 0;
+		}
+
+		a {
+		    font-size: @large;
+		    font-weight: bold;
+		    display: block;
+		    background: @grape-dk;
+		    line-height: 48px;
+		    width: 20px;
+		    text-align: center;
+		    color: white;
+		}
+
+		button {
+			margin-left: 15px;
+
+			i {
+				color: @charcoal;
+				font-size: @x-regular;
+			}
+		}
+
+		& + span {
+			font-size: @small * 2;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	.empty-cart {
+		img {
+			height: 70vh;
+			margin: 25px auto;
+			display: block;
+		}
+	}
+}
+
+
+
+@import url(../tablet/card.less);

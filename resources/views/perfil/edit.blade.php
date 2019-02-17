@@ -9,7 +9,7 @@
 
 		<h2>Editar tu perfil</h2>
 		
-		<form action="{{ route('perfil.update', ['id' => $usuario->id]) }}" method="post" class="form" enctype="multipart/form-data">
+		<form action="{{ route('perfil.update', ['id' => Auth::user()->id]) }}" method="post" class="form" enctype="multipart/form-data">
 			@csrf
 			@method('PUT')
 
@@ -17,15 +17,15 @@
 
 				<div class="col-xs-12 col-md-5 col-lg-3">
 					<div class="user-info">
-						@if ( !empty($usuario->foto) )
-						<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$usuario->foto) }}" alt="{{ $usuario->name }}">
+						@if ( !empty(Auth::user()->name) )
+						<img class="img-fluid" src="{{ url('storage/images/usuarios/'.Auth::user()->foto) }}" alt="{{ Auth::user()->name }}">
 						@else
-						<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $usuario->name }}">
+						<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ Auth::user()->name }}">
 						@endif
 					</div>
 					
 					<div class="row-form">
-						<input class="inputfile" type="file" accept="image/*" id="foto" name="foto" value="{{ old('$usuario->foto') }}">
+						<input class="inputfile" type="file" accept="image/*" id="foto" name="foto" value="{{ old(Auth::user()->foto) }}">
 						<label for="foto" class="file-btn">
 							<span class="link">
 								<i class="fas fa-cloud-upload"></i>
@@ -43,7 +43,7 @@
 				<div class="col-xs-12 col-md-7 col-lg-9">
 					<div class="row-form">
 						<label for="name">Nombre</label>
-						<input type="text" name="name" id="name"  value="{{ old('name', $usuario->name) }}">
+						<input type="text" name="name" id="name"  value="{{ old('name', Auth::user()->name) }}">
 						@if($errors->has('name'))
 						<small class="text-danger">{{ $errors->first('name') }}</small>
 						@endif
@@ -51,7 +51,7 @@
 
 					<div class="row-form">
 						<label for="last_name">Apellido</label>
-						<input type="text" name="last_name" id="last_name"  value="{{ old('last_name', $usuario->last_name) }}">
+						<input type="text" name="last_name" id="last_name"  value="{{ old('last_name', Auth::user()->last_name) }}">
 						@if($errors->has('last_name'))
 						<small class="text-danger">{{ $errors->first('last_name') }}</small>
 						@endif
@@ -59,7 +59,7 @@
 
 					<div class="row-form">
 						<label for="last_name">Teléfono</label>
-						<input type="text" name="telephone" id="telephone"  value="{{ old('telephone', $usuario->telephone) }}">
+						<input type="text" name="telephone" id="telephone"  value="{{ old('telephone', Auth::user()->telephone) }}">
 						@if($errors->has('telephone'))
 						<small class="text-danger">{{ $errors->first('telephone') }}</small>
 						@endif

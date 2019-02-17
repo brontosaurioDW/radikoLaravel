@@ -77,10 +77,9 @@ class PerfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        $usuario = User::find($id);
-        return view('perfil.edit', compact('usuario'));
+        return view('perfil.edit');
     }
 
     // @MARTA: controller de detalles pedidos 
@@ -89,8 +88,8 @@ class PerfilController extends Controller
     public function detallePedido($pedido)
     {
         $userId = auth()->user()->id;
-		$pedido = Pedido::where('usuario_id', $userId)->find($pedido);
-		return view('perfil.detalle-pedido', compact('pedido'));
+        $pedido = Pedido::where('usuario_id', $userId)->find($pedido);
+        return view('perfil.detalle-pedido', compact('pedido'));
     }        
 
     /**
