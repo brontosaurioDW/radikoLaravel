@@ -6,7 +6,7 @@
     <div class="main-wrapper relative cart">
         @if (count(Cart::content()) != 0)
             <div class="container-fluid">
-                <div class="header-huerta rdk-charcoal d-flex justify-content-end" style="background-image: url('../images/header-huerta.jpg');">
+                <div class="header-huerta rdk-charcoal d-flex justify-content-end" >
                     <div class="diagonal bg-trama">
                         <h2 class="huerta-title">
                             <span class="d-block">Tu compra con</span>
@@ -26,13 +26,13 @@
                                 <a class="nav-link active" href="#">Revisar Pedido</a>
                             </li>
                             {{-- <li class="nav-item disabledTab">
-                                <a class="nav-link" data-toggle="tab" href="#" role="tab" aria-controls="" aria-selected="false">Dirección</a>
+                                <a class="nav-link" href="#">Dirección</a>
                             </li>
                             <li class="nav-item disabledTab">
-                                <a class="nav-link" data-toggle="tab" href="#" role="tab" aria-controls="" aria-selected="false">Horario</a>
+                                <a class="nav-link" href="#">Horario</a>
                             </li>
                             <li class="nav-item disabledTab">
-                                <a class="nav-link" data-toggle="tab" href="#" role="tab" aria-controls="" aria-selected="false">Pago</a>
+                                <a class="nav-link" href="#">Pago</a>
                             </li> --}}
                         </ul>
                     </div>
@@ -123,9 +123,19 @@
 
                                 <div class="continue">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <a class="link" href="{{url("carrito?vaciar=1")}}"  onclick="return ConfirmarBorrado();">Vaciar canasta</a>
-
-                                        <a href="{{url("carrito/paso2")}}" class="btn btn-medium btn-primary">Siguiente</a>
+                                        <a class="link" href="{{url("carrito?vaciar=1")}}" onclick="return ConfirmarBorrado();">
+                                            Vaciar canasta
+                                        </a>
+                                        
+                                        @if( Auth::check() AND Auth::user()->tipo == 'cliente' )                                           
+                                            <a href="{{url("carrito/paso2")}}" class="btn btn-medium btn-primary">Continuar</a>
+                                        @else
+                                            <div class="not-logged-in">
+                                                <a href="{{ url('/login') }}" class="link">Iniciá sesión</a>
+                                                <span> o </span> 
+                                                <a href="{{ url('/registro') }}" class="link">Registrate</a>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

@@ -32,6 +32,19 @@ $(document).ready(function(){
             }
         });
     });
+
+    // Select time 
+    $('ul.times').each(function(index, el) {
+        var timeLink = $(this).find('.js-time');
+
+        $(timeLink).each(function(index, el) {
+            $(this).on('click', function(event) {
+                event.preventDefault();
+                $('.js-time').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    });
 });
 
 $(window).on('scroll', function(){

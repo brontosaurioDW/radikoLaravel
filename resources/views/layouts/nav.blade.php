@@ -10,13 +10,11 @@
     </div>
 	
 	<h1>
-	@if(Auth::check())
-		@if(Auth::user()->tipo == 'huerta')
-        <a class="navbar-brand" href="{{ route('cpanel.productos.index') }}">Rádiko</a>
-		@endif
-	@else
-        <a class="navbar-brand" href="{{ url('/') }}">Rádiko</a>
-	@endif	
+    	@if(Auth::check() AND Auth::user()->tipo == 'huerta')
+            <a class="navbar-brand" href="{{ route('cpanel.productos.index') }}">Rádiko</a>
+        @else
+            <a class="navbar-brand" href="{{ url('/') }}">Rádiko</a>
+        @endif  
 	</h1>	
 
     <ul>
@@ -31,7 +29,11 @@
 <nav class="navbar navbar-inverse easy-sidebar">
     <div class="container">
         <h1 class="d-none d-lg-block">
-            <a class="navbar-brand" href="{{ url('/') }}">Rádiko</a>
+            @if(Auth::check() AND Auth::user()->tipo == 'huerta')
+                <a class="navbar-brand" href="{{ route('cpanel.productos.index') }}">Rádiko</a>
+            @else
+                <a class="navbar-brand" href="{{ url('/') }}">Rádiko</a>
+            @endif  
         </h1>
 
         <ul class="navbar-nav flex-row flex-wrap">
@@ -60,7 +62,7 @@
             </li>
 			<li class="d-none d-lg-block">
                 <a href="{{ route('carrito.index') }}">
-                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fal fa-shopping-basket"></i>
                 </a>
             </li>
             @else
