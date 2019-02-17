@@ -121,3 +121,44 @@
 	    width: 100%;
 	}
 }
+
+.radio.radio {
+	line-height: normal;
+	cursor: pointer;
+	margin: 10px 0;
+
+	input {
+		display: none;
+	}
+
+	input + span {
+		line-height: normal;
+		cursor: pointer;
+	}
+
+	input + span:before {
+		content: '';
+	    display: inline-block;
+	    vertical-align: middle;
+	    margin-right: 15px;
+	    border: 1px solid #969696;
+	    width: 20px;
+	    height: 20px;
+	    border-radius: 50%;
+	    /* box-shadow: 2px 2px 0 #707070; */
+	}
+
+	input:checked + span:before {
+		content: "\f00c";
+		font-family: 'Font Awesome 5 Pro';
+		font-weight: 700;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-size: 11px;
+		text-align: center;
+		line-height: 20px;
+		color: #ffffff;
+		border: 1px solid @grape;
+		background: @grape;
+	}
+}

@@ -7,7 +7,7 @@
 <div class="main-wrapper relative">
 	<section class="huerta-detalle">
 		<div class="container-fluid">
-			<div class="header-huerta rdk-charcoal d-flex justify-content-end" style="background-image: url('../images/header-huerta.jpg');">
+			<div class="header-huerta rdk-charcoal d-flex justify-content-end" >
 				<div class="diagonal bg-trama">
 					<h2 class="huerta-title	">{{$huerta->huerta}}</h2>
 				</div>

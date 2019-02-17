@@ -14,7 +14,7 @@ class TiposPagosSeeder extends Seeder
     {
         //#1 Por ahora único tipo de pago	
 		TipoPago::create([
-			'tipo' => 'Tarjeta de crédito'
+			'tipo' => 'Efectivo'
 		]);
     }
 }

@@ -43,4 +43,9 @@ class Usuario extends Model
     {
         return $this->hasOne(Huerta::class);
     }
+	
+	public function direcciones()
+    {
+        return $this->hasMany(Direccion::class);
+    }
 }
