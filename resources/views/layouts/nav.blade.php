@@ -16,7 +16,7 @@
     <ul>
         <li>
             <a href="javascript:void(0)" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fal fa-shopping-basket"></i>
             </a>
         </li>
     </ul>
@@ -68,7 +68,7 @@
             @endif
             <li class="d-none d-lg-block">
                 <a href="{{ route('carrito.index') }}">
-                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fal fa-shopping-basket"></i>
                 </a>
             </li>
         </ul>

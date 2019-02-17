@@ -48,7 +48,7 @@
 					<li class="nav-item">
 						<a class="nav-link @if(!Session::has('status') and $errors->isEmpty()) active @endif" id="home-tab" data-toggle="tab" href="#huerta-productos-listado" role="tab" aria-controls="huerta-productos-listado" aria-selected="true">
 							<span class="d-none d-sm-block">Productos</span>
-							<i class="far fa-shopping-cart d-md-none"></i>
+							<i class="fal fa-shopping-basket d-md-none"></i>
 						</a>
 					</li>
 					<li class="nav-item">
@@ -403,24 +403,26 @@
 								<span class="bold" data-product-price>$ 36.00</span> x <span data-product-unidad-medida></span>.
 							</span>
 
-							<p data-product-description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut error officia placeat illo alias cum minima dignissimos accusantium earum incidunt.</p>
+							<p data-product-description>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut error officia placeat illo alias cum minima dignissimos accusantium earum incidunt.
+							</p>
 
 							<form method="POST" action="{{route('carrito.agregar')}}" class="form">
-								<div class="form">
-									<div class="row-form d-flex align-items-center flex-wrap justify-content-between">
+								<div class="form form-bg">
+									<div class="d-flex align-items-center flex-wrap justify-content-start">
 										<input type="hidden" name="product_id" value="" data-product-id>
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
 										<input type="hidden" name="huerta_id" value="{{$huerta->id}}">
 										<input type="hidden" name="unidad" value="" data-product-unidad-medida2>
+										
 										<label for="cantidad">Cantidad</label>
 										<input type="number" name="product_qty"> <span data-product-unidad-medida3></span>
 									</div>
-									<div class="row-form">
-										<button type="submit" class="btn btn-primary btn-medium">
-                                            <i class="fa fa-shopping-cart"></i>
-                                                Agregar al carrito
-                                        </button>
-									</div>							
+									
+									<button type="submit" class="btn btn-primary btn-medium">
+                                        <i class="fal fa-shopping-basket"></i>
+                                        Agregar al carrito
+                                    </button>			
 								</div>
 							</form>
 						</div>

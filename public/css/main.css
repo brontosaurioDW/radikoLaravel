@@ -6195,9 +6195,9 @@ h4 {
   color: #272727;
 }
 .card .img-wrapper {
-  width: 35%;
-  max-width: 160px;
+  width: 160px;
   overflow: hidden;
+  background: #cacaca;
 }
 .card img {
   height: 160px;
@@ -6205,7 +6205,7 @@ h4 {
 }
 .card .card-info {
   border-left: 10px solid #7065B0;
-  width: 65%;
+  width: 75%;
   padding: 1.2rem;
   position: relative;
 }
@@ -6227,9 +6227,9 @@ h4 {
 }
 .card .more-info {
   position: absolute;
-  left: 1.5rem;
-  right: 1.5rem;
-  bottom: 1.5rem;
+  left: 1.2rem;
+  right: 1.2rem;
+  bottom: 1.2rem;
   line-height: 150%;
 }
 .card .more-info i {
@@ -6283,12 +6283,68 @@ h4 {
   margin-top: 0;
 }
 .card.listado .sub-total {
-  font-size: 32px;
+  font-size: 25px;
 }
 @media screen and (min-width: 768px) {
   .card {
     margin-bottom: 25px;
   }
+}
+.cart {
+  padding-bottom: 5rem;
+}
+.cart .tabs-outline {
+  margin-bottom: 45px;
+}
+.cart h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+.cart .btn {
+  min-width: 170px;
+}
+.cart .update {
+  background: transparent;
+  border: 0;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  cursor: pointer;
+}
+.cart .qnt input[type="text"] {
+  text-align: center;
+  max-width: 60px;
+  margin: 0;
+  border: 0;
+}
+.cart .qnt a {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  background: #5E5593;
+  line-height: 48px;
+  width: 20px;
+  text-align: center;
+  color: white;
+}
+.cart .qnt button {
+  margin-left: 15px;
+}
+.cart .qnt button i {
+  color: #272727;
+  font-size: 18px;
+}
+.cart .qnt + span {
+  font-size: 28px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cart .empty-cart img {
+  height: 70vh;
+  margin: 25px auto;
+  display: block;
 }
 .categories {
   position: relative;
@@ -6575,6 +6631,7 @@ footer .download-btn li {
 }
 .form input[type="text"],
 .form input[type="password"],
+.form input[type="number"],
 .form select,
 .form textarea {
   background: #FFFFFF;
@@ -6599,6 +6656,7 @@ footer .download-btn li {
 }
 .form-bg input[type="text"],
 .form-bg input[type="password"],
+.form-bg input[type="number"],
 .form-bg select,
 .form-bg textarea {
   padding: 0 15px;
@@ -7124,6 +7182,10 @@ header:not(.is-home) + main .main-wrapper {
 .header-huerta .diagonal {
   width: 100%;
 }
+.header-huerta .huerta-title span {
+  font-size: 16px;
+  line-height: normal;
+}
 .header-huerta h2 {
   text-shadow: 4px 4px 0 black;
   font-size: 3rem;
@@ -7199,7 +7261,7 @@ header:not(.is-home) + main .main-wrapper {
     font-size: 40px;
     background: #272727;
     margin: 0;
-    padding: 90px 25px 90px 30px;
+    padding: 85px 25px 85px 30px;
   }
 }
 .modal-backdrop.show {
@@ -7238,9 +7300,8 @@ header:not(.is-home) + main .main-wrapper {
 .modal .modal-content .precio + p {
   line-height: 165%;
   margin: 15px 0;
-  padding: 15px 0;
+  padding: 15px 0 0;
   border-top: 1px solid #DCDCDC;
-  border-bottom: 1px solid #DCDCDC;
 }
 .modal .modal-content label {
   min-height: unset;
@@ -7248,8 +7309,10 @@ header:not(.is-home) + main .main-wrapper {
   font-size: 15px;
   font-weight: 600;
 }
-.modal .modal-content .select {
-  width: 75%;
+.modal .modal-content input {
+  width: 90px;
+  padding-right: 0;
+  margin: 0 15px;
 }
 .modal .modal-content .btn {
   position: static;
@@ -7663,41 +7726,3 @@ header:not(.is-home) + main .main-wrapper {
   list-style: none;
   font-size: 15px;
 }
-
-
-/* Sección Pedido */
-@media screen and (min-width: 768px) {
-	.pedido .huerta-title span{
-		display: block;
-		font-size: 18px;
-	}
-	.pedido-productos .card {
-		width: 100%;
-	}
-	.pedido-productos .card .card-info {
-		width:100%;
-	}
-	.pedido-productos .card .card-title  h3{
-		width:90%;
-	}
-	.pedido-productos .card .modificar-cantidad{
-		width: 100%;
-		justify-content: space-between;
-		align-items: center;
-	}
-	.pedido-productos .card .modificar-cantidad a{
-		color: #707070;
-		margin: 0 15px;
-	}
-	.detalle-carrito{
-		border-bottom: 1px solid #898989;
-		margin-bottom: 20px;
-	}
-	.detalle-carrito .importe{
-		font-size: 18px;
-		
-	}
-	
-	
-	
-}	
