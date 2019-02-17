@@ -105,7 +105,7 @@ class UsersSeeder extends Seeder
       User::create([
         'name' => 'Carlos',
         'last_name' => 'Gomez',
-        'email' => 'info@jardinorganico.com.ar',
+        'email' => 'carlos@mail.com.ar',
         'password' => \Hash::make('123'),
         'telephone' => '11 4568-1223',
         'foto' => 'carlos.jpg',
@@ -116,7 +116,7 @@ class UsersSeeder extends Seeder
       User::create([
         'name' => 'Pedro',
         'last_name' => 'Martinez',
-        'email' => 'hola@huertaorganica.com.ar',
+        'email' => 'pedro@mail.com.ar',
         'password' => \Hash::make('123'),
         'telephone' => '11-6547-8542',
         'foto' => 'pedro.png',
@@ -127,7 +127,7 @@ class UsersSeeder extends Seeder
       User::create([
         'name' => 'Oscar',
         'last_name' => 'Lopez',
-        'email' => 'huerta@talloverde.com',
+        'email' => 'oscar@mail.com.ar',
         'password' => \Hash::make('123'),
         'telephone' => '0-800-88-8256',
         'foto' => 'oscar.png',
@@ -138,7 +138,7 @@ class UsersSeeder extends Seeder
       User::create([
         'name' => 'Mariano',
         'last_name' => 'Pedraza',
-        'email' => 'info@estilorganico.com',
+        'email' => 'mariano@mail.com.ar',
         'password' => \Hash::make('123'),
         'telephone' => '15-2839-8358',
         'foto' => 'mariano.jpg',
@@ -149,7 +149,7 @@ class UsersSeeder extends Seeder
       User::create([
         'name' => 'Clara',
         'last_name' => 'Diaz',
-        'email' => 'info@eljardin.com',
+        'email' => 'clara@mail.com.ar',
         'password' => \Hash::make('123'),
         'telephone' => '15-2025-1564',
         'foto' => 'clara.jpg',
@@ -160,7 +160,7 @@ class UsersSeeder extends Seeder
       User::create([
         'name' => 'Pedro',
         'last_name' => 'Mendoza',
-        'email' => 'info@huertadepedro.com',
+        'email' => 'pedrom@mail.com.ar',
         'password' => \Hash::make('123'),
         'telephone' => '15-8974-6325',
         'foto' => 'pedro.jpg',
@@ -171,7 +171,7 @@ class UsersSeeder extends Seeder
       User::create([
         'name' => 'Lara',
         'last_name' => 'Mugas',
-        'email' => 'huerta@broteurbano.com',
+        'email' => 'lara@mail.com.ar',
         'password' => \Hash::make('123'),
         'telephone' => '15-6548-3214',
         'foto' => 'lara.jpg',
@@ -182,7 +182,7 @@ class UsersSeeder extends Seeder
       User::create([
         'name' => 'Tomás',
         'last_name' => 'Laucier',
-        'email' => 'huerta@mburucuyá.com',
+        'email' => 'tomas@mail.com.ar',
         'password' => \Hash::make('123'),
         'telephone' => '15-8745-9632',
         'foto' => 'tomas.jpg',

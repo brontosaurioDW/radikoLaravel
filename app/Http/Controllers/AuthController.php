@@ -71,8 +71,12 @@ class AuthController extends Controller
                 'class' => 'alert-danger'
             ]);
         }
-
-        return redirect()->intended('/');
+		
+		if(Auth::user()->tipo == 'huerta'){
+			return redirect()->intended('/cpanel/productos');
+		}else{
+			return redirect()->intended('/');
+		}		
     }
 
 
