@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pedido;
 use App\Models\Huerta;
 use App\Models\Usuario;
+use App\Models\Direccion;
 use App\User;
 
 use Storage;
@@ -63,16 +64,22 @@ class PerfilController extends Controller
         return view('perfil.index', compact('pedidosPendientes', 'pedidosRealizados'));
     }
 
+	public function showDirecciones()
+    {
+        $userId = auth()->user()->id;	
+		$direcciones = Direccion::where('usuario_id', $userId)->get();	
+		
+        return view('perfil.direcciones', compact('direcciones'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        $usuario = User::find($id);
-        return view('perfil.edit', compact('usuario'));
+        return view('perfil.edit');
     }
 
     // @MARTA: controller de detalles pedidos 
@@ -81,8 +88,8 @@ class PerfilController extends Controller
     public function detallePedido($pedido)
     {
         $userId = auth()->user()->id;
-		$pedido = Pedido::where('usuario_id', $userId)->find($pedido);
-		return view('perfil.detalle-pedido', compact('pedido'));
+        $pedido = Pedido::where('usuario_id', $userId)->find($pedido);
+        return view('perfil.detalle-pedido', compact('pedido'));
     }        
 
     /**

@@ -17,13 +17,13 @@
         @endif  
 	</h1>	
 
-    <ul>
-        <li>
-            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
-                <i class="fal fa-shopping-basket"></i>
-            </a>
-        </li>
-    </ul>
+   <ul>
+    <li>
+        <a href="javascript:void(0)" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
+            <i class="fal fa-shopping-basket"></i>
+        </a>
+    </li>
+</ul>
 </div>
 
 <nav class="navbar navbar-inverse easy-sidebar">
@@ -37,58 +37,64 @@
         </h1>
 
         <ul class="navbar-nav flex-row flex-wrap">
-		@if(Auth::check())
-			@if(Auth::user()->tipo == 'cliente')
-			<li>
-				<a href="{{ url('/huertas') }}">Huertas</a>
-			</li>
-            <li>
-                <div class="dropdown show">
-                    <a href="javascript:void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                        
-                        Bienvenido/a {{ Auth::user()->name }}                 
-                    </a>
+        @if(Auth::check())
+            @if(Auth::user()->tipo == 'cliente')
+                <li>
+                    <a href="{{ url('/huertas') }}">Huertas</a>
+                </li>
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">                        
-                        <a class="dropdown-item" href="{{ route('perfil.detalle' , Auth::user()->id ) }}">
-                            <i class="fas fa-user"></i>
-                            <span>Perfil</span>
+                <li>
+                    <div class="dropdown show">
+                        <a href="javascript:void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                        
+                            Bienvenido/a {{ Auth::user()->name }}                 
                         </a>
-                        <a class="dropdown-item" href="{{ route('logout') }}">
-                            <i class="fas fa-sign-out-alt"></i>
-                            <span>Cerrar sesión</span>
-                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">                        
+                            <a class="dropdown-item" href="{{ route('perfil.detalle' , Auth::user()->id ) }}">
+                                <i class="fas fa-user"></i>
+                                <span>Perfil</span>
+                            </a>
+    						<a class="dropdown-item" href="{{ route('perfil.direcciones' , Auth::user()->id ) }}">
+                                <i class="fas fa-user"></i>
+                                <span>Mis direcciones</span>
+                            </a>
+                            <a class="dropdown-item" href="{{ route('logout') }}">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Cerrar sesión</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </li>
-			<li class="d-none d-lg-block">
-                <a href="{{ route('carrito.index') }}">
-                    <i class="fal fa-shopping-basket"></i>
-                </a>
-            </li>
+                </li>
+
+    			<li class="d-none d-lg-block">
+                    <a href="{{ route('carrito.index') }}">
+                        <i class="fal fa-shopping-basket"></i>
+                    </a>  
+                </li>
             @else
-				<li>
-                <div class="dropdown show">
-                    <a href="javascript:void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                        
-                        Bienvenido/a {{ Auth::user()->name }}                 
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="{{ route('cpanel.perfil.index') }}">
-                            <i class="fas fa-user"></i>
-                            <span>Perfil</span>
-                        </a>                      
-                        <a class="dropdown-item" href="{{ route('logout') }}">
-                            <i class="fas fa-sign-out-alt"></i>
-                            <span>Cerrar sesión</span>
+                <li>
+                    <div class="dropdown show">
+                        <a href="javascript:void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                        
+                            Bienvenido/a {{ Auth::user()->name }}                 
                         </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{ route('cpanel.perfil.index') }}">
+                                <i class="fas fa-user"></i>
+                                <span>Perfil</span>
+                            </a>                      
+                            <a class="dropdown-item" href="{{ route('logout') }}">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Cerrar sesión</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </li>
+            @endif
+        @else			
+            <li>
+                <a href="{{ url('/huertas') }}">Huertas</a>
             </li>
-			@endif
-		@else			
-			<li>
-				<a href="{{ url('/huertas') }}">Huertas</a>
-			</li>
             <li>
                 <a href="{{ url('/login') }}">Ingresá</a>
             </li>
@@ -100,7 +106,7 @@
                     <i class="fal fa-shopping-basket"></i>
                 </a>
             </li>
-		@endif	
-        </ul>
-    </div>
+        @endif	
+    </ul>
+</div>
 </nav>

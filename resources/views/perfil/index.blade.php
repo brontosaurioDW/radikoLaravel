@@ -37,7 +37,7 @@
 								</li>
 							</ul>
 
-							<a class="btn btn-primary btn-medium" href="{{ route('perfil.edit' , Auth::user()->id ) }}">
+							<a class="btn btn-primary btn-medium" href="{{ route('perfil.edit') }}">
 								Editar perfil
 							</a>	
 						</div>

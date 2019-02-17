@@ -23,6 +23,9 @@ class CrearTablaDirecciones extends Migration
             $table->string('departamento', 10);
             $table->string('telefono', 20);
             $table->string('aclaracion', 255);
+			
+			$table -> unsignedInteger('usuario_id');
+			
             $table->softDeletes();
             $table->timestamps();
         });

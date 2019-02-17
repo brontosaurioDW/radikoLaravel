@@ -121,8 +121,13 @@ Route::middleware('auth')->group(function() {
 		'as' => 'perfil.detalle',
 		'uses' => 'PerfilController@show'
 	]);
+	
+	Route::get('/perfil/direcciones', [
+		'as' => 'perfil.direcciones',
+		'uses' => 'PerfilController@showDirecciones'
+	]);
 
-	Route::get('/perfil/{perfil}/editar', [
+	Route::get('/perfil/editar', [
 		'as' => 'perfil.edit',
 		'uses' => 'PerfilController@edit'
 	]);
@@ -145,6 +150,7 @@ Route::middleware('auth')->group(function() {
 Route::get('contacto', function() {
 	return view('contacto.contacto');
 });
+
 
 // Cpanel
 
@@ -201,6 +207,7 @@ Route::put('/cpanel/perfil/{usuario}/editar', [
 	'as' => 'cpanel.perfil.update',
 	'uses' => 'CpanelPerfilController@update'
 ]);
+
 
 Route::get('/carrito', [
 	'as' => 'carrito.index',
