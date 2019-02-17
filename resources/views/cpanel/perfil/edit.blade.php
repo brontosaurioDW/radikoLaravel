@@ -29,19 +29,31 @@
 
 					<div class="form-group">
 						<label for="name">Foto</label>
-						<input type="file" class="form-control" id="foto" name="foto">
+						<input type="file" class="form-control" accept="image/*" id="foto" name="foto">
+						@if($errors->has('foto'))
+						<small class="text-danger">{{ $errors->first('foto') }}</small>
+						@endif
 					</div>
 					<div class="form-group">
 						<label for="name">Nombre</label>
-						<input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}">
+						<input type="text" class="form-control" id="name" name="name" value="{{ old('name', Auth::user()->name) }}">
+						@if($errors->has('name'))
+						<small class="text-danger">{{ $errors->first('name') }}</small>
+						@endif
 					</div>
 					<div class="form-group">
 						<label for="last_name">Apellido</label>
-						<input type="text" class="form-control" id="last_name" name="last_name" value="{{ Auth::user()->last_name }}">
+						<input type="text" class="form-control" id="last_name" name="last_name" value="{{ old('last_name', Auth::user()->last_name) }}">
+						@if($errors->has('last_name'))
+						<small class="text-danger">{{ $errors->first('last_name') }}</small>
+						@endif
 					</div>
 					<div class="form-group">
 						<label for="telephone">Teléfono</label>
-						<input type="text" class="form-control" id="telephone" name="telephone" value="{{ Auth::user()->telephone }}">
+						<input type="text" class="form-control" id="telephone" name="telephone" value="{{ old('telephone', Auth::user()->telephone) }}">
+						@if($errors->has('telephone'))
+						<small class="text-danger">{{ $errors->first('telephone') }}</small>
+						@endif
 					</div>
 
 					<button type="submit" class="btn btn-primary btn-medium">Guardar cambios</button>

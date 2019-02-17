@@ -17,7 +17,7 @@
 
 				<div class="col-xs-12 col-md-5 col-lg-3">
 					<div class="user-info">
-						@if ( !empty(Auth::user()->name) )
+						@if ( !empty(Auth::user()->foto) )
 						<img class="img-fluid" src="{{ url('storage/images/usuarios/'.Auth::user()->foto) }}" alt="{{ Auth::user()->name }}">
 						@else
 						<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ Auth::user()->name }}">
