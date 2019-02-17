@@ -30,6 +30,8 @@
 					</div>
 				</div>
 				<a class="btn btn-primary btn-medium" href="{{ url()->previous() }}">Volver</a>
+
+				<a class="btn btn-primary btn-medium" href="{{ url()->previous() }}">Editar</a>
 			</div>
 
 		</div>
