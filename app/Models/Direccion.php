@@ -12,4 +12,9 @@ class Direccion extends Model
 	{
 		return $this->belongsTo(Usuario::class);
 	}
+	
+	public function pedidos()
+    {
+        return $this->hasMany(Pedido::class);
+    }
 }

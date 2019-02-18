@@ -33,4 +33,9 @@ class Pedido extends Model
 	{
 		return $this->belongsTo(Disponibilidad::class, 'id_disponibilidad', 'id');
 	}
+	
+	public function direccion()
+	{
+		return $this->belongsTo(Direccion::class);
+	}
 }
