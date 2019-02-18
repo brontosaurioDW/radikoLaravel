@@ -64,13 +64,6 @@ class PerfilController extends Controller
         return view('perfil.index', compact('pedidosPendientes', 'pedidosRealizados'));
     }
 
-	public function showDirecciones()
-    {
-        $userId = auth()->user()->id;	
-		$direcciones = Direccion::where('usuario_id', $userId)->get();	
-		
-        return view('perfil.direcciones', compact('direcciones'));
-    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -81,9 +74,7 @@ class PerfilController extends Controller
     {
         return view('perfil.edit');
     }
-
-    // @MARTA: controller de detalles pedidos 
-    //esta es un controller temporal para ver los pedidos
+	
 
     public function detallePedido($pedido)
     {
@@ -138,6 +129,52 @@ class PerfilController extends Controller
       );
     }
 
+	// TODO LO REFERENTE A DIRECCIONES //
+	
+	public function showDirecciones()
+    {
+        $userId = auth()->user()->id;	
+		$direcciones = Direccion::where('usuario_id', $userId)->get();	
+		
+        return view('perfil.direcciones', compact('direcciones'));
+    }
+	
+	public function showFormDireccion()
+    {
+		return view('perfil.create-direccion');
+    }
+	
+	public function createDireccion(Request $request)
+    {
+		$inputData = $request->all();
+		
+		$request->validate(Direccion::$rules, [
+			'referencia.max' => 'La referencia puede tener como máximo 50 caracteres.',
+			'calle.required' => 'El nombre de la calle no puede estar vacío.',
+			'calle.max' => 'El nombre de la calle puede tener como máximo 100 caracteres.',
+			'numero.required' => 'Debe indicar un número',
+			'telefono.max' => 'El teléfono puede tener como máximo 20 caracteres.',
+			'aclaracion.max' => 'La referencia puede tener como máximo 255 caracteres.'
+		]);
+		
+		$userId = auth()->user()->id;
+		$inputData['usuario_id'] = $userId;
+		
+		Direccion::create($inputData);
+		
+		return redirect()->route('perfil.direcciones' )
+        ->with(
+            [
+                'status' => 'La dirección se cargó exitosamente.',
+                'class' => 'success'
+            ]
+        );
+    }
+	
+	public function editDireccion()
+    {
+        return view('perfil.edit-direccion');
+    }
 
     /**
      * Remove the specified resource from storage.

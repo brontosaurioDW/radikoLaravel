@@ -42,6 +42,10 @@
 							
 					<div class="col-xs-12 col-md-7 col-lg-9">
 						<h3>Direcciones Guardadas</h3>
+						
+						<a class="btn btn-primary btn-medium" href="{{ route('perfil.direcciones.create') }}">
+							Agregar Dirección
+						</a>
 
 						<ul class="list-boxed orders mb-5">
 							@foreach ($direcciones as $direccion)
@@ -58,7 +62,10 @@
 										<li>
 											<span>{{$direccion->aclaracion}}</span>
 										</li>
-									</ul>									
+									</ul>
+									<a class="btn btn-primary btn-medium" href="{{ route('perfil.direcciones.edit') }}">
+										Editar dirección
+									</a>
 								</div>
 							</li>
 							@endforeach
@@ -67,5 +74,4 @@
 				</div>		
 		</section>
 	</div>
-
 @endsection

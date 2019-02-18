@@ -126,6 +126,20 @@ Route::middleware('auth')->group(function() {
 		'as' => 'perfil.direcciones',
 		'uses' => 'PerfilController@showDirecciones'
 	]);
+	
+	Route::get('/perfil/nuevaDireccion', [
+		'as' => 'perfil.direcciones.create',
+		'uses' => 'PerfilController@showFormDireccion'
+	]);
+	Route::post('/perfil/nuevaDireccion', [
+		'as' => 'perfil.direcciones.store',
+		'uses' => 'PerfilController@createDireccion'
+	]);
+	
+	Route::get('/perfil/editarDireccion', [
+		'as' => 'perfil.direcciones.edit',
+		'uses' => 'PerfilController@editDireccion'
+	]);
 
 	Route::get('/perfil/editar', [
 		'as' => 'perfil.edit',
