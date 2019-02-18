@@ -15,8 +15,11 @@
 			<div class="col-9">	
 				<h3>Editar producto</h3>
 
-				<form method="POST" action="{{ route('cpanel.productos.store') }}" enctype="multipart/form-data">
+				<form method="POST" action="{{ route('cpanel.productos.update', ['id' => $producto->id] ) }}" enctype="multipart/form-data">
+
 					@csrf
+					@method('PUT')
+
 					<div class="form-group">
 						<label for="producto">Producto</label>
 						<input type="text" class="form-control" id="producto" name="producto" value="{{ old('producto', $producto->producto) }}">
@@ -55,25 +58,33 @@
 							@endforeach
 						</select>
 					</div>
-					<div class="form-group">
-						<label for="foto">Foto</label>
-						<input type="file" class="form-control" id="foto" name="foto">
-						@if($errors->has('foto'))
-						<small class="text-danger">{{ $errors->first('foto') }}</small>
-						@endif
-					</div>		
+
+					<div class="row">
+						<div class="col-4">
+							<img class="img-fluid" src="{{ url('storage/images/productos/'.$producto->foto) }}" alt="{{$producto->producto}}" />
+						</div>
+						<div class="col-8">
+							<div class="form-group">
+								<label for="foto">Foto</label>
+								<input type="file" class="form-control" id="foto" name="foto">
+								@if($errors->has('foto'))
+								<small class="text-danger">{{ $errors->first('foto') }}</small>
+								@endif
+							</div>		
+						</div>
+					</div>
 					<div class="form-group">
 						<label for="categoria">Categoría</label>
 						<select id="categoria" name="categoria_id" class="form-control">
 							@foreach($categorias as $categoria)
-							<option value="{{ $categoria->id }}" {{ old('categoria_id') == $categoria->id ? 'selected' : ''}} >
+							<option value="{{ $categoria->id }}" {{ old('categoria_id', $producto->categoria_id) == $categoria->id ? 'selected' : ''}} >
 								{{ $categoria->categoria }}
 							</option>
 							@endforeach
 						</select>
 					</div>
 					
-					<button type="submit" class="btn btn-primary btn-medium">Crear producto</button>
+					<button type="submit" class="btn btn-primary btn-medium">Editar producto</button>
 				</form>
 
 			</div>

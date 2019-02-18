@@ -184,9 +184,24 @@ Route::get('/cpanel/productos/{prodcuto}', [
 	'uses' => 'CpanelProductosController@show'
 ]);
 
-Route::get('/cpanel/productos/{prodcuto}/edit', [
+Route::get('/cpanel/productos/{prodcuto}/editar', [
 	'as' => 'cpanel.productos.edit',
 	'uses' => 'CpanelProductosController@edit'
+]);
+
+Route::put('/cpanel/productos/{prodcuto}/editar', [
+	'as' => 'cpanel.productos.update',
+	'uses' => 'CpanelProductosController@update'
+]);
+
+Route::get('/cpanel/productos/{prodcuto}/eliminar', [
+	'as' => 'cpanel.productos.confirmDestroy',
+	'uses' => 'CpanelProductosController@confirmDestroy'
+]);
+
+Route::delete('/cpanel/productos/{prodcuto}/eliminar', [
+	'as' => 'cpanel.productos.destroy',
+	'uses' => 'CpanelProductosController@destroy'
 ]);
 
 // Cpanel Huerta
