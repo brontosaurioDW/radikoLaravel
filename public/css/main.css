@@ -4,6 +4,12 @@ body {
   color: #272727;
   font-family: 'Montserrat', sans-serif;
 }
+body.transparent header:not(.sticky-header) {
+  background: transparent;
+}
+body.transparent header:not(.is-home) + main .main-wrapper {
+  padding-top: 0;
+}
 .main-wrapper {
   background: #FFFFFF;
   height: 100%;
@@ -6316,18 +6322,19 @@ h4 {
 .cart .qnt input[type="text"] {
   text-align: center;
   max-width: 60px;
-  margin: 0;
+  margin: 0 10px;
   border: 0;
+  height: 35px;
 }
 .cart .qnt a {
   font-size: 20px;
+  color: #FFFFFF;
+  background: #272727;
   font-weight: bold;
   display: block;
-  background: #5E5593;
-  line-height: 48px;
-  width: 20px;
+  line-height: 25px;
+  width: 25px;
   text-align: center;
-  color: white;
 }
 .cart .qnt button {
   margin-left: 15px;
@@ -6979,6 +6986,14 @@ header.sticky-header {
 header:not(.is-home) + main .main-wrapper {
   padding-top: 100px;
 }
+header .dropdown.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header .dropdown.dropdown li {
+  margin: 0;
+}
 .dropdown-menu i {
   margin-right: 10px;
   font-size: 12px;
@@ -7269,26 +7284,22 @@ header:not(.is-home) + main .main-wrapper {
   margin-top: 30px;
 }
 .header-huerta {
-  background-repeat: no-repeat;
-  background-size: cover;
   background-attachment: fixed;
   margin: -40px -15px 30px;
-  padding: 65px 0;
+  padding: 65px 20px;
   text-align: center;
   color: #FFFFFF;
-}
-.header-huerta .diagonal {
-  width: 100%;
 }
 .header-huerta .huerta-title span {
   font-size: 16px;
   line-height: normal;
 }
 .header-huerta h2 {
-  text-shadow: 4px 4px 0 black;
   font-size: 3rem;
   line-height: 100%;
   font-weight: 700;
+  text-shadow: 4px 4px 2px #5E5593;
+  padding: 15rem 25px 5rem;
 }
 .huerta-informacion #map {
   width: 100%;
@@ -7338,28 +7349,9 @@ header:not(.is-home) + main .main-wrapper {
     padding: 0;
     overflow: hidden;
   }
-  .header-huerta .diagonal {
-    padding: 0;
-    text-align: left;
-    position: relative;
-    width: 50%;
-  }
-  .header-huerta .diagonal:before {
-    content: '';
-    display: block;
-    position: absolute;
-    border-style: solid;
-    width: 0;
-    height: 0;
-    border-width: 0 150px 230px 0;
-    border-color: transparent #272727 transparent transparent;
-    left: -150px;
-  }
   .header-huerta h2 {
-    font-size: 40px;
-    background: #272727;
+    font-size: 45px;
     margin: 0;
-    padding: 85px 25px 85px 30px;
   }
 }
 .modal-backdrop.show {

@@ -49,19 +49,27 @@
                             Bienvenido/a {{ Auth::user()->name }}                 
                         </a>
 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">                        
-                            <a class="dropdown-item" href="{{ route('perfil.detalle' , Auth::user()->id ) }}">
-                                <i class="fas fa-user"></i>
-                                <span>Perfil</span>
-                            </a>
-    						<a class="dropdown-item" href="{{ route('perfil.direcciones' , Auth::user()->id ) }}">
-                                <i class="fas fa-user"></i>
-                                <span>Mis direcciones</span>
-                            </a>
-                            <a class="dropdown-item" href="{{ route('logout') }}">
-                                <i class="fas fa-sign-out-alt"></i>
-                                <span>Cerrar sesión</span>
-                            </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">    
+                            <ul>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('perfil.detalle' , Auth::user()->id ) }}">
+                                        <i class="fas fa-user"></i>
+                                        <span>Perfil</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('perfil.direcciones' , Auth::user()->id ) }}">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Mis direcciones</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <span>Cerrar sesión</span>
+                                    </a>
+                                </li>
+                            </ul>    
                         </div>
                     </div>
                 </li>
@@ -79,14 +87,20 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('cpanel.perfil.index') }}">
-                                <i class="fas fa-user"></i>
-                                <span>Perfil</span>
-                            </a>                      
-                            <a class="dropdown-item" href="{{ route('logout') }}">
-                                <i class="fas fa-sign-out-alt"></i>
-                                <span>Cerrar sesión</span>
-                            </a>
+                            <ul>                                    
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('cpanel.perfil.index') }}">
+                                        <i class="fas fa-user"></i>
+                                        <span>Perfil</span>
+                                    </a> 
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <span>Cerrar sesión</span>
+                                    </a>                                
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </li>

@@ -2,6 +2,11 @@
 
 @section ('title', 'Radiko')
 
+@if (count(Cart::content()) != 0)
+    @section ('bodyClass', 'transparent')
+    @section ('header-class', 'is-home')
+@endif
+
 @section ('content')
     <section class="huerta-title-wrapper">
         <div class="container-fluid">

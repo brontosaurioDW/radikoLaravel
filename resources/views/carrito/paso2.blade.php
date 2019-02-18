@@ -2,19 +2,28 @@
 
 @section ('title', 'Radiko')
 
+@if (count(Cart::content()) != 0)
+    @section ('bodyClass', 'transparent')
+    @section ('header-class', 'is-home')
+@endif
+
 @section ('content')
     <div class="main-wrapper relative cart">
+
         @if (count(Cart::content()) != 0)
             <div class="container-fluid">
-                <div class="header-huerta rdk-charcoal d-flex justify-content-end" >
-                    <div class="diagonal bg-trama">
-                        <h2 class="huerta-title">
+                <div class="header-huerta bg-trama-b rdk-grape">
+                    <div class="diagonal">
+                        <h2 class="huerta-title ">
                             <span class="d-block">Tu compra con</span>
-                            Jardín Orgánico
+
+                            @if(Session::has('huerta')) 
+                                <?php echo Session::get('huerta') ?>
+                            @endif
                         </h2>
                     </div>
                 </div>
-            </div>
+            </div>  
 
             <section class="checkout-step">
                 <div class="container">

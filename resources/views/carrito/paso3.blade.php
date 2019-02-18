@@ -2,19 +2,27 @@
 
 @section ('title', 'Radiko')
 
+@if (count(Cart::content()) != 0)
+    @section ('bodyClass', 'transparent')
+    @section ('header-class', 'is-home')
+@endif
+
 @section ('content')
     <div class="main-wrapper relative cart">
         @if (count(Cart::content()) != 0)
             <div class="container-fluid">
-                <div class="header-huerta rdk-charcoal d-flex justify-content-end" >
-                    <div class="diagonal bg-trama">
-                        <h2 class="huerta-title">
+                <div class="header-huerta bg-trama-b rdk-grape">
+                    <div class="diagonal">
+                        <h2 class="huerta-title ">
                             <span class="d-block">Tu compra con</span>
-                            Jardín Orgánico
+                            
+                            @if(Session::has('huerta')) 
+                                <?php echo Session::get('huerta') ?>
+                            @endif
                         </h2>
                     </div>
                 </div>
-            </div>
+            </div>  
 
             <section class="checkout-step">
                 <div class="container">
@@ -28,127 +36,47 @@
                              <li class="nav-item">
                                 <a class="nav-link" href="#">Dirección</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">Horario</a>
-                            </li>
-                            {{--  <li class="nav-item disabledTab">
-                                <a class="nav-link" href="#">Pago</a>
+                            {{-- <li class="nav-item">
+                                <a class="nav-link " href="#">Horario</a>
                             </li> --}}
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Pago</a>
+                            </li> 
                         </ul>
                     </div>
 
                     <div class="tab-content">
-
                         <div class="row">
                             <div class="col-md-7">
 
-                                <div class="dias">
-                                    <h2>Días y horarios disponibles</h2>
+                                <div class="title text-left">
+                                    <h2>Medio de pago</h2>
+                                </div>
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="card select-time">
-                                                <div class="card-info w-100 no-border">
-                                                    <h3>Viernes 20 de Julio</h3>
-
-                                                    <ul class="d-flex flex-wrap times">
-                                                        <li>
-                                                            <a href="#" class="js-time">08hs - 10hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time disabled">10hs - 12hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time">12hs - 14hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time">14hs - 16hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time disabled">16hs - 18hs</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="card select-time">
-                                                <div class="card-info w-100 no-border">
-                                                    <h3>Viernes 20 de Julio</h3>
-
-                                                    <ul class="d-flex flex-wrap times">
-                                                        <li>
-                                                            <a href="#" class="js-time">08hs - 10hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time disabled">10hs - 12hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time">12hs - 14hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time">14hs - 16hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time disabled">16hs - 18hs</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="card select-time">
-                                                <div class="card-info w-100 no-border">
-                                                    <h3>Viernes 20 de Julio</h3>
-
-                                                    <ul class="d-flex flex-wrap times">
-                                                        <li>
-                                                            <a href="#" class="js-time">08hs - 10hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time disabled">10hs - 12hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time">12hs - 14hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time">14hs - 16hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time disabled">16hs - 18hs</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="card select-time">
-                                                <div class="card-info w-100 no-border">
-                                                    <h3>Viernes 20 de Julio</h3>
-
-                                                    <ul class="d-flex flex-wrap times">
-                                                        <li>
-                                                            <a href="#" class="js-time">08hs - 10hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time disabled">10hs - 12hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time">12hs - 14hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time">14hs - 16hs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="js-time disabled">16hs - 18hs</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                               <div class="card payment">
+                                    <div class="card-info w-100 no-border">
+                                        <ul class="m-0">
+                                            <li>
+                                                <label class="radio d-flex align-items-center">
+                                                    <input type="radio" value="0" name="pago" checked>
+                                                    <span></span>
+                                                    <span>Efectivo en la entrega</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="radio d-flex align-items-center">
+                                                    <input type="radio" value="1" name="pago">
+                                                    <span></span>
+                                                    <span>Tarjeta de débito, crédito o efectivo a través de 
+                                                        <span class="bold">Mercado Pago</span>
+                                                    </span>
+                                                </label>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-md-5">
                                 <h2>Tu canasta</h2>
 
@@ -176,10 +104,10 @@
                                     <div class="d-flex justify-content-between align-items-center">         
                                         <a class="link" href="{{url("carrito?vaciar=1")}}">
                                             <i class="fas fa-chevron-left"></i>
-                                            <span>Volver a tus direcciones</span>
+                                            <span>Volver a los horarios</span>
                                         </a>
 
-                                        <a href="{{url("carrito/paso4")}}" class="btn btn-medium btn-primary">Continuar</a>
+                                        <a href="{{url("carrito/confirmacion")}}" class="btn btn-medium btn-primary">Finalizar compra</a>
                                     </div>
                                 </div>
                             </div>
@@ -187,6 +115,7 @@
                     </div>
                 </div>
             </section>
+
         @else
             <div class="container">
                 <div class="empty-cart">

@@ -88,7 +88,8 @@ class CarritoController extends Controller
         if (Request::isMethod('post')) {
             $product_id = Request::get('product_id');
             $product_qty = Request::get('product_qty');
-            $product_huerta = Request::get('huerta_id');
+            $huerta_id = Request::get('huerta_id');
+            $huerta_nombre = Request::get('huerta_nombre');
             $product_unidad = Request::get('unidad');
             $product = Producto::find($product_id);
 
@@ -99,15 +100,13 @@ class CarritoController extends Controller
                 'price' => $product->precio,
                 'options' => ['unidad' => $product_unidad, 'foto' => $product->foto]
             ]);
-
         }
 
         $cart = Cart::content();        
 
         //$id_huerta = Request::get('huerta_id');
 
-        return view('carrito.index');
-
+        return redirect()->route('carrito.index')->with('huerta', $huerta_nombre);
     } 
 
 

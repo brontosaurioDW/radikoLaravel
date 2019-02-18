@@ -2,13 +2,17 @@
 
 @section ('title', 'Radiko')
 
+@section ('bodyClass', 'transparent')
+
+@section ('header-class', 'is-home')
+
 @section ('content')
 
 <div class="main-wrapper relative">
 	<section class="huerta-detalle">
 		<div class="container-fluid">
-			<div class="header-huerta rdk-charcoal d-flex justify-content-end" >
-				<div class="diagonal bg-trama">
+			<div class="header-huerta bg-trama-b rdk-grape">
+				<div class="diagonal">
 					<h2 class="huerta-title	">{{$huerta->huerta}}</h2>
 				</div>
 			</div>
@@ -413,6 +417,7 @@
 										<input type="hidden" name="product_id" value="" data-product-id>
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
 										<input type="hidden" name="huerta_id" value="{{$huerta->id}}">
+										<input type="hidden" name="huerta_nombre" value="{{$huerta->huerta}}">
 										<input type="hidden" name="unidad" value="" data-product-unidad-medida2>
 										
 										<label for="cantidad">Cantidad</label>
