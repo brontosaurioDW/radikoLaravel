@@ -184,6 +184,11 @@ Route::get('/cpanel/productos/{prodcuto}', [
 	'uses' => 'CpanelProductosController@show'
 ]);
 
+Route::get('/cpanel/productos/{prodcuto}/edit', [
+	'as' => 'cpanel.productos.edit',
+	'uses' => 'CpanelProductosController@edit'
+]);
+
 // Cpanel Huerta
 
 Route::get('/cpanel/huerta', [

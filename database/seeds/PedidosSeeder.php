@@ -23,7 +23,8 @@ class PedidosSeeder extends Seeder
 			'huerta_id'=>1,
 			'id_estado_pedido'=>2,
 			'id_tipo_pago'=>1,
-			'id_disponibilidad'=>1
+			'id_disponibilidad'=>1,
+			'direccion_id'=>1
 		]);
 		
 		//#2	
@@ -37,7 +38,8 @@ class PedidosSeeder extends Seeder
 			'huerta_id'=>3,
 			'id_estado_pedido'=>1,
 			'id_tipo_pago'=>1,
-			'id_disponibilidad'=>8
+			'id_disponibilidad'=>8,
+			'direccion_id'=>3
 		]);
 		
 		//#3	
@@ -51,7 +53,8 @@ class PedidosSeeder extends Seeder
 			'huerta_id'=>2,
 			'id_estado_pedido'=>3,
 			'id_tipo_pago'=>1,
-			'id_disponibilidad'=>5
+			'id_disponibilidad'=>5,
+			'direccion_id'=>5
 		]);
 		
 		//#4	
@@ -65,7 +68,8 @@ class PedidosSeeder extends Seeder
 			'huerta_id'=>2,
 			'id_estado_pedido'=>2,
 			'id_tipo_pago'=>1,
-			'id_disponibilidad'=>6
+			'id_disponibilidad'=>6,
+			'direccion_id'=>6
 		]);
 		
 		//#5	
@@ -79,7 +83,8 @@ class PedidosSeeder extends Seeder
 			'huerta_id'=>1,
 			'id_estado_pedido'=>1,
 			'id_tipo_pago'=>1,
-			'id_disponibilidad'=>4
+			'id_disponibilidad'=>4,
+			'direccion_id'=>7
 		]);
 		
 		//#6	
@@ -93,7 +98,8 @@ class PedidosSeeder extends Seeder
 			'huerta_id'=>1,
 			'id_estado_pedido'=>2,
 			'id_tipo_pago'=>1,
-			'id_disponibilidad'=>2
+			'id_disponibilidad'=>2,
+			'direccion_id'=>2
 		]);
 		
 		//#7	
@@ -107,7 +113,8 @@ class PedidosSeeder extends Seeder
 			'huerta_id'=>1,
 			'id_estado_pedido'=>2,
 			'id_tipo_pago'=>1,
-			'id_disponibilidad'=>1
+			'id_disponibilidad'=>1,
+			'direccion_id'=>4
 		]);
 		
 		//#8	
@@ -121,7 +128,8 @@ class PedidosSeeder extends Seeder
 			'huerta_id'=>1,
 			'id_estado_pedido'=>1,
 			'id_tipo_pago'=>1,
-			'id_disponibilidad'=>3
+			'id_disponibilidad'=>3,
+			'direccion_id'=>3
 		]);
 		
 		//#9	
@@ -135,7 +143,8 @@ class PedidosSeeder extends Seeder
 			'huerta_id'=>3,
 			'id_estado_pedido'=>3,
 			'id_tipo_pago'=>1,
-			'id_disponibilidad'=>9
+			'id_disponibilidad'=>9,
+			'direccion_id'=>6
 		]);
     }
 }

@@ -100,12 +100,12 @@
 							<h2>Dirección</h2>
 						</div>
 						<div class="row">
-							<div class="col-md-12" style="color:red">
-								<h3 class="bold">Casa</h3>
+							<div class="col-md-12">
+								<h3>{{ $pedido->direccion->referencia }}</h3>
 								<ul class="mb-4">
-									<li>Salguero 900</li>
-									<li>Almagro</li>
-									<li>(011) 11 5533 6665</li>
+									<li>{{ $pedido->direccion->calle }} {{ $pedido->direccion->numero }} {{ $pedido->direccion->piso }}</li>
+									<li>{{ $pedido->direccion->telefono }}</li>
+									<li>{{ $pedido->direccion->aclaracion }}</li>
 								</ul>
 							</div>
 						</div>

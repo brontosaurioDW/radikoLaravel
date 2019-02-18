@@ -25,7 +25,7 @@
 					</div>
 					
 					<div class="row-form">
-						<input class="inputfile" type="file" accept="image/*" id="foto" name="foto" value="{{ old(Auth::user()->foto) }}">
+						<input class="inputfile" type="file" accept="image/*" id="foto" name="foto" value="">
 						<label for="foto" class="file-btn">
 							<span class="link">
 								<i class="fas fa-cloud-upload"></i>

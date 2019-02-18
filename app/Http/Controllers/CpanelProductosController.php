@@ -115,8 +115,6 @@ class CpanelProductosController extends Controller
      */
     public function show($id)
     {
-        // $producto = Producto::find($id);
-
         $producto = Producto::with(['unidadDeMedida','categoria'])->get()->find($id);
 
         return view('cpanel.productos.show', compact('producto'));
@@ -130,7 +128,11 @@ class CpanelProductosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categorias = Categoria::all();
+        $unidades = UnidadDeMedida::all();
+        $producto = Producto::with(['unidadDeMedida','categoria'])->get()->find($id);
+
+        return view('cpanel.productos.edit', compact('producto', 'categorias', 'unidades'));
     }
 
     /**
