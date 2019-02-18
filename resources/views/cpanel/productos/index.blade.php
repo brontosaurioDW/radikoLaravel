@@ -43,7 +43,7 @@
 							<td>
 								<a class="btn btn-primary" href="{{ route( 'cpanel.productos.show', ['id' => $producto->id] ) }}" data-toggle="tooltip" data-placement="top" title="Ver"><span class="sr-only">Ver</span><i class="far fa-eye"></i></a>
 								<a class="btn btn-primary" href="{{ route( 'cpanel.productos.edit', ['id' => $producto->id] ) }}" data-toggle="tooltip" data-placement="top" title="Editar"><span class="sr-only">Editar</span><i class="far fa-edit"></i></a>
-								<a class="btn btn-primary" href="#" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="sr-only">Eliminar</span><i class="far fa-trash"></i></a>
+								<a class="btn btn-primary" href="{{ route( 'cpanel.productos.confirmDestroy', ['id' => $producto->id] ) }}" data-toggle="tooltip" data-placement="top" title="Eliminar"><span class="sr-only">Eliminar</span><i class="far fa-trash"></i></a>
 							</td>
 						</tr>
 						@endforeach

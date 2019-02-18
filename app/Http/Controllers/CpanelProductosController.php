@@ -144,7 +144,67 @@ class CpanelProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $inputData = $request->input();
+
+        $request->validate(Producto::$rules, [
+            'producto.required' => 'El nombre del producto no puede estar vacío.',       
+            'producto.min' => 'El nombre del producto debe tener al menos :min caracteres.',       
+            'descripcion.required' => 'La descripción no puede estar vacía.',       
+            'marca.required' => 'La marca del producto no puede estar vacía.',       
+            'precio.required' => 'El precio es requerido.',       
+            'foto.image' => 'La imaen debe tener un formato valido. .jpg o .png.',       
+        ]);
+
+
+        if($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $image = Image::make($file);
+            $image->resize(500, 500, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            $fotoName = $request->file('foto')->hashName('');
+            $filepath = $request->file('foto')->hashName('public/images/productos'); 
+            Storage::put($filepath, (string) $image->encode());   
+            $inputData['foto'] = $fotoName;
+        }
+
+        $userId = auth()->user()->id;
+        $usuarioHuerta = Usuario::with('huerta')->get()->find($userId);
+        $huertaId = $usuarioHuerta->huerta->id;
+
+        $inputData['estado'] = '1';
+        $inputData['huerta_id'] = $huertaId;
+
+        $producto = Producto::find($id);
+
+        $producto->update($inputData);
+
+
+        if(isset($file) && !empty($file)) {
+            Storage::delete($file);
+        }
+
+        return redirect()->route('cpanel.productos.index' )
+        ->with(
+            [
+                'status' => 'El producto <b>' . $inputData['producto'] . '</b> se editóa exitosamente.',
+                'class' => 'success'
+            ]
+        );
+    }
+
+
+    /**
+     * Confirm removing the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function confirmDestroy($id)
+    {
+        $producto = Producto::find($id);
+
+        return view('cpanel.productos.confirm-destroy', compact('producto'));
     }
 
     /**
@@ -155,6 +215,22 @@ class CpanelProductosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto = Producto::find($id);
+
+        $foto = $producto->foto;
+        if ($foto) {
+            Storage::delete($foto);
+        }
+
+        $producto->delete();
+
+        return redirect()->route('cpanel.productos.index' )
+        ->with(
+            [
+                'status' => 'El producto <b>' . $producto->producto . '</b> se eliminó exitosamente.',
+                'class' => 'success'
+            ]
+        );
+
     }
 }
