@@ -17,12 +17,13 @@ class Direccion extends Model
 		'piso',
 		'departamento',
 		'telefono',
-		'aclaracion'
+		'aclaracion',
+		'usuario_id'
 	];
 	
 	/** @var array Las reglas de la validación. */
 	public static $rules = [
-		'referencia' => 'max:50',
+		'referencia' => 'min:3|max:50',
 		'calle' => 'required|max:100',
 		'numero' => 'required',
 		'telefono' => 'max:20',

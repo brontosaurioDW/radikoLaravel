@@ -139,16 +139,17 @@ class PerfilController extends Controller
         return view('perfil.direcciones', compact('direcciones'));
     }
 	
-	public function showFormDireccion()
+	public function createDireccion()
     {
 		return view('perfil.create-direccion');
     }
 	
-	public function createDireccion(Request $request)
+	public function storeDireccion(Request $request)
     {
 		$inputData = $request->all();
 		
 		$request->validate(Direccion::$rules, [
+			'referencia.min' => 'La referencia puede tener como mínimo 3 caracteres.',
 			'referencia.max' => 'La referencia puede tener como máximo 50 caracteres.',
 			'calle.required' => 'El nombre de la calle no puede estar vacío.',
 			'calle.max' => 'El nombre de la calle puede tener como máximo 100 caracteres.',
@@ -171,9 +172,12 @@ class PerfilController extends Controller
         );
     }
 	
-	public function editDireccion()
+	public function editDireccion($direccion)
     {
-        return view('perfil.edit-direccion');
+		$direccion = Direccion::find($direccion);
+        return view(
+			'perfil.edit-direccion', 
+			compact('direccion'));
     }
 
     /**
