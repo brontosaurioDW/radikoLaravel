@@ -5936,10 +5936,13 @@ readers do not read off random characters that represent icons */
   border: 0;
   box-shadow: none;
 }
+.tabs-full .nav-tabs .nav-link {
+  border: 0;
+}
 .tabs-full .nav-tabs .nav-link.active,
 .tabs-full .nav-tabs .nav-item.show .nav-link {
   color: #FFFFFF;
-  background: #898989;
+  background: #272727;
 }
 .tabs-outline .nav-tabs .nav-link.active,
 .tabs-outline .nav-tabs .nav-item.show .nav-link {
@@ -7435,6 +7438,108 @@ header .dropdown.dropdown li {
 .modal .modal-content .btn {
   position: absolute;
 }
+header:not(.is-home) + main .cpanel {
+  padding-top: 105px;
+}
+.cpanel .sidebar .card-info {
+  padding: 0;
+}
+.cpanel .sidebar .simple-list {
+  margin: 0;
+}
+.cpanel .sidebar li {
+  margin: 0;
+}
+.cpanel .sidebar a {
+  padding: 20px;
+  margin-left: 1px;
+}
+.cpanel .sidebar a.active {
+  background: #ebebeb;
+}
+.cpanel .sidebar a i {
+  float: right;
+  margin-top: 6px;
+}
+.cpanel .title {
+  position: relative;
+  padding-bottom: 30px;
+}
+.cpanel .add-product {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.cpanel .price {
+  width: 100px;
+}
+.cpanel .actions {
+  width: 100px;
+}
+.cpanel .actions a {
+  margin-right: 8px;
+}
+.cpanel .buttons {
+  margin-top: 25px;
+}
+.cpanel .buttons .link {
+  margin-right: 25px;
+}
+.cpanel .details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.cpanel .details li:first-child {
+  margin-top: 0;
+}
+.cpanel .details li {
+  margin: 15px 0;
+}
+.cpanel table {
+  width: 100%;
+}
+.cpanel table th,
+.cpanel table td {
+  word-wrap: break-word;
+  padding: 15px 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+  line-height: normal;
+}
+.cpanel table tr th:first-of-type,
+.cpanel table tr td:first-of-type {
+  padding-left: 0;
+}
+.cpanel table tr th:last-of-type,
+.cpanel table tr td:last-of-type {
+  padding-right: 0;
+}
+.cpanel img {
+  width: 100%;
+}
+.cpanel .nav {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.c-panel-wrapper {
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+.c-panel-inner-wrapper {
+  background: #FFFFFF;
+  padding: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  .c-panel-wrapper {
+    padding: 1rem;
+  }
+  .cpanel .table-responsive table {
+    min-width: 500px;
+  }
+}
 .pagination {
   margin: 20px auto 40px;
 }
@@ -7554,6 +7659,22 @@ header .dropdown.dropdown li {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.list-opiniones .flag,
+.list-boxed .flag {
+  padding: 10px;
+  text-align: center;
+  line-height: normal;
+  color: #FFFFFF;
+  display: inline-block;
+}
+.list-opiniones .flag.red,
+.list-boxed .flag.red {
+  background: #ea5f48;
+}
+.list-opiniones .flag.green,
+.list-boxed .flag.green {
+  background: #50d2a4;
 }
 .list-opiniones li,
 .list-boxed li {

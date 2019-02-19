@@ -4,20 +4,20 @@
 
 @section ('content')
 
-<div class="main-wrapper relative small-height">
-	<section class="container profile">
+	<div class="main-wrapper cpanel relative">
+		<section class="container">
+			@include ('cpanel.nav')
 
-		<div class="row">
-			<div class="col-3">
-				@include ('cpanel.nav')
+			<div class="c-panel-wrapper bg-trama rdk-charcoal">
+				<div class="c-panel-inner-wrapper">
+					<div class="title">
+						<h3>Pedidos de la huerta</h3>
+					</div>
+
+				</div>
 			</div>
 
-			<div class="col-9">	
-				<h3>Pedidos de la huerta</h3>
-			</div>
-		</div>
-
-	</section>
-</div>
+		</section>
+	</div>
 
 @endsection

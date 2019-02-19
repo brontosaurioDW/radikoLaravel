@@ -1,0 +1,139 @@
+header:not(.is-home) + main .cpanel {
+    padding-top: 105px;
+}
+
+.cpanel {
+
+	.sidebar {
+		.card-info {
+			padding: 0;
+		}
+
+		.simple-list {
+			margin: 0;
+		}
+
+		li {
+			margin: 0;
+		}
+
+		a {
+			padding: 20px;
+			margin-left: 1px;
+
+			&.active {
+				background: #ebebeb;
+			}
+
+			i {
+				float: right;
+				margin-top: 6px;
+			}
+		}
+	}
+
+	.title {
+		position: relative;
+		padding-bottom: 30px;
+	}
+
+	.add-product {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	.price {
+		width: 100px;
+	}
+
+	.actions {
+		width: 100px;
+
+		a {
+			margin-right: 8px;
+		}
+	}
+
+	.buttons {
+		margin-top: 25px; 
+
+		.link {
+			margin-right: 25px;
+		}
+	}
+
+	.details {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 40px 0;
+
+		li:first-child {
+			margin-top: 0;
+		}
+		
+		li {
+			margin: 15px 0;
+		}
+	}
+
+	table {
+		width: 100%;
+
+		th,
+		td {
+			word-wrap: break-word;
+			padding: 15px 10px;
+			vertical-align: middle;
+			border-bottom: 1px solid #ddd;
+			line-height: normal;
+		}
+
+		tr {
+			th:first-of-type, 
+			td:first-of-type {
+				padding-left: 0;
+			}
+
+			th:last-of-type,
+			td:last-of-type {
+				padding-right: 0;
+			}
+		}
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.nav {
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+}
+
+.c-panel-wrapper {
+	padding: 3rem;
+	margin-bottom: 3rem;
+}
+
+.c-panel-inner-wrapper{
+	background: @ice;
+	padding: 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+	.c-panel-wrapper {
+	    padding: 1rem;
+	}
+
+	.cpanel {
+		.table-responsive {
+			table {
+				min-width: 500px;
+			}
+		}
+	}
+}

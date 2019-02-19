@@ -60,7 +60,14 @@
 								</div>
 								<div class="media-body">
 									<h4>{{$pedido->huerta->huerta}}</h4>
-									<span style="color:red">{{$pedido->estado->estado}}</span>
+									
+									{{-- @if ($pedido->estado->estado == 'Pendiente de pago')
+										@php $status = 'red' @endphp
+									@else
+										@php $status = 'green' @endphp
+									@endif
+
+									<span class="flag {{ $status }}"> {{$pedido->estado->estado}} </span> --}}
 
 									<ul class="simple-list">
 										<li>
@@ -73,7 +80,10 @@
 										</li>
 									</ul>		
 
-									<a href="{{ route('perfil.pedidoDetalle' , $pedido->id ) }}" class="link-fwd">Ver detalle</a>							
+									<a href="{{ route('perfil.pedidoDetalle' , $pedido->id ) }}" class="link">
+										<span>Ver detalle</span>
+										<i class="fas fa-chevron-right"></i>
+									</a>							
 								</div>
 							</li>
 							@endforeach
@@ -105,7 +115,10 @@
 										</li>
 									</ul>		
 
-									<a href="{{ route('perfil.pedidoDetalle' , $pedidoR->id) }}" class="link-fwd">Ver detalle</a>							
+									<a href="{{ route('perfil.pedidoDetalle' , $pedidoR->id) }}" class="link">
+										<span>Ver detalle</span>
+										<i class="fas fa-chevron-right"></i>
+									</a>							
 								</div>
 							</li>
 							@endforeach
