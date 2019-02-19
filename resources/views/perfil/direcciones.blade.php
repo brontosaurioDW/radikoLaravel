@@ -63,7 +63,7 @@
 											<span>{{$direccion->aclaracion}}</span>
 										</li>
 									</ul>
-									<a class="btn btn-primary btn-medium" href="{{ route('perfil.direcciones.edit'), $direccion->id }}">
+									<a class="btn btn-primary btn-medium" href="{{ route( 'perfil.direcciones.edit', ['id' => $direccion->id] ) }}">
 										Editar dirección
 									</a>
 								</div>
