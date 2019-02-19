@@ -149,7 +149,7 @@ class PerfilController extends Controller
 		$inputData = $request->all();
 		
 		$request->validate(Direccion::$rules, [
-			'referencia.min' => 'La referencia puede tener como mínimo 3 caracteres.',
+			'referencia.required' => 'La referencia no puede estar vacia.',
 			'referencia.max' => 'La referencia puede tener como máximo 50 caracteres.',
 			'calle.required' => 'El nombre de la calle no puede estar vacío.',
 			'calle.max' => 'El nombre de la calle puede tener como máximo 100 caracteres.',

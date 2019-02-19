@@ -23,7 +23,7 @@ class Direccion extends Model
 	
 	/** @var array Las reglas de la validación. */
 	public static $rules = [
-		'referencia' => 'min:3|max:50',
+		'referencia' => 'required|max:50',
 		'calle' => 'required|max:100',
 		'numero' => 'required',
 		'telefono' => 'max:20',
