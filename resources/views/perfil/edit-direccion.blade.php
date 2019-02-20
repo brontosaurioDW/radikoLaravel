@@ -47,8 +47,9 @@
 		
 				<div class="add-address">
 					<div class="form form-bg">
-						<form method="POST" action="{{ route('perfil.direcciones.store', ['id' => $direccion->id] ) }}">
+						<form method="POST" action="{{ route('perfil.direcciones.update', ['id' => $direccion->id] ) }}">
 							@csrf
+							@method('PUT')
 							<div class="row-form">
 								<label>Nombre / Referencia</label>
 								<input type="text" name="referencia" value="{{ old('referencia', $direccion->referencia) }}" placeholder="">

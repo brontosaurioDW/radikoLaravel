@@ -26,7 +26,7 @@ class Direccion extends Model
 		'referencia' => 'required|max:50',
 		'calle' => 'required|max:100',
 		'numero' => 'required',
-		'telefono' => 'max:20',
+		'telefono' => 'required|max:20',
 		'aclaracion' => 'max:255'
 	];
 	

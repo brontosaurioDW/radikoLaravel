@@ -46,7 +46,14 @@
 						<a class="btn btn-primary btn-medium" href="{{ route('perfil.direcciones.create') }}">
 							Agregar Dirección
 						</a>
+						
+						@if(Session::has('status'))
+							@component('components.alert', ['tipo' => Session::get('class')])
+								{!! Session::get('status') !!}
+							@endcomponent
+						@endif
 
+						@isset($direcciones)
 						<ul class="list-boxed orders mb-5">
 							@foreach ($direcciones as $direccion)
 							<li class="list-wrapper media">
@@ -63,13 +70,20 @@
 											<span>{{$direccion->aclaracion}}</span>
 										</li>
 									</ul>
-									<a class="btn btn-primary btn-medium" href="{{ route( 'perfil.direcciones.edit', ['id' => $direccion->id] ) }}">
-										Editar dirección
+									<a class="btn btn-primary btn-small" style="right:135px" href="{{ route( 'perfil.direcciones.edit', ['id' => $direccion->id] ) }}">
+										Editar
+									</a>
+									<a class="btn btn-secondary btn-small" href="{{ route( 'perfil.direccion.confirmDestroyDireccion', ['id' => $direccion->id] ) }}">
+										Eliminar
 									</a>
 								</div>
 							</li>
 							@endforeach
 						</ul>
+						@endisset
+						@empty($direcciones)
+						<p>Aún no tienes ninguna dirección cargada</p>
+						@endempty
 					</div>					
 				</div>		
 		</section>

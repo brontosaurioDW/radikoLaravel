@@ -82,7 +82,7 @@
 							</div>
 							<div class="row-form split d-flex justify-content-between">
 								<label>Teléfono</label>
-								<input type="text" name="telefono" value="{{ old('telefono') }}" placeholder="">
+								<input type="tel" name="telefono" value="{{ old('telefono') }}" pattern="\([0-9]{3}\) [0-9]{4}[ -][0-9]{4}" value="{{ old('numero') }}" placeholder="(011) 5555-5555">
 								@if($errors->has('telefono'))
 								<small class="text-danger">{{ $errors->first('telefono') }}</small>
 								@endif

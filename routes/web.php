@@ -132,23 +132,40 @@ Route::middleware('auth')->group(function() {
 		'uses' => 'PerfilController@update'
 	]);
 	
+	/* DIRECCIONES DEL CLIENTE*/
 	Route::get('/perfil/direcciones', [
 		'as' => 'perfil.direcciones',
-		'uses' => 'PerfilController@showDirecciones'
+		'uses' => 'DireccionesController@showDirecciones'
 	]);
 	
 	Route::get('/perfil/direcciones/nuevaDireccion', [
 		'as' => 'perfil.direcciones.create',
-		'uses' => 'PerfilController@createDireccion'
+		'uses' => 'DireccionesController@createDireccion'
 	]);
+	
 	Route::post('/perfil/direcciones/nuevaDireccion', [
 		'as' => 'perfil.direcciones.store',
-		'uses' => 'PerfilController@storeDireccion'
+		'uses' => 'DireccionesController@storeDireccion'
 	]);
 	
 	Route::get('/perfil/direcciones/{direccion}/editarDireccion', [
 		'as' => 'perfil.direcciones.edit',
-		'uses' => 'PerfilController@editDireccion'
+		'uses' => 'DireccionesController@editDireccion'
+	]);
+	
+	Route::put('/perfil/direcciones/{direccion}/editarDireccion', [
+		'as' => 'perfil.direcciones.update',
+		'uses' => 'DireccionesController@updateDireccion'
+	]);
+	
+	Route::get('/perfil/direcciones/{direccion}/eliminarDireccion', [
+	'as' => 'perfil.direccion.confirmDestroyDireccion',
+	'uses' => 'DireccionesController@confirmDestroyDireccion'
+	]);
+
+	Route::delete('/perfil/direcciones/{direccion}/eliminarDireccion', [
+		'as' => 'perfil.direccion.destroyDireccion',
+		'uses' => 'DireccionesController@DestroyDireccion'
 	]);
 
 });
