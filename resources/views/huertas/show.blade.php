@@ -24,10 +24,10 @@
 					<div class="alert dummy-alert alert-dismissible fade show" role="alert">
 						<div class="row">
 							<div class="col-6">
-								<p class="bold">¡Agregaste un producto al carrito!</p>
+								<p class="bold">¡Agregaste un producto a la canasta!</p>
 							</div>
 							<div class="col-6 text-right">
-								<a href="confirmacion-paso-1.html">Ver carrito</a>
+								<a href="confirmacion-paso-1.html">Ver canasta</a>
 							</div>
 						</div>
 
@@ -426,7 +426,7 @@
 									
 									<button type="submit" class="btn btn-primary btn-medium">
                                         <i class="fal fa-shopping-basket"></i>
-                                        Agregar al carrito
+                                        Agregar a la canasta
                                     </button>			
 								</div>
 							</form>

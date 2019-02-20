@@ -6997,6 +6997,19 @@ header .dropdown.dropdown ul {
 header .dropdown.dropdown li {
   margin: 0;
 }
+header li a {
+  position: relative;
+}
+header li a .cart-yes {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #50D2A4;
+  display: block;
+  position: absolute;
+  top: -2px;
+  right: -5px;
+}
 .dropdown-menu i {
   margin-right: 10px;
   font-size: 12px;

@@ -19,8 +19,11 @@
 
    <ul>
     <li>
-        <a href="javascript:void(0)" data-toggle="tooltip" data-placement="right" title="Carrito proximamente">
+        <a href="{{ route('carrito.index') }}">
             <i class="fal fa-shopping-basket"></i>
+            @if (Cart::content()->count() > 0)
+                <span class="cart-yes"></span>
+            @endif
         </a>
     </li>
 </ul>
@@ -77,6 +80,10 @@
     			<li class="d-none d-lg-block">
                     <a href="{{ route('carrito.index') }}">
                         <i class="fal fa-shopping-basket"></i>
+
+                        @if (Cart::content()->count() > 0)
+                            <span class="cart-yes"></span>
+                        @endif
                     </a>  
                 </li>
             @else
@@ -118,6 +125,9 @@
             <li class="d-none d-lg-block">
                 <a href="{{ route('carrito.index') }}">
                     <i class="fal fa-shopping-basket"></i>
+                    @if (Cart::content()->count() > 0)
+                        <span class="cart-yes"></span>
+                    @endif
                 </a>
             </li>
         @endif	

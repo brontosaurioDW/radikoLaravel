@@ -14,11 +14,8 @@
                 <div class="header-huerta bg-trama-b rdk-grape">
                     <div class="diagonal">
                         <h2 class="huerta-title ">
-                            <span class="d-block">Tu compra con</span>                          
-
-                            @if(Session::has('huerta')) 
-                                <?php echo Session::get('huerta') ?>
-                            @endif
+                            <span class="d-block">Tu compra con</span>   
+                            @php echo Config::get('canasta.informacion.huerta'); @endphp          
                         </h2>
                     </div>
                 </div>
@@ -49,10 +46,11 @@
                         <div class="row">
                             <div class="col-md-7">
                                 <h2>Productos</h2>
-                                
+
                                 <ul class="m-0 p-0">
                                     <?php foreach(Cart::content() as $row) :?>
                                         <li class="card">
+
                                             <div class="d-flex">
                                                 <div class="img-wrapper">
                                                     <img src="/images/productos/<?php echo $row->options->foto; ?>" alt="Tomates" class="img-fluid">
@@ -160,4 +158,5 @@
             </div>
         @endif        
     </div>
+
 @endsection
