@@ -19,7 +19,7 @@ class DireccionesSeeder extends Seeder
 			'numero' => '1200',
 			'piso' => '1',
 			'departamento' => 'D',
-			'telefono' => '1530547862',
+			'telefono' => '(011) 3054-7862',
 			'aclaracion' => 'Puerta negra',
 			'usuario_id' => 5
 		]);
@@ -30,8 +30,8 @@ class DireccionesSeeder extends Seeder
 			'numero' => '1571',
 			'piso' => '2',
 			'departamento' => '1',
-			'telefono' => '1565478254',
-			'aclaracion' => '',
+			'telefono' => '(011) 6547-8254',
+			'aclaracion' => null,
 			'usuario_id' => 5
 		]);
 		//#3 #usuario 6
@@ -39,21 +39,21 @@ class DireccionesSeeder extends Seeder
 			'referencia' => 'Casa de mamá',
 			'calle' => 'Godoy Cruz',
 			'numero' => '3008',
-			'piso' => '',
-			'departamento' => '',
-			'telefono' => '25476875',
+			'piso' => null,
+			'departamento' => null,
+			'telefono' => '(011) 2547-6875',
 			'aclaracion' => 'No funciona el timbre, pegar un grito',
 			'usuario_id' => 6
 		]);
 		//#4 #usuario 7
 		Direccion::create([
-			'referencia' => '',
+			'referencia' => 'Lo de Moni',
 			'calle' => 'Belgrano',
 			'numero' => '955',
 			'piso' => '5',
 			'departamento' => 'A',
-			'telefono' => '5647-8963',
-			'aclaracion' => '',
+			'telefono' => '(011) 5647-8963',
+			'aclaracion' => null,
 			'usuario_id' => 7
 		]);
 		//#5 #usuario 7
@@ -63,7 +63,7 @@ class DireccionesSeeder extends Seeder
 			'numero' => '2500',
 			'piso' => '9',
 			'departamento' => 'A',
-			'telefono' => '5647-8963',
+			'telefono' => '(011) 5647-8963',
 			'aclaracion' => 'Dejar al Sr. de Seguridad',
 			'usuario_id' => 7
 		]);
@@ -74,7 +74,7 @@ class DireccionesSeeder extends Seeder
 			'numero' => '854',
 			'piso' => '2',
 			'departamento' => 'B',
-			'telefono' => '15-3054-7862',
+			'telefono' => '(011) 3054-7862',
 			'aclaracion' => 'no funciona el timbre, golpear fuerte',
 			'usuario_id' => 8
 		]);
@@ -84,9 +84,9 @@ class DireccionesSeeder extends Seeder
 			'referencia' => 'Lo de mamá',
 			'calle' => 'Salguero',
 			'numero' => '1254',
-			'piso' => '',
-			'departamento' => '',
-			'telefono' => '4300-2580',
+			'piso' => null,
+			'departamento' => null,
+			'telefono' => '(011) 4300-2580',
 			'aclaracion' => 'Puerta verde',
 			'usuario_id' => 8
 		]);

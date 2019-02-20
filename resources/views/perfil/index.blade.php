@@ -46,7 +46,8 @@
 							
 					<div class="col-xs-12 col-md-7 col-lg-9">
 						<h3>Pedidos pendientes</h3>
-
+						
+						@if(!$pedidosPendientes->isEmpty())
 						<ul class="list-boxed orders mb-5">
 							@foreach ($pedidosPendientes as $pedido)
 							
@@ -88,9 +89,13 @@
 							</li>
 							@endforeach
 						</ul>
+						@else
+						<p>No tienes ningún pedido pendiente.</p>
+						@endif
 
 						<h3>Pedidos realizados</h3>
 
+						@if(!$pedidosRealizados->isEmpty())
 						<ul class="list-boxed orders">
 							@foreach ($pedidosRealizados as $pedidoR)
 							<li class="list-wrapper media">
@@ -123,6 +128,9 @@
 							</li>
 							@endforeach
 						</ul>
+						@else
+						<p>Aún no has completado ningún pedido.</p>
+						@endif
 					</div>					
 				</div>		
 		</section>

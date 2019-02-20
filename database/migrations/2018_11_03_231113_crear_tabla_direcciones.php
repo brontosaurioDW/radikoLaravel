@@ -19,10 +19,10 @@ class CrearTablaDirecciones extends Migration
             // $table->string('tipo');
             $table->string('calle', 100);
             $table->string('numero', 45);
-            $table->string('piso', 10);
-            $table->string('departamento', 10);
+            $table->string('piso', 10)->nullable();
+            $table->string('departamento', 10)->nullable();
             $table->string('telefono', 20);
-            $table->string('aclaracion', 255);
+            $table->string('aclaracion', 255)->nullable();
 			
 			$table -> unsignedInteger('usuario_id');
 			
