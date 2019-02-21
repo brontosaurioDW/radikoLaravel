@@ -25,6 +25,7 @@
                 <span class="cart-yes"></span>
             @endif
         </a>
+        <div class="mensajitoTooltip js-tooltip"> El producto se agregó a la canasta </div>
     </li>
 </ul>
 </div>
@@ -37,9 +38,10 @@
             @else
                 <a class="navbar-brand" href="{{ url('/') }}">Rádiko</a>
             @endif  
+
         </h1>
 
-        <ul class="navbar-nav flex-row flex-wrap">
+        <ul class="navbar-nav flex-row flex-wrap relative">
         @if(Auth::check())
             @if(Auth::user()->tipo == 'cliente')
                 <li>
@@ -85,6 +87,7 @@
                             <span class="cart-yes"></span>
                         @endif
                     </a>  
+                    <div class="mensajitoTooltip js-tooltip"> El producto se agregó a la canasta </div>
                 </li>
             @else
                 <li>
@@ -129,6 +132,7 @@
                         <span class="cart-yes"></span>
                     @endif
                 </a>
+                <div class="mensajitoTooltip js-tooltip"> El producto se agregó a la canasta </div>
             </li>
         @endif	
     </ul>

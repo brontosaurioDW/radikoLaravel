@@ -411,22 +411,22 @@
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut error officia placeat illo alias cum minima dignissimos accusantium earum incidunt.
 							</p>
 
-							<form method="POST" action="{{route('carrito.agregar')}}" class="form">
+							<form method="POST" action="{{url('carrito/agregar')}}" class="form" id="add-to-basket">
 								<div class="form form-bg">
 									<div class="d-flex align-items-center flex-wrap justify-content-start">
 										<input type="hidden" name="product_id" value="" data-product-id>
-										<input type="hidden" name="_token" value="{{ csrf_token() }}">
+										{{-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
+										<meta name="csrf-token" content="{{ csrf_token() }}">
 										<input type="hidden" name="huerta_id" value="{{$huerta->id}}">
 										<input type="hidden" name="huerta_nombre" value="{{$huerta->huerta}}">
 										<input type="hidden" name="unidad" value="" data-product-unidad-medida2>
 										
 										<label for="cantidad">Cantidad</label>
-										<input type="number" name="product_qty"> <span data-product-unidad-medida3></span>
+										<input type="number" name="product_qty" min="1" max="10"> <span data-product-unidad-medida3></span>
 									</div>
 									
-									<button type="submit" class="btn btn-primary btn-medium">
-                                        <i class="fal fa-shopping-basket"></i>
-                                        Agregar a la canasta
+									<button type="submit" class="btn btn-primary btn-small js-agregar-producto">
+                                        <i class="fal fa-shopping-basket"></i> Agregar a la canasta
                                     </button>			
 								</div>
 							</form>

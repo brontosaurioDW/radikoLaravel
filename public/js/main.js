@@ -45,6 +45,55 @@ $(document).ready(function(){
             });
         });
     });
+
+    // Chequear si hay productos en el carrito y si hay, confirmar cambio de huerta
+    /*$('.js-check-huerta').on('click', function(event) {
+        event.preventDefault();
+        
+        if (!confirm("¿Estás seguro?")) {
+            return false;
+        } 
+
+        var row = $(this).parents().data('id');
+    });*/
+
+    // Ajax agregar producto al carrito
+    $('.js-agregar-producto').on('click',  function(event) {
+        event.preventDefault();
+
+        var ruta = $(this).parents('form').prop('action');
+
+        $.ajaxSetup({
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+        });
+
+        $.ajax({
+            url: ruta,            
+            type: 'POST',
+            data: {
+                product_id: $('input[name="product_id"]').val(),
+                product_qty: $('input[name="product_qty"]').val(),
+                huerta_id: $('input[name="huerta_id"]').val(),
+                huerta_nombre: $('input[name="huerta_nombre"]').val(),
+                unidad: $('input[name="unidad"]').val(),
+            },
+            success: function(result) {
+                if (result['success'] == 'ok') {
+                    $('#producto-detalle').modal('hide');
+
+                    setTimeout(function() {
+                        $(".js-tooltip").fadeIn();
+
+                        setTimeout(function() {
+                            $(".js-tooltip").fadeOut();
+                        }, 2000);
+                    }, 500);
+                } else {
+                    console.log('Error');
+                }
+            },
+        });
+    });
 });
 
 $(window).on('scroll', function(){
@@ -60,7 +109,7 @@ $(window).on('scroll', function(){
     }
 });
 
-function GeocodingAdress() {
+/*function GeocodingAdress() {
     // GEOCODING API -- Google maps para detalle de huerta
     if ($('.datos-info-huerta').length > 0) {
         var geocoder;
@@ -91,7 +140,7 @@ function GeocodingAdress() {
             }
         });
     }
-}
+}*/
 
 // Carrito
 function ConfirmarBorrado(event) {

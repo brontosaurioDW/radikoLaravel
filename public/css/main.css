@@ -7010,6 +7010,30 @@ header li a .cart-yes {
   top: -2px;
   right: -5px;
 }
+.mensajitoTooltip {
+  display: none;
+  background: #50D2A4;
+  color: #FFFFFF;
+  box-shadow: 2px 2px 0px #43A280;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.mensajitoTooltip:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -5px;
+  right: 3px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #50D2A4;
+}
 .dropdown-menu i {
   margin-right: 10px;
   font-size: 12px;

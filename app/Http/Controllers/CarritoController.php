@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Producto;
 use App\Models\Huerta;
@@ -67,28 +68,37 @@ class CarritoController extends Controller
 
 
     // agrega un producto al carrito
-    public function agregar() {
+    public function agregar(HttpRequest $request) {
 
-        if (Request::isMethod('post')) {
-            $product_id = Request::get('product_id');
-            $product_qty = Request::get('product_qty');
-            $huerta_id = Request::get('huerta_id');
-            $huerta_nombre = Request::get('huerta_nombre');
-            $product_unidad = Request::get('unidad');
-            $product = Producto::find($product_id);
+        $product_id     = $request->input('product_id');
+        $product_qty    = $request->input('product_qty');
+        $huerta_id      = $request->input('huerta_id');
+        $huerta_nombre  = $request->input('huerta_nombre');
+        $product_unidad = $request->input('unidad');
+        
+        $product = Producto::find($product_id);
 
-            Cart::add([
-                'id' => $product_id, 
-                'name' => $product->producto, 
-                'qty' => $product_qty, 
-                'price' => $product->precio,
-                'options' => ['unidad' => $product_unidad, 'foto' => $product->foto, 'huerta' => $huerta_nombre, 'huerta_id' => $huerta_id]
+        Cart::add([
+            'id' => $product_id, 
+            'name' => $product->producto, 
+            'qty' => $product_qty, 
+            'price' => $product->precio,
+            'options' => ['unidad' => $product_unidad, 'foto' => $product->foto, 'huerta' => $huerta_nombre, 'huerta_id' => $huerta_id]
+        ]);
+
+        UpdateCartData::updateEnv('NOMBRE_HUERTA_CARRITO', $huerta_nombre);
+
+        /*return redirect()->route('carrito.index');*/
+
+        if ($request->ajax()) {
+            return response()->json([
+                'success' => 'ok',
             ]);
-
-            UpdateCartData::updateEnv('NOMBRE_HUERTA_CARRITO', $huerta_nombre);
+        } else {
+            return response()->json([
+                'error' => 'error',
+            ]);
         }
-
-        return redirect()->route('carrito.index');
     } 
 
 

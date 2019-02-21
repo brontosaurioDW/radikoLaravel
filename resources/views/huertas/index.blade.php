@@ -62,7 +62,7 @@
 						<div class="d-flex flex-wrap justify-content-between">
 							@foreach ($huertas as $huerta)
 							<div class="card no-border">
-								<a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="d-flex">
+								<a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="d-flex js-check-huerta">
 									<div class="img-wrapper">
 										<img src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="<?php echo $huerta->huerta ?>" />
 									</div>

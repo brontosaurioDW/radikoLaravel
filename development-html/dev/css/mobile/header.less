@@ -87,6 +87,32 @@ header {
 	}
 }
 
+.mensajitoTooltip {
+	display: none;
+	background: @pepper;
+	color: @ice;
+	box-shadow: 2px 2px 0px @pepper-dk;
+	position: absolute;
+	top: 30px;
+	right: 0;
+	padding: 10px 25px;
+	border-radius: 5px;
+	font-size: 13px;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: -5px;
+		right: 3px;
+		width: 0;
+		height: 0;
+		border-left: 9px solid transparent;
+		border-right: 9px solid transparent;
+		border-bottom: 9px solid @pepper;
+	}
+}
+
 .dropdown-menu {
 	i {
 		margin-right: 10px;
