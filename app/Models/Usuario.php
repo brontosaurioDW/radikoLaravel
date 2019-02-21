@@ -11,7 +11,7 @@ class Usuario extends Model
 
     /** @var array Los campos que se pueden cargar de manera masiva. */
     protected $fillable = [
-        'name', 'last_name', 'email', 'password', 'telephone', 'foto', 'estado'
+        'name', 'last_name', 'email', 'password', 'telephone', 'foto', 'estado', 'tipo'
     ];
 
     /** @var array Las reglas de la validación. */

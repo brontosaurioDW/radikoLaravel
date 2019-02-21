@@ -86,7 +86,7 @@ class AuthController extends Controller
     * @return \Illuminate\Http\Response
     */
     public function doRegistro(Request $request)
-    {
+    {   
 
         $request->validate(User::$rules_register, [
             'name.required' => 'El campo de nombre es requerido',
@@ -102,6 +102,8 @@ class AuthController extends Controller
 
         $input = $request->input();
 
+        $input['tipo'] = 'cliente';
+        $input['estado'] = 'activo';
         $input['password'] = \Hash::make($input['password']);
         $user = User::create($input);
 
