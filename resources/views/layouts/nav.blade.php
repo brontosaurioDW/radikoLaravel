@@ -57,13 +57,13 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">    
                             <ul>
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('perfil.detalle' , Auth::user()->id ) }}">
+                                    <a class="dropdown-item" href="{{ route('perfil.detalle') }}">
                                         <i class="fas fa-user"></i>
                                         <span>Perfil</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('perfil.direcciones' , Auth::user()->id ) }}">
+                                    <a class="dropdown-item" href="{{ route('perfil.direcciones') }}">
                                         <i class="fas fa-map-marker-alt"></i>
                                         <span>Mis direcciones</span>
                                     </a>
