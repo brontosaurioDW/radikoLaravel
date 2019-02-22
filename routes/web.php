@@ -189,9 +189,6 @@ Route::get('/cpanel', function() {
 	return view('cpanel.index');
 });
 
-Route::get('/cpanel/pedidos', function() {
-	return view('cpanel.pedidos.index');
-});
 
 // Cpanel Productos
 
@@ -233,6 +230,18 @@ Route::get('/cpanel/productos/{prodcuto}/eliminar', [
 Route::delete('/cpanel/productos/{prodcuto}/eliminar', [
 	'as' => 'cpanel.productos.destroy',
 	'uses' => 'CpanelProductosController@destroy'
+]);
+
+// Capnel Pedidos
+
+// Route::get('/cpanel/pedidos', function() {
+// 	''
+// 	return view('cpanel.pedidos.index');
+// });
+
+Route::get('/cpanel/pedidos', [
+	'as' => 'cpanel.pedidos.index',
+	'uses' => 'CpanelPedidosController@index'
 ]);
 
 // Cpanel Huerta
