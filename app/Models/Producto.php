@@ -32,7 +32,6 @@ class Producto extends Model
 
 	];
 
-
 	public function huerta()
 	{
 		return $this->belongsTo(Huerta::class);
@@ -46,5 +45,10 @@ class Producto extends Model
 	public function categoria()
 	{
 		return $this->belongsTo(Categoria::class);
+	}
+
+	public function pedido()
+	{
+		return $this->belongsTo(Pedido::class);
 	}
 }

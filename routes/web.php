@@ -234,14 +234,14 @@ Route::delete('/cpanel/productos/{prodcuto}/eliminar', [
 
 // Capnel Pedidos
 
-// Route::get('/cpanel/pedidos', function() {
-// 	''
-// 	return view('cpanel.pedidos.index');
-// });
-
 Route::get('/cpanel/pedidos', [
 	'as' => 'cpanel.pedidos.index',
 	'uses' => 'CpanelPedidosController@index'
+]);
+
+Route::get('/cpanel/pedidos/{pedido}', [
+	'as' => 'cpanel.pedidos.show',
+	'uses' => 'CpanelPedidosController@show'
 ]);
 
 // Cpanel Huerta
