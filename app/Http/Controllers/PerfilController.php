@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pedido;
-use App\Models\Huerta;
-use App\Models\Usuario;
-use App\Models\Direccion;
-use App\User;
 
 use Storage;
 use Image;
 use DB;
+
+use App\User;
+
+use App\Models\Pedido;
+use App\Models\Huerta;
+use App\Models\Usuario;
+use App\Models\Direccion;
+use App\Models\Producto;
+use App\Models\RelPedidosProductos;
+
 
 class PerfilController extends Controller
 {
@@ -74,13 +79,17 @@ class PerfilController extends Controller
     {
         return view('perfil.edit');
     }
-	
+
 
     public function detallePedido($pedido)
     {
-        $userId = auth()->user()->id;
-        $pedido = Pedido::where('usuario_id', $userId)->find($pedido);
-        return view('perfil.detalle-pedido', compact('pedido'));
+        // $userId = auth()->user()->id;
+        //$pedido = Pedido::where('usuario_id', $userId)->find($pedido);
+
+        $pedido = Pedido::find($pedido);
+        $productos = Producto::all();
+        $productos_pedido = RelPedidosProductos::where('pedido_id', $pedido->id)->get();
+        return view('perfil.detalle-pedido', compact('pedido', 'productos', 'productos_pedido'));
     }        
 
     /**

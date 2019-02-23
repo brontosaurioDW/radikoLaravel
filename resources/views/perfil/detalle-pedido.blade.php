@@ -1,8 +1,8 @@
 	@extends ('layouts.master')
 
-@section ('title', 'Radiko - Información usuario')
+	@section ('title', 'Radiko - Información usuario')
 
-@section ('content')
+	@section ('content')
 
 	<div class="main-wrapper relative small-height">
 		<section class="container detalle-pedido">
@@ -31,18 +31,16 @@
 							<h2>Pedido</h2>
 						</div>
 						<ul>
+							@foreach ($productos as $producto)
+							@foreach ($productos_pedido as $producto_pedido)
+							@if ($producto->id == $producto_pedido->producto_id)
 							<li class="d-flex justify-content-between align-items-center">
-								<span style="color:red">2 kg.  Tomate</span>
-								<span class="price-black" style="color:red">$80</span>
+								<span style="color:red">2 kg.  {{$producto->producto}}</span>
+								<span class="price-black" style="color:red">${{$producto->precio}}</span>
 							</li>
-							<li class="d-flex justify-content-between align-items-center">
-								<span style="color:red">1 kg.  Frutilla</span>
-								<span class="price-black" style="color:red">$50</span>
-							</li>
-							<li class="d-flex justify-content-between align-items-center">
-								<span style="color:red">1/2 kg.  Blueberry</span>
-								<span class="price-black" style="color:red">$90</span>
-							</li>
+							@endif
+							@endforeach
+							@endforeach
 						</ul>
 						<ul>
 							<li class="bold d-flex justify-content-between align-items-center">
@@ -113,8 +111,8 @@
 					</div>
 				</div>
 			</div>
-	
+
 		</section>
 	</div>
 
-@endsection
+	@endsection
