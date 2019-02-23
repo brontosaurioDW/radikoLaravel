@@ -23,6 +23,62 @@ class RelPedidosProductosSeeder extends Seeder
     	]);
     	RelPedidosProductos::create([
     		'pedido_id' => 1,
+    		'producto_id' => 7
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 9
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 18
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 21
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 3
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 3
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 3
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 3
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 3
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 3
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 3
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 3
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 3
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
+    		'producto_id' => 3
+    	]);
+    	RelPedidosProductos::create([
+    		'pedido_id' => 1,
     		'producto_id' => 3
     	]);
     }
