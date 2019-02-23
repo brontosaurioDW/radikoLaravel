@@ -29,7 +29,7 @@
 				@foreach ($productos_pedido as $producto_pedido)
 				@if ($producto->id == $producto_pedido->producto_id)
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Producto: {{$producto->producto}} | Cantidad: 1 | {{$producto->precio}}</li>
+					<li class="list-group-item">Producto: {{$producto->producto}} | Cantidad: {{$producto_pedido->cantidad}} | {{$producto->precio}}</li>
 				</ul>
 				@endif
 				@endforeach

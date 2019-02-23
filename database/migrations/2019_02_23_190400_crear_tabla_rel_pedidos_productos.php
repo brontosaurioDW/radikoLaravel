@@ -17,6 +17,7 @@ class CrearTablaRelPedidosProductos extends Migration
             $table->increments('id');
             $table->unsignedInteger('producto_id');
             $table->unsignedInteger('pedido_id');
+            $table->float('cantidad');
             $table->timestamps();
         });
     }

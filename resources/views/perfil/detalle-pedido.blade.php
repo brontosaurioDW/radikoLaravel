@@ -35,7 +35,7 @@
 							@foreach ($productos_pedido as $producto_pedido)
 							@if ($producto->id == $producto_pedido->producto_id)
 							<li class="d-flex justify-content-between align-items-center">
-								<span style="color:red">2 kg.  {{$producto->producto}}</span>
+								<span style="color:red">{{$producto_pedido->cantidad}} {{$producto->unidadDeMedida->unidad}}.  {{$producto->producto}}</span>
 								<span class="price-black" style="color:red">${{$producto->precio}}</span>
 							</li>
 							@endif
