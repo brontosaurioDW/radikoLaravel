@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Session;
 
 class Admin
 {
@@ -15,6 +16,11 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
+		if(\Auth::user()->tipo != "admin") {
+            return redirect(url('/'));
+        }
+
+		//continúa tu camino
         return $next($request);
     }
 }

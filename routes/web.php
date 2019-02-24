@@ -310,3 +310,42 @@ Route::get('/carrito/confirmacion', [
 	'as' => 'carrito.confirmacion',
 	'uses' => 'CarritoController@finalizar'
 ]);
+
+// ADMIN
+Route::middleware('admin')->group(function(){
+	Route::get('/admin', function() {
+		return view('admin.index');
+	});
+	
+	// listar
+	Route::get('/admin/huertas', [
+		'as' => 'admin.huertas',
+		'uses' => 'AdminController@showHuertas'
+	]);
+	
+	Route::get('/admin/usuarios', [
+		'as' => 'admin.usuarios',
+		'uses' => 'AdminController@showClientes'
+	]);
+	
+	Route::get('/admin/pedidos', [
+		'as' => 'admin.pedidos',
+		'uses' => 'AdminController@showPedidos'
+	]);
+	
+	// registrar huerta
+	Route::get('/admin/huertas/nueva', [
+		'as' => 'admin.huertas.create',
+		'uses' => 'AdminController@createHuerta'
+	]);
+	
+	Route::post('/admin/huertas/nueva', [
+		'as' => 'admin.huertas.store',
+		'uses' => 'AdminController@storeHuerta'
+	]);
+	
+	Route::get('/admin/huertas/{huerta}', [
+	'as' => 'admin.huertas.detalle-huerta',
+	'uses' => 'AdminController@showHuerta'
+]);
+});
