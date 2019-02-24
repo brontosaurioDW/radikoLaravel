@@ -74,6 +74,8 @@ class AuthController extends Controller
 		
 		if(Auth::user()->tipo == 'huerta'){
 			return redirect()->intended('/cpanel/productos');
+		}elseif(Auth::user()->tipo == 'admin'){
+			return redirect()->intended('/admin/huertas');
 		}else{
 			return redirect()->intended('/');
 		}		

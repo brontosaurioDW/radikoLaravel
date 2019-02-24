@@ -20,6 +20,15 @@ class Huerta extends Model
 		'destacado',
 		'id_tipo_huerta'
 	];
+	
+	/** @var array Las reglas de la validación. */
+	public static $rules = [
+		'huerta' => 'required|max:100',
+		'cuit' => 'required|max:11',
+		'razon_social' => 'required',
+		'direccion' => 'max:100',
+		'telefono' => 'required|max:30'
+	];
 
 	public function tipoHuerta() 
 	{
@@ -45,4 +54,10 @@ class Huerta extends Model
 	{
 		return $this->hasMany(Pedido::class, 'id_huerta', 'id');
 	}
+	
+	public function usuario()
+	{
+		return $this->belongsTo(Usuario::class);
+	}
+	
 }
