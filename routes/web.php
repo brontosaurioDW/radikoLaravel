@@ -159,8 +159,8 @@ Route::middleware('auth')->group(function() {
 	]);
 	
 	Route::get('/perfil/direcciones/{direccion}/eliminarDireccion', [
-	'as' => 'perfil.direccion.confirmDestroyDireccion',
-	'uses' => 'DireccionesController@confirmDestroyDireccion'
+		'as' => 'perfil.direccion.confirmDestroyDireccion',
+		'uses' => 'DireccionesController@confirmDestroyDireccion'
 	]);
 
 	Route::delete('/perfil/direcciones/{direccion}/eliminarDireccion', [
@@ -289,6 +289,11 @@ Route::post('/carrito/agregar', 'CarritoController@agregar');
 Route::get('/carrito/paso2', [
 	'as' => 'carrito.paso2',
 	'uses' => 'CarritoController@paso2'
+]);
+
+Route::post('/carrito/paso2', [
+	'as' => 'carrito.direcciones.store',
+	'uses' => 'CarritoController@storeDireccion'
 ]);
 
 Route::get('/carrito/paso3', [

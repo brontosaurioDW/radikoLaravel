@@ -7,9 +7,15 @@ use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Producto;
 use App\Models\Huerta;
+use App\Models\Direccion;
+
 use App;
 use Config;
 use Cart;
+
+use Storage;
+use Image;
+use DB;
 
 
 class CarritoController extends Controller
@@ -20,10 +26,8 @@ class CarritoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-
     public function cart() {
-        
+
         // aumenta la cantidad del producto
         if (Request::get('product_id') && (Request::get('increment')) == 1) {
             $id    = Request::get('product_id');
@@ -118,8 +122,45 @@ class CarritoController extends Controller
     }
 
     public function paso2() {
+       $userId = auth()->user()->id;  
+       $direcciones = Direccion::where('usuario_id', $userId)->get();   
+       return view('carrito.paso2', compact('direcciones')); 
+   }
 
-        return view('carrito.paso2'); 
+
+    /**
+     * Ingresa una nueva dirección.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeDireccion(HttpRequest $request)
+    {
+        $inputData = $request->all();
+        
+        $request->validate(Direccion::$rules, [
+            'referencia.required' => 'La referencia no puede estar vacia.',
+            'referencia.max' => 'La referencia puede tener como máximo 50 caracteres.',
+            'calle.required' => 'El nombre de la calle no puede estar vacío.',
+            'calle.max' => 'El nombre de la calle puede tener como máximo 100 caracteres.',
+            'numero.required' => 'Debe indicar un número',
+            'telefono.required' => 'Debe completar con un teléfono.',
+            'telefono.max' => 'El teléfono puede tener como máximo 20 caracteres.',
+            'aclaracion.max' => 'La referencia puede tener como máximo 255 caracteres.'
+        ]);
+        
+        $userId = auth()->user()->id;
+        $inputData['usuario_id'] = $userId;
+        
+        Direccion::create($inputData);
+        
+        return redirect()->route('carrito.paso2' )
+        ->with(
+            [
+                'status' => 'La dirección se cargó exitosamente.',
+                'class' => 'success'
+            ]
+        );     
     }
 
 
