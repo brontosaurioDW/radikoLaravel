@@ -411,7 +411,7 @@
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut error officia placeat illo alias cum minima dignissimos accusantium earum incidunt.
 							</p>
 
-							<span class="error d-none js-error-qnt"> Por favor agrega una cantidad </span>
+							<span class="error d-none js-error-qnt"></span>
 
 							<form method="POST" action="{{url('carrito/agregar')}}" class="form" id="add-to-basket">
 								<div class="form form-bg">

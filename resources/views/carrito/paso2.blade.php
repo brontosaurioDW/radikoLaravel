@@ -16,10 +16,7 @@
             <div class="diagonal">
                 <h2 class="huerta-title ">
                     <span class="d-block">Tu compra con</span>
-
-                    @if(Session::has('huerta')) 
-                    <?php echo Session::get('huerta') ?>
-                    @endif
+                    <span id="nombreHuertaActual"></span>
                 </h2>
             </div>
         </div>
@@ -168,7 +165,7 @@
 
                             <div class="continue">
                                 <div class="d-flex justify-content-between align-items-center">    
-                                    <a class="link" href="{{url("carrito?vaciar=1")}}">
+                                    <a class="link" href="{{ url()->previous() }}">
                                         <i class="fas fa-chevron-left"></i>
                                         <span>Volver a revisar el pedido</span>
                                     </a>

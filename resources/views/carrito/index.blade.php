@@ -15,7 +15,7 @@
                     <div class="diagonal">
                         <h2 class="huerta-title ">
                             <span class="d-block">Tu compra con</span>  
-                            NOMBRE DE LA HUERTA
+                            <span id="nombreHuertaActual"></span>
                         </h2>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                                     <?php endforeach;?>
                                 </ul>
 
-                                <a href="#" class="link">
+                                <a href="{{ url()->previous() }}" class="link">
                                     <i class="fas fa-chevron-left"></i>
                                     <span>Seguir comprando</span>
                                 </a>
@@ -129,9 +129,7 @@
 
                                 <div class="continue">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <a class="link" href="{{url("carrito?vaciar=1")}}" onclick="return ConfirmarBorrado();">
-                                            Vaciar canasta
-                                        </a>
+                                        <a class="link js-vaciar-carrito" href="{{url("carrito?vaciar=1")}}" onclick="return ConfirmarBorrado();">Vaciar canasta</a>
                                         
                                         @if( Auth::check() AND Auth::user()->tipo == 'cliente' )                                           
                                             <a href="{{url("carrito/paso2")}}" class="btn btn-medium btn-primary">Continuar</a>

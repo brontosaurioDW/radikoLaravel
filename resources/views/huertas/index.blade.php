@@ -104,9 +104,6 @@
 					
 				</div>
 			</div>
-
-			<div class="alert" role="alert" id="result"></div>
-
 		</div>
 
 		{{-- DESCARGA LA APP  --}}
@@ -125,12 +122,14 @@
 					<i class="far fa-times"></i>
 				</button>
 
-				<p>Estás ingresando a otra huerta y tu canasta ya tiene productos de {{-- @php echo Config::get('canasta.informacion.huerta'); @endphp  --}}</p>
-				<p>Si continuás con esta huerta se vaciará la canasta.</p>
-				<p>¿Continuamos?</p>
-
-				<button type="button" class="btn btn-default" id="modal-btn-si">Vaciar canasta</button>
-				<button type="button" class="btn btn-primary" id="modal-btn-no">No seguir</button>
+				<p>Estás ingresando a otra huerta y tu canasta ya tiene productos de <span id="nombre-huerta-actual-modal"></span></p>
+				<p>Si continuás con esta huerta se vaciará la canasta. ¿Continuamos?</p>
+				
+				<div class="buttons justify-content-center d-flex align-items-center" role="group" aria-label="Confirm modal">
+					<meta name="csrf-token" content="{{ csrf_token() }}">
+					<button type="button" class="btn btn-primary btn-small" id="modal-btn-si">Vaciar canasta</button>
+					<a class="link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">No seguir</button>
+				</a>
 			</div>
 		</div>
 	</div>

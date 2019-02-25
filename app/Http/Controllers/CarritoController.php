@@ -66,7 +66,6 @@ class CarritoController extends Controller
         if((Request::get('vaciar')) == 1) {
 
             Cart::destroy();
-            /*Pedido::NombreHuertaUpdate('');*/
         }
 
         $cart = Cart::content();
