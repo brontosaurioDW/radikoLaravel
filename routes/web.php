@@ -341,9 +341,17 @@ Route::middleware('admin')->group(function(){
 		'as' => 'admin.huertas.store',
 		'uses' => 'AdminController@storeHuerta'
 	]);
+	
 	// detalle huerta
 	Route::get('/admin/huertas/{huerta}', [
 	'as' => 'admin.huertas.detalle-huerta',
 	'uses' => 'AdminController@showHuerta'
-]);
+	]);
+	
+	// detalle cliente
+	Route::get('/admin/clientes/{cliente}', [
+	'as' => 'admin.clientes.detalle-cliente',
+	'uses' => 'AdminController@showCliente'
+	]);
+	
 });
