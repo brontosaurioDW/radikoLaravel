@@ -14,7 +14,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col-sm-12">						
+						<div class="col-sm-8">					
 							<ul class="details">
 								<li>
 									<span class="bold">Huerta:</span> {{ $huerta->huerta }}
@@ -26,21 +26,61 @@
 									<span class="bold">Razón Social:</span> {{ $huerta->razon_social }}
 								</li>
 								<li>
-									<span class="bold">Dirección:</span>{{ $huerta->direccion }}
+									<span class="bold">Dirección:</span> {{ $huerta->direccion }}
 								</li>
 								<li>
-									<span class="bold">Teléfono:</span>{{ $huerta->telefono }}
+									<span class="bold">Teléfono:</span> {{ $huerta->telefono }}
 								</li>
 								<li>
-									<span class="bold">Email:</span>{{ $huerta->email }}
+									<span class="bold">Email:</span> {{ $huerta->email }}
 								</li>
 								<li>
-									<span class="bold">Referente:</span>
+									<span class="bold">Tipo de Huerta: </span> {{ $huerta->tipoHuerta->tipo }} 
 								</li>
 								<li>
-									<span class="bold">Tipo de Huerta:</span> 
+									<span class="bold">Fecha de alta: </span> {{ $huerta->created_at->format('d-M-Y') }} 
 								</li>
 							</ul>
+						</div>
+						
+						<div class="col-sm-4">
+							@if ( !empty($huerta->foto) )
+								<img class="img-fluid" src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="{{ $huerta->huerta }}" />
+							@else
+								<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $huerta->huerta }}">
+							@endif
+							<img class="img-fluid" src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="" />
+						</div>
+					</div>	
+					
+					<div class="title">
+						<h3>Datos del Referente</h3>				
+					</div>
+						
+					<div class="row">
+						<div class="col-sm-8">						
+							<ul class="details">
+								<li>
+									<span class="bold">Nombre:</span> {{ $huerta->usuario->name }} {{ $huerta->usuario->last_name }} 
+								</li>
+								<li>
+									<span class="bold">Teléfono: </span> {{$huerta->usuario->telephone }} 
+								</li>
+								<li>
+									<span class="bold">Email: </span> {{$huerta->usuario->email }} 
+								</li>
+								<li>
+									<span class="bold">Estado: </span> {{ $huerta->usuario->estado }} 
+								</li>
+							</ul>
+						</div>
+						
+						<div class="col-sm-4">
+							@if ( !empty($huerta->usuario->foto) )
+								<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$huerta->usuario->foto) }}" alt="{{ $huerta->usuario->name }} {{ $huerta->usuario->last_name }}" />
+							@else
+								<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $huerta->usuario->name }} {{ $huerta->usuario->last_name }}">
+							@endif
 						</div>
 					</div>
 					

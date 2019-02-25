@@ -41,12 +41,14 @@ class AdminController extends Controller
 	
 	public function createHuerta()
     {
+		// Vista form para registrar huerta
 		$tipos = TipoHuerta::all();
 		return view('admin.create-huerta', compact('tipos'));
     }
 	
 	public function storeHuerta(Request $request)
     {
+		// Registro de huerta
 		$inputData = $request->all();
 		
 		$request->validate(Huerta::$rules, [
@@ -73,8 +75,9 @@ class AdminController extends Controller
 	
 	 public function showHuerta($id)
     {
-        $huerta = Huerta::with('tipo')->get()->find($id);
+		// detalle de la huerta
+        $huerta = Huerta::find($id);
 
-        return view('admin.huertas.detalle-huerta', compact('huerta'));
+        return view('admin.detalle-huerta', compact('huerta'));
     }
 }
