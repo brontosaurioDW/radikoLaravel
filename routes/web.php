@@ -304,9 +304,14 @@ Route::get('/carrito/paso4', [
 	'uses' => 'CarritoController@paso4'
 ]);
 
-Route::get('/carrito/confirmacion', [
+Route::post('/carrito/confirmacion', [
 	'as' => 'carrito.confirmacion',
 	'uses' => 'CarritoController@finalizar'
+]);
+
+Route::get('/carrito/verconfirmacion', [
+	'as' => 'carrito.verconfirmacion',
+	'uses' => 'CarritoController@verconfirmacion'
 ]);
 
 // ADMIN

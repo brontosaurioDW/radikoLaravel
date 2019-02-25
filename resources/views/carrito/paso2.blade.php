@@ -29,7 +29,7 @@
             <div class="tabs-outline">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Revisar Pedido</a>
+                        <a class="nav-link" href="{{url("carrito")}}">Revisar Pedido</a>
                     </li> 
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Dirección</a>
@@ -57,7 +57,8 @@
 
                             <!-- Listado de direcciones -->
                             @foreach ($direcciones as $direccion)
-                            <div class="card address">
+                            <div class="card address js-seleccionar-direccion">
+                                <input type="hidden" name="direccionId" value="{{$direccion->id}}">
                                 <div class="d-flex">
                                     <div class="card-info w-100 no-border">
                                         <h3>{{$direccion->referencia}}</h3>
@@ -73,7 +74,7 @@
                                                 <span>{{$direccion->aclaracion}}</span>
                                             </li>
                                         </ul>
-                                        <button class="btn-terciary btn btn-small"> Usar </button>
+                                        <button class="btn-terciary btn btn-small js-usar"> Usar </button>
                                     </div>                              
                                 </div>
                             </div>

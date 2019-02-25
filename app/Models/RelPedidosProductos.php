@@ -13,5 +13,10 @@ class RelPedidosProductos extends Model
 	{
 		return $this->hasMany(Producto::class);
 	}
+
+	public function pedido()
+	{
+		return $this->hasMany(Pedido::class);
+	}
 }
 

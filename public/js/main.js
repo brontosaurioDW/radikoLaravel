@@ -56,6 +56,7 @@ $(document).ready(function() {
         // Vaciar localStorage si se vacia el carrito
         $('.js-vaciar-carrito').on('click', function(event) {
             localStorage.removeItem("nombreHuertaLocal");
+            localStorage.removeItem("IDHuertaLocal");
         });
 
         // Chequear si hay productos en el carrito y si hay, confirmar cambio de huerta
@@ -87,6 +88,7 @@ $(document).ready(function() {
                                     type: 'GET',
                                     success: function(result) {
                                         localStorage.removeItem("nombreHuertaLocal");
+                                        localStorage.removeItem("IDHuertaLocal");
                                         window.location = ruta;
                                     },
                                 });
@@ -137,7 +139,9 @@ $(document).ready(function() {
                     success: function(result) {
                         if (result['success'] == 'ok') {
                             var huertaLocal = $('input[name="huerta_nombre"]').val();
+                            var huertaLocalId = $('input[name="huerta_id"]').val();
                             localStorage.setItem('nombreHuertaLocal', huertaLocal);                        
+                            localStorage.setItem('IDHuertaLocal', huertaLocalId);             
 
                             $('#producto-detalle').modal('hide');
 
@@ -154,6 +158,59 @@ $(document).ready(function() {
                     },
                 });
             }
+        });
+
+        // Selección de dirección - Paso 2
+        $('.js-seleccionar-direccion').each(function() {
+            var direccionId = $(this).find('input[name="direccionId"]').val();
+
+            var direccionIdLocal = localStorage.getItem('direccionParaElPedido');    
+            if (direccionIdLocal) {
+                if (direccionId == direccionIdLocal) {
+                    $(this).find('.js-usar').addClass('disabled');
+                }
+            }
+            
+            $(this).find('.js-usar').on('click', function(event) {
+                localStorage.setItem('direccionParaElPedido', direccionId);        
+                $('.js-usar').removeClass('disabled');
+                $(this).addClass('disabled');
+            });
+        });
+
+        // Confirmar Compra
+        $('.js-confirmar-compra').on('click', function(event) {
+            event.preventDefault();
+            var direccionDelPedido  = localStorage.getItem("IDHuertaLocal");
+            var huertaDelPedido     = localStorage.getItem("direccionParaElPedido");
+
+            var ruta = $(this).attr('href');
+
+            // Ajax para destruir el carrito
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+            });
+
+            $.ajax({
+                url: ruta,
+                type: 'POST',
+                data: {
+                    huertaDelPedido: huertaDelPedido,
+                    direccionDelPedido: direccionDelPedido,
+                },
+                success: function(result) {
+                    if (result['success'] == 'ok') {
+                        localStorage.removeItem("nombreHuertaLocal");
+                        localStorage.removeItem("IDHuertaLocal");
+
+                        window.location = "/carrito/verconfirmacion";
+                    } else {
+                        console.log('Error');
+                    }
+                },
+            });
         });
 });
 

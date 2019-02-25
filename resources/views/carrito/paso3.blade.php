@@ -10,6 +10,7 @@
 @section ('content')
     <div class="main-wrapper relative cart">
         @if (count(Cart::content()) != 0)
+
             <div class="container-fluid">
                 <div class="header-huerta bg-trama-b rdk-grape">
                     <div class="diagonal">
@@ -21,6 +22,8 @@
                 </div>
             </div>  
 
+            <meta name="csrf-token" content="{{ csrf_token() }}">
+
             <section class="checkout-step">
                 <div class="container">
 
@@ -28,10 +31,10 @@
                     <div class="tabs-outline">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Revisar Pedido</a>
+                                <a class="nav-link" href="{{url("carrito")}}">Revisar Pedido</a>
                             </li> 
                              <li class="nav-item">
-                                <a class="nav-link" href="#">Dirección</a>
+                                <a class="nav-link" href="{{url("carrito/paso2")}}">Dirección</a>
                             </li>
                             {{-- <li class="nav-item">
                                 <a class="nav-link " href="#">Horario</a>
@@ -60,7 +63,7 @@
                                                     <span>Efectivo en la entrega</span>
                                                 </label>
                                             </li>
-                                            <li>
+                                            {{-- <li>
                                                 <label class="radio d-flex align-items-center">
                                                     <input type="radio" value="1" name="pago">
                                                     <span></span>
@@ -68,7 +71,7 @@
                                                         <span class="bold">Mercado Pago</span>
                                                     </span>
                                                 </label>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </div>
                                 </div>
@@ -98,13 +101,14 @@
                                 </div>
 
                                 <div class="continue">
+
                                     <div class="d-flex justify-content-between align-items-center">         
                                         <a class="link" href="{{ url()->previous() }}">
                                             <i class="fas fa-chevron-left"></i>
-                                            <span>Volver a los horarios</span>
+                                            <span>Cambiar dirección</span>
                                         </a>
 
-                                        <a href="{{url("carrito/confirmacion")}}" class="btn btn-medium btn-primary">Finalizar compra</a>
+                                        <a href="{{url("carrito/confirmacion")}}" class="btn btn-medium btn-primary js-confirmar-compra">Finalizar compra</a>
                                     </div>
                                 </div>
                             </div>

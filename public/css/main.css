@@ -6418,6 +6418,13 @@ h4 {
 .cart .payment li:last-child {
   margin-bottom: 0;
 }
+.last-step .ok {
+  font-size: 15px;
+  line-height: 150%;
+  padding: 25px 0 45px;
+  max-width: 80%;
+  margin: 0 auto;
+}
 .categories {
   position: relative;
 }
@@ -6704,6 +6711,7 @@ footer .download-btn li {
 .form input[type="text"],
 .form input[type="password"],
 .form input[type="number"],
+.form input[type="tel"],
 .form select,
 .form textarea {
   background: #FFFFFF;
@@ -6729,6 +6737,7 @@ footer .download-btn li {
 .form-bg input[type="text"],
 .form-bg input[type="password"],
 .form-bg input[type="number"],
+.form-bg input[type="tel"],
 .form-bg select,
 .form-bg textarea {
   padding: 0 15px;

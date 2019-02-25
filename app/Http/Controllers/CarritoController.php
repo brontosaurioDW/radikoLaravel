@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Cookie\CookieJar;
 use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\RelPedidosProductos;
 use App\Models\Pedido;
-use App\Models\CanastaTemporal;
 use App\Models\Producto;
 use App\Models\Huerta;
 use App\Models\Direccion;
@@ -174,17 +174,43 @@ class CarritoController extends Controller
     }
 
 
-    public function finalizar() {
+    public function finalizar(HttpRequest $request) {
+        
+        if ($request->ajax()) {
 
-        // @TO DO: mandar el pedido a la base.
+            $guardarPedido = new Pedido();
+            $guardarPedido->fecha_pedido        =   date('Y-m-d H:i:s');
+            $guardarPedido->subtotal            =   Cart::subtotal();
+            $guardarPedido->subtotal            =   Cart::subtotal();
+            $guardarPedido->costo_envio         =   "130";
+            $guardarPedido->total               =   Cart::total();
+            $guardarPedido->usuario_id          =   auth()->user()->id;
+            $guardarPedido->huerta_id           =   $request->input('huertaDelPedido');
+            $guardarPedido->id_estado_pedido    =   "1";
+            $guardarPedido->id_tipo_pago        =   "1";
+            $guardarPedido->direccion_id        =   $request->input('direccionDelPedido');
+            $guardarPedido->save();
 
+            foreach(Cart::content() as $row) {
+                $productoRel                = new RelPedidosProductos();
+                $productoRel->pedido_id     = $guardarPedido->id;
+                $productoRel->producto_id   = $row->id;
+                $productoRel->cantidad      = $row->qty;
+            }
 
-        // se vacia el carrito cuando se manda el pedido
+            Cart::destroy();
 
-        Cart::destroy();
-        /*Pedido::NombreHuertaUpdate('');*/
-
-        return view('carrito.confirmacion'); 
-
+            return response()->json([
+                'success' => 'ok'
+            ]);
+        } else {
+            return response()->json([
+                'error' => 'error',
+            ]);
+        }
     }  
+
+    public function verconfirmacion() {
+        return view('carrito.confirmacion'); 
+    }
 }

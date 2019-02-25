@@ -128,7 +128,7 @@
 				<div class="buttons justify-content-center d-flex align-items-center" role="group" aria-label="Confirm modal">
 					<meta name="csrf-token" content="{{ csrf_token() }}">
 					<button type="button" class="btn btn-primary btn-small" id="modal-btn-si">Vaciar canasta</button>
-					<a class="link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">No seguir</button>
+					<a class="link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">Continuar mi compra</button>
 				</a>
 			</div>
 		</div>
