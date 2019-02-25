@@ -126,21 +126,19 @@ class HuertasController extends Controller
       //
   }
 
-    /**
-    * Display the specified resource.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
-    public function show($id)
-    {
-
-        $huerta     = Huerta::find($id);
-        $productos  = Producto::with('unidadDeMedida')->where('huerta_id', $id)->paginate(8);
-        $categorias = Categoria::All();
-
-        return view('huertas.show', compact('huerta', 'productos','categorias'));
-    }
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function show($id)
+  {
+    $huerta = Huerta::find($id);
+    $categorias = Categoria::All();
+    $productos = Producto::with('unidadDeMedida')->where('huerta_id', $id)->paginate(8);
+    return view('huertas.show', compact('huerta', 'productos','categorias'));
+  }
 
   /**
    * Show the form for editing the specified resource.

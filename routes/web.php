@@ -159,8 +159,8 @@ Route::middleware('auth')->group(function() {
 	]);
 	
 	Route::get('/perfil/direcciones/{direccion}/eliminarDireccion', [
-	'as' => 'perfil.direccion.confirmDestroyDireccion',
-	'uses' => 'DireccionesController@confirmDestroyDireccion'
+		'as' => 'perfil.direccion.confirmDestroyDireccion',
+		'uses' => 'DireccionesController@confirmDestroyDireccion'
 	]);
 
 	Route::delete('/perfil/direcciones/{direccion}/eliminarDireccion', [
@@ -234,14 +234,14 @@ Route::delete('/cpanel/productos/{prodcuto}/eliminar', [
 
 // Capnel Pedidos
 
-// Route::get('/cpanel/pedidos', function() {
-// 	''
-// 	return view('cpanel.pedidos.index');
-// });
-
 Route::get('/cpanel/pedidos', [
 	'as' => 'cpanel.pedidos.index',
 	'uses' => 'CpanelPedidosController@index'
+]);
+
+Route::get('/cpanel/pedidos/{pedido}', [
+	'as' => 'cpanel.pedidos.show',
+	'uses' => 'CpanelPedidosController@show'
 ]);
 
 // Cpanel Huerta
@@ -289,6 +289,11 @@ Route::get('/carrito/paso2', [
 	'uses' => 'CarritoController@paso2'
 ]);
 
+Route::post('/carrito/paso2', [
+	'as' => 'carrito.direcciones.store',
+	'uses' => 'CarritoController@storeDireccion'
+]);
+
 Route::get('/carrito/paso3', [
 	'as' => 'carrito.paso3',
 	'uses' => 'CarritoController@paso3'
@@ -303,3 +308,42 @@ Route::get('/carrito/confirmacion', [
 	'as' => 'carrito.confirmacion',
 	'uses' => 'CarritoController@finalizar'
 ]);
+
+// ADMIN
+Route::middleware('admin')->group(function(){
+	Route::get('/admin', function() {
+		return view('admin.index');
+	});
+	
+	// listar
+	Route::get('/admin/huertas', [
+		'as' => 'admin.huertas',
+		'uses' => 'AdminController@showHuertas'
+	]);
+	
+	Route::get('/admin/usuarios', [
+		'as' => 'admin.usuarios',
+		'uses' => 'AdminController@showClientes'
+	]);
+	
+	Route::get('/admin/pedidos', [
+		'as' => 'admin.pedidos',
+		'uses' => 'AdminController@showPedidos'
+	]);
+	
+	// registrar huerta
+	Route::get('/admin/huertas/nueva', [
+		'as' => 'admin.huertas.create',
+		'uses' => 'AdminController@createHuerta'
+	]);
+	
+	Route::post('/admin/huertas/nueva', [
+		'as' => 'admin.huertas.store',
+		'uses' => 'AdminController@storeHuerta'
+	]);
+	// detalle huerta
+	Route::get('/admin/huertas/{huerta}', [
+	'as' => 'admin.huertas.detalle-huerta',
+	'uses' => 'AdminController@showHuerta'
+]);
+});
