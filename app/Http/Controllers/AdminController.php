@@ -7,6 +7,7 @@ use App\Models\Pedido;
 use App\Models\Huerta;
 use App\Models\Usuario;
 use App\Models\TipoHuerta;
+use App\Models\Direccion;
 use App\User;
 
 use Storage;
@@ -79,5 +80,14 @@ class AdminController extends Controller
         $huerta = Huerta::find($id);
 
         return view('admin.detalle-huerta', compact('huerta'));
+    }
+	
+	public function showCliente($id)
+    {
+		// detalle del cliente
+        $cliente = Usuario::find($id);
+		$direcciones = Direccion::where('usuario_id', $cliente)->get();
+
+        return view('admin.detalle-cliente', compact('cliente', 'direcciones'));
     }
 }

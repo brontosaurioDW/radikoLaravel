@@ -49,7 +49,6 @@
 							@else
 								<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $huerta->huerta }}">
 							@endif
-							<img class="img-fluid" src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="" />
 						</div>
 					</div>	
 					
