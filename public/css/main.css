@@ -7334,8 +7334,10 @@ header li a .cart-yes {
   font-size: 16px;
   line-height: normal;
 }
-.header-huerta h2 {
+.header-huerta .huerta-title span + span {
   font-size: 3rem;
+}
+.header-huerta h2 {
   line-height: 100%;
   font-weight: 700;
   text-shadow: 4px 4px 2px #5E5593;
@@ -7409,6 +7411,12 @@ header li a .cart-yes {
   cursor: pointer;
   z-index: 10;
 }
+.modal .error {
+  color: #C94B36;
+  font-weight: 500;
+  margin: 10px 0 ;
+  display: block;
+}
 .modal .modal-body {
   padding-top: 3rem;
 }
@@ -7450,6 +7458,24 @@ header li a .cart-yes {
   left: 15px;
   right: unset;
   top: unset;
+}
+.modal .modal-content .confirm-modal {
+  padding: 35px 20px;
+}
+.modal .modal-content .confirm-modal p {
+  font-size: 18px;
+  text-align: center;
+}
+.modal .modal-content .confirm-modal span {
+  font-weight: bold;
+  display: block;
+}
+.modal .modal-content .confirm-modal .btn {
+  position: static;
+  margin-right: 15px;
+}
+.modal .modal-content .confirm-modal a {
+  cursor: pointer;
 }
 .product-img {
   position: relative;

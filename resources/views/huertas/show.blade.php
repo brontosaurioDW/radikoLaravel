@@ -411,6 +411,8 @@
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut error officia placeat illo alias cum minima dignissimos accusantium earum incidunt.
 							</p>
 
+							<span class="error d-none js-error-qnt"></span>
+
 							<form method="POST" action="{{url('carrito/agregar')}}" class="form" id="add-to-basket">
 								<div class="form form-bg">
 									<div class="d-flex align-items-center flex-wrap justify-content-start">
@@ -421,10 +423,11 @@
 										<input type="hidden" name="huerta_nombre" value="{{$huerta->huerta}}">
 										<input type="hidden" name="unidad" value="" data-product-unidad-medida2>
 										
-										<label for="cantidad">Cantidad</label>
-										<input type="number" name="product_qty" min="1" max="10"> <span data-product-unidad-medida3></span>
+										<label for="cantidad">Cantidad</label>									
+										<input type="number" name="product_qty" min="1" max="10"> 
+										<span data-product-unidad-medida3></span>
 									</div>
-									
+
 									<button type="submit" class="btn btn-primary btn-small js-agregar-producto">
                                         <i class="fal fa-shopping-basket"></i> Agregar a la canasta
                                     </button>			

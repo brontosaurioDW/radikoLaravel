@@ -10,7 +10,7 @@
                     <div class="diagonal bg-trama">
                         <h2 class="huerta-title">
                             <span class="d-block">Tu compra con</span>
-                            Jardín Orgánico
+                            <span id="nombreHuertaActual"></span>
                         </h2>
                     </div>
                 </div>
@@ -174,7 +174,7 @@
 
                                 <div class="continue">
                                     <div class="d-flex justify-content-between align-items-center">         
-                                        <a class="link" href="{{url("carrito?vaciar=1")}}">
+                                        <a class="link" href="#">
                                             <i class="fas fa-chevron-left"></i>
                                             <span>Volver a tus direcciones</span>
                                         </a>
