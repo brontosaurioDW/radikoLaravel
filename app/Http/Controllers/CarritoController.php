@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Request;
+use Illuminate\Cookie\CookieJar;
 use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\Pedido;
+use App\Models\CanastaTemporal;
 use App\Models\Producto;
 use App\Models\Huerta;
 use App;
@@ -59,6 +62,7 @@ class CarritoController extends Controller
         if((Request::get('vaciar')) == 1) {
 
             Cart::destroy();
+            /*Pedido::NombreHuertaUpdate('');*/
         }
 
         $cart = Cart::content();
@@ -83,16 +87,17 @@ class CarritoController extends Controller
             'name' => $product->producto, 
             'qty' => $product_qty, 
             'price' => $product->precio,
-            'options' => ['unidad' => $product_unidad, 'foto' => $product->foto, 'huerta' => $huerta_nombre, 'huerta_id' => $huerta_id]
+            'options' => [
+                'unidad' => $product_unidad, 
+                'foto' => $product->foto, 
+                'huerta' => $huerta_nombre, 
+                'huerta_id' => $huerta_id
+            ]
         ]);
-
-        UpdateCartData::updateEnv('NOMBRE_HUERTA_CARRITO', $huerta_nombre);
-
-        /*return redirect()->route('carrito.index');*/
 
         if ($request->ajax()) {
             return response()->json([
-                'success' => 'ok',
+                'success' => 'ok'
             ]);
         } else {
             return response()->json([
@@ -137,6 +142,7 @@ class CarritoController extends Controller
         // se vacia el carrito cuando se manda el pedido
 
         Cart::destroy();
+        /*Pedido::NombreHuertaUpdate('');*/
 
         return view('carrito.confirmacion'); 
 

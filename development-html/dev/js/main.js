@@ -49,50 +49,74 @@ $(document).ready(function(){
     // Chequear si hay productos en el carrito y si hay, confirmar cambio de huerta
     /*$('.js-check-huerta').on('click', function(event) {
         event.preventDefault();
-        
-        if (!confirm("¿Estás seguro?")) {
-            return false;
-        } 
 
-        var row = $(this).parents().data('id');
+        var ruta                  =   $(this).attr('href');
+        var nombreHuertaCarrito   =   $('input[name="nombreHuertaCarrito"]').val();
+        var nombreEstaHuerta      =   $(this).find('input[name="nombreEstaHuerta"]').val();
+
+        if (nombreHuertaCarrito != nombreEstaHuerta) {
+
+            console.log("holis");
+            $('#confirmar-vaciar-carrito').modal('show');
+
+            $(window).on('shown.bs.modal', function() {
+                ModalConfirm(function(confirm) {
+                    if (confirm) {
+                        $("#result").html("CONFIRMADO");
+                    } else {
+                        $("#result").html("NO CONFIRMADO");
+                    }
+                });
+            });
+        } else {
+          window.location = ruta;
+        }
     });*/
 
     // Ajax agregar producto al carrito
     $('.js-agregar-producto').on('click',  function(event) {
         event.preventDefault();
 
-        var ruta = $(this).parents('form').prop('action');
+        if ($('input[name="product_qty"]').val() == '') {
 
-        $.ajaxSetup({
-            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-        });
+           $('.js-error-qnt').removeClass('d-none'); 
 
-        $.ajax({
-            url: ruta,            
-            type: 'POST',
-            data: {
-                product_id: $('input[name="product_id"]').val(),
-                product_qty: $('input[name="product_qty"]').val(),
-                huerta_id: $('input[name="huerta_id"]').val(),
-                huerta_nombre: $('input[name="huerta_nombre"]').val(),
-                unidad: $('input[name="unidad"]').val(),
-            },
-            success: function(result) {
-                if (result['success'] == 'ok') {
-                    $('#producto-detalle').modal('hide');
+        } else {
+            
+           $('.js-error-qnt').addClass('d-none');
+           var ruta = $(this).parents('form').prop('action');
 
-                    setTimeout(function() {
-                        $(".js-tooltip").fadeIn();
+           $.ajaxSetup({
+               headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+           });
 
-                        setTimeout(function() {
-                            $(".js-tooltip").fadeOut();
-                        }, 2000);
-                    }, 500);
-                } else {
-                    console.log('Error');
-                }
-            },
-        });
+           $.ajax({
+               url: ruta,            
+               type: 'POST',
+               data: {
+                   product_id: $('input[name="product_id"]').val(),
+                   product_qty: $('input[name="product_qty"]').val(),
+                   huerta_id: $('input[name="huerta_id"]').val(),
+                   huerta_nombre: $('input[name="huerta_nombre"]').val(),
+                   unidad: $('input[name="unidad"]').val(),
+               },
+               success: function(result) {
+                   if (result['success'] == 'ok') {
+                       $('#producto-detalle').modal('hide');
+
+                       setTimeout(function() {
+                           $(".js-tooltip").fadeIn();
+
+                           setTimeout(function() {
+                               $(".js-tooltip").fadeOut();
+                           }, 2500);
+                       }, 500);
+                   } else {
+                       console.log('Error');
+                   }
+               },
+           });
+        }        
     });
 });
 
@@ -151,3 +175,20 @@ function ConfirmarBorrado(event) {
         return true;
     }
 }
+
+function ModalConfirm(callback) {
+
+    $("#btn-confirm").on("click", function() {
+        $("#confirmar-vaciar-carrito").modal('show');
+    });
+
+    $("#modal-btn-si").on("click", function() {
+        callback(true);
+        $("#confirmar-vaciar-carrito").modal('hide');
+    });
+
+    $("#modal-btn-no").on("click", function() {
+        callback(false);
+        $("#confirmar-vaciar-carrito").modal('hide');
+    });
+};

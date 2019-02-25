@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DisponibilidadesSeeder::class);
 		$this->call(EstadosPedidosSeeder::class);
 		$this->call(TiposPagosSeeder::class);
-		$this->call(PedidosSeeder::class);
+        $this->call(PedidosSeeder::class);
     }
 }

@@ -60,9 +60,14 @@
 						</div>
 
 						<div class="d-flex flex-wrap justify-content-between">
+
+							<input type="hidden" name="nombreHuertaCarrito" value="@php echo Config::get('canasta.informacion.huerta'); @endphp">
+							
 							@foreach ($huertas as $huerta)
 							<div class="card no-border">
+								{{-- {{ route( 'huertas.show', ['id' => $huerta->id] ) }} --}}
 								<a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="d-flex js-check-huerta">
+									<input type="hidden" name="nombreEstaHuerta" value="{{ $huerta->huerta }}">
 									<div class="img-wrapper">
 										<img src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="<?php echo $huerta->huerta ?>" />
 									</div>
@@ -99,11 +104,36 @@
 					
 				</div>
 			</div>
+
+			<div class="alert" role="alert" id="result"></div>
+
 		</div>
 
 		{{-- DESCARGA LA APP  --}}
 		@include ('elementos.descarga-app-violeta')
+
 	</section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="confirmar-vaciar-carrito" tabindex="-1" role="dialog" aria-labelledby="confirmVaciarCarrito" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content block">
+			<div class="modal-body confirm-modal">
+
+				<button type="button" class="closes" data-dismiss="modal" aria-label="Close">
+					<i class="far fa-times"></i>
+				</button>
+
+				<p>Estás ingresando a otra huerta y tu canasta ya tiene productos de {{-- @php echo Config::get('canasta.informacion.huerta'); @endphp  --}}</p>
+				<p>Si continuás con esta huerta se vaciará la canasta.</p>
+				<p>¿Continuamos?</p>
+
+				<button type="button" class="btn btn-default" id="modal-btn-si">Vaciar canasta</button>
+				<button type="button" class="btn btn-primary" id="modal-btn-no">No seguir</button>
+			</div>
+		</div>
+	</div>
 </div>
 
 @endsection

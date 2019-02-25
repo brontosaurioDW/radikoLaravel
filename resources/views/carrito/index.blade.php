@@ -14,8 +14,8 @@
                 <div class="header-huerta bg-trama-b rdk-grape">
                     <div class="diagonal">
                         <h2 class="huerta-title ">
-                            <span class="d-block">Tu compra con</span>   
-                            @php echo Config::get('canasta.informacion.huerta'); @endphp          
+                            <span class="d-block">Tu compra con</span>  
+                            NOMBRE DE LA HUERTA
                         </h2>
                     </div>
                 </div>
