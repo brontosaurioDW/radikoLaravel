@@ -15,10 +15,12 @@ class Huerta extends Model
 		'cuit',
 		'razon_social',
 		'direccion',
+		'telefono',
 		'cantidad_max_envios',
 		'foto',
 		'destacado',
-		'id_tipo_huerta'
+		'id_tipo_huerta',
+		'email'
 	];
 	
 	/** @var array Las reglas de la validación. */

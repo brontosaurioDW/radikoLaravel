@@ -11,7 +11,7 @@
 		<div class="c-panel-wrapper bg-trama rdk-charcoal">
 			<div class="c-panel-inner-wrapper">
 				<div class="title">
-					<h3>Pedido single</h3>
+					<h3>Detalle del pedido</h3>
 				</div>
 				
 				<h4 class="my-4">Orden</h4>

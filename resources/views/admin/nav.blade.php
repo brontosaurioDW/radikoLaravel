@@ -16,8 +16,8 @@
 			</a>
 		</li>
 		<li>
-			<a href="#" class="nav-link">
-				<span>Auditoría</span>
+			<a href="{{ url('/admin/estadisticas') }}" class="nav-link {{ Request::is('admin/estadisticas') ? 'active' : '' }}" class="nav-link">
+				<span>Estadísticas</span>
 			</a>
 		</li>
 	</ul>

@@ -21,7 +21,7 @@ class CrearTablaHuertas extends Migration
             $table->string('direccion', 100)->nullable();
 			$table->string('telefono', 30);
 			$table->string('email')->unique();
-            $table->tinyInteger('cantidad_max_envios');
+            $table->tinyInteger('cantidad_max_envios')->nullable();
             $table->string('foto', 255);
             $table->boolean('destacado');
             $table->unsignedInteger('tipo_huerta_id');

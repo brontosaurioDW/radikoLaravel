@@ -321,6 +321,18 @@ Route::middleware('admin')->group(function(){
 		'uses' => 'AdminController@showCliente'
 	]);
 	
+	// detalle pedido
+	Route::get('/admin/pedidos/{pedido}', [
+		'as' => 'admin.pedidos.detalle-pedido',
+		'uses' => 'AdminController@showPedido'
+	]);
+	
+	//estadísticas
+	Route::get('/admin/estadisticas', [
+		'as' => 'admin.estadisticas',
+		'uses' => 'EstadisticasController@showEstadisticas'
+	]);
+	
 });
 
 Route::get('/carrito', [

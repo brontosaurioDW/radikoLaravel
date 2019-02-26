@@ -39,10 +39,22 @@
 										{{$pedido->usuario->name}} {{$pedido->usuario->last_name}}
 									</td>
 									<td>
-										{{$pedido->id_estado_pedido}}
+										@if($pedido->estado->estado == 'Entregado')
+											<i class="fas fa-circle text-success" style="font-size:12px; margin-right: 3px;"></i>
+											{{$pedido->estado->estado}}
+										@elseif($pedido->estado->estado == 'Pendiente de entrega')
+											<i class="fas fa-circle text-warning" style="font-size:12px; margin-right: 3px;"></i>
+											{{$pedido->estado->estado}}	
+										@elseif($pedido->estado->estado == 'Pendiente de pago')
+											<i class="fas fa-circle text-danger" style="font-size:12px; margin-right: 3px;"></i>
+											{{$pedido->estado->estado}}
+										@else
+											<i class="fas fa-circle text-muted" style="font-size:12px; margin-right: 3px;"></i>
+											{{$pedido->estado->estado}}
+										@endif
 									</td>
 									<td class="actions">
-										<a class="link" href="#" data-toggle="tooltip" data-placement="top" title="Ver"><span class="sr-only">Ver</span><i class="far fa-eye"></i></a>
+										<a class="link" href="{{ route( 'admin.pedidos.detalle-pedido', ['id' => $pedido->id] ) }}" data-toggle="tooltip" data-placement="top" title="Ver"><span class="sr-only">Ver</span><i class="far fa-eye"></i></a>
 										<a class="link" href="#" data-toggle="tooltip" data-placement="top" title="Editar"><span class="sr-only">Editar</span><i class="far fa-edit"></i></a>
 									</td>
 								</tr>

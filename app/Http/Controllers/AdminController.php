@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pedido;
+use App\Models\EstadoPedido;
 use App\Models\Huerta;
 use App\Models\Usuario;
 use App\Models\TipoHuerta;
 use App\Models\Direccion;
+use App\Models\Producto;
+use App\Models\RelPedidosProductos;
 use App\User;
 
 use Storage;
@@ -62,7 +65,7 @@ class AdminController extends Controller
 			'telefono.required' => 'Debe completar con un teléfono.',
 			'telefono.max' => 'El teléfono puede tener como máximo 30 caracteres.'
 		]);
-				
+		
 		Huerta::create($inputData);
 		
 		return redirect()->route('admin.huertas' )
@@ -89,5 +92,15 @@ class AdminController extends Controller
 		$direcciones = Direccion::where('usuario_id', $cliente)->get();
 
         return view('admin.detalle-cliente', compact('cliente', 'direcciones'));
+    }
+	
+	public function showPedido($id)
+    {
+		// detalle del pedido
+        $pedido = Pedido::find($id);
+		$productos = Producto::all();
+        $productos_pedido = RelPedidosProductos::where('pedido_id', $pedido->id)->get();
+
+        return view('admin.detalle-pedido', compact('pedido', 'productos', 'productos_pedido'));
     }
 }
