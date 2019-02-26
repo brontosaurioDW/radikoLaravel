@@ -187,134 +187,137 @@ Route::get('contacto', function() {
 
 Route::middleware('auth')->group(function() {
 
-	Route::get('/cpanel', function() {
-		return view('cpanel.index');
+	Route::middleware('huerta')->group(function() {
+
+		Route::get('/cpanel', function() {
+			return view('cpanel.index');
+		});
+
+		// Cpanel Productos
+
+		Route::get('/cpanel/productos', [
+			'as' => 'cpanel.productos.index',
+			'uses' => 'CpanelProductosController@index'
+		]);
+
+		Route::get('/cpanel/productos/nuevo', [
+			'as' => 'cpanel.productos.create',
+			'uses' => 'CpanelProductosController@create'
+		]);
+
+		Route::post('/cpanel/productos/nuevo', [
+			'as' => 'cpanel.productos.store',
+			'uses' => 'CpanelProductosController@store'
+		]);
+
+		Route::get('/cpanel/productos/{prodcuto}', [
+			'as' => 'cpanel.productos.show',
+			'uses' => 'CpanelProductosController@show'
+		]);
+
+		Route::get('/cpanel/productos/{prodcuto}/editar', [
+			'as' => 'cpanel.productos.edit',
+			'uses' => 'CpanelProductosController@edit'
+		]);
+
+		Route::put('/cpanel/productos/{prodcuto}/editar', [
+			'as' => 'cpanel.productos.update',
+			'uses' => 'CpanelProductosController@update'
+		]);
+
+		Route::get('/cpanel/productos/{prodcuto}/eliminar', [
+			'as' => 'cpanel.productos.confirmDestroy',
+			'uses' => 'CpanelProductosController@confirmDestroy'
+		]);
+
+		Route::delete('/cpanel/productos/{prodcuto}/eliminar', [
+			'as' => 'cpanel.productos.destroy',
+			'uses' => 'CpanelProductosController@destroy'
+		]);
+
+		// Capnel Pedidos
+
+		Route::get('/cpanel/pedidos', [
+			'as' => 'cpanel.pedidos.index',
+			'uses' => 'CpanelPedidosController@index'
+		]);
+
+		Route::get('/cpanel/pedidos/{pedido}', [
+			'as' => 'cpanel.pedidos.show',
+			'uses' => 'CpanelPedidosController@show'
+		]);
+
+		// Cpanel Huerta
+
+		Route::get('/cpanel/huerta', [
+			'as' => 'cpanel.huerta.index',
+			'uses' => 'CpanelHuertaController@show'
+		]);
+
+		// Cpanel Perfil
+
+		Route::get('/cpanel/perfil', [
+			'as' => 'cpanel.perfil.index',
+			'uses' => 'CpanelPerfilController@show'
+		]);
+
+		Route::get('/cpanel/perfil/editar', [
+			'as' => 'cpanel.perfil.edit',
+			'uses' => 'CpanelPerfilController@edit'
+		]);
+
+		Route::put('/cpanel/perfil/{usuario}/editar', [
+			'as' => 'cpanel.perfil.update',
+			'uses' => 'CpanelPerfilController@update'
+		]);
+
+
+		Route::get('/carrito', [
+			'as' => 'carrito.index',
+			'uses' => 'CarritoController@cart'
+		]);
+
+		Route::get('/carrito/updetear', [
+			'as' => 'carrito.updetear',
+			'uses' => 'CarritoController@updetear'
+		]);
+
+		Route::post('/carrito/agregar', [
+			'as' => 'carrito.agregar',
+			'uses' => 'CarritoController@agregar'
+		]);
+
+		Route::get('/carrito/paso2', [
+			'as' => 'carrito.paso2',
+			'uses' => 'CarritoController@paso2'
+		]);
+
+		Route::post('/carrito/paso2', [
+			'as' => 'carrito.direcciones.store',
+			'uses' => 'CarritoController@storeDireccion'
+		]);
+
+		Route::get('/carrito/paso3', [
+			'as' => 'carrito.paso3',
+			'uses' => 'CarritoController@paso3'
+		]);
+
+		Route::get('/carrito/paso4', [
+			'as' => 'carrito.paso4',
+			'uses' => 'CarritoController@paso4'
+		]);
+
+		Route::post('/carrito/confirmacion', [
+			'as' => 'carrito.confirmacion',
+			'uses' => 'CarritoController@finalizar'
+		]);
+
+		Route::get('/carrito/verconfirmacion', [
+			'as' => 'carrito.verconfirmacion',
+			'uses' => 'CarritoController@verconfirmacion'
+		]);
+
 	});
-
-
-	// Cpanel Productos
-
-	Route::get('/cpanel/productos', [
-		'as' => 'cpanel.productos.index',
-		'uses' => 'CpanelProductosController@index'
-	]);
-
-	Route::get('/cpanel/productos/nuevo', [
-		'as' => 'cpanel.productos.create',
-		'uses' => 'CpanelProductosController@create'
-	]);
-
-	Route::post('/cpanel/productos/nuevo', [
-		'as' => 'cpanel.productos.store',
-		'uses' => 'CpanelProductosController@store'
-	]);
-
-	Route::get('/cpanel/productos/{prodcuto}', [
-		'as' => 'cpanel.productos.show',
-		'uses' => 'CpanelProductosController@show'
-	]);
-
-	Route::get('/cpanel/productos/{prodcuto}/editar', [
-		'as' => 'cpanel.productos.edit',
-		'uses' => 'CpanelProductosController@edit'
-	]);
-
-	Route::put('/cpanel/productos/{prodcuto}/editar', [
-		'as' => 'cpanel.productos.update',
-		'uses' => 'CpanelProductosController@update'
-	]);
-
-	Route::get('/cpanel/productos/{prodcuto}/eliminar', [
-		'as' => 'cpanel.productos.confirmDestroy',
-		'uses' => 'CpanelProductosController@confirmDestroy'
-	]);
-
-	Route::delete('/cpanel/productos/{prodcuto}/eliminar', [
-		'as' => 'cpanel.productos.destroy',
-		'uses' => 'CpanelProductosController@destroy'
-	]);
-
-	// Capnel Pedidos
-
-	Route::get('/cpanel/pedidos', [
-		'as' => 'cpanel.pedidos.index',
-		'uses' => 'CpanelPedidosController@index'
-	]);
-
-	Route::get('/cpanel/pedidos/{pedido}', [
-		'as' => 'cpanel.pedidos.show',
-		'uses' => 'CpanelPedidosController@show'
-	]);
-
-	// Cpanel Huerta
-
-	Route::get('/cpanel/huerta', [
-		'as' => 'cpanel.huerta.index',
-		'uses' => 'CpanelHuertaController@show'
-	]);
-
-	// Cpanel Perfil
-
-	Route::get('/cpanel/perfil', [
-		'as' => 'cpanel.perfil.index',
-		'uses' => 'CpanelPerfilController@show'
-	]);
-
-	Route::get('/cpanel/perfil/editar', [
-		'as' => 'cpanel.perfil.edit',
-		'uses' => 'CpanelPerfilController@edit'
-	]);
-
-	Route::put('/cpanel/perfil/{usuario}/editar', [
-		'as' => 'cpanel.perfil.update',
-		'uses' => 'CpanelPerfilController@update'
-	]);
-
-
-	Route::get('/carrito', [
-		'as' => 'carrito.index',
-		'uses' => 'CarritoController@cart'
-	]);
-
-	Route::get('/carrito/updetear', [
-		'as' => 'carrito.updetear',
-		'uses' => 'CarritoController@updetear'
-	]);
-
-	Route::post('/carrito/agregar', [
-		'as' => 'carrito.agregar',
-		'uses' => 'CarritoController@agregar'
-	]);
-
-	Route::get('/carrito/paso2', [
-		'as' => 'carrito.paso2',
-		'uses' => 'CarritoController@paso2'
-	]);
-
-	Route::post('/carrito/paso2', [
-		'as' => 'carrito.direcciones.store',
-		'uses' => 'CarritoController@storeDireccion'
-	]);
-
-	Route::get('/carrito/paso3', [
-		'as' => 'carrito.paso3',
-		'uses' => 'CarritoController@paso3'
-	]);
-
-	Route::get('/carrito/paso4', [
-		'as' => 'carrito.paso4',
-		'uses' => 'CarritoController@paso4'
-	]);
-
-	Route::post('/carrito/confirmacion', [
-		'as' => 'carrito.confirmacion',
-		'uses' => 'CarritoController@finalizar'
-	]);
-
-	Route::get('/carrito/verconfirmacion', [
-		'as' => 'carrito.verconfirmacion',
-		'uses' => 'CarritoController@verconfirmacion'
-	]);
 
 });
 
