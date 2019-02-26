@@ -271,55 +271,10 @@ Route::middleware('auth')->group(function() {
 			'uses' => 'CpanelPerfilController@update'
 		]);
 
-
-		Route::get('/carrito', [
-			'as' => 'carrito.index',
-			'uses' => 'CarritoController@cart'
-		]);
-
-		Route::get('/carrito/updetear', [
-			'as' => 'carrito.updetear',
-			'uses' => 'CarritoController@updetear'
-		]);
-
-		Route::post('/carrito/agregar', [
-			'as' => 'carrito.agregar',
-			'uses' => 'CarritoController@agregar'
-		]);
-
-		Route::get('/carrito/paso2', [
-			'as' => 'carrito.paso2',
-			'uses' => 'CarritoController@paso2'
-		]);
-
-		Route::post('/carrito/paso2', [
-			'as' => 'carrito.direcciones.store',
-			'uses' => 'CarritoController@storeDireccion'
-		]);
-
-		Route::get('/carrito/paso3', [
-			'as' => 'carrito.paso3',
-			'uses' => 'CarritoController@paso3'
-		]);
-
-		Route::get('/carrito/paso4', [
-			'as' => 'carrito.paso4',
-			'uses' => 'CarritoController@paso4'
-		]);
-
-		Route::post('/carrito/confirmacion', [
-			'as' => 'carrito.confirmacion',
-			'uses' => 'CarritoController@finalizar'
-		]);
-
-		Route::get('/carrito/verconfirmacion', [
-			'as' => 'carrito.verconfirmacion',
-			'uses' => 'CarritoController@verconfirmacion'
-		]);
-
 	});
 
 });
+
 
 // ADMIN
 Route::middleware('admin')->group(function(){
@@ -367,3 +322,48 @@ Route::middleware('admin')->group(function(){
 	]);
 	
 });
+
+Route::get('/carrito', [
+	'as' => 'carrito.index',
+	'uses' => 'CarritoController@cart'
+]);
+
+Route::get('/carrito/updetear', [
+	'as' => 'carrito.updetear',
+	'uses' => 'CarritoController@updetear'
+]);
+
+Route::post('/carrito/agregar', [
+	'as' => 'carrito.agregar',
+	'uses' => 'CarritoController@agregar'
+]);
+
+Route::get('/carrito/paso2', [
+	'as' => 'carrito.paso2',
+	'uses' => 'CarritoController@paso2'
+]);
+
+Route::post('/carrito/paso2', [
+	'as' => 'carrito.direcciones.store',
+	'uses' => 'CarritoController@storeDireccion'
+]);
+
+Route::get('/carrito/paso3', [
+	'as' => 'carrito.paso3',
+	'uses' => 'CarritoController@paso3'
+]);
+
+Route::get('/carrito/paso4', [
+	'as' => 'carrito.paso4',
+	'uses' => 'CarritoController@paso4'
+]);
+
+Route::post('/carrito/confirmacion', [
+	'as' => 'carrito.confirmacion',
+	'uses' => 'CarritoController@finalizar'
+]);
+
+Route::get('/carrito/verconfirmacion', [
+	'as' => 'carrito.verconfirmacion',
+	'uses' => 'CarritoController@verconfirmacion'
+]);
