@@ -24,9 +24,9 @@
 							<label for="estado">Cambiar a </label>
 							<select id="estado" name="estado" class="">
 
-								<option value="activo">activo</option>
-								<option value="suspendido">suspendido</option>
-								<option value="dado de baja">dado de baja</option>
+								<option value="activo" {{ old('estado', $cliente->estado) == 'activo' ? 'selected' : ''}}>activo</option>
+								<option value="suspendido" {{ old('estado', $cliente->estado) == 'suspendido' ? 'selected' : ''}}>suspendido</option>
+								<option value="dado de baja" {{ old('estado', $cliente->estado) == 'dado de baja' ? 'selected' : ''}}>dado de baja</option>
 
 							</select>
 						</div>

@@ -22,19 +22,9 @@
 						@method('PUT')
 						<div class="row-form">
 							<label for="id_estado_pedido">Cambiar a </label>
-							
-							<select id="unidad_de_medida" name="unidad_de_medida_id">
-							@foreach($unidades as $unidad)
-							<option value="{{ $unidad->id }}" {{ old('unidad_de_medida_id', $producto->unidad_de_medida_id) == $unidad->id ? 'selected' : ''}} >
-								{{ $unidad->unidad }}
-							</option>
-							@endforeach
-						</select>
-							
-						
 							<select id="id_estado_pedido" name="id_estado_pedido" class="">
 								@foreach($estados as $estado)
-								<option value="{{ $estado->id_estado_pedido }}" {{ old('id_estado_pedido') == $estado->id_estado_pedido ? 'selected' : ''}} >
+								<option value="{{ $estado->id_estado_pedido }}" {{ old('id_estado_pedido', $pedido->id_estado_pedido) == $estado->id_estado_pedido ? 'selected' : ''}} >
 									{{ $estado->estado }}
 								</option>
 								@endforeach
