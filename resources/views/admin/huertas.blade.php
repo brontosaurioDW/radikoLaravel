@@ -12,8 +12,6 @@
 				<div class="c-panel-inner-wrapper">
 					<div class="title">
 						<h3>Huertas registradas</h3>
-					
-						<a class="btn btn-primary btn-small add-product" href="{{ route( 'admin.huertas.create') }}"> Registrar Huerta</a>
 					</div>	
 					
 					@if(Session::has('status'))

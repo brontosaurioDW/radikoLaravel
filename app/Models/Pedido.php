@@ -9,6 +9,10 @@ class Pedido extends Model
     /** @var string El nombre de la tabla */
 	protected $table = "pedidos";
 	
+	protected $fillable = [
+		'id_estado_pedido'
+	];
+	
 	public function usuario()
 	{
 		return $this->belongsTo(Usuario::class);

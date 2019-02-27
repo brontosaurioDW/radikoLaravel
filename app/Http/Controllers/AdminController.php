@@ -43,40 +43,6 @@ class AdminController extends Controller
 		return view('admin.pedidos', compact('pedidos'));
 	}
 	
-	public function createHuerta()
-    {
-		// Vista form para registrar huerta
-		$tipos = TipoHuerta::all();
-		return view('admin.create-huerta', compact('tipos'));
-    }
-	
-	public function storeHuerta(Request $request)
-    {
-		// Registro de huerta
-		$inputData = $request->all();
-		
-		$request->validate(Huerta::$rules, [
-			'huerta.required' => 'El nombre de la huerta no puede estar vacio.',
-			'huerta.max' => 'El nombre de la huerta puede tener como máximo 100 caracteres.',
-			'cuit.required' => 'El cuit no puede estar vacío.',
-			'cuit.max' => 'El cuit puede tener como máximo 11 caracteres.',
-			'razon_social.required' => 'La Razón Social de la huerta no puede estar vacia.',
-			'direccion.max' => 'La dirección puede tener como máximo 100 caracteres.',
-			'telefono.required' => 'Debe completar con un teléfono.',
-			'telefono.max' => 'El teléfono puede tener como máximo 30 caracteres.'
-		]);
-		
-		Huerta::create($inputData);
-		
-		return redirect()->route('admin.huertas' )
-        ->with(
-            [
-                'status' => 'La huerta se cargó exitosamente.',
-                'class' => 'success'
-            ]
-        );
-    }
-	
 	 public function showHuerta($id)
     {
 		// detalle de la huerta

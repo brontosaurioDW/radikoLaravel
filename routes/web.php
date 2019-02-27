@@ -303,17 +303,6 @@ Route::middleware('admin')->group(function(){
 		'uses' => 'AdminController@showPedidos'
 	]);
 	
-	// registrar huerta
-	Route::get('/admin/huertas/nueva', [
-		'as' => 'admin.huertas.create',
-		'uses' => 'AdminController@createHuerta'
-	]);
-	
-	Route::post('/admin/huertas/nueva', [
-		'as' => 'admin.huertas.store',
-		'uses' => 'AdminController@storeHuerta'
-	]);
-	
 	// edit estado cliente
 	Route::get('/admin/clientes/{cliente}/editarCliente', [
 		'as' => 'admin.clientes.edit-cliente',
