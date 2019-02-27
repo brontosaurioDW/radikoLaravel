@@ -55,7 +55,7 @@
 				productName.innerHTML = data.producto
 				productPrice.innerHTML = data.precio
 				productDescription.innerHTML = data.descripcion
-				productImage.setAttribute('src', 'http://localhost:8000/storage/images/productos/' + data.foto)
+				productImage.setAttribute('src', '/storage/images/productos/' + data.foto)
 
 				productId.setAttribute('value', idProducto)
 
