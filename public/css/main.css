@@ -6364,9 +6364,16 @@ h4 {
   text-align: center;
 }
 .cart .address .btn {
+  transition: 0.3s;
   min-width: inherit;
   padding: 0 25px;
   font-size: 13px;
+}
+.cart .address .current {
+  background: transparent;
+  color: #7065B0;
+  opacity: 0.5;
+  border: 0;
 }
 .cart .add-address {
   margin-top: 50px;

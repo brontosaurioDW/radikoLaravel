@@ -181,7 +181,7 @@
                                         <span>Volver a revisar el pedido</span>
                                     </a>
 
-                                    <a href="{{url("carrito/paso3")}}" class="btn btn-medium btn-primary">Continuar</a>
+                                    <a href="{{url("carrito/paso3")}}" class="btn btn-medium btn-primary js-validar-direccion">Continuar</a>
                                 </div>
                             </div>
                         </div>
@@ -198,4 +198,26 @@
         </div>
         @endif        
     </div>
-    @endsection
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="CargarDireccion" tabindex="-1" role="dialog" aria-labelledby="CargarDireccionModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content block">
+                <div class="modal-body confirm-modal">
+                    <button type="button" class="closes" data-dismiss="modal" aria-label="Close">
+                        <i class="far fa-times"></i>
+                    </button>
+
+                    <p>Por favor selecciona una dirección o carga una nueva</p>
+                    
+                    <div class="buttons justify-content-center d-flex align-items-center" role="group" aria-label="Cerrar modal">
+                        <button type="button" class="btn btn-primary btn-small" data-dismiss="modal" aria-label="Close">
+                            Ok
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

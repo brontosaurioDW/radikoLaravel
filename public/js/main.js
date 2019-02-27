@@ -64,6 +64,7 @@ $(document).ready(function() {
         $('.js-vaciar-carrito').on('click', function(event) {
             localStorage.removeItem("nombreHuertaLocal");
             localStorage.removeItem("IDHuertaLocal");
+            localStorage.removeItem("direccionParaElPedido");
         });
 
         // Chequear si hay productos en el carrito y si hay, confirmar cambio de huerta
@@ -203,15 +204,28 @@ $(document).ready(function() {
             var direccionIdLocal = localStorage.getItem('direccionParaElPedido');    
             if (direccionIdLocal) {
                 if (direccionId == direccionIdLocal) {
-                    $(this).find('.js-usar').addClass('disabled');
+                    $(this).find('.js-usar').addClass('current');
                 }
             }
             
             $(this).find('.js-usar').on('click', function(event) {
                 localStorage.setItem('direccionParaElPedido', direccionId);        
-                $('.js-usar').removeClass('disabled');
-                $(this).addClass('disabled');
+                $('.js-usar').removeClass('current');
+                $(this).addClass('current');
             });
+        });
+
+        // validar direccion en paso 2
+        $('.js-validar-direccion').on('click', function(event) {
+            event.preventDefault();
+
+            var ruta = $(this).attr('href');
+
+            if (!localStorage.getItem('direccionParaElPedido')) {
+                $("#CargarDireccion").modal('show');
+            } else {
+                window.location = ruta;
+            }
         });
 
         // Confirmar Compra
