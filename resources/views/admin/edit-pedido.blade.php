@@ -6,7 +6,6 @@
 
 	<div class="main-wrapper cpanel relative">
 		<section class="container">
-		@include ('admin.nav')
 			
 			<div class="c-panel-wrapper bg-trama rdk-charcoal">
 				<div class="c-panel-inner-wrapper">

@@ -40,8 +40,16 @@
 				padding: 0;
 			}
 
-			a:first-of-type {
-				padding-bottom: 15px;
+			li {
+				a {
+					padding-bottom: 15px;
+				}
+
+				&:last-child {
+					a {
+						padding: 0;
+					}
+				}
 			}
 		}
 	}

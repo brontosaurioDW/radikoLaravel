@@ -41,7 +41,10 @@
 			</div>
 			
 			<div class="col-xs-12 col-md-7 col-lg-9">
-				<a href="{{url()->previous()}}" class="link-back">volver</a>
+				<a href="{{url()->previous()}}" class="link">
+					<i class="fas fa-chevron-left"></i>
+					<span>volver</span>
+				</a>
 				
 				<h3>Editar Dirección</h3>
 		
@@ -81,7 +84,7 @@
 								<label>Departamento <span>(opcional)</span></label>
 								<input type="text" name="departamento" value="{{ old('departamento', $direccion->departamento) }}" placeholder="">
 							</div>
-							<div class="row-form split d-flex justify-content-between">
+							<div class="row-form">
 								<label>Teléfono</label>
 								<input type="text" name="telefono" value="{{ old('telefono', $direccion->telefono) }}" placeholder="">
 								@if($errors->has('telefono'))

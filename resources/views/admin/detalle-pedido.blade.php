@@ -6,86 +6,147 @@
 
 	<div class="main-wrapper cpanel relative">
 		<section class="container">
-		@include ('admin.nav')
-			
-			<div class="c-panel-wrapper bg-trama rdk-charcoal">
+			<div class="c-panel-wrapper bg-trama rdk-charcoal last-step">
 				<div class="c-panel-inner-wrapper">
-					<div class="title">
-						<h3>Detalle del pedido</h3>
-					</div>
+
+					<a class="link" href="{{ url()->previous() }}">
+						<i class="fas fa-chevron-left"></i>
+						<span>Volver</span>
+					</a>
 					
-					<h4 class="my-4">Orden</h4>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">N° de pedido: {{$pedido->id}}</li>
-					</ul>
-					
-					<h4 class="my-4">Estado</h4>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">
-							@if($pedido->estado->estado == 'Entregado')
-								<span style="color:white; padding: 5px 10px; background-color: #50D2A4;">{{$pedido->estado->estado}}</span>
-							@elseif($pedido->estado->estado == 'Pendiente de pago')
-								<span style="color:white; padding: 5px 10px; background-color: #DD964D;">{{$pedido->estado->estado}}</span>
-							@elseif($pedido->estado->estado == 'Pendiente de entrega')
-								<span style="color:white; padding: 5px 10px; background-color: #C94B36;">{{$pedido->estado->estado}}</span>
-							@else
-								<span style="color:white; padding: 5px 10px; background-color: #6c757d;">{{$pedido->estado->estado}}</span>
-							@endif
-						</li>
-					</ul>
+					<div class="italic mb-2">Fecha: {{$pedido->fecha_pedido}}</div>
 
-					<h4 class="my-4">Datos del pedido</h4>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item"> Subtotal: {{$pedido->subtotal}}</li>
-						<li class="list-group-item">Total: {{$pedido->total}}</li>
-					</ul>
-					<h4 class="my-4">Productos</h4>
-					@foreach ($productos as $producto)
-					@foreach ($productos_pedido as $producto_pedido)
-					@if ($producto->id == $producto_pedido->producto_id)
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Producto: {{$producto->producto}} | Cantidad: {{$producto_pedido->cantidad}} | {{$producto->precio}}</li>
-					</ul>
-					@endif
-					@endforeach
-					@endforeach
+					<div class="row justify-content-between">
+					    <div class="col-md-6">
+					        <div class="card pedido">
+					            <div class="d-flex">
+					                <div class="card-info w-100 no-border">     
+					                    <div class="d-flex align-items-center justify-content-between m-0">
+					                        <span>Pedido N°</span>
+					                        <span class="price-black bold">{{ $pedido->id }}</span>
+					                    </div>
+					                </div>
+					            </div>
+					        </div>
 
-					<h4 class="my-4">Fecha de entrega</h4>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Fecha: {{$pedido->fecha_pedido}}</li>
-					</ul>
+					        <div class="card listado">
+					            <div class="d-flex">
+					                <div class="card-info w-100 no-border">                                 
+					                    <ul class="simple-list">
+					                        @foreach ($productos as $producto)
+					                            @foreach ($productos_pedido as $producto_pedido)
+					                                @if ($producto->id == $producto_pedido->producto_id)
+					                                    <li class="d-flex justify-content-between">
+					                                        <span>
+					                                            {{$producto_pedido->cantidad}} 
+					                                            {{$producto->unidadDeMedida->unidad}}.  
+					                                            {{$producto->producto}}
+					                                        </span>
+					                                        <span class="price-black">
+					                                            ${{$producto_pedido->cantidad * $producto->precio}}
+					                                        </span>
+					                                    </li>
+					                                @endif
+					                            @endforeach
+					                        @endforeach
+					                    </ul>
 
-					<h4 class="my-4">Dirección de entrega</h4>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Calle:{{$pedido->direccion->calle}} {{$pedido->direccion->numero}}</li>
-						@if ($pedido->direccion->piso || $pedido->direccion->departamento)
-						<li class="list-group-item">Departamento: {{$pedido->direccion->piso}} {{$pedido->direccion->departamento}}</li>
-						@endif
-						<li class="list-group-item">Teléfono: {{$pedido->direccion->telefono}}</li>
-						<li class="list-group-item">Aclaración: {{$pedido->direccion->aclaracion}}</li>
-						<li class="list-group-item">Referencia: {{$pedido->direccion->referencia}}</li>
-					</ul>
+					                    <ul class="simple-list m-0">
+					                        <li class="bold d-flex justify-content-between align-items-center">
+					                            <span>Subtotal:</span>
+					                            <span class="price-black bold">$ {{$pedido->total}} </span>
+					                        </li>
+					                        <li class="bold d-flex justify-content-between align-items-center">
+					                            <span>Costo de envío:</span>
+					                            <span class="price-black bold">$ 130 </span>
+					                        </li> 
+					                    </ul>
+					                </div>                              
+					            </div>
+					        </div>
 
-					<h4 class="my-4">Datos del cliente:</h4>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">{{$pedido->usuario->name}} {{$pedido->usuario->last_name}}</li>
-						<li class="list-group-item">{{$pedido->usuario->email}}</li>
-						<li class="list-group-item">{{$pedido->usuario->telephone}}</li>
-					</ul>
-									
-					<h4 class="my-4">Datos de la Huerta:</h4>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">{{$pedido->huerta->huerta}}</li>
-						<li class="list-group-item">{{$pedido->huerta->email}}</li>
-						<li class="list-group-item">{{$pedido->huerta->telefono}}</li>
-					</ul>
+					        <div class="card pedido total">
+					            <div class="d-flex">
+					                <div class="card-info w-100 no-border">    
+					                    <div class="d-flex align-items-center justify-content-between m-0">
+					                        <span>Total:</span>
+					                        <span class="price-black bold"> $ {{$pedido->total + 130 }} </span>
+					                    </div>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="col-md-6">
+					        <div class="card">
+					            <div class="d-flex">
+					                <div class="card-info w-100 no-border">  
+					                    <h2>{{$pedido->huerta->huerta}}</h2>
+					                    <ul class="simple-list">
+					                        <li>{{$pedido->huerta->direccion}}</li>
+					                        <li>{{$pedido->huerta->telefono}}</li>
+					                        <li>{{$pedido->huerta->email}}</li>
+					                    </ul>
+					                </div>
+					            </div>
+					        </div>
 
-					<div class="buttons d-flex justify-content-end align-items-center">
-						<a class="link" href="{{ route( 'admin.pedidos') }}">
-							<i class="fas fa-chevron-left"></i>
-							<span>Volver</span>
-						</a>
-						<a class="btn btn-primary btn-small" href="{{ route( 'admin.pedidos.edit-pedido', ['id' => $pedido->id] ) }}">Cambiar estado</a>
+					        <div class="card">
+					            <div class="d-flex">
+					                <div class="card-info w-100 no-border">  
+					                    <h2>{{ $pedido->direccion->referencia }}</h2>
+					                    <ul class="simple-list">
+					                        <li>
+					                            {{ $pedido->direccion->calle }} {{ $pedido->direccion->numero }}
+					                        </li>
+
+					                        @if ($pedido->direccion->piso != null)
+					                            <li>
+					                                Piso {{ $pedido->direccion->piso }} - Dpto: {{ $pedido->direccion->departamento }}
+					                            </li>
+					                        @endif
+
+					                        <li>
+					                            {{ $pedido->direccion->telefono }}
+					                        </li>
+
+					                        @if ($pedido->direccion->aclaracion != null)
+					                            <li class="italic">
+					                                {{ $pedido->direccion->aclaracion }} 
+					                            </li>
+					                        @endif
+					                    </ul>
+					                </div>
+					            </div>
+					        </div>
+
+					        <div class="card">
+					            <div class="d-flex">
+					                <div class="card-info w-100 no-border">  
+					                    <h2>Datos del cliente:</h2>
+					                    <ul class="simple-list">
+					                        <li>
+					                        	<span class="bold">Nombre:</span> {{$pedido->usuario->name}}
+					                        </li>
+					                        <li>
+					                        	<span class="bold">Apellido:</span> {{$pedido->usuario->last_name}}
+					                        </li>
+					                        <li>
+					                        	<span class="bold">Email:</span> {{$pedido->usuario->email}}
+					                        </li>
+					                        <li>
+					                        	<span class="bold">Teléfono:</span> {{$pedido->usuario->telephone}}
+					                        </li>
+					                    </ul>
+
+					                    @if ( !empty($pedido->usuario->foto) )
+					                    	<img class="img-fluid" src="{{ url('storage/images/usuarios/'.$pedido->usuario->foto) }}" alt="{{ $pedido->usuario->name }}" style="width: auto;">
+					                    @else
+					                    	<img class="img-fluid" src="{{ url('storage/images/user-default.png') }}" alt="{{ $pedido->usuario->name }}" style="width: auto;">
+					                    @endif
+					                </div>
+					            </div>
+					        </div>
+					    </div>
 					</div>
 				</div>
 			</div>

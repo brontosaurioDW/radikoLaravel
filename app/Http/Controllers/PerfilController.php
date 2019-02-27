@@ -63,8 +63,8 @@ class PerfilController extends Controller
 		/*$pedidosPendientes = DB::table('pedidos')->where('usuario_id', $userId)->whereIn('id_estado_pedido', [1, 2])->get(); //pedidos pendiente de entrega y de pago
 		$pedidosRealizados = DB::table('pedidos')->where('usuario_id', $userId)->where('id_estado_pedido', 3)->get(); //pedidos entregados*/
 		
-		$pedidosPendientes = Pedido::where('usuario_id', $userId)->whereIn('id_estado_pedido', [1, 2])->get();
-		$pedidosRealizados = Pedido::where('usuario_id', $userId)->where('id_estado_pedido', 3)->get();
+		$pedidosPendientes = Pedido::where('usuario_id', $userId)->orderBy('fecha_pedido','DESC')->whereIn('id_estado_pedido', [1, 2])->get();
+		$pedidosRealizados = Pedido::where('usuario_id', $userId)->orderBy('fecha_pedido','DESC')->where('id_estado_pedido', 3)->get();
 		
         return view('perfil.index', compact('pedidosPendientes', 'pedidosRealizados'));
     }

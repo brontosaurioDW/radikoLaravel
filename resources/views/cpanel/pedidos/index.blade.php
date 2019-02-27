@@ -28,7 +28,9 @@
 							<td>{{$pedido->fecha_pedido}}</td>
 							<td>{{$pedido->usuario->name}} {{$pedido->usuario->last_name}}</td>
 							<td>$ {{$pedido->total}}</td>
-							<td><a href="{{ route('cpanel.pedidos.show', ['id' => $pedido->id]) }}">Ver detalles</a></td>
+							<td>
+								<a class="link" href="{{ route('cpanel.pedidos.show', ['id' => $pedido->id]) }}" data-toggle="tooltip" data-placement="top" title="Ver"><span class="sr-only">Ver</span><i class="far fa-eye"></i></a>
+							</td>
 						</tr>
 						@endforeach
 					</tbody>

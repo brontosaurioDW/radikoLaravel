@@ -9,7 +9,7 @@
 		<div class="c-panel-wrapper bg-trama rdk-charcoal">
 			<div class="c-panel-inner-wrapper">
 				<div class="title">
-					<h3>Editar perfil del usuario (huerta)</h3>
+					<h3>Editar perfil del usuario</h3>
 				</div>
 
 				<form method="post" action="{{ route('cpanel.perfil.update', ['id' => Auth::user()->id]) }}" enctype="multipart/form-data" class="form">

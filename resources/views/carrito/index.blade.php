@@ -79,7 +79,7 @@
                                                         <!-- <span> <?php echo $row->options->unidad; ?>  </span> -->
                                                     </form>
 
-                                                    <a href="{{url("carrito?product_id=$row->id&borrar=1")}}" onclick="return ConfirmarBorrado();" class="remove rdk-tomato text">
+                                                    <a href="{{url("carrito?product_id=$row->id&borrar=1")}}" class="remove rdk-tomato js-borrar-producto text">
                                                         <i class="far fa-trash-alt"></i>
                                                     </a>
                                                 </div>
@@ -130,7 +130,7 @@
 
                                 <div class="continue">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <a class="link js-vaciar-carrito" href="{{url("carrito?vaciar=1")}}" onclick="return ConfirmarBorrado();">Vaciar canasta</a>
+                                        <a href="#" class="link js-vaciar-carrito">Vaciar canasta</a>
                                         
                                         @if( Auth::check() AND Auth::user()->tipo == 'cliente' )                                           
                                             <a href="{{url("carrito/paso2")}}" class="btn btn-medium btn-primary">Continuar</a>
@@ -156,6 +156,45 @@
                 </div>
             </div>
         @endif        
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="BorrarCarrito" tabindex="-1" role="dialog" aria-labelledby="BorrarCarritoModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content block">
+                <div class="modal-body confirm-modal">
+                    <button type="button" class="closes" data-dismiss="modal" aria-label="Close">
+                        <i class="far fa-times"></i>
+                    </button>
+
+                    <p>¿Estás seguro qué querés vaciar la canasta?</p>
+                    
+                    <div class="buttons justify-content-center d-flex align-items-center" role="group" aria-label="Cerrar modal">
+                        <a href="{{url("carrito?vaciar=1")}}" class="btn btn-primary btn-small" id="btn-vaciar">Si, vaciar canasta</a>
+                        <a class="link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">No borrar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+    <div class="modal fade" id="BorrarProducto" tabindex="-1" role="dialog" aria-labelledby="BorrarProductoModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content block">
+                <div class="modal-body confirm-modal">
+                    <button type="button" class="closes" data-dismiss="modal" aria-label="Close">
+                        <i class="far fa-times"></i>
+                    </button>
+
+                    <p>¿Estás seguro qué querés quitar este producto?</p>
+                    
+                    <div class="buttons justify-content-center d-flex align-items-center" role="group" aria-label="Cerrar modal">
+                        <a href="#" class="btn btn-primary btn-small" id="btn-quitar">Si, quitar producto</a>
+                        <a class="link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">No borrar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 @endsection

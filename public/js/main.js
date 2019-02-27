@@ -62,9 +62,34 @@ $(document).ready(function() {
 
         // Vaciar localStorage si se vacia el carrito
         $('.js-vaciar-carrito').on('click', function(event) {
-            localStorage.removeItem("nombreHuertaLocal");
-            localStorage.removeItem("IDHuertaLocal");
-            localStorage.removeItem("direccionParaElPedido");
+            $('#BorrarCarrito').modal('show');
+
+            $("#btn-vaciar").on("click", function() {
+                callback(true);
+
+                localStorage.removeItem("nombreHuertaLocal");
+                localStorage.removeItem("IDHuertaLocal");
+                localStorage.removeItem("direccionParaElPedido");
+                
+                $('#BorrarCarrito').modal('hide');
+            });
+        });
+
+        // Borrar un producto del carrito
+        $('.js-borrar-producto').on('click', function(event) {
+            event.preventDefault();
+
+            var ruta = $(this).attr('href');
+
+            $('#BorrarProducto').modal('show');
+
+            $("#btn-quitar").on("click", function() {
+                $(this).attr('href', ruta);
+                callback(true);
+                $('#BorrarProducto').modal('hide');
+            });
+
+            chequearContenidoCarrito();
         });
 
         // Chequear si hay productos en el carrito y si hay, confirmar cambio de huerta
@@ -115,26 +140,7 @@ $(document).ready(function() {
         });
 
         // Chequear contenido del carrito y mostrar canasta con puntito verde
-
-        var puntitoVerde = $('.js-cart-content');
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-        });
-
-        $.ajax({
-            url: '/carrito/chequearContenidoCarrito',
-            type: 'GET',
-            success: function(result) {
-                if (result['contenidoDelCarrito'].length == 0) {
-                    $(".js-cart-content").removeClass('d-block');
-                } else {
-                    $(".js-cart-content").addClass('d-block');
-                }
-            },
-        });
+        chequearContenidoCarrito();
 
         // Ajax agregar producto al carrito
         $('.js-agregar-producto').on('click', function(event) {
@@ -281,6 +287,31 @@ $(window).on('scroll', function() {
     }
 });
 
+function chequearContenidoCarrito() {
+    var puntitoVerde = $('.js-cart-content');
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+    });
+
+    $.ajax({
+        url: '/carrito/chequearContenidoCarrito',
+        type: 'GET',
+        success: function(result) {
+            if (result['contenidoDelCarrito'].length == 0) {
+                $(".js-cart-content").removeClass('d-block');
+                localStorage.removeItem("nombreHuertaLocal");
+                localStorage.removeItem("direccionParaElPedido");
+                localStorage.removeItem("IDHuertaLocal");
+            } else {
+                $(".js-cart-content").addClass('d-block');
+            }
+        },
+    });
+}
+
 function GeocodingAdress() {
     // GEOCODING API -- Google maps para detalle de huerta
     if ($('.datos-info-huerta').length > 0) {
@@ -311,16 +342,6 @@ function GeocodingAdress() {
                 console.log('Geocode was not successful for the following reason: ' + status);
             }
         });
-    }
-}
-
-// Carrito
-function ConfirmarBorrado(event) {
-    var confirmacion = confirm('Estas seguro?');
-    if (!confirmacion) {
-        return false;
-    } else {
-        return true;
     }
 }
 

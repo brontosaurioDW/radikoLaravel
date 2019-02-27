@@ -41,7 +41,10 @@
 			</div>
 			
 			<div class="col-xs-12 col-md-7 col-lg-9">
-				<a href="{{url()->previous()}}" class="link-back">volver</a>
+				<a href="{{url()->previous()}}" class="link">
+					<i class="fas fa-chevron-left"></i>
+					<span>volver</span>
+				</a>
 				
 				<h3>Agregar Dirección</h3>
 	
@@ -80,7 +83,7 @@
 								<label>Departamento <span>(opcional)</span></label>
 								<input type="text" name="departamento" value="{{ old('departamento') }}" placeholder="">
 							</div>
-							<div class="row-form split d-flex justify-content-between">
+							<div class="row-form">
 								<label>Teléfono</label>
 								<input type="tel" name="telefono" value="{{ old('telefono') }}" pattern="\([0-9]{3}\) [0-9]{4}[ -][0-9]{4}" value="{{ old('numero') }}" placeholder="(011) 5555-5555">
 								@if($errors->has('telefono'))

@@ -7236,8 +7236,11 @@ header li a .cart-yes {
     font-size: 14px;
     padding: 0;
   }
-  .navbar-nav .dropdown-menu a:first-of-type {
+  .navbar-nav .dropdown-menu li a {
     padding-bottom: 15px;
+  }
+  .navbar-nav .dropdown-menu li:last-child a {
+    padding: 0;
   }
 }
 .why-radiko {
@@ -7620,6 +7623,7 @@ header:not(.is-home) + main .cpanel {
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
+  border: none;
 }
 .c-panel-wrapper {
   padding: 3rem;
@@ -7683,6 +7687,9 @@ header:not(.is-home) + main .cpanel {
 .profile h3 {
   font-size: 20px;
   margin-bottom: 10px;
+}
+.profile .link {
+  margin-bottom: 30px;
 }
 .file-btn i {
   margin-right: 10px;

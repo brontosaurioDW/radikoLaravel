@@ -64,7 +64,6 @@ class CarritoController extends Controller
 
         // vacia el carrito
         if((Request::get('vaciar')) == 1) {
-
             Cart::destroy();
         }
 
@@ -132,7 +131,6 @@ class CarritoController extends Controller
         }
     } 
 
-
     public function updetear() {
 
         $id    = Request::get('product_id');
@@ -154,13 +152,6 @@ class CarritoController extends Controller
        return view('carrito.paso2', compact('direcciones')); 
    }
 
-
-    /**
-     * Ingresa una nueva dirección.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function storeDireccion(HttpRequest $request)
     {
         $inputData = $request->all();
@@ -190,12 +181,10 @@ class CarritoController extends Controller
         );     
     }
 
-
     public function paso3() {
 
         return view('carrito.paso3'); 
     }
-
 
     public function finalizar(HttpRequest $request) {
         
