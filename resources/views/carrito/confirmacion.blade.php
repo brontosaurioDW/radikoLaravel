@@ -22,7 +22,7 @@
         <section class="checkout-step last-step">
             <div class="container">
 
-                <div class="tab-content m-5">
+                <div class="tab-content">
                     <p class="ok text-center">
                         ¡Listo! Ya recibimos tu pedido y le avisamos a la huerta. Sólo queda que coordines el envío con ellos.
                         Acá vas a encontrar la información de tu compra, pero no te preocupes que también te la mandamos por mail.

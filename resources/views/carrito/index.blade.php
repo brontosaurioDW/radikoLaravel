@@ -28,14 +28,14 @@
                     <div class="tabs-outline">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Revisar Pedido</a>
+                                <a class="nav-link active" href="#">Pedido</a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="tab-content">
                         <div class="row">
-                            <div class="col-md-7">
+                            <div class="col-lg-7">
                                 <h2>Productos</h2>
 
                                 <ul class="m-0 p-0">
@@ -58,7 +58,7 @@
                                                     <form method="GET" action="{{route('carrito.updetear')}}" class="more-info form-bg form p-0">
                                                         <input type="hidden" name="product_id" value="{{$row->id}}">
 
-                                                        <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex justify-content-between align-items-center flex-wrap">
                                                             <div class="qnt d-flex align-items-center">                                                        
                                                                 <a class="cart_quantity_down link" href='{{url("carrito?product_id=$row->id&decrease=1")}}'> - </a>                                                        
                                                                 <input class="cart_quantity_input" type="text" name="quantity" value="{{$row->qty}}" autocomplete="off" size="2">
@@ -95,7 +95,7 @@
 
                             </div>
 
-                            <div class="col-md-5">
+                            <div class="col-lg-5 sidebar">
                                 <h2>Tu canasta</h2>
 
                                 <div class="card listado">
@@ -129,7 +129,7 @@
                                 </div>
 
                                 <div class="continue">
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center flex-wrap">
                                         <a href="#" class="link js-vaciar-carrito">Vaciar canasta</a>
                                         
                                         @if( Auth::check() AND Auth::user()->tipo == 'cliente' )                                           
@@ -169,9 +169,9 @@
 
                     <p>¿Estás seguro qué querés vaciar la canasta?</p>
                     
-                    <div class="buttons justify-content-center d-flex align-items-center" role="group" aria-label="Cerrar modal">
-                        <a href="{{url("carrito?vaciar=1")}}" class="btn btn-primary btn-small" id="btn-vaciar">Si, vaciar canasta</a>
-                        <a class="link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">No borrar</a>
+                    <div class="buttons justify-content-center d-flex align-items-center flex-wrap" role="group" aria-label="Cerrar modal">
+                        <a href="{{url("carrito?vaciar=1")}}" class="mb-2 btn btn-primary btn-small" id="btn-vaciar">Si, vaciar canasta</a>
+                        <a class="mb-2 link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">No borrar</a>
                     </div>
                 </div>
             </div>
@@ -188,9 +188,9 @@
 
                     <p>¿Estás seguro qué querés quitar este producto?</p>
                     
-                    <div class="buttons justify-content-center d-flex align-items-center" role="group" aria-label="Cerrar modal">
-                        <a href="#" class="btn btn-primary btn-small" id="btn-quitar">Si, quitar producto</a>
-                        <a class="link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">No borrar</a>
+                    <div class="buttons justify-content-center d-flex align-items-center flex-wrap" role="group" aria-label="Cerrar modal">
+                        <a href="#" class="mb-2 btn btn-primary btn-small" id="btn-quitar">Si, quitar producto</a>
+                        <a class="mb-2 link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">No borrar</a>
                     </div>
                 </div>
             </div>
