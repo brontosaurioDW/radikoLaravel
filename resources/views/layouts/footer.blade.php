@@ -2,13 +2,15 @@
     <div class="content">
         <div class="container">
             <div class="row">
+
                 <div class="col-lg-2">
                     <div class="d-none d-lg-block">
                         <a href="javascript:void(0)" class="logo-foo"> Rádiko </a>
                         <p> Tu huerta cerca </p>
                     </div>
                 </div>
-                <div class="col-md-3">
+
+                <div class="col-md-6 col-lg-3">
                     <ul>
                         <li>
                             <a href="{{ url('/legales/politica-privacidad') }}">Política de privacidad</a>
@@ -22,7 +24,7 @@
                     </ul>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-3">
                     <div class="social">
                         <ul class="d-flex align-items-center justify-content-center">
                             <li>
