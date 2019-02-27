@@ -375,7 +375,7 @@ Route::post('/carrito/confirmacion', [
 	'uses' => 'CarritoController@finalizar'
 ]);
 
-Route::get('/carrito/verconfirmacion', [
+Route::get('/carrito/verconfirmacion/{pedido}', [
 	'as' => 'carrito.verconfirmacion',
 	'uses' => 'CarritoController@verconfirmacion'
 ]);

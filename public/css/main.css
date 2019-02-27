@@ -6291,6 +6291,9 @@ h4 {
 .card.listado ul li:first-child {
   margin-top: 0;
 }
+.card.listado ul li:last-child {
+  margin-bottom: 0;
+}
 .card.listado .sub-total {
   font-size: 25px;
 }
@@ -6418,12 +6421,25 @@ h4 {
 .cart .payment li:last-child {
   margin-bottom: 0;
 }
+.last-step .card .card-info {
+  padding: 2rem;
+}
 .last-step .ok {
   font-size: 15px;
   line-height: 150%;
   padding: 25px 0 45px;
   max-width: 80%;
   margin: 0 auto;
+}
+.last-step .pedido span + span {
+  font-size: 25px;
+}
+.last-step .total span {
+  font-size: 25px;
+  font-weight: bold;
+}
+.last-step .total span + span {
+  color: #50D2A4;
 }
 .categories {
   position: relative;

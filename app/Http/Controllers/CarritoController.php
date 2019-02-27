@@ -181,27 +181,29 @@ class CarritoController extends Controller
             $guardarPedido = new Pedido();
             $guardarPedido->fecha_pedido        =   date('Y-m-d H:i:s');
             $guardarPedido->subtotal            =   Cart::subtotal();
-            $guardarPedido->subtotal            =   Cart::subtotal();
-            $guardarPedido->costo_envio         =   "130";
             $guardarPedido->total               =   Cart::total();
+            $guardarPedido->costo_envio         =   "130";
             $guardarPedido->usuario_id          =   auth()->user()->id;
             $guardarPedido->huerta_id           =   $request->input('huertaDelPedido');
             $guardarPedido->id_estado_pedido    =   "1";
             $guardarPedido->id_tipo_pago        =   "1";
             $guardarPedido->direccion_id        =   $request->input('direccionDelPedido');
             $guardarPedido->save();
-
+            
             foreach(Cart::content() as $row) {
                 $productoRel                = new RelPedidosProductos();
                 $productoRel->pedido_id     = $guardarPedido->id;
                 $productoRel->producto_id   = $row->id;
                 $productoRel->cantidad      = $row->qty;
+
+                $productoRel->save();
             }
 
             Cart::destroy();
 
             return response()->json([
-                'success' => 'ok'
+                'success' => 'ok',
+                'id_pedido' => $guardarPedido->id
             ]);
         } else {
             return response()->json([
@@ -210,7 +212,10 @@ class CarritoController extends Controller
         }
     }  
 
-    public function verconfirmacion() {
-        return view('carrito.confirmacion'); 
+    public function verconfirmacion($pedido) {
+        $pedido     = Pedido::find($pedido);
+        $productos  = Producto::all();
+        $productos_pedido = RelPedidosProductos::where('pedido_id', $pedido->id)->get();
+        return view('carrito.confirmacion', compact('pedido', 'productos', 'productos_pedido'));
     }
 }
