@@ -17,7 +17,9 @@ class AuthController extends Controller
     {
         $prevRoute = url()->previous();
 
-        return view('auth.login');
+        // dd($prevRoute);
+
+        return view('auth.login', compact('prevRoute'));
     } 
 
 
@@ -50,6 +52,7 @@ class AuthController extends Controller
     */
     public function doLogin(Request $request)
     {
+        
 
         $request->validate(User::$rules_login, [
             'email.required' => 'El campo email es requerido',
@@ -77,6 +80,9 @@ class AuthController extends Controller
 		}elseif(Auth::user()->tipo == 'admin'){
 			return redirect()->intended('/admin/huertas');
 		}else{
+            if ($input['prevRoute'] == 'http://localhost:8000/carrito') {
+                return redirect()->intended('/carrito');
+            }
 			return redirect()->intended('/');
 		}		
     }
