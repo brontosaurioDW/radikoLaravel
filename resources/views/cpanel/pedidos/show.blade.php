@@ -9,11 +9,13 @@
 
 		<div class="c-panel-wrapper bg-trama rdk-charcoal last-step">
 			<div class="c-panel-inner-wrapper">
-
-				<a class="link" href="{{ url()->previous() }}">
-					<i class="fas fa-chevron-left"></i>
-					<span>Volver</span>
-				</a>
+				
+				<div class="buttons d-flex justify-content-start align-items-center">
+					<a class="link" href="{{ url()->previous() }}">
+						<i class="fas fa-chevron-left"></i>
+						<span>Volver</span>
+					</a>
+				</div>
 				
 				<div class="italic mb-2">Fecha: {{$pedido->fecha_pedido}}</div>
 
@@ -147,7 +149,6 @@
 				                </div>
 				            </div>
 				        </div>
-
 				    </div>
 				</div>
 			</div>
