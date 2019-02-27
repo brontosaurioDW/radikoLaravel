@@ -181,10 +181,11 @@ $(document).ready(function() {
         // Confirmar Compra
         $('.js-confirmar-compra').on('click', function(event) {
             event.preventDefault();
-            var direccionDelPedido  = localStorage.getItem("IDHuertaLocal");
-            var huertaDelPedido     = localStorage.getItem("direccionParaElPedido");
+            var direccionDelPedido  = localStorage.getItem("direccionParaElPedido");
+            var huertaDelPedido     = localStorage.getItem("IDHuertaLocal");
 
             var ruta = $(this).attr('href');
+            var idPedido = "";
 
             // Ajax para destruir el carrito
             $.ajaxSetup({
@@ -203,9 +204,12 @@ $(document).ready(function() {
                 success: function(result) {
                     if (result['success'] == 'ok') {
                         localStorage.removeItem("nombreHuertaLocal");
+                        localStorage.removeItem("direccionParaElPedido");
                         localStorage.removeItem("IDHuertaLocal");
 
-                        window.location = "/carrito/verconfirmacion";
+                        idPedido = result['id_pedido']; 
+
+                        window.location = "/carrito/verconfirmacion/" + idPedido;
                     } else {
                         console.log('Error');
                     }

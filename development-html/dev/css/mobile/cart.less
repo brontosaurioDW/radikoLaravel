@@ -155,12 +155,33 @@
 }
 
 .last-step {
+	.card .card-info {
+		padding: 2rem;
+	}
+
 	.ok {
 		font-size: 15px;
 		line-height: 150%;
 		padding: 25px 0 45px;
 		max-width: 80%;
 		margin: 0 auto;
+	}
+
+	.pedido {
+		span + span {
+			font-size: 25px;
+		}
+	}
+
+	.total {
+		span {
+			font-size: 25px;
+			font-weight: bold;
+
+			& + span {
+				color: @pepper;
+			}
+		}
 	}
 }
 
