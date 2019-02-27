@@ -53,7 +53,7 @@
 
                                             <div class="d-flex">
                                                 <div class="img-wrapper">
-                                                    <img src="/images/productos/<?php echo $row->options->foto; ?>" alt="Tomates" class="img-fluid">
+                                                    <img src="{{ url('storage/images/productos/'.$row->options->foto) }}" alt="Tomates" class="img-fluid">
                                                 </div>
 
                                                 <div class="card-info dark-border">
