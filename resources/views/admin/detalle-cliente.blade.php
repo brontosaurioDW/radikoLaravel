@@ -55,11 +55,11 @@
 					</div>	
 				
 					<div class="buttons d-flex justify-content-end align-items-center">
-						<a class="link" href="{{ url()->previous() }}">
+						<a class="link" href="{{ route( 'admin.usuarios') }}">
 							<i class="fas fa-chevron-left"></i>
 							<span>Volver</span>
 						</a>
-						<a class="btn btn-primary btn-small" href="{{ url()->previous() }}">Editar</a>
+						<a class="btn btn-primary btn-small" href="{{ route( 'admin.clientes.edit-cliente', ['id' => $cliente->id] ) }}">Cambiar estado</a>
 					</div>
 				</div>
 			</div>

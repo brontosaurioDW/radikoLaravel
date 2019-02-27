@@ -314,6 +314,18 @@ Route::middleware('admin')->group(function(){
 		'uses' => 'AdminController@storeHuerta'
 	]);
 	
+	// edit estado cliente
+	Route::get('/admin/clientes/{cliente}/editarCliente', [
+		'as' => 'admin.clientes.edit-cliente',
+		'uses' => 'AdminController@editCliente'
+	]);
+	
+	// actualizar estado del cliente
+	Route::put('/admin/clientes/{cliente}/editarCliente', [
+		'as' => 'admin.clientes.update',
+		'uses' => 'AdminController@updateCliente'
+	]);
+	
 	// detalle huerta
 	Route::get('/admin/huertas/{huerta}', [
 		'as' => 'admin.huertas.detalle-huerta',
@@ -331,7 +343,7 @@ Route::middleware('admin')->group(function(){
 		'as' => 'admin.pedidos.detalle-pedido',
 		'uses' => 'AdminController@showPedido'
 	]);
-	
+
 	//estadísticas
 	Route::get('/admin/estadisticas', [
 		'as' => 'admin.estadisticas',

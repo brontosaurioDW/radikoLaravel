@@ -103,4 +103,28 @@ class AdminController extends Controller
 
         return view('admin.detalle-pedido', compact('pedido', 'productos', 'productos_pedido'));
     }
+	
+	public function editCliente($cliente)
+    {
+		// edicion del cliente
+		$cliente = Usuario::find($cliente);
+        return view('admin.edit-cliente', compact('cliente'));
+    }
+	
+	public function updateCliente(Request $request, $id){
+		
+		// actualización del estado del cliente
+		$inputData = $request->input();
+				
+		$cliente = Usuario::find($id);
+		$cliente->update($inputData);
+		
+		return redirect()->route('admin.usuarios' )
+        ->with(
+            [
+                'status' => 'El estado de ' .$cliente->name. ' ' .$cliente->last_name. ' se actualizó correctamente.',
+                'class' => 'success'
+            ]
+        );
+	}
 }
