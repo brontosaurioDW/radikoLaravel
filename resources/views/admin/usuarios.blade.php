@@ -14,6 +14,11 @@
 						<h3>Clientes registrados</h3>
 					</div>
 
+					@if(Session::has('status'))
+						@component('components.alert', ['tipo' => Session::get('class')])
+							{!! Session::get('status') !!}
+						@endcomponent
+					@endif
 					
 					<div class="table-responsive">
 						<table>
@@ -51,7 +56,7 @@
 									</td>
 									<td class="actions">
 										<a class="link" href="{{ route( 'admin.clientes.detalle-cliente', ['id' => $usuario->id] ) }}" data-toggle="tooltip" data-placement="top" title="Ver"><span class="sr-only">Ver</span><i class="far fa-eye"></i></a>
-										<a class="link" href="#" data-toggle="tooltip" data-placement="top" title="Editar"><span class="sr-only">Editar</span><i class="far fa-edit"></i></a>
+										<a class="link" href="{{ route( 'admin.clientes.edit-cliente', ['id' => $usuario->id] ) }}" data-toggle="tooltip" data-placement="top" title="Editar"><span class="sr-only">Editar</span><i class="far fa-edit"></i></a>
 									</td>
 								</tr>
 								@endforeach
