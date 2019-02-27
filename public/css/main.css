@@ -6212,6 +6212,7 @@ h4 {
   height: 215px;
   width: auto;
   max-width: unset;
+  min-height: 160px;
 }
 .card .card-info {
   border-left: 10px solid #7065B0;
