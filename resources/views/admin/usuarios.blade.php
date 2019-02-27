@@ -41,16 +41,16 @@
 									</td>
 									<td>
 										@if($usuario->estado == 'activo')
-											<i class="fas fa-circle text-success" style="font-size:12px; margin-right: 3px;"></i>
+											<i class="fas fa-square-full" style="font-size:12px; margin-right: 3px; color: #50D2A4;"></i>
 											{{$usuario->estado}}
 										@elseif($usuario->estado == 'suspendido')
-											<i class="fas fa-circle text-warning" style="font-size:12px; margin-right: 3px;"></i>
+											<i class="fas fa-square-full" style="font-size:12px; margin-right: 3px; color: #DD964D;"></i>
 											{{$usuario->estado}}	
 										@elseif($usuario->estado == 'pendiente de pago')
-											<i class="fas fa-circle text-danger" style="font-size:12px; margin-right: 3px;"></i>
+											<i class="fas fa-square-full" style="font-size:12px; margin-right: 3px; color: #C94B36;"></i>
 											{{$usuario->estado}}
 										@else
-											<i class="fas fa-circle text-muted" style="font-size:12px; margin-right: 3px;"></i>
+											<i class="fas fa-square-full" style="font-size:12px; margin-right: 3px; color: #6c757d;"></i>
 											{{$usuario->estado}}
 										@endif
 									</td>
