@@ -153,7 +153,7 @@ class HuertasController extends Controller
     $huerta = Huerta::find($id);
     $categorias = Categoria::All();
     $productos = Producto::with('unidadDeMedida')->where('huerta_id', $id)->where('producto', 'LIKE', '%' . $inputData . '%')->paginate(8);
-    return view('huertas.show', compact('huerta', 'productos','categorias'));
+    return view('huertas.show', compact('huerta', 'productos','categorias', 'inputData'));
   }
 
   /**

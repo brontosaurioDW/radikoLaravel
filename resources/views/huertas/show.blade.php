@@ -116,6 +116,15 @@
 							<div class="huerta-productos">
 								<div class="d-flex flex-wrap justify-content-between">
 
+									@if ($productos->isEmpty())
+									<div class="no-results">
+										<p>
+											Lo sentimos, no hay resultados para 
+											<span class="bold">{{ $inputData }}</span>
+										</p>
+									</div>
+									@endif
+
 									@foreach ($productos as $producto)
 
 									<div class="card no-border">
@@ -161,20 +170,20 @@
 								<!-- Horarios de envio desktop -->
 								<div class="horarios-envios">
 									@if ($huerta->disponibilidad->isEmpty()) 
-			   							<p class="text-danger">No hay horarios disponibles para esta huerta</p>
+									<p class="text-danger">No hay horarios disponibles para esta huerta</p>
 									@else
-										<h2>Horarios de de envío Capital Federal</h2>
+									<h2>Horarios de de envío Capital Federal</h2>
 
-										<ul class="simple-list">
-											@foreach ($huerta->disponibilidad as $disponibilidad)
-												<li class="d-flex justify-content-between flex-wrap">
-													<span class="datecol semi-bold">{{ $disponibilidad->dias }}</span>
-													<span class="hourscol">
-														{{  $disponibilidad->inicio }} - {{  $disponibilidad->final }}
-													</span>
-												</li>
-											@endforeach										
-										</ul>
+									<ul class="simple-list">
+										@foreach ($huerta->disponibilidad as $disponibilidad)
+										<li class="d-flex justify-content-between flex-wrap">
+											<span class="datecol semi-bold">{{ $disponibilidad->dias }}</span>
+											<span class="hourscol">
+												{{  $disponibilidad->inicio }} - {{  $disponibilidad->final }}
+											</span>
+										</li>
+										@endforeach										
+									</ul>
 									@endif
 								</div>
 							</div>
@@ -429,8 +438,8 @@
 									</div>
 
 									<button type="submit" class="btn btn-primary btn-small js-agregar-producto">
-                                        <i class="fal fa-shopping-basket"></i> Agregar a la canasta
-                                    </button>			
+										<i class="fal fa-shopping-basket"></i> Agregar a la canasta
+									</button>			
 								</div>
 							</form>
 						</div>
