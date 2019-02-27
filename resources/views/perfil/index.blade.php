@@ -77,7 +77,7 @@
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
-											<span style="color:red">$ 785.00</span>
+											<span>$ {{ $pedido->subtotal + 130.00 }}</span>
 										</li>
 									</ul>		
 
@@ -116,7 +116,7 @@
 										</li>
 										<li class="total">
 											<span class="bold">Precio</span>
-											<span style="color:red">$ 785.00</span>
+											<span>$ {{ $pedido->subtotal + 130.00 }}</span>
 										</li>
 									</ul>		
 

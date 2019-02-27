@@ -92,9 +92,19 @@
                                                 <?php endforeach;?>
                                             </ul>
 
+                                            <div class="total bold d-flex justify-content-between">
+                                                <span>Subtotal</span>
+                                                <span>$ <?php echo Cart::subtotal(); ?></span>
+                                            </div>
+
+                                            <div class="total bold d-flex justify-content-between">
+                                                <span>Envío</span>
+                                                <span>$ 130</span>
+                                            </div>
+
                                             <div class="sub-total bold d-flex justify-content-between">
-                                                <span>Subtotal:</span>
-                                                <span>$<?php echo Cart::subtotal(); ?></span>
+                                                <span>Total</span>
+                                                <span>$ <?php echo Cart::subtotal() + 130; ?></span>
                                             </div>
                                         </div>                              
                                     </div>

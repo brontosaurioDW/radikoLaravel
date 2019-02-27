@@ -396,3 +396,7 @@ Route::get('/carrito/verconfirmacion/{pedido}', [
 	'as' => 'carrito.verconfirmacion',
 	'uses' => 'CarritoController@verconfirmacion'
 ]);
+
+Route::get('/carrito/chequearContenidoCarrito', [
+	'uses' => 'CarritoController@chequearContenidoCarrito'
+]);

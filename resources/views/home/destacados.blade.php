@@ -41,7 +41,8 @@
             @endswitch
 
             <div class="<?php echo $class ?>">
-                <a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="cta-link">
+                <a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="cta-link js-check-huerta">
+                    <input type="hidden" name="nombreEstaHuerta" value="{{ $huerta->huerta }}">
                     <div class="img-wrapper">
                         <img src="{{ url("storage/images/destacados/$img.png") }}" alt="{{ $huerta->huerta }}" class="img-fluid">
                     </div>
@@ -78,4 +79,4 @@
             <a href="{{ url('/huertas') }}" class="btn btn-medium btn-primary">Ver más</a>
         </div>
     </div>
-</div> 
+</div>

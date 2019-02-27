@@ -16,28 +16,7 @@
 					<h2 class="huerta-title	">{{$huerta->huerta}}</h2>
 				</div>
 			</div>
-		</div>		
-
-		<div class="d-none" id="js-dummy-alert js-carrito-alert">
-			<div class="row">
-				<div class="col-12">
-					<div class="alert dummy-alert alert-dismissible fade show" role="alert">
-						<div class="row">
-							<div class="col-6">
-								<p class="bold">¡Agregaste un producto a la canasta!</p>
-							</div>
-							<div class="col-6 text-right">
-								<a href="confirmacion-paso-1.html">Ver canasta</a>
-							</div>
-						</div>
-
-						<button type="button" class="closes" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
+		</div>	
 
 		<div class="container">
 			<a href="{{ url()->previous() }}" class="link">

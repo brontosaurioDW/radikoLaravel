@@ -30,15 +30,6 @@
                             <li class="nav-item">
                                 <a class="nav-link active" href="#">Revisar Pedido</a>
                             </li>
-                            {{-- <li class="nav-item disabledTab">
-                                <a class="nav-link" href="#">Dirección</a>
-                            </li>
-                            <li class="nav-item disabledTab">
-                                <a class="nav-link" href="#">Horario</a>
-                            </li>
-                            <li class="nav-item disabledTab">
-                                <a class="nav-link" href="#">Pago</a>
-                            </li> --}}
                         </ul>
                     </div>
 
@@ -119,9 +110,19 @@
                                                 <?php endforeach;?>
                                             </ul>
 
+                                            <div class="total bold d-flex justify-content-between">
+                                                <span>Subtotal</span>
+                                                <span>$ <?php echo Cart::subtotal(); ?></span>
+                                            </div>
+
+                                            <div class="total bold d-flex justify-content-between">
+                                                <span>Envío</span>
+                                                <span>$ 130</span>
+                                            </div>
+
                                             <div class="sub-total bold d-flex justify-content-between">
-                                                <span>Subtotal:</span>
-                                                <span>$<?php echo Cart::subtotal(); ?></span>
+                                                <span>Total</span>
+                                                <span>$ <?php echo Cart::subtotal() + 130; ?></span>
                                             </div>
                                         </div>                              
                                     </div>

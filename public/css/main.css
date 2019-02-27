@@ -6421,6 +6421,9 @@ h4 {
 .cart .payment li:last-child {
   margin-bottom: 0;
 }
+.last-step .link {
+  margin-bottom: 30px;
+}
 .last-step .card .card-info {
   padding: 2rem;
 }
@@ -7026,11 +7029,11 @@ header li a {
   position: relative;
 }
 header li a .cart-yes {
+  display: none;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: #50D2A4;
-  display: block;
   position: absolute;
   top: -2px;
   right: -5px;
@@ -7044,7 +7047,6 @@ header li a .cart-yes {
   top: 30px;
   right: 0;
   padding: 10px 25px;
-  border-radius: 5px;
   font-size: 13px;
 }
 .mensajitoTooltip:before {

@@ -73,6 +73,28 @@ class CarritoController extends Controller
         return view('carrito.index');
     }
 
+    // Chequear contenido del carrito
+    public function chequearContenidoCarrito(HttpRequest $request) {
+        $contenidoDelCarrito = Cart::content();
+
+        if ($request->ajax()) {
+            if ($contenidoDelCarrito) {
+                return response()->json([
+                    'success' => 'ok',
+                    'contenidoDelCarrito' => $contenidoDelCarrito
+                ]);
+            } else {
+                return response()->json([
+                    'success' => 'ok',
+                    'contenidoDelCarrito' => null
+                ]);
+            }
+        } else {
+            return response()->json([
+                'error' => 'error',
+            ]);
+        }
+    }
 
     // agrega un producto al carrito
     public function agregar(HttpRequest $request) {
@@ -100,7 +122,8 @@ class CarritoController extends Controller
 
         if ($request->ajax()) {
             return response()->json([
-                'success' => 'ok'
+                'success' => 'ok',
+                'contenidoDelCarrito' => Cart::content()
             ]);
         } else {
             return response()->json([

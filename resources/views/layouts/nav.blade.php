@@ -1,3 +1,4 @@
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <div class="mobile-header d-flex d-lg-none align-items-center justify-content-between">
 
     <div class="navbar-header">
@@ -21,9 +22,7 @@
     <li>
         <a href="{{ route('carrito.index') }}">
             <i class="fal fa-shopping-basket"></i>
-            @if (Cart::content()->count() > 0)
-                <span class="cart-yes"></span>
-            @endif
+            <span class="cart-yes js-cart-content"></span>
         </a>
         <div class="mensajitoTooltip js-tooltip"> El producto se agregó a la canasta </div>
     </li>
@@ -69,7 +68,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                    <a class="dropdown-item js-logout" href="{{ route('logout') }}">
                                         <i class="fas fa-sign-out-alt"></i>
                                         <span>Cerrar sesión</span>
                                     </a>
@@ -82,10 +81,7 @@
     			<li class="d-none d-lg-block">
                     <a href="{{ route('carrito.index') }}">
                         <i class="fal fa-shopping-basket"></i>
-
-                        @if (Cart::content()->count() > 0)
-                            <span class="cart-yes"></span>
-                        @endif
+                        <span class="cart-yes js-cart-content"></span>
                     </a>  
                     <div class="mensajitoTooltip js-tooltip"> El producto se agregó a la canasta </div>
                 </li>
@@ -99,7 +95,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <ul>                                    
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('cpanel.perfil.index') }}">
+                                    <a class="dropdown-item js-logout" href="{{ route('cpanel.perfil.index') }}">
                                         <i class="fas fa-user"></i>
                                         <span>Perfil</span>
                                     </a> 
@@ -128,9 +124,7 @@
             <li class="d-none d-lg-block">
                 <a href="{{ route('carrito.index') }}">
                     <i class="fal fa-shopping-basket"></i>
-                    @if (Cart::content()->count() > 0)
-                        <span class="cart-yes"></span>
-                    @endif
+                    <span class="cart-yes js-cart-content"></span>
                 </a>
                 <div class="mensajitoTooltip js-tooltip"> El producto se agregó a la canasta </div>
             </li>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use Cart;
 
 class AuthController extends Controller
 {
@@ -130,6 +131,7 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
+        Cart::destroy();
         return redirect('/');
     }
 }

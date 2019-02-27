@@ -5,7 +5,6 @@
 @section ('bodyClass', 'transparent')
 @section ('header-class', 'is-home')
 
-
 @section ('content')
     <div class="main-wrapper relative cart">
 

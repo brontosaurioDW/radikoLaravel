@@ -46,6 +46,13 @@ $(document).ready(function() {
         });
     });
 
+    // Logout
+    $('.js-logout').on('click', function() {
+        localStorage.removeItem("nombreHuertaLocal");
+        localStorage.removeItem("direccionParaElPedido");
+        localStorage.removeItem("IDHuertaLocal");
+    });
+
     /*  CARRITO*/
         // Mostrar nombre de la huerta desde locaStorage
         if (localStorage.getItem("nombreHuertaLocal")) {
@@ -67,6 +74,10 @@ $(document).ready(function() {
                 var ruta                  = $(this).attr('href');
                 var nombreHuertaCarrito   = $(this).find('input[name="nombreEstaHuerta"]').val();
                 var nombreDelLocal        = localStorage.getItem("nombreHuertaLocal");
+
+                console.log(ruta);
+                console.log(nombreDelLocal);
+                console.log(nombreHuertaCarrito);
 
                 if (nombreDelLocal && nombreHuertaCarrito != nombreDelLocal) {                   
                     $('#confirmar-vaciar-carrito').modal('show');
@@ -100,6 +111,28 @@ $(document).ready(function() {
                 }
                 
             });
+        });
+
+        // Chequear contenido del carrito y mostrar canasta con puntito verde
+
+        var puntitoVerde = $('.js-cart-content');
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+        });
+
+        $.ajax({
+            url: '/carrito/chequearContenidoCarrito',
+            type: 'GET',
+            success: function(result) {
+                if (result['contenidoDelCarrito'].length == 0) {
+                    $(".js-cart-content").removeClass('d-block');
+                } else {
+                    $(".js-cart-content").addClass('d-block');
+                }
+            },
         });
 
         // Ajax agregar producto al carrito
@@ -143,6 +176,7 @@ $(document).ready(function() {
                             localStorage.setItem('nombreHuertaLocal', huertaLocal);                        
                             localStorage.setItem('IDHuertaLocal', huertaLocalId);             
 
+                            $('input[name="product_qty"]').val("");
                             $('#producto-detalle').modal('hide');
 
                             setTimeout(function() {
@@ -151,7 +185,9 @@ $(document).ready(function() {
                                 setTimeout(function() {
                                     $(".js-tooltip").fadeOut();
                                 }, 2500);
-                            }, 500);
+                            }, 200);
+
+                            $(".js-cart-content").fadeIn();
                         } else {
                             console.log('Error');
                         }
