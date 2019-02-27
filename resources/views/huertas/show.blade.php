@@ -97,7 +97,7 @@
 
 						<div class="col-xs-12 col-lg-9">
 							{{-- BUSCADOR  --}}
-							<form action="" method="" class="form">
+							<form class="form" action="{{ route('huertas.single.search', ['id' => $huerta->id]) }}" method="get">
 								<div class="row">
 									<div class="col-md-4 offset-md-8">
 										<form method="" action="">

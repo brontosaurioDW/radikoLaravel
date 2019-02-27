@@ -28,6 +28,11 @@ Route::get('search', [
 	'uses' => 'HuertasController@showSearchResults'
 ]);
 
+Route::get('search/{huerta}', [
+	'as' => 'huertas.single.search',
+	'uses' => 'HuertasController@showSearchResultsHuerta'
+]);
+
 Route::get('/huertas/categoria/{categoria}', [
 	'as' => 'huertas.categoria',
 	'uses' => 'HuertasController@huertasByCategory',
