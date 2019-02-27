@@ -9,6 +9,14 @@
 			
 			<div class="c-panel-wrapper bg-trama rdk-charcoal">
 				<div class="c-panel-inner-wrapper">
+
+					<div class="buttons d-flex justify-content-start align-items-center">
+						<a class="link" href="{{ route( 'admin.usuarios') }}">
+							<i class="fas fa-chevron-left"></i>
+							<span>Volver</span>
+						</a>
+					</div>
+
 					<div class="title">
 						<h3>Detalle del cliente</h3>				
 					</div>
@@ -18,16 +26,6 @@
 							<ul class="details">
 								<li>
 									<span class="bold">Nombre:</span> {{ $cliente->name }} {{ $cliente->last_name }}
-								</li>
-								<li>
-									<span class="bold">Dirección:</span>
-									<ul>
-									@foreach ($direcciones as $direccion)
-										<li>
-											<span>{{$direccion->referencia}}</span>
-										</li>
-									@endforeach	
-									</ul>
 								</li>
 								<li>
 									<span class="bold">Teléfono:</span> {{ $cliente->telephone }}
@@ -62,11 +60,7 @@
 						</div>
 					</div>	
 				
-					<div class="buttons d-flex justify-content-end align-items-center">
-						<a class="link" href="{{ route( 'admin.usuarios') }}">
-							<i class="fas fa-chevron-left"></i>
-							<span>Volver</span>
-						</a>
+					<div class="buttons bottom d-flex justify-content-end align-items-center">
 						<a class="btn btn-primary btn-small" href="{{ route( 'admin.clientes.edit-cliente', ['id' => $cliente->id] ) }}">Cambiar estado</a>
 					</div>
 				</div>

@@ -9,15 +9,23 @@
 			
 			<div class="c-panel-wrapper bg-trama rdk-charcoal">
 				<div class="c-panel-inner-wrapper">
+					
+					<div class="buttons d-flex justify-content-start align-items-center">
+						<a class="link" href="{{ url()->previous() }}">
+							<i class="fas fa-chevron-left"></i>
+							<span>Volver</span>
+						</a>
+					</div>	
+
 					<div class="title">
 						<h3>Estado de {{ $cliente->name }} {{ $cliente->last_name }}</h3>				
 					</div>
 
-					<div>
+					<div class="estado">
 						<span class="bold">Estado actual:</span> {{ $cliente->estado }}
 					</div>
 
-					<form method="POST" action="{{ route('admin.clientes.update', ['id' => $cliente->id] ) }}">
+					<form method="POST" action="{{ route('admin.clientes.update', ['id' => $cliente->id] ) }}" class="form">
 						@csrf
 						@method('PUT')
 						<div class="row-form">
@@ -35,12 +43,6 @@
 							<button class="btn-primary btn btn-medium"> Modificar </button>
 							</div>
 					</form>
-				
-					<div class="buttons d-flex justify-content-end align-items-center">
-						<a class="link" href="{{ url()->previous() }}">
-							<i class="fas fa-chevron-left"></i>
-							<span>Volver</span>
-					</div>	
 				</div>
 			</div>
 		</section>

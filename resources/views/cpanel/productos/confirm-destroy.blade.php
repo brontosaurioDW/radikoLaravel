@@ -8,6 +8,13 @@
 		<section class="container">
 			<div class="c-panel-wrapper bg-trama rdk-charcoal">
 				<div class="c-panel-inner-wrapper">
+					<div class="buttons d-flex justify-content-start align-items-center">
+						<a class="link" href="{{ url()->previous() }}">
+							<i class="fas fa-chevron-left"></i>
+							<span>Volver</span>
+						</a>
+					</div>	
+
 					<div class="title">			
 						<h3>Eliminar producto de la  huerta</h3>
 						<p>¿Esta seguro que desea eliminar el siguiente producto?</p>
@@ -45,11 +52,7 @@
 						@csrf
 						@method('DELETE')		
 
-						<div class="buttons d-flex justify-content-end align-items-center">
-							<a class="link" href="{{ url()->previous() }}">
-								<i class="fas fa-chevron-left"></i>
-								<span>Volver</span>
-							</a>
+						<div class="buttons bottom d-flex justify-content-end align-items-center">
 							<button class="btn btn-primary btn-small">Eliminar</button>
 						</div>		
 					</form>				
