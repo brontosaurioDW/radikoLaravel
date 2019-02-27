@@ -40,22 +40,22 @@
 									</td>
 									<td>
 										@if($pedido->estado->estado == 'Entregado')
-											<i class="fas fa-circle text-success" style="font-size:12px; margin-right: 3px;"></i>
+											<i class="fas fa-square-full" style="font-size:12px; margin-right: 3px; color: #50D2A4;"></i>
 											{{$pedido->estado->estado}}
 										@elseif($pedido->estado->estado == 'Pendiente de entrega')
-											<i class="fas fa-circle text-warning" style="font-size:12px; margin-right: 3px;"></i>
+											<i class="fas fa-square-full" style="font-size:12px; margin-right: 3px; color: #C94B36;"></i>
 											{{$pedido->estado->estado}}	
 										@elseif($pedido->estado->estado == 'Pendiente de pago')
-											<i class="fas fa-circle text-danger" style="font-size:12px; margin-right: 3px;"></i>
+											<i class="fas fa-square-full" style="font-size:12px; margin-right: 3px; color: #DD964D;"></i>
 											{{$pedido->estado->estado}}
 										@else
-											<i class="fas fa-circle text-muted" style="font-size:12px; margin-right: 3px;"></i>
+											<i class="fas fa-square-full" style="font-size:12px; margin-right: 3px; color: #6c757d;"></i>
 											{{$pedido->estado->estado}}
 										@endif
 									</td>
 									<td class="actions">
 										<a class="link" href="{{ route( 'admin.pedidos.detalle-pedido', ['id' => $pedido->id] ) }}" data-toggle="tooltip" data-placement="top" title="Ver"><span class="sr-only">Ver</span><i class="far fa-eye"></i></a>
-										<a class="link" href="#" data-toggle="tooltip" data-placement="top" title="Editar"><span class="sr-only">Editar</span><i class="far fa-edit"></i></a>
+										<a class="link" href="{{ route( 'admin.pedidos.edit-pedido', ['id' => $pedido->id] ) }}" data-toggle="tooltip" data-placement="top" title="Editar"><span class="sr-only">Editar</span><i class="far fa-edit"></i></a>
 									</td>
 								</tr>
 								@endforeach

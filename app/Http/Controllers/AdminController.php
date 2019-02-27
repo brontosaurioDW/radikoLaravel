@@ -106,7 +106,7 @@ class AdminController extends Controller
 	
 	public function editCliente($cliente)
     {
-		// edicion del cliente
+		// edicion del cliente (estado)
 		$cliente = Usuario::find($cliente);
         return view('admin.edit-cliente', compact('cliente'));
     }
@@ -123,6 +123,31 @@ class AdminController extends Controller
         ->with(
             [
                 'status' => 'El estado de ' .$cliente->name. ' ' .$cliente->last_name. ' se actualizó correctamente.',
+                'class' => 'success'
+            ]
+        );
+	}
+	
+	public function editPedido($pedido)
+    {
+		// edicion del pedido (estado)
+		$estados = EstadoPedido::all();
+		$pedido = Pedido::find($pedido);
+        return view('admin.edit-pedido', compact('estados', 'pedido'));
+    }
+	
+	public function updatePedido(Request $request, $id){
+		
+		// actualización del estado del pedido
+		$inputData = $request->input();
+				
+		$pedido = Pedido::find($id);
+		$pedido->update($inputData);
+		
+		return redirect()->route('admin.pedidos' )
+        ->with(
+            [
+                'status' => 'El estado del pedido n° ' .$pedido->id. ' se actualizó correctamente.',
                 'class' => 'success'
             ]
         );

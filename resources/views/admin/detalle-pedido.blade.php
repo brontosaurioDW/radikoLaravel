@@ -18,6 +18,21 @@
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item">N° de pedido: {{$pedido->id}}</li>
 					</ul>
+					
+					<h4 class="my-4">Estado</h4>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							@if($pedido->estado->estado == 'Entregado')
+								<span style="color:white; padding: 5px 10px; background-color: #50D2A4;">{{$pedido->estado->estado}}</span>
+							@elseif($pedido->estado->estado == 'Pendiente de pago')
+								<span style="color:white; padding: 5px 10px; background-color: #DD964D;">{{$pedido->estado->estado}}</span>
+							@elseif($pedido->estado->estado == 'Pendiente de entrega')
+								<span style="color:white; padding: 5px 10px; background-color: #C94B36;">{{$pedido->estado->estado}}</span>
+							@else
+								<span style="color:white; padding: 5px 10px; background-color: #6c757d;">{{$pedido->estado->estado}}</span>
+							@endif
+						</li>
+					</ul>
 
 					<h4 class="my-4">Datos del pedido</h4>
 					<ul class="list-group list-group-flush">
@@ -65,6 +80,13 @@
 						<li class="list-group-item">{{$pedido->huerta->telefono}}</li>
 					</ul>
 
+					<div class="buttons d-flex justify-content-end align-items-center">
+						<a class="link" href="{{ route( 'admin.pedidos') }}">
+							<i class="fas fa-chevron-left"></i>
+							<span>Volver</span>
+						</a>
+						<a class="btn btn-primary btn-small" href="{{ route( 'admin.pedidos.edit-pedido', ['id' => $pedido->id] ) }}">Cambiar estado</a>
+					</div>
 				</div>
 			</div>
 		</section>

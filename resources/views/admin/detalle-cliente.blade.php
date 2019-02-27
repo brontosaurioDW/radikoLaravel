@@ -37,7 +37,16 @@
 									<span class="bold">Email:</span> {{ $cliente->email }}
 								</li>
 								<li>
-									<span class="bold">Estado: </span> {{ $cliente->estado }} 
+									<span class="bold">Estado: </span> 
+										@if($cliente->estado == 'activo')
+											<span style="color:white; padding: 5px 10px; background-color: #50D2A4;">{{$cliente->estado}}</span>
+										@elseif($cliente->estado == 'suspendido')
+											<span style="color:white; padding: 5px 10px; background-color: #DD964D;">{{$cliente->estado}}</span>
+										@elseif($cliente->estado == 'pendiente de pago')
+											<span style="color:white; padding: 5px 10px; background-color: #C94B36;">{{$cliente->estado}}</span>
+										@else
+											<span style="color:white; padding: 5px 10px; background-color: #6c757d;">{{$cliente->estado}}</span>
+										@endif
 								</li>
 								<li>
 									<span class="bold">Fecha de alta: </span> {{ $cliente->created_at->format('d-M-Y') }} 
