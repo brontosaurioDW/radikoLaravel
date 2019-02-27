@@ -17,10 +17,11 @@
 				</h1>
 			</div>
 
+
 			<form action="{{ route('auth.doLogin')}}" method="post">
 				<div class="form">
 					@csrf
-
+					
 					<h2>Login</h2>
 
 					@if(Session::has('status'))
@@ -46,6 +47,8 @@
 							<small class="text-danger">{{ $errors->first('password') }}</small>
 						@endif
 					</div>
+
+					<input type="hidden" name="prevRoute" value="{{$prevRoute}}">
 
 					<div class="row-form">
 						<button class="btn btn-secondary btn-small">Ingresar</button>
