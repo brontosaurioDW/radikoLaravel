@@ -93,13 +93,15 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <ul>                                    
+                            <ul>         
+                                @if(Auth::user()->tipo != 'admin')                           
                                 <li>
                                     <a class="dropdown-item js-logout" href="{{ route('cpanel.perfil.index') }}">
                                         <i class="fas fa-user"></i>
                                         <span>Perfil</span>
                                     </a> 
                                 </li>
+                                @endif
                                 <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}">
                                         <i class="fas fa-sign-out-alt"></i>
