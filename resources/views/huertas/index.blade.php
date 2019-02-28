@@ -24,82 +24,71 @@
 			</div>
 
 			<div class="container">
-
-				<div class="row">			
-					<div class="col-xs-12 d-none d-lg-block col-lg-3">
-						{{-- FILTROS LATERALES  --}}
-						@include ('huertas.filtros-desktop')
-					</div>
-
-					<div class="col-xs-12 col-lg-9">
-						<div class="huerta-productos">
-							<div class="form">
-								<div class="row">
-									<div class="col-xs-12 col-md-4 d-none d-md-block">
-										<label for="filtros" class="sr-only">Filtros</label>
-										<select class="select" id="filtros">
-											<option>Mejores puntuados</option>
-											<option>Más valorados</option>
-											<option>De mayor a menor</option>
-											<option>De menor a mayor</option>
-											<option>Los más nuevos</option>
-										</select>
-									</div>
-									<div class="col-md-4 offset-md-4">
-										<form action="{{ route('huertas.search') }}" method="get">
-											<div class="relative search-sm">
-												<input type="text" name="search" id="search" placeholder="¿Qué estás buscando?">
-												<button class="btn-search">
-													<span class="sr-only">Search</span>
-													<i class="fas fa-search"></i>
-												</button>
-											</div>
-										</form>
-									</div>
-								</div>
+				<div class="huerta-productos">
+					<div class="form">
+						<div class="row">
+							<div class="col-xs-12 col-md-4 d-none d-md-block">
+								<label for="filtros" class="sr-only">Filtros</label>
+								<select class="select" id="filtros">
+									<option>Mejores puntuados</option>
+									<option>Más valorados</option>
+									<option>De mayor a menor</option>
+									<option>De menor a mayor</option>
+									<option>Los más nuevos</option>
+								</select>
 							</div>
-
-							<div class="d-flex flex-wrap justify-content-between">							
-								@foreach ($huertas as $huerta)
-								<div class="card no-border">
-									<a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="d-flex js-check-huerta">
-										<input type="hidden" name="nombreEstaHuerta" value="{{ $huerta->huerta }}">
-										<div class="img-wrapper">
-											<img src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="<?php echo $huerta->huerta ?>" />
-										</div>
-										<div class="card-info">
-											<h3>{{ $huerta->huerta }}</h3>
-
-											<div class="stars">
-												@foreach ( $reviews as $review )
-
-												@if ( $review->huerta_id == $huerta->id )
-												{{-- {{ $review->stars }} --}}
-
-												@for ($i = 0; $i < 5; ++$i)
-												<i class="{{ $review->stars <= $i ? 'far' : 'fas' }} fa-star" aria-hidden="true"></i>
-												@endfor
-
-												@endif
-
-												@endforeach
-											</div>
-
-										</div>								
-									</a>
-								</div>	
-								@endforeach
-							</div>	
+							<div class="col-md-4 offset-md-4">
+								<form action="{{ route('huertas.search') }}" method="get">
+									<div class="relative search-sm">
+										<input type="text" name="search" id="search" placeholder="¿Qué estás buscando?">
+										<button class="btn-search">
+											<span class="sr-only">Search</span>
+											<i class="fas fa-search"></i>
+										</button>
+									</div>
+								</form>
+							</div>
 						</div>
-						
-						<nav aria-label="navigation">
-							<ul class="pagination">
-								<?php echo $huertas->links(); ?>
-							</ul>
-						</nav>
-						
 					</div>
+
+					<div class="d-flex flex-wrap justify-content-between">							
+						@foreach ($huertas as $huerta)
+						<div class="card no-border">
+							<a href="{{ route( 'huertas.show', ['id' => $huerta->id] ) }}" class="d-flex js-check-huerta">
+								<input type="hidden" name="nombreEstaHuerta" value="{{ $huerta->huerta }}">
+								<div class="img-wrapper">
+									<img src="{{ url('storage/images/huertas/'.$huerta->foto) }}" alt="<?php echo $huerta->huerta ?>" />
+								</div>
+								<div class="card-info">
+									<h3>{{ $huerta->huerta }}</h3>
+
+									<div class="stars">
+										@foreach ( $reviews as $review )
+
+										@if ( $review->huerta_id == $huerta->id )
+										{{-- {{ $review->stars }} --}}
+
+										@for ($i = 0; $i < 5; ++$i)
+										<i class="{{ $review->stars <= $i ? 'far' : 'fas' }} fa-star" aria-hidden="true"></i>
+										@endfor
+
+										@endif
+
+										@endforeach
+									</div>
+
+								</div>								
+							</a>
+						</div>	
+						@endforeach
+					</div>	
 				</div>
+				
+				<nav aria-label="navigation">
+					<ul class="pagination">
+						<?php echo $huertas->links(); ?>
+					</ul>
+				</nav>
 			</div>
 
 			{{-- DESCARGA LA APP  --}}

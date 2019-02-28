@@ -54,91 +54,70 @@
 			<div class="tab-content">
 				<div class="tab-pane fade @if(!Session::has('status') and $errors->isEmpty()) show active @endif" id="huerta-productos-listado" role="tabpanel" aria-labelledby="huerta-productos-listado">
 
-					<div class="row">
-						<div class="col-xs-12 d-none d-lg-block col-lg-3">
-							{{-- FILTROS LATERALES  --}}
-							<div class="sidebar-filtros">
-								<h3>Categoría</h3>
-								<ul>
-									@foreach ($categorias as $categoria)
-									<li>
-										<label class="checkbox clearfix">			
-											<input type="checkbox" name="cat-1" data-product-cateogry @if ( isset($categoriaSeleccionada->id) and $categoriaSeleccionada->id == $categoria->id) checked	@endif >
-											<span class="checkmark"></span>
-											<span class="float-left">{{ $categoria->categoria }}</span>
-											<span class="light float-right">({{ $categoria->productos->count() }})</span>
-										</label>
-									</li>
-									@endforeach
-								</ul>
+					{{-- BUSCADOR  --}}
+					<form class="form" action="{{ route('huertas.single.search', ['id' => $huerta->id]) }}" method="get">
+						<div class="row">
+							<div class="col-md-4 offset-md-8">
+								<form method="" action="">
+									<div class="relative search-sm">
+										<input type="text" name="search" placeholder="¿Qué estás buscando?">
+										<button class="btn-search">
+											<span class="sr-only">Search</span>
+											<i class="fas fa-search"></i>
+										</button>
+									</div>
+								</form>
 							</div>
 						</div>
+					</form>
 
-						<div class="col-xs-12 col-lg-9">
-							{{-- BUSCADOR  --}}
-							<form class="form" action="{{ route('huertas.single.search', ['id' => $huerta->id]) }}" method="get">
-								<div class="row">
-									<div class="col-md-4 offset-md-8">
-										<form method="" action="">
-											<div class="relative search-sm">
-												<input type="text" name="search" placeholder="¿Qué estás buscando?">
-												<button class="btn-search">
-													<span class="sr-only">Search</span>
-													<i class="fas fa-search"></i>
-												</button>
-											</div>
-										</form>
+					<div class="huerta-productos">
+						<div class="d-flex flex-wrap justify-content-between">
+
+							@if ($productos->isEmpty())
+							<div class="no-results">
+								<p>
+									Lo sentimos, no hay resultados para 
+									<span class="bold">{{ $inputData }}</span>
+								</p>
+							</div>
+							@endif
+
+							@foreach ($productos as $producto)
+
+							<div class="card no-border">
+								<a href="javascript:void(0)" class="d-flex" data-target="#producto-detalle" data-id="{{$producto->id}}">
+									<div class="img-wrapper">
+										<img class="card-img-top" src="{{ url('storage/images/productos/'.$producto->foto) }}" alt="Card image cap">
 									</div>
-								</div>
-							</form>
+									<div class="card-info dark-border">
+										<h3>{{ $producto->producto }}</h3>
+										<div class="more-info">
+											{{-- <span class="categoria d-block">{{ $producto->producto }}</span> --}}
+											<span class="precio d-block">
+												<span class="bold">$ {{ $producto->precio }}</span> x {{ $producto->unidadDeMedida->unidad }}.
+											</span>
+											<i class="far fa-chevron-right"></i>
+										</div>
+									</div>								
+								</a>
+								{{-- <span class="envio">
+									<i class="fal fa-truck"></i>
+									<span>Costo de envío: $150 / $195</span>
+								</span> --}}
+							</div>
 
-							<div class="huerta-productos">
-								<div class="d-flex flex-wrap justify-content-between">
+							@endforeach
 
-									@if ($productos->isEmpty())
-									<div class="no-results">
-										<p>
-											Lo sentimos, no hay resultados para 
-											<span class="bold">{{ $inputData }}</span>
-										</p>
-									</div>
-									@endif
-
-									@foreach ($productos as $producto)
-
-									<div class="card no-border">
-										<a href="javascript:void(0)" class="d-flex" data-target="#producto-detalle" data-id="{{$producto->id}}">
-											<div class="img-wrapper">
-												<img class="card-img-top" src="{{ url('storage/images/productos/'.$producto->foto) }}" alt="Card image cap">
-											</div>
-											<div class="card-info dark-border">
-												<h3>{{ $producto->producto }}</h3>
-												<div class="more-info">
-													{{-- <span class="categoria d-block">{{ $producto->producto }}</span> --}}
-													<span class="precio d-block">
-														<span class="bold">$ {{ $producto->precio }}</span> x {{ $producto->unidadDeMedida->unidad }}.
-													</span>
-													<i class="far fa-chevron-right"></i>
-												</div>
-											</div>								
-										</a>
-										{{-- <span class="envio">
-											<i class="fal fa-truck"></i>
-											<span>Costo de envío: $150 / $195</span>
-										</span> --}}
-									</div>
-
-									@endforeach
-
-								</div>
-							</div>							
-							<nav aria-label="navigation">
-								<ul class="pagination">
-									<?php echo $productos->links(); ?>
-								</ul>
-							</nav>
 						</div>
-					</div>
+					</div>	
+
+					<nav aria-label="navigation">
+						<ul class="pagination">
+							<?php echo $productos->links(); ?>
+						</ul>
+					</nav>
+
 				</div>
 
 				<div class="tab-pane fade" id="huerta-informacion" role="tabpanel" aria-labelledby="huerta-informacion">
