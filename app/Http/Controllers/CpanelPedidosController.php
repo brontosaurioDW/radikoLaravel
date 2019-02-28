@@ -19,6 +19,7 @@ use App\Models\UnidadDeMedida;
 use App\Models\Review;
 use App\Models\Disponibilidad;
 use App\Models\Pedido;
+use App\Models\EstadoPedido;
 use App\Models\RelPedidosProductos;
 
 class CpanelPedidosController extends Controller
@@ -72,27 +73,29 @@ class CpanelPedidosController extends Controller
         return view('cpanel.pedidos.show', compact('pedido', 'productos', 'productos_pedido'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function editPedido($pedido)
     {
-        //
+        // edicion del pedido (estado)
+        $estados = EstadoPedido::all();
+        $pedido = Pedido::find($pedido);
+        return view('cpanel.pedidos.edit-pedido', compact('estados', 'pedido'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    
+    public function updatePedido(Request $request, $id){
+        
+        // actualización del estado del pedido
+        $inputData = $request->input();
+                
+        $pedido = Pedido::find($id);
+        $pedido->update($inputData);
+        
+        return redirect()->route('cpanel.pedidos.index')
+        ->with(
+            [
+                'status' => 'El estado del pedido n° ' .$pedido->id. ' se actualizó correctamente.',
+                'class' => 'success'
+            ]
+        );
     }
 
     /**

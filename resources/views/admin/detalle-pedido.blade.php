@@ -9,7 +9,7 @@
 			<div class="c-panel-wrapper bg-trama rdk-charcoal last-step">
 				<div class="c-panel-inner-wrapper">
 
-					<a class="link" href="{{ url()->previous() }}">
+					<a class="link" href="{{ route( 'admin.pedidos' ) }}">
 						<i class="fas fa-chevron-left"></i>
 						<span>Volver</span>
 					</a>
@@ -147,6 +147,9 @@
 					            </div>
 					        </div>
 					    </div>
+					</div>
+					<div class="buttons bottom d-flex justify-content-end align-items-center">
+						<a class="btn btn-primary btn-small" href="{{ route( 'admin.pedidos.edit-pedido', ['id' => $pedido->id] ) }}">Cambiar estado</a>
 					</div>
 				</div>
 			</div>

@@ -9,7 +9,7 @@
 			<div class="c-panel-wrapper bg-trama rdk-charcoal">
 				<div class="c-panel-inner-wrapper">
 					<div class="buttons d-flex justify-content-start align-items-center">
-						<a class="link" href="{{ url()->previous() }}">
+						<a class="link" href="{{ route( 'cpanel.productos.index' ) }}">
 							<i class="fas fa-chevron-left"></i>
 							<span>Volver</span>
 						</a>

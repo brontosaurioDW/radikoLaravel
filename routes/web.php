@@ -252,6 +252,18 @@ Route::middleware('auth')->group(function() {
 			'uses' => 'CpanelPedidosController@show'
 		]);
 
+		// edit estado pedido
+		Route::get('/cpanel/pedidos/{pedido}/editarPedido', [
+			'as' => 'cpanel.pedidos.edit-pedido',
+			'uses' => 'CpanelPedidosController@editPedido'
+		]);
+		
+		// actualizar estado del pedido
+		Route::put('/cpanel/pedidos/{pedido}/editarPedido', [
+			'as' => 'cpanel.pedidos.update',
+			'uses' => 'CpanelPedidosController@updatePedido'
+		]);
+
 		// Cpanel Huerta
 
 		Route::get('/cpanel/huerta', [

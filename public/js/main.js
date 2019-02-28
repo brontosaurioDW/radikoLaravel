@@ -22,7 +22,6 @@ $(document).ready(function() {
                 fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
             } else {
                 fileName = e.target.value.split('\\').pop();
-                console.log(fileName);
             }
 
             if (fileName) {
@@ -100,10 +99,6 @@ $(document).ready(function() {
                 var ruta                  = $(this).attr('href');
                 var nombreHuertaCarrito   = $(this).find('input[name="nombreEstaHuerta"]').val();
                 var nombreDelLocal        = localStorage.getItem("nombreHuertaLocal");
-
-                console.log(ruta);
-                console.log(nombreDelLocal);
-                console.log(nombreHuertaCarrito);
 
                 if (nombreDelLocal && nombreHuertaCarrito != nombreDelLocal) {                   
                     $('#confirmar-vaciar-carrito').modal('show');
@@ -318,7 +313,6 @@ function GeocodingAdress() {
         var geocoder;
         var map;
         var address = $('.address').data('direccion');
-        console.log(address);
 
         geocoder = new google.maps.Geocoder();
 
