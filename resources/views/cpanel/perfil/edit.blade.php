@@ -10,7 +10,7 @@
 			<div class="c-panel-inner-wrapper">
 				
 				<div class="buttons d-flex justify-content-start align-items-center">
-					<a class="link" href="{{ url()->previous() }}">
+					<a class="link" href="{{ route( 'cpanel.perfil.index' ) }}">
 						<i class="fas fa-chevron-left"></i>
 						<span>Volver</span>
 					</a>

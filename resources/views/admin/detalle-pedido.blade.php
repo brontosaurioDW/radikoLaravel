@@ -9,7 +9,7 @@
 			<div class="c-panel-wrapper bg-trama rdk-charcoal last-step">
 				<div class="c-panel-inner-wrapper">
 
-					<a class="link" href="{{ url()->previous() }}">
+					<a class="link" href="{{ route( 'admin.pedidos' ) }}">
 						<i class="fas fa-chevron-left"></i>
 						<span>Volver</span>
 					</a>
