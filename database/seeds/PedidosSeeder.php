@@ -29,9 +29,9 @@ class PedidosSeeder extends Seeder
 		//#2	
 		Pedido::create([
 			'fecha_pedido' => '2018-08-30 13:25:00',
-			'subtotal' => 325,
+			'subtotal' => 820.50,
 			'costo_envio' => 130,
-			'total' => 455,
+			'total' => 820.50,
 			'observaciones' => 'pedido numero #2',
 			'usuario_id'=>6,
 			'huerta_id'=>3,
@@ -43,9 +43,9 @@ class PedidosSeeder extends Seeder
 		//#3	
 		Pedido::create([
 			'fecha_pedido' => '2018-09-01 19:00:00',
-			'subtotal' => 103.6,
+			'subtotal' => 363.80,
 			'costo_envio' => 130,
-			'total' => 233.6,
+			'total' =>  363.80,
 			'observaciones' => 'pedido numero #3',
 			'usuario_id'=>7,
 			'huerta_id'=>2,
@@ -99,9 +99,9 @@ class PedidosSeeder extends Seeder
 		//#7	
 		Pedido::create([
 			'fecha_pedido' => '2018-10-12 15:50:00',
-			'subtotal' => 115,
+			'subtotal' => 911.90,
 			'costo_envio' => 130,
-			'total' => 245,
+			'total' => 911.90,
 			'observaciones' => 'pedido numero #7',
 			'usuario_id'=>7,
 			'huerta_id'=>1,
@@ -113,9 +113,9 @@ class PedidosSeeder extends Seeder
 		//#8	
 		Pedido::create([
 			'fecha_pedido' => '2018-10-15 16:50:00',
-			'subtotal' => 134,
+			'subtotal' => 92.9,
 			'costo_envio' => 130,
-			'total' => 264,
+			'total' => 92.9,
 			'observaciones' => 'pedido numero #8',
 			'usuario_id'=>6,
 			'huerta_id'=>1,
