@@ -34,7 +34,7 @@ class CpanelPedidosController extends Controller
         $userId = auth()->user()->id;
         $usuarioHuerta = Usuario::with('huerta')->get()->find($userId);
         $huertaId = $usuarioHuerta->huerta->id;
-        $pedidos = Pedido::where('huerta_id', $huertaId)->get();
+        $pedidos = Pedido::where('huerta_id', $huertaId)->orderBy('fecha_pedido','DESC')->get();
         return view('cpanel.pedidos.index', compact('pedidos'));
     }
 
