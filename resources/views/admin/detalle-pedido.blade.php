@@ -148,6 +148,9 @@
 					        </div>
 					    </div>
 					</div>
+					<div class="buttons bottom d-flex justify-content-end align-items-center">
+						<a class="btn btn-primary btn-small" href="{{ route( 'admin.pedidos.edit-pedido', ['id' => $pedido->id] ) }}">Cambiar estado</a>
+					</div>
 				</div>
 			</div>
 		</section>
