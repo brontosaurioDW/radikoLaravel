@@ -327,6 +327,18 @@ Route::middleware('admin')->group(function(){
 		'uses' => 'AdminController@updatePedido'
 	]);
 	
+	// edit estado huerta
+	Route::get('/admin/huertas/{huerta}/editarHuerta', [
+		'as' => 'admin.huertas.edit-huerta',
+		'uses' => 'AdminController@editHuerta'
+	]);
+	
+	// actualizar estado del pedido
+	Route::put('/admin/huertas/{huerta}/editarHuerta', [
+		'as' => 'admin.huertas.update',
+		'uses' => 'AdminController@updateHuerta'
+	]);
+	
 	// detalle huerta
 	Route::get('/admin/huertas/{huerta}', [
 		'as' => 'admin.huertas.detalle-huerta',
