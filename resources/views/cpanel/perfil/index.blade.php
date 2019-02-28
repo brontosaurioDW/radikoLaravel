@@ -10,6 +10,7 @@
 
 		<div class="c-panel-wrapper bg-trama rdk-charcoal">
 			<div class="c-panel-inner-wrapper">
+
 				<div class="title">
 					<h3>Perfil del usuario</h3>
 				</div>
@@ -37,7 +38,7 @@
 						</div>
 					</div>
 
-					<div class="buttons d-flex justify-content-end align-items-center">
+					<div class="buttons bottom d-flex justify-content-end align-items-center">
 						<a href="{{ route('cpanel.perfil.edit') }}" class="btn btn-primary btn-medium">Editar perfil</a>
 					</div>
 				@endif

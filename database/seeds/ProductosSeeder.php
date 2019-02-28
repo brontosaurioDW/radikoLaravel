@@ -26,7 +26,7 @@ class ProductosSeeder extends Seeder
 		'huerta_id' => 1
     ]);
 	Producto::create([
-		'producto' => 'Naranaja',
+		'producto' => 'Naranja',
 		'descripcion' => 'Las naranjas tienen un alto contenido de vitamina C, así como niveles de potasio, fibra, vitamina B, ácido fólico y antioxidantes.',
 		'marca' => 'Jardín Orgánico',
 		'precio' => 45.00,

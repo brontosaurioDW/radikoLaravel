@@ -6212,6 +6212,7 @@ h4 {
   height: 215px;
   width: auto;
   max-width: unset;
+  min-height: 160px;
 }
 .card .card-info {
   border-left: 10px solid #7065B0;
@@ -6248,6 +6249,10 @@ h4 {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+.card .more-info .fa-chevron-right {
+  right: 15px;
+  bottom: 15px;
 }
 .card .more-info .select-wrapper {
   margin-right: 15px;
@@ -6451,6 +6456,10 @@ h4 {
 }
 .last-step .card .card-info {
   padding: 2rem;
+}
+.last-step .card img {
+  height: 160px;
+  width: auto;
 }
 .last-step .ok {
   font-size: 15px;
@@ -7645,7 +7654,13 @@ header:not(.is-home) + main .cpanel {
 .cpanel .actions a {
   margin-right: 8px;
 }
+.cpanel .estado {
+  margin-bottom: 20px;
+}
 .cpanel .buttons {
+  margin-bottom: 25px;
+}
+.cpanel .buttons.bottom {
   margin-top: 25px;
 }
 .cpanel .buttons .link {
