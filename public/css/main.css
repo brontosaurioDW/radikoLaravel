@@ -6209,10 +6209,11 @@ h4 {
   background: #bababa;
 }
 .card img {
+  min-height: 160px;
   height: 215px;
   width: auto;
   max-width: unset;
-  min-height: 160px;
+  object-fit: cover;
 }
 .card .card-info {
   border-left: 10px solid #7065B0;
@@ -6494,6 +6495,9 @@ h4 {
 @media screen and (min-width: 768px) {
   .cart .address .btn {
     position: absolute;
+  }
+  .cart .continue .btn {
+    margin-top: 0;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
@@ -7612,6 +7616,9 @@ header li a .cart-yes {
   .modal .modal-content .btn {
     position: absolute;
   }
+  .modal .confirm-modal .btn {
+    margin-top: 0;
+  }
 }
 header:not(.is-home) + main .cpanel {
   padding-top: 105px;
@@ -7763,6 +7770,9 @@ header:not(.is-home) + main .cpanel {
   position: absolute;
   bottom: 15px;
   right: 15px;
+}
+.orders li .link {
+  margin: 0;
 }
 .profile h2,
 .profile h3 {

@@ -10,7 +10,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-7">
                     <ul>
                         <li>
                             <a href="{{ url('/legales/politica-privacidad') }}">Política de privacidad</a>

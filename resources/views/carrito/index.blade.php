@@ -171,7 +171,7 @@
                     
                     <div class="buttons justify-content-center d-flex align-items-center flex-wrap" role="group" aria-label="Cerrar modal">
                         <a href="{{url("carrito?vaciar=1")}}" class="mb-2 btn btn-primary btn-small" id="btn-vaciar">Si, vaciar canasta</a>
-                        <a class="mb-2 link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">No borrar</a>
+                        <a class="mb-2 link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">Seguir con la compra</a>
                     </div>
                 </div>
             </div>
@@ -190,7 +190,7 @@
                     
                     <div class="buttons justify-content-center d-flex align-items-center flex-wrap" role="group" aria-label="Cerrar modal">
                         <a href="#" class="mb-2 btn btn-primary btn-small" id="btn-quitar">Si, quitar producto</a>
-                        <a class="mb-2 link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">No borrar</a>
+                        <a class="mb-2 link d-block" id="modal-btn-no" data-dismiss="modal" aria-label="Close">No quitar producto</a>
                     </div>
                 </div>
             </div>
