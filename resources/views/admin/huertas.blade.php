@@ -60,7 +60,7 @@
 									</td>
 									<td class="actions">
 										<a class="link" href="{{ route( 'admin.huertas.detalle-huerta', ['id' => $huerta->id] ) }}" data-toggle="tooltip" data-placement="top" title="Ver"><span class="sr-only">Ver</span><i class="far fa-eye"></i></a>
-										<a class="link" href="#" data-toggle="tooltip" data-placement="top" title="Editar"><span class="sr-only">Editar</span><i class="far fa-edit"></i></a>
+										<a class="link" href="{{ route( 'admin.huertas.edit-huerta', ['id' => $huerta->id] ) }}" data-toggle="tooltip" data-placement="top" title="Editar"><span class="sr-only">Editar</span><i class="far fa-edit"></i></a>
 									</td>
 								</tr>
 								@endforeach

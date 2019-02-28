@@ -118,4 +118,33 @@ class AdminController extends Controller
             ]
         );
 	}
+	
+	public function editHuerta($huerta)
+    {
+		// edicion de la huerta (estado)
+		$huerta = Huerta::find($huerta);
+        return view('admin.edit-huerta', compact('huerta'));
+    }
+	
+	public function updateHuerta(Request $request, $id){
+		
+		// actualización del estado del usuario huerta
+		$inputData = $request->input();
+				
+		$huerta = Huerta::find($id);
+		$idUsuario = $huerta['usuario_id'];
+		
+		$estadoUsuario = $inputData['estado'];
+		
+		$usuario = Usuario::find($idUsuario);
+		$usuario->update($inputData);
+		
+		return redirect()->route('admin.huertas' )
+        ->with(
+            [
+                'status' => 'El estado de la huerta '.$huerta->huerta.' se actualizó correctamente.',
+                'class' => 'success'
+            ]
+        );
+	}
 }
