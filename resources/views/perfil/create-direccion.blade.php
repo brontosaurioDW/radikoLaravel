@@ -85,7 +85,7 @@
 							</div>
 							<div class="row-form">
 								<label>Teléfono</label>
-								<input type="tel" name="telefono" value="{{ old('telefono') }}" pattern="\([0-9]{3}\) [0-9]{4}[ -][0-9]{4}" value="{{ old('numero') }}" placeholder="(011) 5555-5555">
+								<input type="tel" name="telefono" value="{{ old('telefono') }}"  value="{{ old('numero') }}" placeholder="011-5555-5555">
 								@if($errors->has('telefono'))
 								<small class="text-danger">{{ $errors->first('telefono') }}</small>
 								@endif
